@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="with=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+   <meta name="keywords" content="html,html tutorial
+   s,web development">
+   <meta name="robots" content="INDEX,FOLLOW">
+   <title> Javascript13(SettimeOut and ClearTimeOut) prectice by Chudasama Vishal </title>
+  
+  <style>
+  
+  </style>
+  
+</head>
+<body>
+  <div class="container">This is a <span id="time"> </span>
+  </div>
+  
+  <hr>
+  
+  <script>
+    function greet(name, byeText){
+       console.log("Hello Good Morning " + name " " + byeText); 
+   } 
+   <!-- setTimeout(greet, 5000, "harry", "Take Care"); -->
+   <!-- ahi 5000ms milisecond chhe aetale 5 second greet ae name chhe gamete rakhishakay, console.log machhe te name and byeText ae settimeout machhe te prmane aave chhe. hi good morning harry take care ae 5s pachhhi aav se-->
+   <!-- timeout = setTimeout(greet, 5000, "harry", "Take Care");
+   ClearTimeOut(timeout ni id ); -->
+   <!-- timeout = kar ta teni id aave chhe ClearTimeOut no upayog kari te je 5s pachhi thavanu chhe tene roki sakay chhe. -->
+   <!-- setInterval(greel, 2000, "vishal", "Hiii"); -->
+   <!-- setInterval kar ta 2s dene 2s de hello good morning vishaal hiii lakhel aav se -->
+   intervallId = setInterval(greel, 2000, "vishal", "Hiii");
+   ClearTimeOut(intervallId);
+   
+   function displayTime(){
+        time = new Date();
+        console.log(time);
+        document.getElementById('time').innerHTML = time;
+    }
+    setInterval(displayTime,  1000);
+  </script>
+  
+  
+  
+  
+</body>
+</html>

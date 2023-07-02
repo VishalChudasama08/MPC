@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="with=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+   <meta name="keywords" content="html,html tutoroal
+   s,web development">
+   <meta name="robots" content="INDEX,FOLLOW">
+   <title> css15(beforer and after psudo selector) prectice by Chudasama Vishal </title>
+  
+  <style>
+  body{
+      margin: 0px;
+      padding: 0px;
+      background-color: black;
+      color:white;
+  }
+  header::before{
+      background: url('https://source.unsplash.com/collection/190727/1600x900') no-repeat center center/cover;
+      content: "";
+      position: absolute;
+      top:0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      /* position no upayog karvathi bgi lakhan ni upar aavi jay chhe. tethi z-index -1 karta bgi pachhad vay jay chhe. */
+      opacity: 0.5;
+      /* opacity no upayog karvathi bgi thodu aachhu kari sakay chhe.
+      teni kimat 0 to 1 ni vache rakhay chhe. 0 ma sav black and 1 ma bgi hoy aevij rahechhe. */
+  }  
+  ul{
+      display: flex;
+      font-size: 18px;
+  }
+  li{
+      list-style: none;
+      padding: 10px;
+  }
+  section{
+      /* border: 1px solid red; */
+      height: 300px;
+      margin: 0px;
+      padding: 2px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+  h3{
+      font-size: 25px;
+  }
+  
+  </style>
+  
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li class="item">home</li>
+        <li class="item">about</li>
+        <li class="item">services</li>
+        <li class="item">contatc</li>
+      </ul>
+    </nav>
+    <section>
+      <h3>welcome to coding world</h3>
+      <p>tury, the publishing houses of America printed more than a fifth of a million different books. Most of them were deadly dull, and many were financial failures. “Many,” did I say? The president of one of the largest publishing houses in the world confessed to me that his company, after seventy-five years of publishing experience, still lost money on seven out of every eight books it published.</p>
+    </section>
+  </header>
+  
+  <hr>
+  
+</body>
+</html>

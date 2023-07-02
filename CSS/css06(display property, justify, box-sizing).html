@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="with=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+   <meta name="keywords" content="html,html tutoroals,web development">
+   <meta name="robots" content="INDEX,FOLLOW">
+   <title> css6 (display property, justify, box-sizing) prectice by Chudasama Vishal </title>
+   
+   <style>
+   /* display: inline, block, inline-block, flex, grid,... */
+   /* flex = css9 */
+   /* grid = css21 */
+   header{
+       margin: auto;
+       border: 2px solid red;
+       width: 99%;
+   }
+   img{
+       margin: auto;
+       display: block;
+       
+       width: 35px;
+   }
+   h3{
+       font-family: verdana, geneva, tahoma, sans-serif;
+       margin: 0px;
+       text-align: center;
+   }
+   h4{
+       text-align: center;
+   }
+   p{
+       text-align: justify;
+   }
+   .box{
+       margin: 1px 0px;
+       border: 2px solid black;
+       padding: 1px;
+       background-color:grey; 
+       display: inline-block;
+       width: 32%;
+       box-sizing: border-box;
+   }
+   .eight-d{
+       width: 100%;
+   }
+   .one{
+       background-color:green;
+   }
+   .one span{
+       border: 2px solid black;
+       background-color: red;
+       display: inline;
+       /* span ae inline aeliment chhe aetleke te navilaenma jato nathi , teni proptiy fixd hoy chhe tethi display: inline; karta kay fer pad to nathi */
+   }
+   .two{
+       background-color: yellow;
+   }
+   .two span{
+       border: 2px solid black;
+       background-color: red;
+       display: block;
+       /* display: block; karta te puri jagiya laylechhe and navi laenma thi chaluthay chhe  */
+       
+       /* aamj display thi inline aeliment ne block and block aeliment ne inline banavi sakay chhe. */
+   }
+   .d{
+       margin: 0px;
+       padding: 0px;
+   }
+   #d1{
+       border:2px solid red;
+       background-color: grey;
+       color: white;
+       display: inline-block;
+       /* display: inline-block; karta bijabox ni border aavechhe  */
+   }
+   #d2{
+       border:2px solid black;
+       background-color: green;
+       color: white;
+       display: ;
+   }
+   #d3{
+       border:2px solid grey;
+       background-color: yellow;
+       color: white;
+       display: inline;
+       /* inline; karta bijabox ni border nathi aavati  */
+   }
+   </style>
+</head>
+<body>
+
+ <header class="top">
+    <img src="https://images.app.goo.gl/i3fmrqF4VnH9VJsV9" alt="મોરપીચ્છ" > 
+    <h3 class=""> welcome to my blog <h3>
+ </header>
+ 
+  <div class="eight-d" id="d-eight">
+  
+   <div class="box">
+   <h4> heading </h4>
+   <p class="small" id="small-p-one">His pay is small and he finds it rather difficult to make both ends meet. He is not so highly educated. He has to travel long distances to deliver the dak. strong. strong.</p>
+   </div>
+   <div class="box">
+   <h4> heading </h4>
+   <p class="small" id="small-p-two">But he is satisfied with what he gets and leads a contented life. The life of a village postman is even harder. He is a man of strong physique. He is a man of strong.</p>
+   </div>
+   <div class="box">
+   <h4> heading </h4>
+   <p class="small" id="small-p-there">Often he read and writes letters for the villagers who respect him and reward him for his services. He is a man of strong physique. He is a man of strong physique.</p>
+   </div>
+
+ </div>
+ 
+ <div>
+     <p class="one">He is a man of <span>strong</span> physique.</p>
+ </div>
+ <div>
+     <p class="two">He is a man of <span>strong</span> physique.</p>
+ </div>
+ 
+ <div class="d" id="d1"><span>strong</span></div>
+ <div class="d" id="d2"><span>strong</span></div>
+ <div class="d" id="d3"><span>strong</span></div>
+ 
+</body>
+</html>

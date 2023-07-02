@@ -1,0 +1,29 @@
+#imgs {
+  border: 1px solid red;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+}
+
+/* .imgdiv{
+  border: 1px solid red;
+  border-radius: 60px;
+  width: 85px;
+  overflow: hidden;
+} */
+
+
+.img {
+  background-image: url("/CSS /IMG_20230327_101111.jpg");
+  width: 85px;
+  border: 1px solid red;
+  height: 1500px;
+  border-radius: 60px;
+  /* transition: background-image 4s ease-in-out .1s; */
+  transition-property: background-image;
+  transition-delay: 2s;
+}
+
+.img:hover {
+  width: 1080px;
+}

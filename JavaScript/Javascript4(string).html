@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="with=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+   <meta name="keywords" content="html,html tutoroal
+   s,web development">
+   <meta name="robots" content="INDEX,FOLLOW">
+   <title> css1(boylor plet) prectice by Chudasama Vishal </title>
+  
+  <style>
+  </style>
+  
+</head>
+<body>
+  
+  <script>
+   var str = "this is a string";
+   console.log(str);
+   var position = str.indexOf('is');
+   console.log(position);
+   <!-- .indexOf('is') kar ta console.log ma 2 batave chhe. te nathi str makhakhel hoy te ma 'is' ketala numbhar ma chhe te bata ve chhe ahi 'this is a string' ma this no t-0,h-1,i-2,s-3, khali spes hoy te'_'-4,i-5,... aevi rite hoy chhe ahi indexOf ma 0 thi chalu thay chhe. -->
+   position = str.lastIndexOf('is');
+   <!-- aemaj biju lakhava mate var lakhavani jarur nathi hoti -->
+   console.log(position);
+   <!-- last kar ta last mahoy teno numbar batave chhe. ahi biji var is chhe te last chhe tethi te no nubare 5 thay chhe.tethi 5 aave.  -->
+   
+   var substr = str.slice(1,6);
+   console.log(substr);
+   <!-- .slice kar ta 1 thi 6 ma hase te lakhan aaav se aahi 1,6 ma thi 'his i' aave chhe. ahi 6 numbar print nathi thato. -->
+   
+   var substr = str.subString(1,6);
+   console.log(substr);
+   <!-- .subString ma 6 numbar no aakado pan print thay chhe. 'his is' aave -->
+   
+   var substr1 = str.substr(1,8);
+   console.log(substr1);
+   <!-- .substr ma 1 numathi lay jya 8 aakada thay tya su dhi print thay chhe. ahi 'his is a' aave ahi te kul 8 aakada thay chhe. spes pan ganay.-->
+   
+   var rep = str.replace('string', 'Vishal');
+   console.log(str);
+   <!-- chhe tej -->
+   console.log(rep);
+   <!-- .replace ma 'string' ni jagiya e 'Vishal' lakhase  -->
+   
+   console.log(str.toUpperCase());
+   console.log(str.toLowerCase());
+   <!-- .toUpperCase() ma badhuj kepital thase jya re .toLowerCase() ma badhuj smol ma aav se . -->
+   
+   var newstr = str.concat('New string');
+   console.log(newstr);
+   <!-- .concat kar ta je mul str che tema 'New String' aatalu umeri de se je thi 'this is a stringNew String' aaav se. -->
+   
+   var strWP = '     thi is      Vishal   ';
+   console.log(strWP);
+   console.log(strWP.trim());
+   <!-- .trim() kar ta 'thi is vishal' ma aagad and pachhad ni khali spes kadhi nakhase -->
+   
+   var c2 = str.charAT(3);
+   console.log(c2);
+   <!-- .charAT(3) kar ta str ma 3 nubare ji hase te print thase ahi 's' aave. -->
+   
+   var c3 = str.charCodeAt(2);
+   console.log(c3); <!-- not very importent -->
+   <!-- .charCodeAt(2) thi 3 ma chhe teno code aave chhe. ahi 105 aave chhe. -->
+   
+   console.log(str[2]);
+   <!-- [2] kar ta str ma 2 nubar nu hase te aav se. ahi 'i' aave. -->
+   
+  </script>
+  
+  
+</body>
+</html>

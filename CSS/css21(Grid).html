@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="with=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+   <meta name="keywords" content="html,html tutoroal
+   s,web development">
+   <meta name="robots" content="INDEX,FOLLOW">
+   <title> css21(Grid) prectice by Chudasama Vishal </title>
+  
+  <style>
+  .grid1{
+    display: grid;
+    /* grid no upayog kar va mate display: grid; karvi pade */ 
+    
+    grid-template-rows: 1fr 2fr 3fr  2fr 1fr;
+    /* ahi rows ma box1 1fr thase,box2 2fr,box3 3fr,... aevij rite laen ma te box mate grid aapi sakay chhe. */
+    /* ahi rows ke columns lakhavama pachhad s lagad vo faraji yat chhe. */
+    /* ahi fr ae line vache ni jagya chhe te difolt rite badhey ma 1fr hoy chhe. */
+    
+    grid-auto-rows: 4fr;
+    /* auto ma badhaj 5fr thay jay chhe je ne mate pelathij dar savel chhe te temj rahe chhe baki na auto mujab thay jay chhe. */
+  
+    grid-row-gap: 1.2rem;
+    /* be grid vacheni gap aape chhe. tene px and rem ma pan aapi sakay chhe. */
+    /* rows ma gap aape. */
+    /* ahi row and column ma pachhad s nathi lag to */
+  }
+    
+  .grid2{
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      /* columns kar ta columns ma 3 pat padi chhe pelo pat 1fr, bijo 1fr, and 3jo 2fr thay jay chhe. badhaj box aamaj gothvay chhe. */
+      
+      grid-column-gap: 8px;
+      /* columns ma gap aape chhe. */
+  }  
+  
+  .grid3{
+      display: grid;
+      grid-template-columns: repeat(5,2fr);
+      /* repeat karta te columns machhe tethi columns ma te mujab ripit thay chhe. ahi 5 ae ketala columns karva te and 2fr ae columns ketala mota hova joete te naki kare chhe. */
+  }
+  
+  .box{
+      border: 1px solid red;
+      background-color: cyan;
+      margin: 1px;
+  }
+ 
+  </style>
+  
+</head>
+<body>
+   <div class="grid1">
+     <div class="box" id="box1">box-1</div>
+     <div class="box" id="box2">box-2</div>
+     <div class="box" id="box3">box-3</div>
+     <div class="box" id="box4">box-4</div>
+     <div class="box" id="box5">box-5</div>
+     <div class="box" id="box6">box-6</div>
+     <div class="box" id="box7">box-7</div>
+     <div class="box" id="box8">box-8</div>
+     <div class="box" id="box9">box-9</div>
+     <div class="box" id="box10">box-10</div>
+   </div>
+   <div class="grid2">
+     <div class="box" id="box11">box-11</div>
+     <div class="box" id="box12">box-12</div>
+     <div class="box" id="box13">box-13</div>
+     <div class="box" id="box14">box-14</div>
+     <div class="box" id="box15">box-15</div>
+     <div class="box" id="box16">box-16</div>
+     <div class="box" id="box17">box-17</div>
+     <div class="box" id="box18">box-18</div>
+     <div class="box" id="box19">box-19</div>
+     <div class="box" id="box20">box-20</div>
+   </div>
+   <div class="grid3">
+     <div class="box" id="box1">box1</div>
+     <div class="box" id="box2">box2</div>
+     <div class="box" id="box3">box3</div>
+     <div class="box" id="box4">box4</div>
+     <div class="box" id="box5">box5</div>
+     <div class="box" id="box6">box6</div>
+     <div class="box" id="box7">box7</div>
+     <div class="box" id="box8">box8</div>
+     <div class="box" id="box9">box9</div>
+     <div class="box" id="box10">box10</div>
+   </div>
+</body>
+</html>

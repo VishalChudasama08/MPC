@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="with=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+   <meta name="keywords" content="html,html tutoroal
+   s,web development">
+   <meta name="robots" content="INDEX,FOLLOW">
+   <title> css17(variables and custom properties) prectice by Chudasama Vishal </title>
+  
+  <style>
+  :root{
+      --geeta: cyan;
+      --okay: 100px;
+      --no: 50px;
+  }
+  /* root thi variables badhij jagiyae lagi sake */
+  
+  .box{
+      --vishal: blue;
+      /* khali .box maj j kam kare chhe */
+      width: var(--okay);
+      border: 1px solid red;
+      height: var(--okay);
+      margin: 5px;
+      background-color: var(--vishal);
+      box-shadow: 2px 2px var(--vishal);
+  }
+  .container{
+      display: flex;
+      background-color: var(--geeta);
+  }
+  .d{
+      width: 300px;
+      height: var(--no);
+      margin: 10px;
+      background-color: var(--geeta);
+  }
+  .dd{
+      width: 300px;
+      height: var(--no);
+      margin: 10px;
+      background-color: var(--geeta);
+  }
+  </style>
+  
+</head>
+<body>
+  <div class="container">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+  <div class="d">1</div>
+  <div class="dd">2</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="with=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+   <meta name="keywords" content="html,html tutoroal
+   s,web development">
+   <meta name="robots" content="INDEX,FOLLOW">
+   <title> css19(transitions) prectice by Chudasama Vishal </title>
+  
+  <style>
+  body{
+        background-color: black;
+        color: white;
+  }
+  #box{
+        display: flex;
+        height: 150px;
+        width: 150px;
+        background-color: red;
+        justify-content: center;
+        align-items: center;
+        /* transition-property: background-color;
+        transition-duration: 2s;
+        transition-timing-function: ease-in-out;
+        transition-delay: .2s;  */
+        
+        transition: background-color 4s ease-in-out .1s;
+        /* tukma aam lakhay */
+        
+        transition: all 2s ease-in-out .1s;
+        /* all karta hover ma chhe te bhadhuj transitions thay */
+  }
+  #box:hover{
+        background-color: green;
+        height: 300px;
+        width: 300px;
+        border-radius: 50px;
+        font-size: 45px;
+  }
+  </style>
+  
+</head>
+<body>
+  <h3>This is CSS Transition Tutorial</h3>
+  <div class="container">
+      <div id="box">
+       This is my box
+      </div>
+  </div>
+</body>
+</html>

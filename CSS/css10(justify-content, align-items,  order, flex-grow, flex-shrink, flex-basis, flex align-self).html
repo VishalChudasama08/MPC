@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="with=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+   <meta name="keywords" content="html,html tutoroal
+   s,web development">
+   <meta name="robots" content="INDEX,FOLLOW">
+   <title> css10(justify-content, align-items,  order, flex-grow, flex-shrink, flex-basis, flex' align-self) prectice by Chudasama Vishal </title>
+  
+  <style>
+            
+  .container{
+      border: 1px solid black;
+      height: 500px;
+      width: 100%;
+      display: flex;
+      flex-flow: row wrap;
+      
+      /* justify-content: center; */
+       /* justify-content: center; karta box center ma godhavay chhe. */
+      /* justify-content: space-between; */
+       /* justify-content: space-between; karta box ni vche ni jgya sarkhi thay jay chhe. */
+      /* justify-content: space-evenly; */
+       /* justify-content: space-evenly; karta bdha box vche ni jgya and bey chheda ni jgya sarkhi rhe chhe. */ 
+       justify-content: space-around; 
+       /* justify-content: space-around; karta boxs na left and right ma sarkhi jgya rhe chhe */
+       
+      align-items: center;
+      /* align-items: center; kar ta boxs mein box ni center ma aavi jay chhe */
+       
+      align-items: flex-end;
+      /* align-items: flex-end; kar ta boxs mein box ni niche  aavi jay chhe */
+      align-items: flex-start;
+      /* align-items: flex-start; kar ta boxs mein box ni upar aavi jay chhe */
+      align-items: stretch;
+      /* align-items: stretch; kar ta boxs mein box (1row and 2row ni vche jgya bna ve)column ma jgya bnavi ne gotha vay chee */
+  } 
+  .item{ 
+      height: 20px;
+      width: 20px; 
+      background-color: pink;
+      border: 2px solid red;
+      margin: 5px;
+      padding: 5px;
+  } 
+  #item1{
+      /* order: 4; */
+      /* flex-grow: 2; */
+      /* flex-shrink: 4; */
+      /* flex-basis: 40px; */
+      /* flex: 2 3 30px; */
+      align-self: center;
+  }
+  #item2{
+      /* order: 2; */
+      /* flex-grow: 3; */
+      /* flex-shrink: 2; */
+      /* flex-basis: 60px; */
+      align-self: flex-start
+  }
+  #item3{
+      /* order: 1; */
+      /* flex-grow: 4; */
+      /* flex-shrink: 3; */
+      align-self: flex-end
+  }
+  #item4{
+      /* order: 3; */
+  }
+  
+  /* order no upayog kar ta jeno order moto hse te pramane te box chhelethi gothavase */
+  /* flex-grow: no upayog karvathi jya sreen jum kar vama aave tyare te box flex-grow: pramane botu thay aekjest kare chhe. je flex-grow: motu hoy te bijana karta vdhare motu thay chhe. */
+  /* flex-shrink: no upayoy flex-grow; karta ulto hoy chhe. te ma mein box nanu kar ta flex-shrink: vada box vdhare nana thay chhe. */ 
+  /* flex-basis:  no upayog karta jo te box row mahoy to teni width ma flex-basis: mujab badle chhe. and jo te box column mahoy to teni height ma flex-basis: mujab badlechhe. flex-basis: ae width ke height karta vadhare hoy to width ke height vadhe chhe ochhi hoy to width ke height ochhi thay chhe. */
+  /* khali flex: no upayog kar ta flex-grow:, flex-shrink: and flex-basis: trney aek sathe lakhi sakay chhe. */
+  /* align-self: center; ma te box flex ni center ma aavi jase */
+  /* align-self: flex-start; ma te box flex na start ma aavi jay chhe. */
+  /* align-self: flex-end; ma te box flex ni niche aavi jay chhe. */
+  /* align-self: no upayog 1 item mate thay chhe jyare align-items: no upayog badhij item mate thay chhe. */
+  
+  </style>
+  
+</head>
+
+<body>
+  <h1> this is tutorial </h1>
+  <div class="container">
+    <div class="item" id="item1">1</div>
+    <div class="item" id="item2">2</div>
+    <div class="item" id="item3">3</div>
+    <div class="item" id="item4">4</div>
+    <div class="item" id="item5">5</div>
+    <div class="item" id="item6">6</div>
+    <div class="item" id="item7">7</div>
+    <!--<div class="item" id="item7">7</div>
+    <div class="item" id="item7">7</div>
+    <div class="item" id="item7">7</div>
+    <div class="item" id="item7">7</div> -->
+   
+  </div>
+</body>
+
+</html>

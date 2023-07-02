@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="with=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+   <meta name="keywords" content="html,html tutorial
+   s,web development">
+   <meta name="robots" content="INDEX,FOLLOW">
+   <title> Javascript1(boylor plet) prectice by Chudasama Vishal </title>
+  
+  <style>
+  .btn{
+      padding: 5px 15px;
+      background-color: red;
+      border: 2px solid black;
+      border-radius: 8px;
+      color: white;
+      font-size: 25px;
+      font-weight: bold;
+      cursor: pointer;
+  }
+  </style>
+  
+</head>
+<body>
+  <div class="container">
+    <h1> This is a heading </h1>
+    <p id="para"> Be bold and rock this on its own or with a comb ination of other accessories. It comes with a lob ster clasp to the back. This striking piece is goin to take center stage on your outfit. Be bold and rock this on its own or with a comb ination of other accessories. It comes with a lob ster clasp to the back. This striking piece is goin to take center stage on your outfit. Be bold and rock this on its own or with a comb ination of other accessories.It comes with a lob ster clasp to the back. This striking piece is goin to take center stage on your outfit. </p>
+    <button class="btn" onclick="hide()"> Show/Hide </button>
+  </div>
+  <hr>
+  
+  <script>
+   let para = document.getElementById('para');
+   para.addEventlistener('mouseover', function run(){
+       alert('Mouse Inside')
+   });
+   <!-- paragrapha upar mause rakhata alert aave  -->
+   
+   para.addEventlistener('mouseout', function run(){
+       alert('Mouse now went outside')
+   });
+   <!-- para ni bahar mause rakhat alert aave -->
+   
+   function toggleHide(){
+     let hite = document.getElementById('btn');
+     let para = document.getElementById('para');
+     if(para.style.display != 'none'){
+         para.style.display = 'none';
+     }
+     else{
+         para.style.display = 'block';
+     }
+   }
+   <!-- paragrapha ne button dabavi hide and show kari sakay chhe. hide-> gayab show-> pachhu aavijay -->
+   
+  </script>
+  
+    
+  
+</body>
+</html>

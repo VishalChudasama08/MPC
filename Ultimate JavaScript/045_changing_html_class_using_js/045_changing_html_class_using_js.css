@@ -1,0 +1,35 @@
+p{
+  border-radius: 5px;
+  padding: 5px;
+}
+.normal{
+  border: 2px solid black;
+}
+em{
+  font-size: 15px;
+}
+.first{
+  border: 2px solid black;
+  color: red;
+  background-color: blue;
+}
+.second{
+  border: 2px solid yellow;
+  color: white;
+}
+.third{
+  border: 2px solid orange;
+  color: gold;
+}
+.gray{
+  background-color: gray;
+}
+.g_y{
+  background-color: greenyellow;
+}
+.text_color{
+  color: black;
+}
+.bold{
+  font-weight: bold;
+}

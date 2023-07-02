@@ -1,0 +1,301 @@
+   html{
+       scroll-behavior: smooth;
+   }
+   
+   
+   *{
+       margin: 0px;
+       padding: 0px;
+       
+       /* bey 0px karta badhuj najik najik thay gayu tuk ma margin and padding 0px thay gay */
+       
+   }
+   
+   
+   body{
+       width: 360px; /* 1500 */
+       height: 2263px;
+       border: 1px solid yellow;
+   }
+   
+   
+   #logo{
+       margin: 5px 10px;
+   }
+   #logo img{
+       width: 30px;
+       height: 30px;
+       /* ahi logo nathi aetale img vaprel chhe tethi width/height set karvi pade chhe jo logo hoy to width/height auto rakhav thi te risponsiv thay sake/nani moti thay sake */
+       margin: 5px 10px;
+       border: 1px solid black;
+       border-radius: 10px;
+   }
+   #navbar{
+       position: sticky;
+       border: 1px solid black;
+       border-radius: 10px;
+       top: 0px;
+       display: flex;
+       /* display: flexl; kar ta baduj ek laen ma aavi gayu. */
+       flex-direction: column;
+       /* column kar ta navbar ma mein teg div and ul column ma aavi jashe. */
+       align-items: center;
+       /* img thodik niche aavi gay te thi badhij items center thodik ma thay jay chhe. img and ul thoduk upar niche hoy to te sar khu center ma aavi jay chhe. */
+       /* justify-content: center; */
+       /* navbar ma hoy te badhu display ma center ma aavi jay chhe. */   
+   }
+   #navbar::before{
+       content: "";
+       background-color: black;
+       border-radius: 10px;
+       position: absolute;
+       top: 0px;
+       left: 0px;
+       height: 100%;
+       width: 1500px; /* 1500 */
+       z-index: -1;
+       opacity: 0.4;
+   }
+   
+   #navbar ul{
+       display: flex;
+   }
+   #navbar ul li{
+       list-style: none;
+       line-height: 1.5rem;
+       /* be line vache ni jagya */
+       font-size: 1.3rem;
+       /* 1.3rem kar ta html( font-size aapel na hoy to difolt rite font-size 11 foy chhe ) na font-size na 1.3 gani thay jay chhe. */
+   }
+   #navbar ul li a{
+       color: black;
+       display: block;
+       margin: 2px 10px; /* 2,10 */
+       padding: 5px 20px; /* 5,20 */
+       border-radius: 20px;
+       text-decoration: none;
+   }
+   #navbar ul li a:hover{
+       color: white;
+       background-color: black;
+   }
+   
+   
+   #home{
+       display: flex;
+       flex-direction: column;
+       border: 1px solid red;
+       border-radius: 10px;
+       padding: 0px 20px; /* 120,100*/
+       padding-top: 100px; /* noti */
+       height: 250px; /* 100 */
+       /* width: 320px; */ /* noti */
+       /* width set na kari ye to te 100% auto metic hoy chhe. */
+       justify-content: center;
+       align-items: center;
+   }
+   #home::before{
+       /* ahi before no upayog bg set karva mate karel chhe. nichenu tena matej chhe te naathi bg ma fera far kari sakay chhe. */
+       content: "";
+       background-color: yellow;
+       /* ahi jpg nathi aav tu aetale color aapel chhe. jpg aave tyare (no-repeat center center/cover) lagadvu */
+       border-radius: 10px;
+       position: absolute;
+       
+       left: 0px;
+       height: 353px; /* 353 */
+       width: 1502px;  /* 1502 */
+       /* ahi width set kar vi pade j chhe */
+       z-index: -1;
+       opacity: 0.9;
+   }
+   #home h1{
+       color: red;
+       font-size: 3.0rem; /* 3.0 */
+       padding: 15px; /* 15 */
+       text-align: center; 
+   }
+   #home p{
+       font-size: 1.1rem; /* 1.1 */
+       text-align: center; 
+   }
+   #home button{
+       margin: 15px;
+       padding: 15px;
+       border: 2px solid yellow;
+       border-radius: 20px;
+       background-color: brown;
+       color: yellow;
+       font-size: 1.5rem;
+       cursor: pointer;
+   }
+   #home button:hover{
+       background-color: red;
+       color: white;
+   }
+   
+
+   #services-container{
+       border: 1px solid red;
+       border-radius: 10px;
+       background-color: ;
+   }
+   .h-primrey{
+       text-align: center;
+       font-size: 2.3rem;
+   }
+   #services{
+       flex-direction: column;
+       margin: 20px;
+       display: flex;
+       /* flex karva thi 3 ney box aekj harod ma rahe chhe. */
+   }
+   #services .box{
+       border: 1px solid red;
+       background-color: #ff795548;
+       margin: 5px; /* 5 */
+       border-radius: 20px;
+   }
+   #services .box img{
+       width: 250px;
+       display: block;
+       margin: 30px auto;
+       border: 3px solid black;
+       border-radius: 10px;
+   }
+   #services .box h1{
+       text-align: center;
+       padding: 0px;
+       font-size: 1.3rem;
+   }
+   #services .box p{
+       text-align: center;
+       font-size: 0.8rem;
+       color: green;
+       padding: 5px;
+   }
+   
+   
+   #client-section{
+       height: ;
+       border: 1px solid red;
+       border-radius: 10px;
+       background-color: cyan;
+   }
+   #client-section::before{
+       content: "";
+       position: absolute;
+       /*background-color: cyan;*/
+       width: 1500px;
+       
+       z-index: -1;
+       opacity: 0.4;
+   }
+   #clients{
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       align-items: center;
+   }
+   .client-items{
+       padding: 8px;
+   }
+   #clients .client-items img{
+       width: 50px; 
+       /* ahi logo nathi aetale img vaprel chhe tethi width set karvi pade chhe jo logo hoy to width auto rakhav jethi te risponsiv thay sake/nani moti thay sake */
+       border: 2px solid black;
+       border-radius: 8px;
+   }
+   
+   
+   
+   #contact{
+       position: relative;
+       border: 1px solid red;
+       border-radius: 10px;
+   }
+   #contact::before{
+       content: "";
+       position: absolute;
+       background: url(./html/MY_Frist_Html.html) no-repeat center center/cover;
+       width: 100%;
+       height: 100%;
+       z-index: -1;
+       opacity: 0.6;
+   }
+   #contact-box{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       padding-bottom: 34px;
+   }
+   #contact-box form{
+       width: 80%;
+   }
+   #contact-box label{
+       font-size: 1.2rem;
+   }
+   #contact-box input,
+   #contact-box textarea{
+       width: 100%;
+       margin: 10px;
+       padding: 2px;
+       text-align: center;
+       font-size: 1.1rem;
+   }
+   #contact-box button{
+       margin: 5px;
+       padding: 2px 20px;
+       border: 2px solid yellow;
+       border-radius: 8px;
+       background-color: brown;
+       color: yellow;
+       font-size: 1.2rem;
+       cursor: pointer;
+   }
+   
+   
+   footer{
+       border: 1px solid black;
+       border-radius: 10px;
+       background-color: black;
+       color: white;
+       padding: 8px 20px;
+       text-align: center;
+   }
+   
+   
+   @media only screen and (max-width:360px){
+      /* display ni width 0px-360px to aa dekhay */
+      /* aa fon ni width 360px chhe. */
+      body{
+          width: 360px;
+      }
+      #navbar::before{
+          width: 360px;
+      }
+      #navbar ul li a{
+          margin: 0px 0px; 
+          padding: 0px 4px;
+      }
+      #home{
+          padding: 0px 20px; 
+          height: 350px; 
+      }
+      #home::before{
+          height: 352px; 
+          width: 360px;  
+      }
+      #home h1{
+          font-size: 1.7rem; 
+          padding: 0px; 
+      }
+      #home p{
+       font-size: 0.9rem; /* 1.1 */
+      }
+      #services .box{
+          margin: 0px; /* 5 */
+      }
+   } 
+   
+   

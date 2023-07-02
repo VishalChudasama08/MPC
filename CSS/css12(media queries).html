@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="with=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+   <meta name="keywords" content="html,html tutoroal
+   s,web development">
+   <meta name="robots" content="INDEX,FOLLOW">
+   <title> css12(media queries) prectice by Chudasama Vishal </title>
+  
+  <style>
+ 
+  h5{
+      font-size: 20px;
+      text-align: center;
+      border: 1px solid black;
+      background-color: white;
+      color: black;
+      display: none;
+      /* none kar ta display ma kay lakhelu ke kay pan aavase nay tukma badha h5 gayab thay jase */
+  }
+  
+  
+  @media only screen and (max-width:360px){
+      /*display ni width 0px-360px to aa dekhay*/
+      /* aa fon ni width 360px chhe tethi box1 dekhya chhe. */
+      #box1{
+          display: block;
+          background-color: cyan;
+      }
+  }
+  
+   @media only screen and (min-width:361px) and (max-width:720px){
+      /*display ni width 361px-720px ma dekhay*/
+      #box2{
+          display: block;
+          background-color: blueviolet;
+      }
+  }
+  
+  @media only screen and (min-width:721px) and (max-width:1080px){
+      /*display ni width 721px-1080px ma dekhay*/
+      #box3{
+          display: block;
+          background-color: yellow;
+      }
+  }
+  
+  @media only screen and (min-width:1081px) and (max-width:1440px){
+      /*display ni width 1081px-1440px ma dekhay*/
+      #box4{
+          display: block;
+          background-color: green;
+      }
+  } 
+  
+  
+  
+  @media only screen and (max-width:360px){
+      /* display ni width 0px-360px to aa dekhay */
+      /* aa fon ni width 360px chhe. */
+      body{
+          width: 360px;
+      }
+      #navbar::before{
+          width: 360px;
+      }
+      #navbar ul li a{
+          margin: 0px 0px; 
+          padding: 0px 4px;
+      }
+      #home{
+          padding: 0px 20px; 
+          padding-top: 100px; 
+          height: 250px; 
+      }
+      #home::before{
+          height: 352px; 
+          width: 360px;  
+      }
+      #home h1{
+          font-size: 1.7rem; 
+          padding: 0px; 
+      }
+      #home p{
+       font-size: 0.9rem; /* 1.1 */
+      }
+      #services .box{
+          margin: 0px; /* 5 */
+      }
+   } 
+   
+  </style>
+  
+</head>
+
+<body>
+     <h5 class="box" id="box1">This is Realme 6</h5>
+     <h5 class="box" id="box2">This is Teblet</h5>
+     <h5 class="box" id="box3">This is Computer</h5>
+     <h5 class="box" id="box4">This is Big screen computer</h5>
+ 
+
+</body>
+
+</html>

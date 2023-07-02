@@ -1,0 +1,1 @@
+alert("This result show using javascript");

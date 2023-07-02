@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="with=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+   <meta name="keywords" content="html,html tutorial
+   s,web development">
+   <meta name="robots" content="INDEX,FOLLOW">
+   <title> Javascript1(boylor plet) prectice by Chudasama Vishal </title>
+  
+  <style>
+  </style>
+  
+</head>
+<body>
+  <div id="main" class="container">
+    <ul id="nav">
+      <li>Home</li>
+      <li>About</li>
+      <li>Services</li>
+      <li>More About Us</li>
+      <li>contact us</li>
+    </ul>
+  </div>
+  <div class="container">
+    This is a another Container
+  </div>
+  <hr>
+  <script>
+    let main = document.getElementById('main');
+    console.log(main);
+    document.write(main);
+    <!-- aam kar vathi id main chhe te div ne target kari sakay chhe pachhi tema sudharapan kari sakay chhe. -->
+    
+    let nav = document.getElementById('nav');
+    console.log(nav);
+    document.write(nav);
+    nav.innerHTML;
+    
+    nav.innerHTML = "<li>Dynamic element</li>";
+    <!-- aam kar vathi ul mali chhe te ne badali sakay chhe. ahi te badaline uparno li aavi jay chhe. -->
+    
+    let containers = document.getElementByClassName('container');
+    console.log(containers);
+    <!-- aam kar vathi brawjer na console ma HTML collction(2) kari ben containers batav se -->
+    container[0];
+    <!-- aam kar ta pelu container aav se -->
+    container[1];
+    <!-- aam kar ta biju container aav se -->
+    
+    let sel = document.querySelector('.container');
+    console.log('Selector returns ', sel);
+    <!-- aam kar vathi brouser na console ma pelo  class aav se -->
+    
+    let sele = document.querySelectorAll('#nav>li');
+    console.log('Selector returns ', sele);
+    <!-- ahi All kar ta #nav na badhaj li aave chhe. All na hoy to peloj li aave chhe. -->
+  </script>
+  
+  
+  
+  
+</body>
+</html>

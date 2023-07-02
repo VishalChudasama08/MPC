@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Media Queries</title>
+    <style>
+        body {
+             margin: 0px;
+         
+        }
+        .box{
+            font-size: 30px;
+            text-align: center;
+            background-color: red;
+            color: white;
+            display: none;
+        }
+        hr {
+             background-color: black;
+             height: 10px;
+             width: 358px;
+             float: left;
+        }
+        .ll {
+            background-color: black;
+            width: 10px;
+            height: 800px;
+            margin: auto 20px;
+        }
+        @media only screen and (max-width:360px){
+            /* Mobile */
+            #box-1{
+                display: block;
+                background-color: cyan;
+            }
+        }
+
+        @media only screen and (min-width: 480px) and (max-width:720px) {
+            /* Tablet */
+            #box-2{
+                display: block;
+                background-color: blueviolet;
+            }
+        }
+
+      @media (min-width: 720px) and (max-width:1440px) {
+           /* Leptop */
+            #box-3{
+                display: block;
+                color: black;
+                background-color: yellow;
+            }
+        }
+
+        @media (min-width: 1440px)  {
+            /* big sreen */
+            #box-4{
+                display: block;
+                background-color: green;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box" id="box-1">I am a Mobile</div>
+    <div class="box" id="box-2">I am a Tablet</div>
+    <div class="box" id="box-3">I am a Leptop</div>
+    <div class="box" id="box-4">I am a Big sreen</div>
+    <hr>
+    <div class="ll"> </div>
+</body>
+</html>

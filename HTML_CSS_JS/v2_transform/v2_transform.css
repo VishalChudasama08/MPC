@@ -1,0 +1,40 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.conteiner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 360px;
+  height: 360px;
+  background-color: burlywood;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid red;
+  width: 100px;
+  height: 100px;
+  background-color: brown;
+  /* transform: rotate(45deg) */
+  /* box 45deg trasu thay jay chhe. */
+
+  transition: all 1s ease-in-out;
+  /* hover tarike upayog karvo hoy tyare */
+  /* all-bhadha mate te, 2s- ketali secend ma puru thase te, ease-in-out= fass-dhimu-fass tena mate */
+}
+
+.box:hover {
+  /* transform: rotate(360deg); */
+  /* rotate kar va mate */
+  /* transform: skew(50deg); */
+  /* mox trasu kar vamatr */
+  /* transform: scale(3); */
+  /* box 3 ganu motu thay jay chhe. */
+/* transform: translate(76px, 45px); */
+  /* 76px ma box x taraf jay chhe. 45px ma box y taraf jay chhe. aabey aek sathe thay chhe aama (,) mukavu jaruri chhe. */
+}

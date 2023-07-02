@@ -1,0 +1,20 @@
+body{
+  margin: 0px;
+  padding: 0px;
+}
+nav{
+  background-color: #d5ecec;
+  margin: 0px;
+  padding: 0px;
+}
+
+nav ul {
+  display: flex;
+  padding: 0px;
+  margin: 0px;
+}
+
+nav ul li{
+  list-style: none;
+  margin-left: 20px;
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="with=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="keywords" content="html,html tutoroal
+   s,web development">
+  <meta name="robots" content="INDEX,FOLLOW">
+  <title> css16(box and text shadow) prectice by Chudasama Vishal </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+  <style>
+    #vishal {
+      margin: 0px;
+      border: 1px solid red;
+      text-align: center;
+      color: red;
+      font-size: 100px;
+      text-shadow:
+    -2px -2px 10px lime,
+    2px -2px 10px lime,
+    -2px 2px 10px lime,
+    2px 2px 10px lime;
+    }
+    
+    .g_card{
+      display: inline-block;
+      padding-top: 5px;
+      margin: 5px;
+      text-align: center;
+      border: 1px solid red;
+      border-radius: 8px;
+      width: 75px; 
+      height: 80px;
+    }
+    
+    .fa-tv{
+      border: 1px solid red;
+    }
+    
+    .container {
+      display: flex;
+    }
+
+    #card1 {
+      /* border:2px solid red; */
+      margin: 20px;
+      padding: 2px;
+      background-color: #ff20bcd4;
+      box-shadow: 4px 5px 6px 3px cyan;
+      /* 4px ae left ke right ma shadow aape chhe jyare */
+      /* 5px ae  top ke bottom ma shadow aape chhe.*/
+      /* 6px ae shado ne blur-radius kare chhe. */
+      /* 3px ae shadow ne sprend-radius(shadow ne ketlu felavvo te) aape chhe. */
+    }
+
+    #card2 {
+      /* border:2px solid red; */
+      margin: 20px;
+      padding: 2px;
+      background-color: #ff20bcd4;
+      box-shadow: -3px -3px cyan, -6px -6px blue, -9px -9px yellow, -12px -12px green, 3px 3px cyan, 6px 6px blue, 9px 9px yellow, 12px 12px green;
+      /* - kar ta shadow left and top aavechhe */
+      /* top,right,bottom,left shadow j - kari sakay chhe  */
+      /* 1 karta vadhare shadow umeri shakay chhe. */
+    }
+
+    #card3 {
+      border: 2px solid black;
+      margin: 10px;
+      padding: 2px;
+      background-color: #ff20bcd4;
+      box-shadow: inset 3px 4px cyan;
+      /* inset kar vathi shadow andar ni taraf aave chhe. */
+    }
+
+    .h {
+      margin: 4px;
+    }
+
+    #card4 {
+      display: flex;
+      /* border:2px solid red; */
+      margin: 10px;
+      padding: 20px 4px;
+      background-color: #ff20bcd4;
+    }
+
+    #h {
+      text-shadow: 1px 2px 1px white;
+    }
+
+    #hh {
+      text-shadow: -1px -2px 1px white;
+    }
+
+    #hhhh {
+      color: red;
+      margin: 25px;
+      padding: 10px;
+      text-shadow: -1px -2px black, -3px -4px green, -5px -6px cyan, -7px -8px yellow, -9px -10px blue;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1 id="vishal">Vishal</h1>
+  <div class="g_card">
+    <i class="fa-solid fa-tv"></i>
+    <p>DTH / Cable TV</p>
+  </div>
+  <div class="g_card">
+    <i class="fa-solid fa-tv"></i>
+    <p>DTH / Cable TV</p>
+  </div>
+  <div class="g_card">
+    <i class="fa-solid fa-tv"></i>
+    <p>DTH / Cable TV</p>
+  </div>
+  <div class="g_card">
+    <i class="fa-solid fa-tv"></i>
+    <p>DTH / Cable TV</p>
+  </div>
+  <div class="container">
+    <div class="card" id="card1">
+      <h3>card-1</h3>
+      <p>Stop frequently in your reading to think over what you are reading. Ask yourself just how and when you can apply each suggestion.</p>
+    </div>
+
+    <div class="card" id="card2">
+      <h3>card-2</h3>
+      <p>Stop frequently in your reading to think over what you are reading. Ask yourself just how and when you can apply each suggestion.</p>
+    </div>
+  </div>
+
+  <div id="container">
+    <div class="card" id="card3">
+      <h3>card-3</h3>
+      <p>Stop frequently in your reading to think over what you are reading. Ask yourself just how and when you can apply each suggestion.</p>
+    </div>
+
+    <div class="card" id="card4">
+      <h3 class="h" id="h">card-4</h3>
+      <h3 class="h" id="hh">card-4</h3>
+      <h1 class="h" id="hhhh">card-4</h1>
+    </div>
+  </div>
+
+</body>
+
+</html>

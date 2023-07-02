@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="with=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="keywords" content="html,html tutoroal
+   s,web development">
+  <meta name="robots" content="INDEX,FOLLOW">
+  <title> Javascript9(Alert,,prompt and Confirm) prectice by Chudasama Vishal </title>
+
+  <style>
+  </style>
+
+</head>
+
+<body>
+  <diV class="container">This is a container</div>
+
+  <script>
+    alert("this is a message");
+    // aam kar ta aek popop aave chhe tema this is a message lakhel hoy chhe te ma ok kar vathi tejay chhe ok na karo to te jatu nathi and web joy sakati nathi
+  
+    let name = prompt("what is your name", "Guest");
+    // prompt no upayog kar ta popop aav se tema je magel hoy te tpying kari sakiye chhiye pachhi ok aapavaji te vayu jay chhe. jo kay na kar vu hoy to cancel kari sakay. ahi "what is your name" , pachhi ni je("guest") lakhel chhe tya je lakhel hoy te web ma lakhel aave chhe.
+    console.log(name);
+    document.write(name);
+    // document kar ta te peg ma pan aavijay chhe.
+  
+    let deletePost = confirm("Do you really want to delete this post?");
+  
+    if (deletePost) {
+      console.log("Your post has been deleted successfully");
+      document.write("Your post has been deleted successfully");
+    }
+    else {
+      console.log("Your post has been not deleted");
+      document("Your post has been not deleted");
+    }
+  
+    console.log(deletePost);
+    document.write(deletePost);
+    // jo ok karie to true aave nakar folse aave
+  </script>
+
+  <!-- <script>
+
+import React, { useState } from 'react';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+
+function MyForm() {
+  return (
+    <Formik
+      initialValues={{ name: '', email: '' }}
+      validate={values => {
+        const errors = {};
+        if (!values.name) {
+          errors.name = 'Name is required';
+        }
+        if (!values.email) {
+          errors.email = 'Email is required';
+        } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
+          errors.email = 'Invalid email address';
+        }
+        return errors;
+      }}
+      onSubmit={(values, { setSubmitting }) => {
+        setTimeout(() => {
+          alert(JSON.stringify(values, null, 2));
+          setSubmitting(false);
+        }, 400);
+      }}
+    >
+      {({ isSubmitting }) => (
+        <Form>
+          <Field type="text" name="name" placeholder="Name" />
+          <ErrorMessage name="name" component="div" />
+          <Field type="email" name="email" placeholder="Email" />
+          <ErrorMessage name="email" component="div" />
+          <button type="submit" disabled={isSubmitting}>
+            Submit
+          </button>
+        </Form>
+      )}
+    </Formik>
+  );
+}
+
+export default MyForm;
+
+</script> -->
+
+</body>
+
+</html>

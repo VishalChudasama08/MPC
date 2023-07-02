@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="with=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+   <meta name="keywords" content="html,html tutoroals,web development">
+   <meta name="robots" content="INDEX,FOLLOW">
+   <title> css4 (navigation menu and search bar) prectice by Chudasama Vishal </title>
+   <style>
+   
+  .navbar{
+      background-color: green;
+      border-radius: 70px; 
+      padding: 6px; 
+      height: 100%;
+      overflow: auto;
+  }
+  
+  .search{
+     margin: 0px;
+  }
+  .navbar input{
+      border: 1px solid black;
+      border-radius: 15px; 
+      align: center;
+      width: 60%;
+      text-indent: 5px;
+      margin-left: 20%;
+  }
+  
+  .navbar ul{
+         
+      /* ahi li ma float no upyog kryo chhe tethi overflow thay chhe tele cantrol kar va ma te overflow auto no use thay chhe */ 
+      
+      padding: 0px;   
+  }
+  
+  .navbar li{
+      float: left;
+      /* float left kar ta bhadha li 1 hrod ma aavi jay chhe. list reti nathi */
+      /* float no upyog kar va thi te li tena perent teg(ul) thi overflow thay jay chhe.*/
+      list-style: none;
+      /* list-style none thi li na •(bulet) nikadi jay chhe */
+      
+      text-indent: 25px;
+  }
+  
+  .navbar li a{
+      padding: 2px 2px;
+      text-decoration: none;
+      color: white;
+  }
+  
+  .navbar li a:hover{
+      color: red;
+  }
+  
+   
+   </style>
+   
+</head>
+<body>
+ <header>
+    <nav class="navbar">  
+        <div class="search">
+            <input type="text" name="search" id="search" placeholder="Search"></input>
+        </div>
+        
+        <ul>
+            <li><a href="#"> Home</a></li>
+            <li><a href="#"> About</a></li>
+            <li><a href="#"> Services</a></li>
+            <li><a href="#"> Contact</a></li>
+        </ul>
+        
+     </nav>
+ </header>
+</body>
+</html>

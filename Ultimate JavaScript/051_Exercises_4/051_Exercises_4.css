@@ -1,0 +1,31 @@
+#clock {
+  border: 3px solid blue;
+  border-radius: 5px;
+  width: 200px;
+  margin: 0px auto;
+}
+
+#clock, #time, #date {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#time, #date{
+  padding: 5px;
+  height: 20px;
+}
+
+#time {
+  display: inline;
+}
+
+#date {
+  border-top: 1px solid gray;
+}
+
+.subscript {
+  font-size: 0.7em;
+  vertical-align: sub;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="with=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+   <meta name="keywords" content="html,html tutoroal
+   s,web development">
+   <meta name="robots" content="INDEX,FOLLOW">
+   <title> css7(position) prectice by Chudasama Vishal </title>
+  
+  <style>
+  
+      /* position: static(default), relative, absolute, fixed, sticky */
+      
+  .bigbox{
+      border: 2px solid black;
+      background-color: khaki;
+      height: 4444px;
+  }
+  .box{
+      margin: 2px;
+      border: 2px solid black;
+      height: 50px;
+      width: 50px;
+      display: inline-block;
+  }
+  #box1{
+      position: static;
+      /* static karta jemchhe tem rahe chhe. */
+  }
+  #box2{
+      position: relative;
+      top: 20px;
+      right: 20px;
+      /* relative karta te box mate top,right,bottom,left set kari shakay pan teni mul jagiyaae khalu rahijay chhe. */
+  }
+  #box3{
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      /* absolute karta te box mate top,right,bottom,left set kari shakay pan teni mul jagiya raheti nathi. */
+  }
+  #box6{
+      position: relative;
+      top: 20px;
+      right: 20px;
+  }
+  #box4{
+      position: fixed;
+      bottom: 5px;
+      right: 20px;
+      /* fixed karta te box srol karta te teni jagyaae j rahechhe and te box mate top,right,bottom,left set kari shakay chhe pan teni mul jagitaa raheti nathi. */
+  }
+  #box5{
+      position: sticky;
+      top: 5px;
+      /* sticky karta te box srol karta top,right,bottom,left je set karel hoy tya choti jay chhe  */
+  }
+  
+  </style>
+  
+</head>
+
+<body>
+
+  <div class="bigbox">
+     <div class="box" id="box1">1</div>
+     <div class="box" id="box2">2</div>
+     <div class="box" id="box3">3</div>
+     <div class="box" id="box4">4</div>
+     <div class="box" id="box5">5</div>
+     <div class="box" id="box6">6</div>
+  </div>
+
+</body>
+
+</html>

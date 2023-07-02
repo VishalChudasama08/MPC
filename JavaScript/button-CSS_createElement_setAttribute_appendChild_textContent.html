@@ -1,0 +1,75 @@
+<!-- 13/04/2023 -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style type="text/css" media="all">
+    body {
+      margin: 0px;
+    }
+
+    .container {
+      border: 3px solid blueviolet;
+      border-radius: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    div {
+      border: 3px solid blueviolet;
+      border-radius: 12px;
+      margin: 5px 2px;
+      padding: 0px;
+      display: inline-block;
+    }
+
+    button {
+      color: white;
+      border: 1px solid blueviolet;
+      background-color: blueviolet;
+      width: 95px;
+      height: 40px;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 8px;
+      /* transition: font-size 5s; */
+      transition: all 0.5s;
+    }
+
+    button:hover {
+      font-size: 1.12rem;
+      margin: 5px;
+      color: lawngreen;
+    }
+
+    /* button:not(:hover) {
+      font-size: 1rem;
+      margin: 0px;
+    } */
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+  </div>
+<script>
+  let container = document.querySelector('.container');
+
+  for (let i = 0; i < 35; i++) {
+    let div = document.createElement('div');
+    let button = document.createElement('button');
+    button.setAttribute('type', 'submit');
+    button.textContent = 'Submit';
+    div.appendChild(button);
+    container.appendChild(div);
+  }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="with=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+   <meta name="keywords" content="html,html tutorial
+   s,web development">
+   <meta name="robots" content="INDEX,FOLLOW">
+   <title> Javascript1(boylor plet) prectice by Chudasama Vishal </title>
+  
+  <style>
+  </style>
+  
+</head>
+<body>
+  <div class="container">This is a container.</div>
+  <div class="container">
+    <span id="time"></span>
+  </div>
+  <hr>
+  
+  <script>
+  function displayTime(){
+        time = new Date();
+        console.log(time);
+        document.getElementById('time').innerHTML = time;
+    }
+    setInterval(displayTime,  1000);
+  </script>
+  
+  
+  
+  
+</body>
+</html>

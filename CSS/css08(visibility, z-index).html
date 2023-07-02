@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="with=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+   <meta name="keywords" content="html,html tutoroal
+   s,web development">
+   <meta name="robots" content="INDEX,FOLLOW">
+   <title> css8(visibility and z-index) prectice by Chudasama Vishal </title>
+  
+  <style>
+  .box{
+      border: 2px solid black;
+      width: 100%;
+      height: 100px;
+  }
+  #box1{
+      background-color: red;
+      position: relative;
+      top: 50px;
+      z-index: 25;
+  }
+  #box2{
+      background-color: yellow;
+      position: relative;
+      top:14px;  
+      z-index: 35;
+      /* z-index will work only for position: relative, absolute, fixed or sticky; */
+      /* z-index je box ni moti hoy chhe te box no color upar dekhay chhe. */
+  }
+  #box3{
+      background-color: #ff607d8b;    
+      display: none;
+      /* display: none; karta te dekhatu nathi and teni jgya pan raheti nathi */
+  }
+  #box4{
+      background-color: #ffff5722;
+      position: relative;
+      visibility: hidden; 
+      /* visibility:hidden; karta te dekhatu nathi and teni jgya pan rahe chhe.*/
+  }
+  #box5{
+      background-color: green;/* #ff9c27b0 */
+      position: relative;
+      top: 50px;
+      z-index: -50;
+  }
+  #box6{
+      background-color: #ff9c27b0;/* #ff2196f3 */
+      position: relative;
+      z-index: -40;
+      /*-40 ae -50 kar ta motachhe aetle box6 uper aavi jashe*/
+      /*khabar nay kem pan aahi "#ff9c27b0" aa color nu box thavu joye pan jetlama niche box5 aave chhe aetlama color mix(thodo aalag) thay jay chhe */
+  }
+  /
+  
+  </style>
+  
+</head>
+
+<body>
+
+<div class="box" id="box1">
+11111111111111111111111111111111111111</div>
+<div class="box" id="box2">
+22222222222222222222222222222222222222</div>
+<div class="box" id="box3">
+33333333333333333333333333333333333333</div>
+<div class="box" id="box4">
+44444444444444444444444444444444444444</div>
+<div class="box" id="box5">
+55555555555555555555555555555555555555</div>
+<div class="box" id="box6">
+66666666666666666666666666666666666666</div>
+
+</body>
+
+</html>

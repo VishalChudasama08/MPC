@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Example</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style type="text/css">
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			background-color: #f1f1f1;
+		}
+
+		.box {
+			flex: 0 0 calc(33.33% - 20px);
+			height: 200px;
+			margin: 10px;
+			padding: 10px;
+			background-color: white;
+			border: 1px solid black;
+			display: none;
+			text-align: center;
+			align-self: center;
+		}
+
+		a {
+			cursor: pointer;
+			color: blue;
+			text-decoration: underline;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.box:first-of-type').show();
+			$('.link').on('click', function() {
+				var target = $(this).data('target');
+				$('.box').hide();
+				$('#'+target).show();
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div id="div1" class="box">
+			<p>This is the first div</p>
+			<a class="link" data-target="div2">Click here to open the second div</a>
+		</div>
+		<div id="div2" class="box">
+			<p>This is the second div</p>
+			<a class="link" data-target="div1">Click here to go back to the first div</a>
+		</div>
+	</div>
+</body>
+</html>

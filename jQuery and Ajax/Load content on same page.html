@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Load content into another div on same page</title>
+  <style type="text/css">
+    #links,
+    #content {
+      border: 2px solid blue;
+      width: 80%;
+      margin: 5px auto;
+      text-align: center;
+    }
+    content {
+      padding: 0px;
+    }
+    p {
+      margin: 0px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="links">
+    <h1>Load content into another div on same page</h1>
+    <p>not server required</p>
+    <hr>
+    <a href="p1.html" data-target="content">Click here to load p1.html</a>
+    <hr>
+    <a href="p2.html" data-target="content">Click here to load p1.html</a>
+    <hr>
+    <a href="p3.html" data-target="content">Click here to load p1.html</a>
+    <hr>
+  </div>
+
+  <div id="content">
+    <p>This is the initial content of the "content" div.</p>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      $("a").click(function(event) {
+        event.preventDefault(); // prevent default link behavior
+        var target = $(this).data("target"); // get the target div ID from the link's data attribute
+        var href = $(this).attr("href"); // get the URL from the link's href attribute
+        $.ajax({
+          url: href,
+          dataType: "html",
+          success: function(response) {
+            $("#" + target).html(response); // replace the target div's content with the loaded HTML
+          },
+          error: function(xhr, status, error) {
+            console.log("Error loading content: " + error);
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>

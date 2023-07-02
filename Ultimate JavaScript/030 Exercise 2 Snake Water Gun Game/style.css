@@ -1,0 +1,29 @@
+body {
+  background-color: rosybrown;
+  border: 6px solid yellow;
+  border-radius: 16px;
+  margin: 0px;
+  padding: 0px;
+}
+h1, #buttondiv {
+  text-align: center;
+}
+button {
+  width: 100px;
+  height: 50px;
+  border: 3px solid darkturquoise;
+  border-radius: 10px;
+  color: red;
+  font-size: 1.5rem;
+}
+#buttonruls {
+  color: green;
+}
+#buttonretry {
+  color: blue;
+}
+#scriptdiv {
+  text-align: center;
+  margin: 20px;
+  font-size: 1.2rem;
+}

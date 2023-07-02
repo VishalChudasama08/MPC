@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="with=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+   <meta name="keywords" content="html,html tutoroal
+   s,web development">
+   <meta name="robots" content="INDEX,FOLLOW">
+   <title> css18(animations and keyframes) prectice by Chudasama Vishal </title>
+  
+  <style>
+  .container{
+      background-color: greenyellow;
+      height: 250px;
+      border: 1px solid black;
+  }
+  .box{
+      background-color: green;
+      position: relative; 
+      display: flex;
+      width: 100px;
+      height: 100px;
+      justify-content: center;
+      align-items: center;
+      animation-name: vishal;
+      
+      animation-duration: 3s;
+      /* animation-duration: animation ketali var chal se te naki kare chhe ahi animation 3 secend sudhi chalse */
+      
+      animation-timing-function: ease-in;
+      /* animation-timing-function: ease-in karta sruaat ma animation dhiru hale pachhi fas hale chhe. ease-out; karta ease-in nu ultu thay pela fas pachhi dhimu. ease-in-out; karta fas-dhimu-fas aerite hale chhe. */
+      
+      animation-delay: 2s;
+      /* animation-delay: no upayog kar vathi animation 3s pachhi chalu thay chhe */
+      
+      animation-interation-count: 3;
+      /* animation-interation-count: ketali var animation ripit karvu te naki kare chhe. infinite; karta chalij rhe chhe */
+      
+      animation-fill-mode: forwards;
+      /* animation-fill-mode: forwards; karvathi to mahoy tyajay ne chhe le ubu rhe chhe. alternate; kar ta from ma uburhe chhe. */
+      
+      animation-direction: reverse;
+      /* animation-direction: karta animation ni disa naki kari sakay chhe. reverse; ma uthamu hale chhe. animation-direction: (alternate, alternate-reverse, normal, reverse, initial, inherit, unset) rakhi sakay chhe. */
+      
+      animation: vishal 3s ease-in 1s 5 forwards;
+  }
+  @keyframes vishal{
+      from{
+          width: 100px;
+      }
+      to{
+          width: 300px;
+      }
+      /* from aetle saru aat maa and to aetale chhele. */
+  }
+  
+  .container1{
+      border: 1px solid black;
+      margin: 2px auto;
+      background-color: greenyellow;
+      height: 250px;
+  }
+  .box1{
+      background-color: green;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 100px;
+      animation: vishal1 1s ease-in 0.5s infinite normal;
+  }
+  @keyframes vishal1{
+      0%{
+         top: 0px;
+         left: 0px;
+      }
+      25%{
+         top: 150px;
+         left: 0px;
+      }
+      50%{
+         top: 150px;
+         left: 243px;
+      }
+      75%{
+         top: 0px;
+         left: 243px;
+      }
+      100%{
+         top: 0px;
+         left: 0px;
+      }
+      /* % vari prma ne man rakhi sakay */
+  }
+      
+  </style>
+</head>  
+
+<body>
+  <div class="container">
+    <div class="box">
+    this is box
+    </div>
+  </div>
+  <div class="container1">
+    <div class="box1">
+    this is box
+    </div>
+  </div>
+</body>
+</html>

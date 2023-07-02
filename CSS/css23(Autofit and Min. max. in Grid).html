@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="with=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+   <meta name="keywords" content="html,html tutoroal
+   s,web development">
+   <meta name="robots" content="INDEX,FOLLOW">
+   <title> css1(boylor plet) prectice by Chudasama Vishal </title>
+  
+  <style>
+   *{
+       width: 1700px;
+   }
+   .container{
+        display: grid;
+        grid-gap: 5px;
+        /* grid-template-columns: 80px 80px 80px; */
+        /* fr ne bad le px ma pan aapi sakay chhe. ahi 80px,80px na 3 columns thase. */
+        /* justify-content: center; */ 
+        /* px mahoy tyare center thay chhe. */
+        
+        /* grid-template-columns: 1fr 1fr 1fr; */
+        /* 1fr,1fr kar ta 3 columns thase pan te columns puri laen roki lese, ae tale 1 laen ma 3 box hase pan te puri laen roki lese jya re px ma aevu nathi thatu tema jetala px kidhu hoy aetalaj px na box thay chhe laen ma baki ni jgya khali rhe chhe. */ 
+        
+        grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+        /* auto-fit, maautomatic fit thay chhe. minmax ma ahi 300px ae min and 1fr ae max chhe ahi manmix pramane box gothavay chhe fon and copyuter ma rispon si bal rhe chhe. temujab te box auto matik fit thay ja chhe.  */
+    }
+    .box{
+        border: 1px solid black;
+        background-color: grey;
+        color: red;
+    }
+  </style>
+  
+</head>
+<body>
+  <div class="container">
+    <div class="box" id="box1">Item-1</div>
+    <div class="box" id="box2">Item-2</div>
+    <div class="box" id="box3">Item-3</div>
+    <div class="box" id="box4">Item-4</div>
+    <div class="box" id="box5">Item-5</div>
+    <div class="box" id="box6">Item-6</div>
+    <div class="box" id="box7">Item-7</div>
+    <div class="box" id="box8">Item-8</div>
+    <div class="box" id="box9">Item-9</div>
+    <div class="box" id="box10">Item-10</div>
+    <div class="box" id="box11">Item-11</div>
+    <div class="box" id="box12">Item-12</div>
+    <div class="box" id="box13">Item-13</div>
+    <div class="box" id="box14">Item-14</div>
+    <div class="box" id="box15">Item-15</div>
+  </div>  
+</body>
+</html>

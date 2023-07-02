@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <script src="/jQuery/js/jquery-3.6.3.min.js"></script>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"> -->
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    header {
+      background-color: rgb(50, 50, 50);
+      padding: 1%;
+      border-radius: 3px;
+    }
+
+    i {
+      color: white;
+      margin-left: 1%;
+    }
+    
+    svg {
+      width: 4.1%;
+      margin-top: 4px;
+      margin-left: 5px;
+    }
+    
+    path {
+      fill: white; /* use fill to set svg color */
+    }
+    
+    #sidebar {
+      border: 1px solid blue;
+      border-radius: 5px;
+      background-color: lawngreen;
+      position: fixed;
+    }
+
+    ul {
+      margin-right: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <!-- <i class="fa-solid fa-bars" id="bars" style="color: red;"></i> -->
+    <svg viewBox="0 0 448 512" id="bars" style="color: red;">
+      <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/>
+    </svg>
+  </header>
+  <div id="sidebar">
+    <ul>
+      <li><a href="">Home</a></li>
+      <li><a href="">About</a></li>
+      <li><a href="">Content</a></li>
+      <li><a href="">Documents</a></li>
+      <li><a href="">Privesi polisiy</a></li>
+    </ul>
+  </div>
+  <div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis nam dicta nemo itaque quibusdam expedita ipsum eum reiciendis cupiditate quod. Quibusdam perferendis exercitationem non assumenda, numquam, provident repellat adipisci voluptatum illum? Nobis alias sunt harum fugiat repellat dolore pariatur asperiores dolorem modi quis reiciendis aliquid maxime aperiam, inventore nam magni qui aspernatur quibusdam commodi quia fugit facilis magnam? Dolor nam ad perferendis excepturi ea unde alias numquam ducimus facere dicta voluptates, optio delectus dignissimos, fuga ut ipsum eius! Repellat quisquam est quos corporis blanditiis, ipsum harum, mollitia sed earum placeat in magni cum fugiat.</p>
+  </div>
+</body>
+<script>
+  // Define the element and the current state
+  let $element = $('#sidebar');
+  let isHidden = false;
+  let v = 1;
+
+  if (isHidden == false) {
+    $('#sidebar').hide();
+  }
+
+  // Add a click event handler to toggle the element
+  $('#bars').click(function() {
+    if(v == 1){
+      // $('#sidebar').show();
+      $('#sidebar').fadeIn(26);
+    }
+      // Determine the target position based on the current state
+      let targetPos = isHidden ? '-100%' : '0';
+
+      // Animate the element to the target position
+      $element.animate({
+        marginLeft: targetPos,
+      }, 500); //500ms
+
+      // Update the current state
+      isHidden = !isHidden;
+      
+      v = 0;
+  });
+</script>
+
+</html>

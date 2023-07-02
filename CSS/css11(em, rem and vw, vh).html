@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="with=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+   <meta name="keywords" content="html,html tutoroal
+   s,web development">
+   <meta name="robots" content="INDEX,FOLLOW">
+   <title> css11(em, rem and vw/vh) prectice by Chudasama Vishal </title>
+  
+  <style>
+  html{
+      font-size: 5px;
+  }
+  .container{
+      text-align: center;
+      font-size: 10px;
+  }
+  #first{
+      font-size: 3em;
+      /* em no upagog karta teni font-size perent(ahiya .container ma aapel chhe te font-size) ni font-size na guniya jetali thay jay chhe */
+      padding: 2em;
+      /* ahi 2*3*10 thay chhe */
+  }
+  #second{
+      font-size: 3rem;
+      padding: 2rem;
+      /* rem no upayog kar ta te html ma aapel font-size mujab badle chhe. */
+  }
+  #four{
+      border: 2px solid black;
+      width: 100vw;
+      height:100vh;
+      /* vw width mate and vh height mate
+      vw/vh no upayog karta ful srieen ma width and height aavi jay chhe. */
+  }
+  </style>
+  
+</head>
+
+<body>
+
+   <div class="container"> 
+      <h3 id="first">this is first heading</h3>
+      <h3 id="second">this is srcond heading</h3>
+      <h3 id="third">this is third heading</h3>
+      <h3 id="four">this is four heading</h3>
+      <h3 id="five">this is five heading</h3>
+   </div>
+
+</body>
+
+</html>

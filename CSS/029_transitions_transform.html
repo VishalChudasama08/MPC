@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #main {
+      border: 2px solid red;
+      width: 192px;
+      display: flex;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    #main img {
+      width: 474px;
+      height: 266px;
+      object-fit: contain;
+      transition: transform 0.3s ease-out;
+    }
+
+    #main img:hover {
+      transform: scale(1.4);
+      transition: transform 0.3s ease-in;
+    }
+  </style>
+</head>
+
+<body>
+  <p>Hover in this image and see...</p>
+  <div id="main" class="container">
+    <img src="IMG_20230327_101111.jpg" class="images" alt="Colorlib Template">
+  </div>
+
+</body>
+
+</html>

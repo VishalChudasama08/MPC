@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brovser Events</title>
+  <style type="text/css" media="all">
+    .container, .container1, .container2{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .container1{
+      border: 2px solid red;
+      width: 65%;
+      padding: 5px;
+    }
+    .container2{
+      margin-top: 5px;
+      border: 5px solid hotpink;
+      width: 65%;
+      height: 100px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="container1" onmouseenter="alert('Mouse Entered on container1')" onclick="console.log('you click on container1')">
+  
+    <button onclick="alert('Hello'); let a = 8; console.log(a + '\nyou click on Button')">Button</button>
+  
+  </div>
+  
+  
+  <div class="container2">
+  
+  </div>
+</div>
+</body>
+<script src="047_brovser_events.js"></script>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>solar update</title>
+  <style>
+    hr{
+      border: 1px solid black;
+    }
+    div {
+      border: 2px solid black;
+      padding: 0px 10px; 
+    }
+  </style>
+</head>
+
+<body>
+
+  <script language="JavaScript">
+  let total_vidha = 9;
+  let one_total_vidha_na = 20000; //25000
+  let vadhro_year_gape = 3; //jetla year re vadharo thavano chhe te
+  let vadhro = 5; //jetla taka (%) vadharo karvano hoy te
+  let this_year_total = total_vidha * one_total_vidha_na;
+  let total_year_na = 0;
+  let update_in_one;
+  let update_in_total;
+  
+  let i = 1;
+  document.write("<h3>Starting in " +total_vidha + " * " + one_total_vidha_na + " = " + this_year_total + " Per Year</h3><div>");
+
+  while (i <= 30) {
+    document.write("<br><b>" + i + " ||</b>  Year Total Rupees = ");
+    this_year_total = total_vidha * one_total_vidha_na;
+    total_year_na = total_year_na + this_year_total;
+    document.write(this_year_total + "₹");
+    
+    if (i%vadhro_year_gape == 0 && i != 30) { // 3 varse %5 no vadharo thay tyare 
+      document.write("<br><br>"+one_total_vidha_na+"<b>+"+vadhro+"%</b> = ");
+      update_in_one = one_total_vidha_na;
+      one_total_vidha_na = one_total_vidha_na + ((one_total_vidha_na * vadhro) / 100);
+      document.write(one_total_vidha_na  + " in one vidha<br>");
+      document.write("update in one vidha is <b>+</b>" + (one_total_vidha_na - update_in_one) + "<br>");
+      
+      document.write("<br>"+this_year_total+"<b>+"+vadhro+"%</b> = ");
+      update_in_total = this_year_total;
+      this_year_total = total_vidha * one_total_vidha_na;
+      document.write(this_year_total+ " in total vidha<br>");
+      document.write("update in total vidha is <b>+</b>" + (this_year_total - update_in_total) + "<hr>");
+    }
+    i++;
+  }
+  document.write("</div>");
+  document.write("<h3>Total ₹ = "+total_year_na + "</h3>");
+  </script>
+</body>
+
+</html>

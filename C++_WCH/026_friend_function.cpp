@@ -18,7 +18,7 @@ public:
     }
 };
 
-complex sumcomplex(complex o1, complex o2) // this funtion is not member of complex class but it is use complex class private varible becose complex class is deffine as friend function. it is deffine friend funtion then this funtion use complex class private
+complex sumcomplex(complex o1, complex o2) // this funtion is not member of complex class but it is use complex class private varible becose complex class is deffine as friend function. it is deffine friend funtion then this funtion use complex class private varible
 {
     complex o3;
     o3.setNumber((o1.a + o2.a), (o2.b + o2.b));

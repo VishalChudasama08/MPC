@@ -1,0 +1,70 @@
+/* body {} */
+
+/* #main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+} */
+
+
+#square {
+    width: 500px;
+    height: 500px;
+    border: 5px solid black;
+    border-radius: 50%;
+    position: relative;
+    /* Add position relative to the square */
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    background-color: #3498db;
+    border: none;
+    /* Remove the default horizontal line */
+    border-radius: 50%;
+    position: absolute;
+    animation: dot1 3s ease-in-out infinite;
+    animation: dot2 3s ease-in-out infinite;
+    /* animation: dot3 3s ease-in-out infinite;
+    animation: dot4 3s ease-in-out infinite;
+    animation: dot5 3s ease-in-out infinite;
+    animation: dot6 3s ease-in-out infinite;
+    animation: dot7 3s ease-in-out infinite;
+    animation: dot8 3s ease-in-out infinite; */
+    left: 50%;
+    /* Center horizontally within the square */
+    top: 50%;
+    /* Center vertically within the square */
+    transform: translate(-50%, -50%);
+    /* Center using transform */
+}
+
+@keyframes do1 {
+    0% {
+        left: 0;
+        top: 0;
+    }
+
+    25% {
+        left: 500px;
+        top: 0;
+    }
+
+    50% {
+        left: 500px;
+        top: 500px;
+    }
+
+    75% {
+        left: 0;
+        top: 500px;
+    }
+
+    100% {
+        left: 0;
+        top: 0;
+    }
+}

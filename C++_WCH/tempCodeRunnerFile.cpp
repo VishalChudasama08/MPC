@@ -1,2 +1,0 @@
-complex a;
-    // a.display();

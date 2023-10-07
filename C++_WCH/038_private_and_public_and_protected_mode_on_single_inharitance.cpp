@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+
 // single inharitance and using visibility mode is public
 /* class Base
 {
@@ -161,6 +162,7 @@ void Derived ::Display()
     cout << "Value Of Data 3 is " << data3 << endl;
     cout << "Defrent on line number 154";
 }
+
 int main()
 {
     Derived der;
@@ -169,3 +171,15 @@ int main()
     der.Display();
     return 0;
 }
+
+/*
++-----------------------+-----------------------+--------------------------+------------------------+
++ Very Inportant        +👇👇👇👇👇👇👇👇👇👇👇👇👇👇Derived Class👇👇👇👇👇👇👇👇👇👇👇+
++-----------------------+---------------------------------------------------------------------------+
++  👇👇Base class👇👇 +  Private Derivation   +   Protected Derivation   +    Public Derivation   +
++-----------------------+-----------------------+--------------------------+------------------------+
++ 1. Private members    +   Not Inherited       +    Not Inherited         +   Not Inherited        +
++ 2. Protected members  +   Private Inherited   +    Protected Inherited   +   Protected Inherited  +
++ 3. Public members     +   Private Inherited   +    Protected Inherited   +   Public Inherited     +
++-----------------------+-----------------------+--------------------------+------------------------+
+*/

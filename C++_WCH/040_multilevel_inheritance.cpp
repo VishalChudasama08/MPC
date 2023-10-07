@@ -52,6 +52,20 @@ public:
         cout << "Your percentage is " << (maths + physics) / 2 << "%" << endl;
     }
 };
+
+/*
+The inherited derived (Result) class will look something like this :
+Data members:
+    roll_number --> protected
+    maths --> protected
+    physics --> protected
+Member function:
+    set_roll_number() --> public
+    get_roll_number() --> public
+    set_marks() --> public
+    get_marks() --> public
+    display_results() --> public
+*/
 int main()
 {
     Result vishal;

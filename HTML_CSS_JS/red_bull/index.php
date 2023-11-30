@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <script src="script.js"></script>
     <div id="main">
         <div id="green" class="color">
             <p class="join">Join Green</p>

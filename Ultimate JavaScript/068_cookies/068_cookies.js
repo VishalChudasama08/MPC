@@ -1,1 +1,0 @@
-//if you try on any browser ==> alert(document.cookie) ==> this is showing all cookie.

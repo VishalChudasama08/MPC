@@ -1,4 +1,4 @@
-public class j034_variable_arguments {
+public class j033_variable_arguments {
     static int sum(int ...arr){ // use ... to set multiple arguments it is store on array
         int values = 0;
         for(int v: arr){

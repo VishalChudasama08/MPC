@@ -1,4 +1,4 @@
-public class j035_recursion {
+public class j034_recursion {
     static int factorial(int n){
         if (n == 1 || n == 0){
             return 1;

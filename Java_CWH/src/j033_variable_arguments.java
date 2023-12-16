@@ -1,12 +1,12 @@
 public class j033_variable_arguments {
-    static int sum(int ...arr){ // use ... to set multiple arguments it is store on array
+    static int sum(int ...arr){ // use ...variable (...arr) to set multiple arguments it is store on array
         int values = 0;
         for(int v: arr){
             values += v;
         }
         return values;
     }
-    static int minus(int x,int ...arr){ // set to 1 argument rec-vested,  use ... to set multiple arguments it is store on array
+    static int minus(int x,int ...arr){ // set to 1 argument rec-vested,  use ... to set multiple arguments it is store in array
         int values = x;
         for(int v: arr){
             values -= v;

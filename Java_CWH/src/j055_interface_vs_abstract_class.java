@@ -1,3 +1,6 @@
+// multiple inheritance is not sported in java
+// (ek rite... ) tethij interface no concept use thay chhe
+
 // possible to use multiple interface in sigle class, but not allowed to use multiple abstract in single class
 
 // defined interface
@@ -5,8 +8,13 @@ interface Bicycle { // jo interface no use kariye to meni badhij method no use k
     int a = 76; // aarite ariable pan declare cariasakay pan te final chhe. tene modified nari
                 // sakay khali use kariashakay class object thi
 
-    void applyBrake(int decrement);
+    // aa methods ne public lakhoke na lakho kay farak pad to nathis, te by default public hoy chhe
+    // pan te je class ma implements thase and use karvanu hoy tya public lakhavu bharajiyat chhe
 
+    void applyBrake(int decrement);
+    private void ExtraBrake(){ // this private method use on default methods, see in j057 code file
+        System.out.println("nothing...");
+    }
     void speedUp(int increment);
 }
 
@@ -22,6 +30,10 @@ class AvonCycle implements Bicycle, HornBicycle { // aarite 1 this vadhare inter
     // no use thay chhe
     // ahi aa class ma interface implements karel chhe tethid interface ni badhij
     // method no use karvo padse
+
+    public int a = 45;
+    // interface na variable ne implements karela class ma override/modifiy kari sakay chhe, jyare object this nathi kari shakatu
+    // pan te method ni jem jaruri nathi
 
     void blowHorn() {
         System.out.println("Pee Pee Poo Poo ☺");
@@ -48,6 +60,7 @@ public class j055_interface_vs_abstract_class {
     public static void main(String[] args) {
         AvonCycle VishalBycycle = new AvonCycle();
         System.out.println("interface class Final variable value is " + VishalBycycle.a); // allowed
+
         // VishalBycycle.a = 454; // Not allowed to modify it
 
         VishalBycycle.blowHornK2g();

@@ -54,6 +54,6 @@ public class j076_practice_set_13 {
         //Q-5
         // currentThread();
         System.out.println("Current Thread is " + Thread.currentThread().getState());
-        // if you get more detail than see oracle.com java document 
+        // if you get more detail than see oracle.com java document
     }
 }

@@ -75,7 +75,7 @@ class Calculator {
              * This return Infinity
              * in this reason I insert if(this.b != 0) and else block code
              */
-            if(this.b == 0){
+            if(this.b != 0){
                 return a/b;
             }
             else {

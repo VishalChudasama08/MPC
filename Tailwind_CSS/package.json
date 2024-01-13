@@ -1,11 +1,15 @@
 {
+  "name": "tailwind_css",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "start": "vite"
   },
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "tailwindcss": "^3.4.1"
-  },
-  "dependencies": {
+    "tailwindcss": "^3.4.1",
     "vite": "^5.0.11"
   }
 }

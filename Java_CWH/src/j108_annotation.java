@@ -1,4 +1,5 @@
-@FunctionalInterface // if you make in the future, not add method in interface
+// if you make in the future, not add method and only present one method in the interface this is called FunctionalInterface annotation
+@FunctionalInterface
 interface MyInterface {
     void method1();
 }

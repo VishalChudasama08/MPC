@@ -65,4 +65,4 @@ console.log({ ...object1, namev: "another", age: 12 }); // use this type to chen
 
 // more information abaut spread operator then visit :- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_synt
 
-// more for destructuring
+// more for destructuring assssignment :- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment

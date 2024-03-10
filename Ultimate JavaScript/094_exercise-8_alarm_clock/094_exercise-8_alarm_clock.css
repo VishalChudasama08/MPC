@@ -1,0 +1,9 @@
+#main {
+    border: 5px solid blue;
+    border-radius: 10px;
+    width: 70%;
+    margin: 0px auto;
+    text-align: center;
+    margin-top: 10%;
+    padding: 2%;
+}

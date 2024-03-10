@@ -4,12 +4,13 @@
 // possible to use multiple interface in sigle class, but not allowed to use multiple abstract in single class
 
 // defined interface
-interface Bicycle { // jo interface no use kariye to meni badhij method no use karvo pade
-    int a = 76; // aarite ariable pan declare cariasakay pan te final chhe. tene modified nari
-                // sakay khali use kariashakay class object thi
+interface Bicycle { // jo interface no use kariye to temani badhij method no use karvo pade
+    int a = 76; // aarite variable pan declare cari sakay pan te final chhe. tene modified na ri
+                // sakay. khali use kari shakay. class object thi
 
-    // aa methods ne public lakhoke na lakho kay farak pad to nathis, te by default public hoy chhe
-    // pan te je class ma implements thase and use karvanu hoy tya public lakhavu bharajiyat chhe
+    // aa methods ne public lakhoke na lakho kay farak pad to nathi, te by default public hoy chhe
+    // pan te je class ma implements thase and use karvanu hoy tya public lakhavu pharajiyat chhe
+    // aa interface ma jetli method banaviye tene jyare aa interface no use kariye tyare te badhij method no use karvo pade chhe
 
     void applyBrake(int decrement);
     private void ExtraBrake(){ // this private method use on default methods, see in j057 code file
@@ -25,8 +26,8 @@ interface HornBicycle { // another interface
 }
 
 class AvonCycle implements Bicycle, HornBicycle { // aarite 1 this vadhare interface no use kari sakay pan abstract no
-                                                  // use 1 thi vadhare nathis karia sakato
-    // interface use kar vu hoy tya extends (inheritance) ni jem implement keyword
+                                                  // use 1 thi vadhare karia sakato nay
+    // interface use kar vu hoy tya extends (inheritance ni jem) keyword
     // no use thay chhe
     // ahi aa class ma interface implements karel chhe tethid interface ni badhij
     // method no use karvo padse

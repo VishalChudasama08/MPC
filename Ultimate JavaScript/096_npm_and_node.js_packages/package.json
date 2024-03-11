@@ -8,8 +8,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "pdf-creator-node": "^2.3.5"
-  }
+  "license": "ISC"
 }

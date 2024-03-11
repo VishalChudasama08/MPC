@@ -1,0 +1,13 @@
+{
+  "name": "097_module_import_js_file",
+  "version": "1.0.0",
+  "description": "",
+  "main": "097_module_import_js_file.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -40,6 +40,13 @@ setInterval(function () {
 
 let v = prompt("Enter Number after ringing alarm clock") * 1000;
 console.log(v);
+let time = new Date().getTime()
+setInterval(() => {
+    secondsLeft = -(new Date().getTime() - (time + v))
+    if (secondsLeft > 0) {
+        document.getElementById("alarm").innerHTML = "Alarm Ringing In " + Math.floor(secondsLeft / 1000) + " seconds";
+    }
+})
 // if (v != 0) {
 setTimeout(function () {
     let audio = new Audio('https://commondatastorage.googleapis.com/codeskulptor-demos/DDR_assets/Kangaroo_MusiQue_-_The_Neverwritten_Role_Playing_Game.mp3');

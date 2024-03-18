@@ -34,13 +34,6 @@ file structure is -->
 /JavaFX/openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/lib/  ...
 /JavaFX/openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/  ...
 
-i create new folder is /j001_hello_world/
-/JavaFX/JavaFX/j001_hello_world/
-
-in j001_hello_world folder, i am how to create hello world javaFX program ? which minimum file required and which place to set it ?
-i am beginner so please proveid me more information and details and explain me in step-by-step
-
-
 
 
  */

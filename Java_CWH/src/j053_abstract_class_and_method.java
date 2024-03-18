@@ -9,7 +9,7 @@ abstract class Shape1 { //ahi class ma method abstract karel chhe tethi class ab
     abstract double area(); // use abstract to override method using another class,
     // jo method abstract banavvi hoy to te class ne pan abstract banav vo pade,
     // abstract class no object na banavi sakay, te class no use inheritance karinej karisakay
-    // je class ma inherit karel hot te class ma abstract method ne override karvi pade,
+    // je class ma inherit karel hot te class ma abstract method ne override karvi pade (abstract method no use karvo pade),
     // jo method ne override na kariye to te class (jema abstract class inherit karel hoy ) ne pan abstract class banavvo pade
 }
 
@@ -18,6 +18,7 @@ class Rectangle3 extends Shape1 {
         super(w, h);
     }
 
+    @Override
     double area() { // override abstract class abstract method, and use it
         return (width * height);
     }

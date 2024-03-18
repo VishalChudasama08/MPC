@@ -1,4 +1,5 @@
 // if you make in the future, not add method and only present one method in the interface this is called FunctionalInterface annotation
+// annotations -> @Override, @Deprecated, @SuppressWarnings("deprecation"), @FunctionalInterface,...
 @FunctionalInterface
 interface MyInterface {
     void method1();
@@ -15,7 +16,7 @@ class TwoClass extends OneClass {
     public void oneMethod(){
         System.out.println("I am Override TwoClass oneMethod");
     }
-    @Deprecated // if you not use this method than make defined @Deprecated
+    @Deprecated // if you not use this method than make defined @Deprecated annotation
     public int sum(int a, int b){ // if you use this method than showing warning
         return a+b;
     }

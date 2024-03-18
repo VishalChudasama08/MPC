@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a05b0b70-6f33-4520-b333-af9cf858a041" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafx/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/javafx/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-core-console-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-core-console-l1-2-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-core-datetime-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-core-debug-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-core-errorhandling-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-core-file-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-core-file-l1-2-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-core-file-l2-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-core-handle-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-core-heap-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-core-interlocked-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-core-libraryloader-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-core-localization-l1-2-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-core-memory-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-core-namedpipe-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-core-processenvironment-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-core-processthreads-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-core-processthreads-l1-1-1.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-core-profile-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-core-rtlsupport-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-core-string-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-core-synch-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-core-synch-l1-2-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-core-sysinfo-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-core-timezone-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-core-util-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-crt-conio-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-crt-convert-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-crt-environment-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-crt-filesystem-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-crt-heap-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-crt-locale-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-crt-math-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-crt-multibyte-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-crt-private-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-crt-process-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-crt-runtime-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-crt-stdio-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-crt-string-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-crt-time-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/api-ms-win-crt-utility-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/decora_sse.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/fxplugins.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/glass.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/glib-lite.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/gstreamer-lite.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/javafx_font.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/javafx_iio.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/jfxmedia.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/jfxwebkit.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/msvcp140.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/msvcp140_1.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/msvcp140_2.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/prism_common.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/prism_d3d.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/prism_sw.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/ucrtbase.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/vcruntime140.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/bin/vcruntime140_1.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.base/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.base/ASSEMBLY_EXCEPTION" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.base/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.controls/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.controls/ASSEMBLY_EXCEPTION" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.controls/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.fxml/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.fxml/ASSEMBLY_EXCEPTION" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.fxml/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.graphics/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.graphics/ASSEMBLY_EXCEPTION" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.graphics/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.graphics/jpeg_fx.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.graphics/mesa3d.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.media/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.media/ASSEMBLY_EXCEPTION" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.media/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.media/directshow.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.media/glib.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.media/gstreamer.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.media/libffi.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.swing/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.swing/ASSEMBLY_EXCEPTION" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.swing/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.web/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.web/ASSEMBLY_EXCEPTION" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.web/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.web/icu_web.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.web/libxml2.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.web/libxslt.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/legal/javafx.web/webkit.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/lib/javafx-swt.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/lib/javafx.base.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/lib/javafx.controls.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/lib/javafx.fxml.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/lib/javafx.graphics.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/lib/javafx.media.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/lib/javafx.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/lib/javafx.swing.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/lib/javafx.web.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openjfx-21.0.2_windows-x64_bin-sdk/javafx-sdk-21.0.2/src.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Java_CWH/src/j053_abstract_class_and_method.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Java_CWH/src/j053_abstract_class_and_method.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Java_CWH/src/j108_annotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Java_CWH/src/j108_annotation.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2djAbLL8FSNxUFm2V7F460iF33W" />
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/Happy_Coding/With_Github/MPC/JavaFX/JavaFX/src",
+    "onboarding.tips.debug.path": "D:/Happy_Coding/With_Github/MPC/JavaFX/JavaFX/src/Main.java"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Happy_Coding\With_Github\MPC\JavaFX\JavaFX\src" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a05b0b70-6f33-4520-b333-af9cf858a041" name="Changes" comment="" />
+      <created>1710511186441</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1710511186441</updated>
+    </task>
+    <servers />
+  </component>
+</project>

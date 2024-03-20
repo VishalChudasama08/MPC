@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class jfk005_scene_builder_yt3 extends Application {
+public class jfx005_scene_builder_yt3 extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("jfk005_scene_builder_yt3.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);

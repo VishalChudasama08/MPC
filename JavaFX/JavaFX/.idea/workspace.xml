@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a05b0b70-6f33-4520-b333-af9cf858a041" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafx/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/javafx/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/javafx/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/javafx/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/javafx/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/javafx/HelloController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/javafx/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/javafx/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/javafx/jfx004_text_line_shapes_yt2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafx/jfk005_scene_builder_yt3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/javafx/jfx005_scene_builder_yt3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +60,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.jfk005_scene_builder_yt3">
+  <component name="RunManager" selected="Application.jfx006_event_handling_yt4">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.javafx.HelloApplication" />
       <module name="JavaFX" />
@@ -80,19 +76,6 @@
     </configuration>
     <configuration name="jfk005_scene_builder_yt3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.javafx.jfk005_scene_builder_yt3" />
-      <module name="JavaFX" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.javafx.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="jfx003_icon" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.javafx.jfx003_icon" />
       <module name="JavaFX" />
       <extension name="coverage">
         <pattern>
@@ -130,13 +113,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="jfx006_event_handling_yt4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.javafx.jfx006_event_handling_yt4" />
+      <module name="JavaFX" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.javafx.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.jfx006_event_handling_yt4" />
         <item itemvalue="Application.jfk005_scene_builder_yt3" />
         <item itemvalue="Application.HelloApplication" />
         <item itemvalue="Application.jfx004_text_line_shapes_yt2" />
         <item itemvalue="Application.jfx003_icon_yt1" />
-        <item itemvalue="Application.jfx003_icon" />
       </list>
     </recent_temporary>
   </component>

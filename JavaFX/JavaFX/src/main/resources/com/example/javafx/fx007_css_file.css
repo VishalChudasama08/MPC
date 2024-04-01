@@ -1,0 +1,17 @@
+.root {
+    -fx-background-color: "black";
+}
+
+.label { /* .lable use to apllay all lable class */
+    -fx-font-size: 20;
+    -fx-text-fill: white;
+    -fx-alignment: center;
+}
+
+#titallabel, #textlabel {
+    -fx-border: 10 solid red;
+}
+
+#titallabel{
+    -fx-font-size: 30;
+}

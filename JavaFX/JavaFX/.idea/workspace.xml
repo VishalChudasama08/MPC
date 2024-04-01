@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a05b0b70-6f33-4520-b333-af9cf858a041" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/javafx/jfx007_css_file.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/javafx/jfx007_css_file.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/javafx/fx007_css_file.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/javafx/fx007_css_file.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/javafx/jfx007_css_file.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/javafx/jfx007_css_file.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,16 +44,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/visha/AppData/Local/SceneBuilder/SceneBuilder.exe&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;D:/Happy_Coding/With_Github/MPC/JavaFX/JavaFX/src/Main.java&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/visha/AppData/Local/SceneBuilder/SceneBuilder.exe",
+    "onboarding.tips.debug.path": "D:/Happy_Coding/With_Github/MPC/JavaFX/JavaFX/src/Main.java",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Happy_Coding\With_Github\MPC\JavaFX\JavaFX\src" />

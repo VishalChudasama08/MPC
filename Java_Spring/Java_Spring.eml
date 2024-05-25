@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component jdk="17" jdk_type="JavaSDK">
+	<contentEntry url="file://$MODULE_DIR$"/>
+	<lib name="commons-logging-1.3.2.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/Jar/commons-logging-1.3.2.jar!/"/>
+	</lib>
+	<lib name="spring-beans-6.1.7.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/Jar/spring-beans-6.1.7.jar!/"/>
+	</lib>
+	<lib name="spring-context-6.1.7.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/Jar/spring-context-6.1.7.jar!/"/>
+	</lib>
+	<lib name="spring-core-6.1.7.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/Jar/spring-core-6.1.7.jar!/"/>
+	</lib>
+	<lib name="spring-expression-6.1.7.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/Jar/spring-expression-6.1.7.jar!/"/>
+	</lib>
+	<levels>
+		<level name="spring_jars" value="project"/>
+	</levels>
+</component>

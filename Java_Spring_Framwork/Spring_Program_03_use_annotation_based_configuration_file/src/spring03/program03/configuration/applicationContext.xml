@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- annotation based configuration file ma pan java ke pachhi xml file banavvi pade (ahi xml file banavel chhe) -->
+<!-- ahi aa spring configuration xml file schema, Spring_Program_01... project karta alag chhe -->
+<!-- schema link :- https://docs.spring.io/spring-framework/docs/4.2.x/spring-framework-reference/html/xsd-configuration.html#xsd-config-body-schemas-context -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+<!--   spring bean definitions karvanu nathi kem ke Student class ma @Component annotation lagadel chhe -->
+    <context:component-scan base-package="spring03.program03.beans"/>
+<!--    using to perform component scanning
+        scan provided annotated file package and discovered spring beans -->
+</beans>

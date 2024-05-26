@@ -1,3 +1,4 @@
+// using xml configuration file to make simple spring program
 package spring001.main;
 
 import org.springframework.context.ApplicationContext;
@@ -18,5 +19,5 @@ public class Main {
         std1.display();
         student std2 = (student) context.getBean("id2"); // "id" --> <bean> tag ni je id hot te
         std2.display();
-    }
+    } 
 }

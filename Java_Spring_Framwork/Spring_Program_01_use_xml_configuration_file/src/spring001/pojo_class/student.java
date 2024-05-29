@@ -1,4 +1,4 @@
-package spring001.pojo_class;
+package spring001.pojo_class; // pojo_class =~ java beans class
 // pojoclass is simple class it is cover some variable and its getter, setter and display methods
 
 public class student {

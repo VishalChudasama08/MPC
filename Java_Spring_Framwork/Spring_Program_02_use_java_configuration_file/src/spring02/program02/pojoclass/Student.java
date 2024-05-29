@@ -1,5 +1,5 @@
-package spring02.program02.pojoclass;
-// pojoclass is simple class it is cover some variable and its getter, setter and display methods
+package spring02.program02.pojoclass; // pojoclass =~ java beans class
+// pojoclass is simple class it is cover some variable and its getter, setter and display methods, also known as java beans class
 public class Student {
     private String name;
     private String email;

@@ -1,5 +1,6 @@
 package spring03.program03.beans;
-
+/* this is java beans class */
+// java bean class is Advance class it is Cover Variables, Constructor, Getter, Setter and many methods...
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean class="spring06.setter.beans.Address" id="addrId">
+        <property name="houseNo" value="218"></property>
+        <property name="city" value="Rajkot"></property>
+        <property name="pinCode" value="360001"></property>
+    </bean>
+    <bean class="spring06.setter.beans.Student" id="stdId">
+        <property name="name" value="Nitin"></property>
+        <property name="rollNumber" value="7"></property>
+        <property name="address" ref="addrId"></property> <!-- reference -->
+    </bean>
+</beans>

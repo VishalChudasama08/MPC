@@ -1,0 +1,96 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+header {
+  background-color: rgb(50,50,50);
+}
+#bars {
+  color: white;
+}
+#githubicon {
+  color: white;
+}
+#bell {
+  color: white;
+}
+
+nav {
+  background-color: rgb(50,50,50); 
+}
+nav li {
+  list-style: none;
+}
+nav li a {
+  text-decoration: none;
+  color: white;
+}
+
+@media only screen and (max-width:720px){
+  header {
+    height: 60px;
+    border-bottom: 0.5px solid red;
+  }
+  #checkbox-bars {
+    position: relative;
+    top: 10.5px;
+    right: 13px;
+    display: none;
+  }
+  #bars {
+    font-size: 26px;
+    position: relative;
+    top: 18px;
+    left: 10px;
+    float: left;
+    cursor: pointer;
+    display: block;
+  }
+  #githubicon {
+    font-size: 33px;
+    position: relative;
+    top: 14px;
+    margin-left: 40%;
+  }
+  #bell {
+    font-size: 25px;
+    position: relative;
+    top: 18px;
+    right: 10px;
+    float: right;
+  }
+
+  #logo {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+  }
+  nav {
+    font-size: 15px;
+    padding: 0px 20px;
+    position: relative;
+    left: -600px;
+  }
+  nav input {
+    margin: 10px;
+    padding: 5px;
+    background-color: rgb(50,50,50);
+    color: white;
+    font-size: 15px;
+    border: 1.5px solid darkgray;
+    border-radius: 8px;
+  }
+  nav ul {
+    margin: 0px;
+    padding: 0px;
+  }
+  nav ul li a {
+    display: block;
+    border-top: 1px solid darkgray;
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+  #checkbox-bars:checked ~ nav{
+    left: 0px;
+  }
+}

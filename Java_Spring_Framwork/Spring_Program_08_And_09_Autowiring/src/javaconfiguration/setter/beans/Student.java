@@ -1,4 +1,4 @@
-package javaconfiguration.constructor.beans;
+package javaconfiguration.setter.beans;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -21,8 +21,18 @@ public class Student {
     -> not on primitive data type (Boolean, char, byte, int, short, float and double)
      */
 
-    public Student(String name, int rollNumber){
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public void setSubject(Subject subject) {
+        this.subject = subject;
+    }
+
+    public void setName(String name) {
         this.name = name;
+    }
+    public void setRollNumber(int rollNumber) {
         this.rollNumber = rollNumber;
     }
     public void dispaly(){

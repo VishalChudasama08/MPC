@@ -1,4 +1,4 @@
-package javaconfiguration.constructor.beans;
+package xmlconfiguration.constructor.beans;
 
 public class Student {
 }

@@ -1,4 +1,4 @@
-package javaconfiguration.setter.beans;
+package xmlconfiguration.setter.beans;
 
 public class Student {
 }

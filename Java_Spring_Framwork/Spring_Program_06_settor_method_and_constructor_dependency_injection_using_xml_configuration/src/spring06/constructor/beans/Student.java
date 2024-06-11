@@ -1,7 +1,5 @@
 package spring06.constructor.beans;
 
-import spring06.setter.beans.Address;
-
 public class Student {
     private String name;
     private int rollNumber;

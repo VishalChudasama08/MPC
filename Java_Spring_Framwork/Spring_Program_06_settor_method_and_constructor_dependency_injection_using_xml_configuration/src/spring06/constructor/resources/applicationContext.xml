@@ -6,12 +6,12 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- bean definitions here -->
-    <bean class="spring06.setter.beans.Address" id="addrId">
+    <bean class="spring06.constructor.beans.Address" id="addrId">
         <constructor-arg value="218"/>
         <constructor-arg value="Rajkot"/>
         <constructor-arg value="360001"/>
     </bean>
-    <bean class="spring06.setter.beans.Student" id="stdId">
+    <bean class="spring06.constructor.beans.Student" id="stdId">
         <constructor-arg value="Vishal"/>
         <constructor-arg value="08"/>
         <constructor-arg ref="addrId"/> <!-- reference -->

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="xmlconfiguration.constructor.beans.Address" id="addrId1">
+        <constructor-arg value="218"/>
+        <constructor-arg value="Rajkot"/>
+        <constructor-arg value="360001"/>
+    </bean>
+    <bean class="xmlconfiguration.constructor.beans.Address" id="addrId2" autowire-candidate="false"> <!-- same object na bean ma 1 thi vadhare id hoy tyare use thay, false aa bean object to use thase nahi-->
+        <constructor-arg value="118"/>
+        <constructor-arg value="surat"/>
+        <constructor-arg value="365123"/>
+    </bean>
+    <bean class="xmlconfiguration.constructor.beans.Student" id="stdId" autowire="constructor"> <!-- constructor no use karine autowire provide kare chhhe-->
+        <constructor-arg value="Vishal" index="0"/> <!-- index aapvi jaruri chhe, to autowire thay chhe, anitar kya index uper autowire karvanu chhe tenu confyujan thay chhe  -->
+        <constructor-arg value="08" index="1"/>
+    </bean>
+</beans>

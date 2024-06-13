@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+<!--    <bean class="xmlconfiguration.setter.beans.Address" id="address">-->
+<!--        <property name="houseNo" value="218"/>-->
+<!--        <property name="city" value="khamabhaliya"/>-->
+<!--        <property name="pinCode" value="361306"/>-->
+<!--    </bean>-->
+<!--    <bean class="xmlconfiguration.setter.beans.Student" id="stdId" autowire="byName"> &lt;!&ndash; ahi autowire="byName" no use kariye to, ahi id="address" hovu joye (je Student class ma => private Address address; aa address name id ma hovu joye)  &ndash;&gt;-->
+<!--        <property name="name" value="Vishal" />-->
+<!--        <property name="rollNumber" value="08" />-->
+<!--    </bean>-->
+
+    <bean class="xmlconfiguration.setter.beans.Address" id="addrId1" autowire-candidate="false">
+        <property name="houseNo" value="218"/>
+        <property name="city" value="khamabhaliya"/>
+        <property name="pinCode" value="361306"/>
+    </bean>
+    <bean class="xmlconfiguration.setter.beans.Address" id="addrId2">
+        <property name="houseNo" value="118"/>
+        <property name="city" value="Dwarka"/>
+        <property name="pinCode" value="361356"/>
+    </bean>
+    <bean class="xmlconfiguration.setter.beans.Student" id="stdId" autowire="byType"> <!-- autowire="byName" no use kariye to beans class na variable ni datatype same hovi joye, aji aadrId1 and addrId2 chhe, be bean object chhe tethi autowire-candidate="false" no use karvo pade, "false" vado object no use nay thay  -->
+        <property name="name" value="Vishal" />
+        <property name="rollNumber" value="08" />
+    </bean>
+</beans>

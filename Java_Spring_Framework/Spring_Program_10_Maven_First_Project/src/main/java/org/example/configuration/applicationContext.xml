@@ -5,10 +5,9 @@
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- bean definitions here -->
     <bean class="org.example.bean.Student" id="stdId">
-        <property name="name" value="Vishal"></property>
-        <property name="rollNumber" value="8"></property>
-        <property name="address" value="431f"></property>
+        <property name="name" value="Vishal"/>
+        <property name="rollNumber" value="12"/>
+        <property name="mark" value="76.08f"/>
     </bean>
 </beans>

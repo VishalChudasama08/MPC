@@ -1,0 +1,68 @@
+Enter password: ********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.4.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create table jdbc_db;
+ERROR 1046 (3D000): No database selected
+mysql> create database jdbc_db;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use jdbc_db;
+Database changed
+mysql> create table register;
+ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> create table register(name varchar(80), email varchar(150), password varchar(20), gender varchar(10), city varchar(50));
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> desc register;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| name     | varchar(80)  | YES  |     | NULL    |       |
+| email    | varchar(150) | YES  |     | NULL    |       |
+| password | varchar(20)  | YES  |     | NULL    |       |
+| gender   | varchar(10)  | YES  |     | NULL    |       |
+| city     | varchar(50)  | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+5 rows in set (0.02 sec)
+
+mysql> select * from register;
+Empty set (0.01 sec)
+
+mysql> select * from register; -- using jdbc add data than i run this qurey
++--------+------------------------------+---------------+--------+--------+
+| name   | email                        | password      | gender | city   |
++--------+------------------------------+---------------+--------+--------+
+| Vishal | vishalchudasama143@gmail.com | Hey There...! | Male   | Rajkot |
++--------+------------------------------+---------------+--------+--------+
+1 row in set (0.00 sec)
+
+mysql> select * from register; -- using jdbc add data than i run this qurey
++--------+------------------------------+---------------+--------+--------+
+| name   | email                        | password      | gender | city   |
++--------+------------------------------+---------------+--------+--------+
+| Vishal | vishalchudasama143@gmail.com | Hey There...! | Male   | Rajkot |
+| Ajay   | ajay@gmail.com               | Ajay09        | Male   | Beraja |
++--------+------------------------------+---------------+--------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select * from register; -- using jdbc add data than i run this qurey
++--------+------------------------------+----------------+--------+--------+
+| name   | email                        | password       | gender | city   |
++--------+------------------------------+----------------+--------+--------+
+| Vishal | vishalchudasama143@gmail.com | Hey There...!  | Male   | Rajkot |
+| Ajay   | ajay@gmail.com               | Ajay09         | Male   | Beraja |
+| Sagar  | sagar@gmail.com              | sagarAambaliya | Male   | forget |
++--------+------------------------------+----------------+--------+--------+
+3 rows in set (0.00 sec)
+
+mysql>

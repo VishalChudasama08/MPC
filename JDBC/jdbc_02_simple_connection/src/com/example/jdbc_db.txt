@@ -1,4 +1,4 @@
-Enter password: ********
+Enter password: ********  (vishal08)
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 10
 Server version: 8.4.0 MySQL Community Server - GPL
@@ -11,15 +11,12 @@ owners.
 
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-mysql> create table jdbc_db;
-ERROR 1046 (3D000): No database selected
 mysql> create database jdbc_db;
 Query OK, 1 row affected (0.01 sec)
 
 mysql> use jdbc_db;
 Database changed
-mysql> create table register;
-ERROR 4028 (HY000): A table must have at least one visible column.
+
 mysql> create table register(name varchar(80), email varchar(150), password varchar(20), gender varchar(10), city varchar(50));
 Query OK, 0 rows affected (0.04 sec)
 

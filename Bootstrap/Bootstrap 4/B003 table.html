@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="bootstrap4.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="container">
+    <i class="fa-solid fa-circle"></i>
+    <h3 style="display: inline; padding-left: 10px">Table Using Bootstrap</h3>
+    <br>
+    <br>
+    <i class="fa-solid fa-arrow-right" style="font-size: 20px;"></i>
+    <h4 style="display: inline;padding-left:10px">.table</h4>
+    <br>
+    <br>
+    <table class="table">
+      <caption>Basic Table Layout</caption>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>City</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Tanmay</td>
+        <td>Bangalore</td>
+      </tr>
+      </tbody>
+    </table>
+  
+    <i class="fa-solid fa-arrow-right" style="font-size: 20px;"></i>
+    <h4 style="display: inline;padding-left:10px">.table-striped</h4>
+    <br>
+    <br>
+    <table class="table table-striped">
+      <caption>Striped Table Layout</caption>
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>City</th>
+        <th>Pincode</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Vishal</td>
+        <td>Rajkot</td>
+        <td>360002</td>
+      </tr>
+      <tr>
+        <td>Vishal</td>
+        <td>Rajkot</td>
+        <td>360002</td>
+      </tr>
+      <tr>
+        <td>Vishal</td>
+        <td>Rajkot</td>
+        <td>360002</td>
+      </tr>
+      <tr>
+        <td>Vishal</td>
+        <td>Rajkot</td>
+        <td>360002</td>
+      </tr>
+      </tbody>
+    </table>
+    
+    <i class="fa-solid fa-arrow-right" style="font-size: 20px;"></i>
+    <h4 style="display: inline;padding-left:10px">.table-bordered</h4>
+    <br>
+    <br>
+    <table class="table table-bordered">
+      <caption>Bordered Table Layout</caption>
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>City</th>
+        <th>Pincode</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Vishal</td>
+        <td>Rajkot</td>
+        <td>360002</td>
+      </tr>
+      </tbody>
+    </table>
+    
+    <i class="fa-solid fa-arrow-right" style="font-size: 20px;"></i>
+    <h4 style="display: inline;padding-left:10px">.table-hover</h4>
+    <br>
+    <br>
+    <table class="table table-hover">
+      <caption>Hover Table Layout</caption>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>City</th>
+          <th>Pincode</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Vishal</td>
+          <td>Rajkot</td>
+          <td>360002</td>
+        </tr>
+        <tr>
+          <td>Vishal</td>
+          <td>Rajkot</td>
+          <td>360002</td>
+        </tr>
+        <tr>
+          <td>Vishal</td>
+          <td>Rajkot</td>
+          <td>360002</td>
+        </tr>
+        <tr>
+          <td>Vishal</td>
+          <td>Rajkot</td>
+          <td>360002</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <i class="fa-solid fa-arrow-right" style="font-size: 20px;"></i>
+    <h4 style="display: inline;padding-left:10px">.table-condensed</h4>
+    <br>
+    <br>
+    <table class="table table-condensed">
+      <caption>Condensed Table Layout</caption>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>City</th>
+          <th>Pincode</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Vishal</td>
+          <td>Rajkot</td>
+          <td>360002</td>
+        </tr>
+        <tr>
+          <td>Vishal</td>
+          <td>Rajkot</td>
+          <td>360002</td>
+        </tr>
+        <tr>
+          <td>Vishal</td>
+          <td>Rajkot</td>
+          <td>360002</td>
+        </tr>
+        <tr>
+          <td>Vishal</td>
+          <td>Rajkot</td>
+          <td>360002</td>
+        </tr>
+      </tbody>
+    </table>
+    <i class="fa-solid fa-arrow-right" style="font-size: 20px;"></i>
+    <h4 style="display: inline;padding-left:10px">Contexual classes</h4>
+    <br>
+    <br>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>No.</th>
+        <th>Class</th>
+        <th>& Descriprion</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr class="bg-secondary">
+        <td>1</td>
+        <td class="bg-primary">.active</td>
+        <td>Applies the hover to a particular row or cell</td>
+      </tr>
+      <tr class="bg-success">
+        <td class="bg-dark">2</td>
+        <td>.success</td>
+        <td>Indicates a successful or positive action</td>
+      </tr>
+      <tr class="bg-warning">
+        <td>3</td>
+        <td>.warning</td>
+        <td class="bg-info">Indicates a warning that might need attention</td>
+      </tr>
+      <tr class="bg-danger">
+        <td>4</td>
+        <td class="light">.danger</td>
+        <td>Indicates a dangerous or potentially negative action</td>
+      </tr>
+      </tbody>
+    </table>
+    <i class="fa-solid fa-arrow-right" style="font-size: 20px;"></i>
+    <h4 style="display: inline;padding-left:10px">.table-responsive</h4>
+    <br>
+    <br>
+    <div class="table-responsive">
+      <table class="table">
+        <caption>Responsive Table Layout</caption>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th>Pincode</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Vishal</td>
+            <td>Rajkot</td>
+            <td>360002</td>
+          </tr>
+          <tr>
+            <td>Vishal</td>
+            <td>Rajkot</td>
+            <td>360002</td>
+          </tr>
+          <tr>
+            <td>Vishal</td>
+            <td>Rajkot</td>
+            <td>360002</td>
+          </tr>
+          <tr>
+            <td>Vishal</td>
+            <td>Rajkot</td>
+            <td>360002</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>  
+  <hr>
+  <div class="container">
+    <table class="table table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>City</th>
+          <th>Pincode</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Vishal</td>
+          <td>Rajkot</td>
+          <td>360002</td>
+        </tr>
+        <tr>
+          <td>Vishal</td>
+          <td>Rajkot</td>
+          <td>360002</td>
+        </tr>
+        <tr>
+          <td>Vishal</td>
+          <td>Rajkot</td>
+          <td>360002</td>
+        </tr>
+        <tr>
+          <td>Vishal</td>
+          <td>Rajkot</td>
+          <td>360002</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

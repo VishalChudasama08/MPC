@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="bootstrap4.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="container">
+  <i class="fa-solid fa-circle"></i>
+  <h3 style="display: inline; padding-left: 10px">Form 1</h3>
+  <form action="img1.jpg">
+    <i class="fa-solid fa-arrow-right" style="font-size: 20px;"></i>
+    <h4 style="display: inline;padding-left:10px">In div .form-group</h4>
+    <br>
+    <i class="fa-solid fa-arrow-right" style="font-size: 20px;"></i>
+    <h4 style="display: inline;padding-left:10px">In input .form-control</h4>
+    <div class="form-group">
+      <label for="email">Email Address: </label> 
+      <input type="email" class="form-control" placeholder="Enter your email" id="email">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" placeholder="Enter Password" name="pwd" id="pwd">
+    </div>
+    <i class="fa-solid fa-arrow-right" style="font-size: 20px;"></i>
+    <h4 style="display: inline;padding-left:10px">In div .form-group .form-check</h4>
+    <br>
+    <i class="fa-solid fa-arrow-right" style="font-size: 20px;"></i>
+    <h4 style="display: inline;padding-left:10px">In label .form-check-label</h4>
+    <br>
+    <i class="fa-solid fa-arrow-right" style="font-size: 20px;"></i>
+    <h4 style="display: inline;padding-left:10px">In input .form-check-input</h4>
+    <div class="form-group form-check">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input">Remember me
+      </label>
+    </div>
+    <i class="fa-solid fa-arrow-right" style="font-size: 20px;"></i>
+    <h4 style="display: inline;padding-left:10px">In button .btn .btn-primary</h4>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <hr>
+  
+  <i class="fa-solid fa-circle"></i>
+  <h3 style="display: inline; padding-left: 10px">Form 2 .form-inline</h3>
+  <form class="form-inline" action="img1.jpg">
+      <label for="email">Email Address: </label> 
+      <input type="email" class="form-control" placeholder="Enter your email" id="email">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" placeholder="Enter Password" name="pwd" id="pwd">
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input">Remember me
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <hr>
+  
+  <i class="fa-solid fa-circle"></i>
+  <h3 style="display: inline; padding-left: 10px">Form 3 Inline Form with Utilities</h3>
+  <form class="form-inline" action="B004.html">
+      <label for="email" class="mr-sm-2">Email Address:</label>
+      <input type="email" class="form-control mb-2 mr-sm-2" placeholder="Enter your email" id="email">
+      <label for="pwd" class="mr-sm-2">Password:</label>
+      <input type="password" class="form-control mb-w mr-sm-2" placeholder="Enter Password" name="pwd" id="pwd">
+    <div class="form-check mb-2 mr-sm-2">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input">Remember me
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+  </form>
+  <hr>
+  
+  <i class="fa-solid fa-circle"></i>
+  <h3 style="display: inline; padding-left: 10px">Form 4 Row/Grid</h3>
+  <br>
+  <i class="fa-solid fa-arrow-right" style="font-size: 20px;"></i>
+    <h4 style="display: inline;padding-left:10px">Row || div .row</h4>
+  <form action="B004.html">
+    <div class="row">
+      <div class="col">
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+      </div>
+      <div class="col">
+        <input type="password" class="form-control" placeholder="Enter Password" name="pwd" id="pwd">
+      </div>
+    </div>
+  </form>
+  <br>
+  <i class="fa-solid fa-arrow-right" style="font-size: 20px;"></i>
+  <h4 style="display: inline;padding-left:10px">Grid || div .form-row </h4>
+  <form action="B004.html">
+    <div class="form-row">
+      <div class="col">
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+      </div>
+      <div class="col">
+        <input type="password" class="form-control" placeholder="Enter Password" name="pwd" id="pwd">
+      </div>
+    </div>
+  </form>
+  
+  <i class="fa-solid fa-circle"></i>
+  <h3 style="display: inline; padding-left: 10px">Form 5 Form Validation</h3>
+  <br>
+  <i class="fa-solid fa-arrow-right" style="font-size: 20px;"></i>
+  <h4 style="display: inline;padding-left:10px">In form .was-validated</h4>
+  <form action="B004.html" class="was-validated">
+    <div class="form-group">
+      <label for="uname" required>Username:</label>
+      <input type="text" class="form-control" id="uname" placeholder="Enter user name" name="uname" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" placeholder="Enter Password" name="pwd" id="pwd" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="form-group form-check">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input">I agree on bla bla...
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Check this checkbox to continue.</div>
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <i class="fa-solid fa-arrow-right" style="font-size: 20px;"></i>
+  <h4 style="display: inline;padding-left:10px">In form .needs-validation</h4>
+  <form action="B004.html" class="needs-validation">
+    <div class="form-group">
+      <label for="uname" required>Username:</label>
+      <input type="text" class="form-control" id="uname" placeholder="Enter user name" name="uname" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" placeholder="Enter Password" name="pwd" id="pwd" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="form-group form-check">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input">I agree on bla bla...
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Check this checkbox to continue.</div>
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<script>
+  //Disable form submission if there are invalid fields
+  (function(){
+    'use strict';
+    window.addEventListener('load',function(){
+      //Get the forms we want to add validation styles to
+      var forms=document.getElementsByClassName('needs-validation');
+      //Loop over them and prevent submission
+      var validation=Array.prototype.filter.call(forms, function(form){
+        form.addEventListener('submit',function(event){
+          if(form.checkValidity()==false){
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        },false);
+      });
+    },false)
+  })();
+</script>
+</body>
+</html>

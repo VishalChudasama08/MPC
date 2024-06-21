@@ -1,0 +1,98 @@
+Setting environment for using XAMPP for Windows.
+visha@LAPTOP-HRB2BB7Q d:\Happy_Coding\xampp
+# cd mysql
+
+visha@LAPTOP-HRB2BB7Q d:\Happy_Coding\xampp\mysql
+# mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.4.32-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| jdbc_db            |
+| moviebook          |
+| mtbs               |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| registration       |
+| test               |
+| v2                 |
++--------------------+
+10 rows in set (0.049 sec)
+
+MariaDB [(none)]> create database spring_jdbc_db;
+Query OK, 1 row affected (0.008 sec)
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| jdbc_db            |
+| moviebook          |
+| mtbs               |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| registration       |
+| spring_jdbc_db     |
+| test               |
+| v2                 |
++--------------------+
+11 rows in set (0.001 sec)
+
+MariaDB [(none)]> create table student(std_roll_number int(3), std_name varchar(100), std_marks int(3));
+ERROR 1046 (3D000): No database selected
+MariaDB [(none)]> use spring_jdbc_db;
+Database changed
+MariaDB [spring_jdbc_db]> create table student(std_roll_number int(3), std_name varchar(100), std_marks float);
+Query OK, 0 rows affected (0.015 sec)
+
+MariaDB [spring_jdbc_db]> desc spring_jdbc_db;
+ERROR 1146 (42S02): Table 'spring_jdbc_db.spring_jdbc_db' doesn't exist
+MariaDB [spring_jdbc_db]> desc student;
++-----------------+--------------+------+-----+---------+-------+
+| Field           | Type         | Null | Key | Default | Extra |
++-----------------+--------------+------+-----+---------+-------+
+| std_roll_number | int(3)       | YES  |     | NULL    |       |
+| std_name        | varchar(100) | YES  |     | NULL    |       |
+| std_marks       | float        | YES  |     | NULL    |       |
++-----------------+--------------+------+-----+---------+-------+
+3 rows in set (0.034 sec)
+
+MariaDB [spring_jdbc_db]> select * from student;
++-----------------+----------+-----------+
+| std_roll_number | std_name | std_marks |
++-----------------+----------+-----------+
+|               8 | Vishal   |     76.18 |
++-----------------+----------+-----------+
+1 row in set (0.001 sec)
+
+MariaDB [spring_jdbc_db]> select * from student;
++-----------------+----------+-----------+
+| std_roll_number | std_name | std_marks |
++-----------------+----------+-----------+
+|               8 | Vishal   |     76.18 |
+|              15 | Piyush   |     80.12 |
++-----------------+----------+-----------+
+2 rows in set (0.000 sec)
+
+MariaDB [spring_jdbc_db]> select * from student;
++-----------------+----------+-----------+
+| std_roll_number | std_name | std_marks |
++-----------------+----------+-----------+
+|               8 | Vishal   |     76.18 |
+|              15 | Piyush   |     82.15 |
++-----------------+----------+-----------+
+2 rows in set (0.001 sec)
+
+MariaDB [spring_jdbc_db]>

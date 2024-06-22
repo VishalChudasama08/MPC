@@ -4,4 +4,12 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+    <servlet-name>myservlet</servlet-name>
+    <servlet-class>com.example.backend.MyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>myservlet</servlet-name> // this name same as servlet tag servlet-name tag value
+    <url-pattern>/vvv</url-pattern> // in browser ult add this "/vvv" this is doGet method, this open new page name is vvv
+  </servlet-mapping>
 </web-app>

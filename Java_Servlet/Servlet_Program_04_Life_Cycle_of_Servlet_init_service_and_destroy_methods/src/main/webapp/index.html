@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Servlet Life Cycle</h2>
+    <h3>1. Loading and Instantiation</h3>
+    <dl>
+        <dd>-- First tomcat server started </dd>
+        <dd>-- java files (servlet file, than extend HttpServlet and ather java file) will compiled and class file will
+            be created </dd>
+        <dd>-- Then class file will be loaded in the memory</dd>
+        <dd>-- and servlet object is created (servlet class file object)</dd>
+    </dl>
+
+    <h3>2. Initialization</h3>
+    <dl>
+        <dd>-- call init() method.</dd>
+        <dd>-- servlet object will be Initializing by invoking init() method</dd>
+    </dl>
+
+    <h3>3. Request Handling</h3>
+    <dl>
+        <dd>-- call service() method.</dd>
+        <dd>-- it will hendl Client Request.</dd>
+        <dd>-- if Client Request is get method than service() method call doGet() method.</dd>
+        <dd>-- if Client Request is post method than service() method call doPost() method. </dd>
+        <dd>-- Client Request send it is created a new thread and then this thread hendl Request (call service() method
+            and this method resolve client request). </dd>
+        <dd>-- Then Client send another request this created a new thread this
+            thread hendl client request... these proses continuously running as per client request </dd>
+        <dd>-- it is multi threading precess</dd>
+    </dl>
+
+    <h3>4. Destroy</h3>
+    <dl>
+        <dd>-- server stopped and close database connection (if connected!) then call destroy() method.</dd>
+        <dd>-- destroy() method delete servlet object</dd>
+    </dl>
+
+    <p><strong>Note:</strong> step 1, 2 and 4 it runs only one time. init() and destroy() method call one time, but step
+        3 run multiple time, service() method call many times</p>
+</body>
+
+</html>

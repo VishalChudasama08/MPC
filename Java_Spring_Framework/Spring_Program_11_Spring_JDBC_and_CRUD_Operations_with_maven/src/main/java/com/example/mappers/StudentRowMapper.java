@@ -6,7 +6,7 @@ import org.springframework.jdbc.core.RowMapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class StudentRowMapper implements RowMapper<Student> {
+public class StudentRowMapper implements RowMapper<Student> { // Student is Student.java file note:- this class store table data
     @Override
     public Student mapRow(ResultSet rs, int rowNum) throws SQLException {
         Student std = new Student();

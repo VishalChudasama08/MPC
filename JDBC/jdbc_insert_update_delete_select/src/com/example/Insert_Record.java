@@ -40,8 +40,7 @@ public class Insert_Record {
         String v5 = "forget";
         // PreparedStatement ps =  conn.prepareStatement("INSERT INTO register VALUES('"+v1+"', '"+v2+"', '"+v3+"', '"+v4+"', '"+v5+"');"); // return in PreparedStatement Class
 
-        // using position parameter
-        PreparedStatement ps = conn.prepareStatement("INSERT INTO register VALUES(?, ?, ?, ?, ?);");
+        PreparedStatement ps = conn.prepareStatement("INSERT INTO register VALUES(?, ?, ?, ?, ?);"); // ? it is position parameter, set values using setString(<index>, <value>) method, see in next lines
         ps.setString(1, v1); // 1 is index...
         ps.setString(2, v2);
         ps.setString(3, v3);

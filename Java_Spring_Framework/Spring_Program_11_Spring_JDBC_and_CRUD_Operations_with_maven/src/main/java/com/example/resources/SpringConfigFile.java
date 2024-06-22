@@ -8,7 +8,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 @Configuration
 public class SpringConfigFile {
     @Bean
-    public DriverManagerDataSource myDataSource(){
+    public DriverManagerDataSource myDataSource(){ // this method you have also known as connection method, store all information on database connectivity
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");

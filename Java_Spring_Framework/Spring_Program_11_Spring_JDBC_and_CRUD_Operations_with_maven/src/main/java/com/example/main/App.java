@@ -50,9 +50,12 @@ public class App {
 
         // ------------------------ SELECT QUERY FOR FULL TABLE DATA------------------------
         String select_query = "SELECT * FROM student;";
-        List<Student> std_list = jdbcTemplate.query(select_query, new StudentRowMapper());
+        List<Student> std_list = jdbcTemplate.query(select_query, new StudentRowMapper()); // query() method return List<>
+        // query() method arguments
+        // 1st -> select sql query  --required
+        // 2nd -> new RowMapper<> (create class this implement RowMapper<> interface, in this case it is StudentRowMapper.java class) --required
 
-        for(Student std : std_list){
+        for(Student std : std_list){ // java - for each loop
             System.out.println("Roll Number: " + std.getstd_roll_number());
             System.out.println("Name: " + std.getstd_name());
             System.out.println("Marks: " + std.getstd_marks());
@@ -63,7 +66,11 @@ public class App {
         // ------------------------ SELECT QUERY FOR ONE ROW DATA ONLY ------------------------
 //        int rollNumber = 8;
 //        String select_query = "SELECT * FROM student WHERE std_roll_number=?;";
-//        Student std = jdbcTemplate.queryForObject(select_query, new StudentRowMapper(), rollNumber); // for this method not need RowMapper (StudentRowMapper.java file)
+//        Student std = jdbcTemplate.queryForObject(select_query, new StudentRowMapper(), rollNumber); // for this method not need List<>, direct store data on tabeldata java file in this program it is Student.java file
+        // queryForObject() method arguments
+        // 1st -> select sql query
+        // 2nd -> new RowMapper<> (create class this implement RowMapper<> interface, in this case it is StudentRowMapper.java class)
+        // 3rd -> position parameter
 //
 //        System.out.println("Roll Number: " + std.getstd_roll_number());
 //        System.out.println("Name: " + std.getstd_name());

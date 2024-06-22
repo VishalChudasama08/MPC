@@ -1,7 +1,6 @@
 package com.example.tabledata;
 
-public class Student {
-
+public class Student { // on this class create method as database table filed name as variable and it datatype
     private int std_roll_number;
     private String std_name;
     private float std_marks;

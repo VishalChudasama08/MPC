@@ -3,6 +3,9 @@
         "ostream": "cpp",
         "iostream": "cpp"
     },
+    "emmet.includeLanguages": {
+        "jsp": "html"
+    },
     "java.compile.nullAnalysis.mode": "automatic",
     "java.configuration.updateBuildConfiguration": "interactive"
 }

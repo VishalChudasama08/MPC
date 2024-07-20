@@ -6,20 +6,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet("/home")
 public class Login extends HttpServlet {
-//    @Override
-//    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        String username = req.getParameter("email");
-//        String password = req.getParameter("password");
-//
-//        if(username.equals("okay@gmail.com") && password.equals("123")){
-//            System.out.println("Success");
-//        } else  {
-//            System.out.println("failed");
-//        }
-//    }
+    @Override
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String username = req.getParameter("email");
+        String password = req.getParameter("password");
+
+        if(username.equals("okay@gmail.com") && password.equals("123")){
+            System.out.println("Success");
+            PrintWriter out = resp.getWriter();
+            out.println("Welcome");
+        } else  {
+            System.out.println("failed");
+        }
+    }
 
 
     // this service method - if get method and if post both work
@@ -35,20 +38,25 @@ public class Login extends HttpServlet {
 //
 //        if(username.equals("okay@gmail.com") && password.equals("123")){
 //            System.out.println("Success");
+//            PrintWriter out = resp.getWriter();
+//            out.println("Welcome");
 //        } else  {
 //            System.out.println("failed");
 //        }
 //    }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String username = req.getParameter("email");
-        String password = req.getParameter("password");
+//    @Override
+//    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        String username = req.getParameter("email");
+//        String password = req.getParameter("password");
+//
+//        if(username.equals("okay@gmail.com") && password.equals("123")){
+//            System.out.println("Success");
+//            PrintWriter out = resp.getWriter();
+//            out.println("Welcome");
+//        } else  {
+//            System.out.println("failed");
+//        }
+//    }
 
-        if(username.equals("okay@gmail.com") && password.equals("123")){
-            System.out.println("Success");
-        } else  {
-            System.out.println("failed");
-        }
-    }
 }

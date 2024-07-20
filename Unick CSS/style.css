@@ -2,95 +2,108 @@ body {
   margin: 0px;
   padding: 0px;
 }
+
 header {
-  background-color: rgb(50,50,50);
-}
-#bars {
-  color: white;
-}
-#githubicon {
-  color: white;
-}
-#bell {
-  color: white;
+  height: 60px;
+  background-color: rgb(50, 50, 50);
 }
 
-nav {
-  background-color: rgb(50,50,50); 
+
+#githubicon {
+  color: white;
+  font-size: 33px;
+  display: flex;
+  position: relative;
+  top: 14px;
+  justify-content: center;
 }
-nav li {
+
+#bell {
+  color: white;
+  font-size: 25px;
+  position: absolute;
+  top: 18px;
+  right: 10px;
+  float: right;
+}
+
+div {
+  background-color: rgb(50, 50, 50);
+  /* display: none; */
+}
+
+div li {
   list-style: none;
 }
-nav li a {
+
+div li a {
   text-decoration: none;
   color: white;
 }
 
-@media only screen and (max-width:720px){
-  header {
-    height: 60px;
-    border-bottom: 0.5px solid red;
-  }
-  #checkbox-bars {
-    position: relative;
-    top: 10.5px;
-    right: 13px;
-    display: none;
-  }
-  #bars {
-    font-size: 26px;
-    position: relative;
-    top: 18px;
-    left: 10px;
-    float: left;
-    cursor: pointer;
-    display: block;
-  }
-  #githubicon {
-    font-size: 33px;
-    position: relative;
-    top: 14px;
-    margin-left: 40%;
-  }
-  #bell {
-    font-size: 25px;
-    position: relative;
-    top: 18px;
-    right: 10px;
-    float: right;
-  }
 
-  #logo {
-    width: 20px;
-    height: 20px;
-    border-radius: 10px;
-  }
-  nav {
-    font-size: 15px;
-    padding: 0px 20px;
-    position: relative;
-    left: -600px;
-  }
-  nav input {
-    margin: 10px;
-    padding: 5px;
-    background-color: rgb(50,50,50);
-    color: white;
-    font-size: 15px;
-    border: 1.5px solid darkgray;
-    border-radius: 8px;
-  }
-  nav ul {
-    margin: 0px;
-    padding: 0px;
-  }
-  nav ul li a {
-    display: block;
-    border-top: 1px solid darkgray;
-    padding-top: 7px;
-    padding-bottom: 7px;
-  }
-  #checkbox-bars:checked ~ nav{
-    left: 0px;
-  }
+#checkbox-bars {
+  cursor: pointer;
+  position: absolute;
+  border: 1px solid red;
+  width: 25px;
+  height: 25px;
+  top: 16px;
+  left: 5px;
+  opacity: 0;
+  /* display: none; */
+}
+
+#bars {
+  color: white;
+  font-size: 26px;
+  position: relative;
+  top: 18px;
+  left: 10px;
+  float: left;
+  cursor: pointer;
+  display: block;
+}
+
+#logo {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+}
+
+#sidebar {
+  position: fixed;
+  left: -250px;
+  /* Initially off-screen or hidden */
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  transition: left 0.3s ease;
+}
+
+div input {
+  margin: 10px;
+  padding: 5px;
+  background-color: rgb(50, 50, 50);
+  color: white;
+  font-size: 15px;
+  border: 1.5px solid darkgray;
+  border-radius: 8px;
+}
+
+
+div ul li a {
+  display: block;
+  border-top: 1px solid darkgray;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+#checkbox-bars:checked~#sidebar {
+  left: 0px;
+  /* Slide into view when checkbox is checked */
+}
+
+#checkbox-bars:checked~#bars {
+  color: black;
 }

@@ -19,7 +19,7 @@ public class Login extends HttpServlet {
 
         PrintWriter out = response.getWriter();
 
-        // RequestDispatcher interface no use karvathi url ma nay badalav thato nathi pan, je file open karvi hoy te thay jay chhe,
+        // RequestDispatcher interface no use karvathi url ma kay badalav thato nathi pan, je file open karvi hoy te thay jay chhe,
         // this is very usefull and secure method to open new file
         if(username.equals("okay@gmail.com") && password.equals("123")){
             System.out.println("Success");
@@ -36,7 +36,7 @@ public class Login extends HttpServlet {
             response.setContentType("text/html"); // use karvathi include() kareli file html file tarike run tha chhe
             // include() method index.html file no source code print kare chhe, pan setContentType() method no use kariye to tem thatu nathi
             // etle index.html file html file tarike browser ma run thay chhe
-            out.println("<h3 style='color:red;'>Email id and Password didn't matched</h3>");
+            out.println("<h3 style='color:red;'>Email id and Password didn't matched</h3><p style='color: orange'>You Enter:<br>&nbsp;&nbsp;&nbsp;&nbsp; Username: "+username+"<br>&nbsp;&nbsp;&nbsp;&nbsp; Password: "+password+"</p><br>");
             RequestDispatcher rd = request.getRequestDispatcher("/index.html");
 //            rd.forward(request, response);
             rd.include(request, response); // include() method no use karvathi response file ma biju pan add karisakay,

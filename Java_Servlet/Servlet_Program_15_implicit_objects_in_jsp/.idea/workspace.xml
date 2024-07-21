@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d135ca8-5bc6-4576-899f-32f18d3b539b" name="Changes" comment="" />
+    <list default="true" id="499eb283-5928-4c9d-b712-777216475937" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,7 +13,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
@@ -29,14 +28,13 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="mavenHome" value="C:/Maven/apache-maven-3.9.8" />
-        <option name="usePluginRegistry" value="true" />
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 0
-}</component>
-  <component name="ProjectId" id="2iMnQCTniNK55PLngrfjXo0gEzX" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2jYST6yJ24MdFepsAK26cE7Q1Qa" />
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -44,28 +42,25 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/Happy_Coding/My_Code_In_Github/MPC/Java_Servlet/Servlet_Program_07_HttpServletRequest_and_httpServletResponse",
-    "settings.editor.selected.configurable": "MavenSettings"
+    "last_opened_file_path": "D:/Happy_Coding/My_Code_In_Github/MPC/Java_Servlet/Servlet_Program_06_without_web_xml_file_servlet_annotations_configurattions",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.runner"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Happy_Coding\My_Code_In_Github\MPC\Java_Servlet\Servlet_Program_06_without_web_xml_file_servlet_annotations_configurattions\src\main\webapp" />
-    </key>
-  </component>
   <component name="RunManager">
-    <configuration name="Tomcat: Servlet_Program_06_without_web_xml_file_servlet_annotations_configurattions" type="com.poratu.idea.plugins.tomcat" temporary="true">
+    <configuration name="Tomcat: Servlet_Program_15_implicit_objects_in_jsp" type="com.poratu.idea.plugins.tomcat" temporary="true">
       <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
       <predefined_log_file enabled="true" id="Tomcat Access Log" />
       <predefined_log_file id="Tomcat Catalina Log" />
       <predefined_log_file id="Tomcat Manager Log" />
       <predefined_log_file id="Tomcat Host Manager Log" />
       <option name="catalinaBase" value="" />
-      <option name="contextPath" value="/Servlet_Program_06_without_web_xml_file_servlet_annotations_configurattions" />
+      <option name="contextPath" value="/Servlet_Program_15_implicit_objects_in_jsp" />
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
+      <option name="envOptions">
+        <map />
+      </option>
       <option name="extraClassPath" value="" />
       <option name="tomcatInfo">
         <TomcatInfo>
@@ -75,25 +70,25 @@
         </TomcatInfo>
       </option>
       <option name="vmOptions" value="" />
-      <module name="Servlet_Program_06_without_web_xml_file_servlet_annotations_configurattions" />
+      <module name="Servlet_Program_15_implicit_objects_in_jsp" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Smart Tomcat.Tomcat: Servlet_Program_06_without_web_xml_file_servlet_annotations_configurattions" />
+        <item itemvalue="Smart Tomcat.Tomcat: Servlet_Program_15_implicit_objects_in_jsp" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2d135ca8-5bc6-4576-899f-32f18d3b539b" name="Changes" comment="" />
-      <created>1719309296220</created>
+      <changelist id="499eb283-5928-4c9d-b712-777216475937" name="Changes" comment="" />
+      <created>1721562527111</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1719309296220</updated>
+      <updated>1721562527111</updated>
     </task>
     <servers />
   </component>

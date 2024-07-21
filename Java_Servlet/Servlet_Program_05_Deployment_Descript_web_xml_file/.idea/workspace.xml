@@ -32,9 +32,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2iMYuCG2OubyDrYwIZUMg13dNK7" />
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
@@ -45,6 +45,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/Happy_Coding/My_Code_In_Github/MPC/Java_Servlet/Servlet_Program_05_Deployment_Descript_web_xml_file",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
@@ -58,9 +59,6 @@
       <option name="catalinaBase" value="C:\Users\visha\.SmartTomcat\Servlet_Program_05_Deployment_Descript_web_xml_file\Servlet_Program_05_Deployment_Descript_web_xml_file" />
       <option name="contextPath" value="/Servlet_Program_05_Deployment_Descript_web_xml_file" />
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
-      <option name="envOptions">
-        <map />
-      </option>
       <option name="extraClassPath" value="" />
       <option name="tomcatInfo">
         <TomcatInfo>

@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="768d4c99-4196-4b4e-bc6c-5539f4e98813" name="Changes" comment="" />
+    <list default="true" id="4251a6b4-48cd-4816-b46e-899e34555461" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -25,34 +28,39 @@
     </option>
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 2
+  &quot;associatedIndex&quot;: 3
 }</component>
-  <component name="ProjectId" id="2jjbhLhNtr4UKJpLseLFHUVcoRq" />
+  <component name="ProjectId" id="2jjvMA2kg7Xw9lBcUWjx4ozI4Ij" />
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Happy_Coding/My_Code_In_Github/MPC/Java_Servlet/Jar Files&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.22758621&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/Happy_Coding/My_Code_In_Github/MPC/Java_Spring_Framework/Spring_Program_12_Use_NamedParameterJdbcTemplate_And_Perform_CURD_Operator",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Happy_Coding\My_Code_In_Github\MPC\Java_Servlet\Servlet_Program_16_Expression_Language\src\main\webapp" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration name="Tomcat: Servlet_Program_17_and_18_registration_and_login" type="com.poratu.idea.plugins.tomcat" temporary="true">
+    <configuration name="Tomcat: Servlet_Program_16_Expression_Language" type="com.poratu.idea.plugins.tomcat" temporary="true">
       <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
       <predefined_log_file enabled="true" id="Tomcat Access Log" />
       <predefined_log_file id="Tomcat Catalina Log" />
       <predefined_log_file id="Tomcat Manager Log" />
       <predefined_log_file id="Tomcat Host Manager Log" />
       <option name="catalinaBase" value="" />
-      <option name="contextPath" value="/Servlet_Program_17_and_18_registration_and_login" />
+      <option name="contextPath" value="/Servlet_Program_16_Expression_Language" />
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
       <option name="extraClassPath" value="" />
       <option name="tomcatInfo">
@@ -63,26 +71,30 @@
         </TomcatInfo>
       </option>
       <option name="vmOptions" value="" />
-      <module name="Servlet_Program_17_and_18_registration_and_login" />
+      <module name="Servlet_Program_16_Expression_Language" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Smart Tomcat.Tomcat: Servlet_Program_17_and_18_registration_and_login" />
+        <item itemvalue="Smart Tomcat.Tomcat: Servlet_Program_16_Expression_Language" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="768d4c99-4196-4b4e-bc6c-5539f4e98813" name="Changes" comment="" />
-      <created>1721903568191</created>
+      <changelist id="4251a6b4-48cd-4816-b46e-899e34555461" name="Changes" comment="" />
+      <created>1721913252526</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1721903568191</updated>
+      <updated>1721913252526</updated>
     </task>
     <servers />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

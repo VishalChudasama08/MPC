@@ -9,8 +9,8 @@
 <body>
     <h2>Hello World!</h2>
 
-    <a href="helloPage">open hello page</a><br>
-    <a href="aboutUs">About Us</a>
+    <a href="hello">open hello page</a><br>
+    <a href="aboutUs">About Us</a><br>
 
     <hr><hr>
     <p style="font-size: 20px;">
@@ -51,6 +51,9 @@
         <dd>10. Scan the package (in which controller are created) in spring configuration file</dd>
     <dl>
     </p>
-    <img style="width: 100%;border:3px solid red;" src="spring_web-mvc_structure_img.png" alt="Spring WEB-MVC Structure Image" />
+    <img style="width: 100%;border:3px solid red;"
+                    src="spring_web-mvc_structure_img.png"
+                    alt="Spring WEB-MVC Structure Image" />
+
 </body>
 </html>

@@ -8,16 +8,16 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class MyController  {
-	@RequestMapping("/")
-	public String home() {
-		return "index"; // This index is `index.jsp` file nu name and return value same hovi joye
-	}
-	@RequestMapping("/index")
-	public String indexPage() {
-		return "index"; // This should match a JSP file like `index.jsp`
-	}
+//	@RequestMapping("/")
+//	public String home() {
+//		return "index"; // This index is `index.jsp` file nu name and return value same hovi joye
+//	}
+//	@RequestMapping("/index")
+//	public String indexPage() {
+//		return ""; // This should match a JSP file like `index.jsp`
+//	}
 	@RequestMapping(value = "/helloPage", method = RequestMethod.GET) // this annotation accept all type of request, You can set methods like get, post
-//	@GetMapping("/helloPage")
+//	@GetMapping("/helloPage") // same as in index.jsp file present "Open hello page" link href attribute value:- href="helloPage"
 	public ModelAndView openHelloPage() {
 		System.out.println("openHelloPage() methos exituted. it minas Opened Hello page...");
 		ModelAndView mav = new ModelAndView();
@@ -25,8 +25,8 @@ public class MyController  {
 		return mav; // Corresponds to hello.jsp
 	}
 
-	@GetMapping("/aboutUsPage")
+	@GetMapping("/aboutUsPage") // same as in index.jsp file present "About Us" link href attribute value:- href="aboutUsPage"
 	public String openAboutUsPage() {
-	    return "aboutUs"; // Corresponds to aboutUs.jsp // This should match a JSP file like `hello.jsp`
+	    return "aboutUs"; // Corresponds to aboutUs.jsp // This should match a JSP file like `aboutUs.jsp`
 	}
 }

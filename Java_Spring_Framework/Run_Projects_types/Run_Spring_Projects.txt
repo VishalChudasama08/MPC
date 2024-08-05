@@ -1,0 +1,29 @@
+*** 
+Run 1 to 13 in IntelliJ very easy, 
+other project prefer to run in Direct Tomcat not any IDE (IntelliJ and Eclipse,...) 
+***
+
+Run in IntelliJ IDEA =>
+D:\Happy_Coding\Videos_lecture\Java\create_servlet_project_with_maven.mp4
+see this video for Run in IntelliJ IDEA (project 1 to 13)
+
+
+Run Direct in Tomcat With maven project => 
+=> (For Create New Project:- Create Maven Project in any IDE (IntelliJ and Eclipse)) than for Run do this ->
+--> open cmd in this project folder and run this 'mvn clean package' command  ex. D:\Happy_Coding\Java\Spring_Program_16_Spring_WEB-MVC_First_Program_eclipse>mvn clean package
+
+--> Note: Make sure open project folder like this :-  D:\Happy_Coding\Java\Spring_Program_16_Spring_WEB-MVC_First_Program_eclipse\
+
+--> this command created .war file (<project_name>.war) in project folder in target folder 
+ex. D:\Happy_Coding\Java\Spring_Program_16_Spring_WEB-MVC_First_Program_eclipse\target\Spring_Program_16_Spring_WEB-MVC_First_Program_eclipse.war
+
+--> This created .war file copy (present in <project_name>\target\ folder) 
+--> than past in tomcat webapps folder (D:\Happy_Coding\Java\apache-tomcat-10.1.26\webapps)
+	ex. D:\Happy_Coding\Java\apache-tomcat-10.1.26\webapps\Spring_Program_16_Spring_WEB-MVC_First_Program_eclipse.war
+
+--> start tomcat server -> bin/startup.bat  (for stop: shutdown.bat)
+--> than run ' http://localhost:8080/ <project_name> ' this run index.jsp file
+ex. http://localhost:8080/Spring_Program_16_Spring_WEB-MVC_First_Program_eclipse/
+
+
+

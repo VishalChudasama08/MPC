@@ -8,6 +8,6 @@
 </head>
 <body>
 	<h3>Hello This is About-Us page</h3>
-	<a href="index">Back to Index Page</a>
+	<a href="index.jsp">Back to Index Page</a>
 </body>
 </html>

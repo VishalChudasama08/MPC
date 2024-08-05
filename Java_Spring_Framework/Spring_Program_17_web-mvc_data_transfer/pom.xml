@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.example.springprogram</groupId>
-  <artifactId>Spring_Program_16_Spring_WEB-MVC_First_Program_eclipse</artifactId>
+  <groupId>spring.mvc.data</groupId>
+  <artifactId>Spring_Program_17_web-mvc_data_transfer</artifactId>
   <packaging>war</packaging>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>Spring_Program_16_Spring_WEB-MVC_First_Program_eclipse Maven Webapp</name>
+  <version>1.0</version>
+  <name>Spring_Program_17_web-mvc_data_transfer Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -22,6 +22,6 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>Spring_Program_16_Spring_WEB-MVC_First_Program_eclipse</finalName>
+    <finalName>Spring_Program_17_web-mvc_data_transfer</finalName>
   </build>
 </project>

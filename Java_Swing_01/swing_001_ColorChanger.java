@@ -7,8 +7,7 @@ public class swing_001_ColorChanger {
     private JFrame frame;
     private String[] colors = {"Red", "Blue", "Green", "Yellow", "Black"};
 
-    // Constructor
-    public swing_001_ColorChanger() {
+    public ColorChanger() {
         frame = new JFrame("Color Changer");
         frame.setSize(300, 200);
         frame.setLayout(new FlowLayout());
@@ -49,7 +48,6 @@ public class swing_001_ColorChanger {
     }
 
     public static void main(String[] args) {
-        // Create an instance of Swing001ColorChanger to display the GUI
-        SwingUtilities.invokeLater(swing_001_ColorChanger::new);
+        new ColorChanger();
     }
 }

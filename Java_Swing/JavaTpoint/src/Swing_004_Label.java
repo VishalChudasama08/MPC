@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Swing_004_Label {
     public static void main(String[] args) {
@@ -13,6 +15,17 @@ public class Swing_004_Label {
         label2.setText("I am label2:- setText, setFont"); // Update text
         String label2text = label2.getText(); // get label text
         label2.setFont(new Font("Serif", Font.BOLD, 16)); // font name, style, size
+
+        // Add a MouseListener to label2 to make it interactive
+        label2.addMouseListener(new MouseAdapter() {
+            // MouseAdapter is used to override only the necessary methods from MouseListener.
+            @Override
+            public void mouseClicked(MouseEvent e) {// The mouseClicked() method handles the click event on label2.
+                // When the label is clicked, a message dialog is displayed.
+                // Perform action when label2 is clicked
+                JOptionPane.showMessageDialog(frame, "Label2 clicked!");
+            }
+        });
 
         JLabel label3 = new JLabel("I am Label3");
         ImageIcon icon = new ImageIcon("src/swinghierarchy.jpg");
@@ -36,7 +49,7 @@ public class Swing_004_Label {
     private static JLabel getLabel4() {
         JLabel label4 = new JLabel();
         label4.setText("<html>I am Label4:- setOpaque, setBackground, setForeground, setBorder, setToolTipText, setHorizontalAlignment, setVerticalAlignment</html>");
-        // Yes HTML Support 😃😃
+        // Yes HTML Support 😃😃 in swing
         // inner <html></html> tag supported tag is ->
         // Basic Formatting: Tags like <b>, <i>, <u>, and <font> for bold, italic, underline, and font changes.
         // Paragraphs and Line Breaks: Tags like <p> and <br> for paragraphs and line breaks.

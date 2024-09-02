@@ -153,9 +153,9 @@ public class Swing_005_TextField implements ActionListener {
             @Override
             public void insertString(int offs, String str, javax.swing.text.AttributeSet a)
                 throws javax.swing.text.BadLocationException {
-                if (getLength() + str.length() <= 20) { // Check if the total length of text is less than or equal to 10
-                    super.insertString(offs, str, a); // If yes, insert the string
-                }
+            if (getLength() + str.length() <= 20) { // Check if the total length of text is less than or equal to 10
+                super.insertString(offs, str, a); // If yes, insert the string
+            }
             }
         });
         textField6.setText("20 chars only"); // set limit than set Text otherwise not working.

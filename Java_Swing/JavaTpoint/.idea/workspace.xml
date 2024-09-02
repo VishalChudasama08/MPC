@@ -47,7 +47,21 @@
       <recent name="D:\Happy_Coding\My_Code_In_Github\MPC\Java_Swing\JavaTpoint\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Swing_005_TextField">
+  <component name="RunManager" selected="Application.Swing_006_TextArea">
+    <configuration name="ButtonExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ButtonExample" />
+      <module name="Java_Swing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JTextAreaExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JTextAreaExample" />
+      <module name="Java_Swing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Swing_003_Button" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Swing_003_Button" />
       <module name="Java_Swing" />
@@ -55,22 +69,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Swing_004_Label (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_004_Label" />
-      <module name="Java_Swing" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Swing_004_Label" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_004_Label" />
-      <module name="Java_Swing" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Swing_005_TextField" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_005_TextField" />
+    <configuration name="Swing_006_TextArea" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_006_TextArea" />
       <module name="Java_Swing" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -85,11 +85,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Swing_005_TextField" />
-        <item itemvalue="Application.Swing_003_Button" />
-        <item itemvalue="Application.Swing_004_Label" />
-        <item itemvalue="Application.Swing_004_Label (1)" />
+        <item itemvalue="Application.Swing_006_TextArea" />
+        <item itemvalue="Application.JTextAreaExample" />
         <item itemvalue="Application.Swing_HTMLSupport" />
+        <item itemvalue="Application.Swing_003_Button" />
+        <item itemvalue="Application.ButtonExample" />
       </list>
     </recent_temporary>
   </component>

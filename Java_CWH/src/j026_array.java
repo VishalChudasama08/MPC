@@ -20,6 +20,26 @@ public class j026_array {
         System.out.println(marks[3]);
         System.out.println(marks[4]);
 
-        String [] str = new String[5]; //String array
+        String [] str = new String[5]; // Declaration String array
+//        str = {"first", "second", "thierd", "forth", "five"}; // this is wrong.
+//        Java does not support assigning values this way to an already declared array.
+
+        str[0] = "first";
+        str[1] = "second";
+        str[2] = "third";
+        str[3] = "fourth";
+        str[4] = "five";
+
+        String[] fruits = {"Apple", "Banana", "Orange"};
+
+        // for loop
+        for (int i = 0; i < fruits.length; i++) {
+            System.out.println(fruits[i]);
+        }
+
+        // for-each loop:
+        for (String fruit : fruits) {
+            System.out.println(fruit);
+        }
     }
 }

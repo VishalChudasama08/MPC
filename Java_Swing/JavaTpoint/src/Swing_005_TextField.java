@@ -1,12 +1,27 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Swing_005_TextField {
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("TextField example");
+public class Swing_005_TextField implements ActionListener {
+    JTextField tf1, tf2, tf3; // Declare the text fields globally for accesses in any method
+    JButton b1,b2;
+    JFrame frame;
+
+    public Swing_005_TextField(){
+        frame = new JFrame("TextField example");
         frame.setLayout(null);
         frame.setSize(800, 800);
 
+        textFields_example(); // Call method to initialize text fields (source:- chatGPT)
+        ActionListener_example(); // Call method to initialize  actions (source:- javaTpoint)
+
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+    }
+
+    // Method 1 : all text fields
+    void textFields_example(){
         JTextField textField1, textField2, textField3_1, textField3_2, textField3_3, textField4, textField5;
 
         // textField1 : simple JTextField with default configuration
@@ -59,7 +74,6 @@ public class Swing_005_TextField {
         JTextField textField8 = new JTextField();
         textField8.setBounds(50, 400, 400, 30); // Set position and size
         textField8.setText(textFromField1);
-
         frame.add(textField8);
         frame.add(textField7);
         frame.add(textField6);
@@ -70,12 +84,66 @@ public class Swing_005_TextField {
         frame.add(textField3_1);
         frame.add(textField2);
         frame.add(textField1);
-
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-
     }
 
+    // Method 2 : Enter value click button and perform Action
+    void ActionListener_example(){
+        JLabel l1 = new JLabel("Text Field 1 : ");
+        l1.setBounds(50, 450, 80, 30);
+        tf1 = new JTextField();
+        tf1.setBounds(135, 450, 200, 30);
+
+        JLabel l2 = new JLabel("Text Field 2 : ");
+        l2.setBounds(50, 500, 80, 30);
+        tf2 = new JTextField();
+        tf2.setBounds(135, 500, 200, 30);
+
+        JLabel l3 = new JLabel("Click Button to Perform Action => ");
+        l3.setBounds(50, 550, 200, 30);
+        b1 = new JButton("+");
+        b1.setBounds(255, 550, 30, 30);
+        b1.setMargin(new Insets(0,0,0,0));
+        b1.setFont(new Font("Serif", Font.BOLD, 20));
+        b1.addActionListener(this);
+
+        b2 = new JButton("-");
+        b2.setBounds(295, 550, 30, 30);
+        b2.setMargin(new Insets(0,0,0,0));
+        b2.setFont(new Font("Serif", Font.BOLD, 20));
+        b2.addActionListener(this);
+
+        JLabel l4 = new JLabel("Result : ");
+        l4.setBounds(50, 600, 50, 30);
+        tf3 = new JTextField();
+        tf3.setBounds(110, 600, 200, 30);
+        tf3.setEditable(false);
+
+        frame.add(tf3);
+        frame.add(l4);
+        frame.add(b1);
+        frame.add(b2);
+        frame.add(l3);
+        frame.add(l1);
+        frame.add(tf1);
+        frame.add(l2);
+        frame.add(tf2);
+    }
+    public static void main(String[] args) {
+        new Swing_005_TextField(); // Create the frame and initialize components
+    }
+
+    public void actionPerformed(ActionEvent e){
+        int a = Integer.parseInt(tf1.getText()); // get text field 1 (tf1 value and type cast in integer )
+        int b = Integer.parseInt(tf2.getText());
+        int c=0;
+        if(e.getSource()==b1){ // check user click in b1 button than do this
+            c=a+b;
+        } else if (e.getSource()==b2){
+            c=a-b;
+        }
+        String result = String.valueOf(c); // type cast in String
+        tf3.setText(result);
+    }
     private static JTextField getJTextField6() {
         // TextField 6: JTextField with input constraints (maximum number of characters allowed)
         JTextField textField6 = new JTextField();

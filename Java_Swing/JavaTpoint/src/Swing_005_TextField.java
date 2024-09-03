@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 
 public class Swing_005_TextField implements ActionListener {
     JTextField tf1, tf2, tf3; // Declare the text fields globally for accesses in any method
@@ -70,10 +72,42 @@ public class Swing_005_TextField implements ActionListener {
         // Example of retrieving and using the text from a JTextField
         String textFromField1 = textField1.getText(); // Get the text from textField1
         System.out.println("Text from Field 1: " + textFromField1); // Print the text to the console
+
         // TextField 8: JTextField with showing text field 1 text
         JTextField textField8 = new JTextField();
         textField8.setBounds(50, 400, 400, 30); // Set position and size
-        textField8.setText(textFromField1);
+        textField8.setText("textField8: "+textFromField1);
+
+        // TextField 9: Placeholder
+        JTextField textField9 = new JTextField();
+        textField9.setBounds(460, 400, 290, 30); // Set position and size
+        String placeholder = "TextField 9: I am Placeholder";
+        textField9.setText(placeholder);
+        textField9.setForeground(Color.GRAY); // text color
+        textField9.setMargin(new Insets(0,0,0,0));
+        // Add focus listener to handle the placeholder
+        textField9.addFocusListener(new FocusListener() {
+            //  When the JTextField gains focus, if the text equals the placeholder, it clears the text
+            @Override
+            public void focusGained(FocusEvent e) { // gaining focus than do this
+                // Clear the placeholder text wan gaining focus
+                if (textField9.getText().equals(placeholder)){ // textField9 text = placeholder than
+                    textField9.setText(""); // set empty text field
+                    textField9.setForeground(Color.BLACK); // text color
+                }
+            }
+            // When the JTextField loses focus, if the text is empty, it resets the placeholder
+            @Override
+            public void focusLost(FocusEvent e) { // losing focus than do this
+                // Restore the placeholder wan text is empty
+                if (textField9.getText().isEmpty()){
+                    textField9.setText(placeholder);
+                    textField9.setForeground(Color.GRAY); // text color
+                }
+            }
+        });
+
+        frame.add(textField9);
         frame.add(textField8);
         frame.add(textField7);
         frame.add(textField6);

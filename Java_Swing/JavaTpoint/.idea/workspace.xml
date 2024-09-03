@@ -47,37 +47,37 @@
       <recent name="D:\Happy_Coding\My_Code_In_Github\MPC\Java_Swing\JavaTpoint\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Swing_006_TextArea">
-    <configuration name="ButtonExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ButtonExample" />
+  <component name="RunManager" selected="Application.Swing_008_CheckBox">
+    <configuration name="Swing_005_TextField" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_005_TextField" />
       <module name="Java_Swing" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JTextAreaExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="JTextAreaExample" />
+    <configuration name="Swing_007_PasswordField (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_007_PasswordField" />
       <module name="Java_Swing" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Swing_003_Button" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_003_Button" />
+    <configuration name="Swing_007_PasswordField" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_007_PasswordField" />
       <module name="Java_Swing" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Swing_006_TextArea" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_006_TextArea" />
+    <configuration name="Swing_008_CheckBox" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_008_CheckBox" />
       <module name="Java_Swing" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Swing_HTMLSupport" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_HTMLSupport" />
+    <configuration name="Swing_008_CheckBox_advance_example" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_008_CheckBox_advance_example" />
       <module name="Java_Swing" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -85,11 +85,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Swing_006_TextArea" />
-        <item itemvalue="Application.JTextAreaExample" />
-        <item itemvalue="Application.Swing_HTMLSupport" />
-        <item itemvalue="Application.Swing_003_Button" />
-        <item itemvalue="Application.ButtonExample" />
+        <item itemvalue="Application.Swing_008_CheckBox" />
+        <item itemvalue="Application.Swing_008_CheckBox_advance_example" />
+        <item itemvalue="Application.Swing_007_PasswordField" />
+        <item itemvalue="Application.Swing_007_PasswordField (1)" />
+        <item itemvalue="Application.Swing_005_TextField" />
       </list>
     </recent_temporary>
   </component>

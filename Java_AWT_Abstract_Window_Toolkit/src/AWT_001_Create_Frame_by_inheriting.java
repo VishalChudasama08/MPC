@@ -1,7 +1,7 @@
 import java.awt.*;
 
-public class AWT_001_Frame_inheriting extends Frame { // for creating frame inherit Frame class
-    AWT_001_Frame_inheriting(){
+public class AWT_001_Create_Frame_by_inheriting extends Frame { // for creating frame inherit Frame class
+    AWT_001_Create_Frame_by_inheriting(){
         setTitle("This is our basic AWT example"); // setting the title of Frame
         setLayout(null); // set layout manager, here no layout manager set
 
@@ -14,6 +14,9 @@ public class AWT_001_Frame_inheriting extends Frame { // for creating frame inhe
     }
 
     public static void main(String[] args) {
-        AWT_001_Frame_inheriting f  = new AWT_001_Frame_inheriting();
+        AWT_001_Create_Frame_by_inheriting f  = new AWT_001_Create_Frame_by_inheriting();
     }
 }
+
+
+

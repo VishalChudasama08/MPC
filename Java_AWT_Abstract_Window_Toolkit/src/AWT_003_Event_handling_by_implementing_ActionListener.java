@@ -3,9 +3,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 // event handling by implementing ActionListener
-public class AWT_003_Event_and_Listener extends Frame implements ActionListener {
+public class AWT_003_Event_handling_by_implementing_ActionListener extends Frame implements ActionListener {
     TextField textField;
-    AWT_003_Event_and_Listener(){
+    AWT_003_Event_handling_by_implementing_ActionListener(){
         setSize(300,300);
         setLayout(null);
 
@@ -26,24 +26,7 @@ public class AWT_003_Event_and_Listener extends Frame implements ActionListener 
     }
 
     public static void main(String[] args) {
-        new AWT_003_Event_and_Listener();
+        new AWT_003_Event_handling_by_implementing_ActionListener();
     }
 }
 
-// event handling by outer class
-class AWT_003_event_handling_by_outer_class extends Frame {
-    TextField textField;
-    AWT_003_event_handling_by_outer_class(){
-        setSize(300, 300);
-        setLayout(null);
-
-        textField = new TextField();
-        textField.setBounds(60,50,170,30);
-
-        setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        new AWT_003_event_handling_by_outer_class();
-    }
-}

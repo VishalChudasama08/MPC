@@ -27,7 +27,7 @@ public class j109_anonymous_class_lambda_expressions {
         // java anonymous class
         // if you create a class using interface but not use many time than create anonymous class and
         // write interface method block in here like this -->
-        MyInterface1 d3 = new MyInterface1() {
+        MyInterface1 d3 = new MyInterface1() { // without implements if use interface and override it all method than is anonymous
             @Override
             public void method1() {
                 System.out.println("I am method 1 from MyInterface1 on anonymous class");

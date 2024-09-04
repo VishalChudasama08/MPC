@@ -1,19 +1,19 @@
 import java.awt.*;
 
-public class AWT_002_Frame_Class {
-    AWT_002_Frame_Class(){
+public class AWT_002_Create_Frame_by_Class {
+    AWT_002_Create_Frame_by_Class() {
         Frame frame = new Frame("Create Frame Class Example");
         frame.setSize(400, 600);
         frame.setLayout(null);
 
         Label label = new Label("Employee id: ");
-        label.setBounds(20,80,80,30);
+        label.setBounds(20, 80, 80, 30);
 
         TextField textField = new TextField();
-        textField.setBounds(100,80,80,30);
+        textField.setBounds(100, 80, 80, 30);
 
         Button button = new Button("Submit");
-        button.setBounds(50,120,80,30);
+        button.setBounds(50, 120, 80, 30);
 
         frame.add(button);
         frame.add(textField);
@@ -22,7 +22,7 @@ public class AWT_002_Frame_Class {
     }
 
     public static void main(String[] args) {
-//        AWT_002_Frame_Class object = new AWT_002_Frame_Class();
-        new AWT_002_Frame_Class(); // this two line is sem mining's
+//        AWT_002_Create_Frame_by_Class object = new AWT_002_Create_Frame_by_Class();
+        new AWT_002_Create_Frame_by_Class(); // this two line is sem mining's
     }
 }

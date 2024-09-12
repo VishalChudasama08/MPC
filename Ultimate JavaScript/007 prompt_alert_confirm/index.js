@@ -8,28 +8,28 @@ console.log("typeof a is", typeof a);
 a = Number.parseInt(a);
 // type casting string to int 
 console.log("a = Number.parseInt(a) then typeof a is", typeof a);
-if (a/2 == 0) {
+if (a % 2 == 0) {
    console.log("Even Number");
 }
-else if (a%2 == 1) {
+else if (a % 2 == 1) {
    console.log("Odd Number");
 }
 else {
    alert("Not a Number");
 }
- 
+
 let b = prompt("Enter Number only 8:- ");
 //prompt is typeof string 
-switch (b='8') {
-   case '8' :
+switch (b) {
+   case '8':
       console.log("Number is 8");
       break;
-   default :
+   default:
       alert("Please Enter 8");
       break;
 }
 let c = prompt("what your age?");
-console.log("You can", (c>=20 ? "drive" : "Not drive"));
+console.log("You can", (c >= 20 ? "drive" : "Not drive"));
 
 // confirm()
 let x;
@@ -38,5 +38,7 @@ if (r == true) {
    x = "you pressed ok!";
 }
 else {
-  x = "you pressed cancel!";
+   x = "you pressed cancel!";
 }
+console.log(x);
+

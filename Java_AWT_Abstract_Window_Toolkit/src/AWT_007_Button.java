@@ -6,7 +6,7 @@ public class AWT_007_Button {
     Frame frame;
     AWT_007_Button(){
         frame = new Frame("Button Examples");
-        frame.setSize(600, 400);
+        frame.setSize(1000, 800);
         frame.setLayout(null);
 
         buttons_example(); // source: JavaTPoint
@@ -21,7 +21,7 @@ public class AWT_007_Button {
         button.setBounds(30,60,100,30); // set the position for the button in frame
 
         TextField textField = new TextField();
-        textField.setBounds(160,65,200,20);
+        textField.setBounds(150,65,130,25);
         textField.setText("Click 'AWT Button'");
 
         button.addActionListener(new ActionListener() {
@@ -38,7 +38,7 @@ public class AWT_007_Button {
     void buttons_example1(){
         Button button1 = new Button();
         button1.setLabel("Button1"); // Change the button’s label using: like set title but in Button that called setLabel
-        button1.setBounds(30,200,100,30); // set the position for the button in frame
+        button1.setBounds(30,100,100,30); // set the position for the button in frame
         button1.setBackground(Color.ORANGE); // Set the button background to light gray
         button1.setForeground(Color.BLUE);       // Set the text color to blue
         button1.setFont(new Font("Arial", Font.BOLD, 16)); // style font. 1st font name, 2nd (BOLD,ITALIC,PLAIN,...), 3rd font size
@@ -56,7 +56,7 @@ public class AWT_007_Button {
         /*
         frame.setLayout(new BorderLayout());
         button.setFont(new Font("Helvetica", Font.BOLD, 16));
-        frame.add(button, BorderLayout.NORTH); // Button placed at the top
+        frame.add(button, BorderLayout.NORTH); // Button placed at the top. options (NORTH, SOUTH, EAST, WEST, CENTER)
          */
 
         // Layout => GridLayout than
@@ -71,7 +71,7 @@ public class AWT_007_Button {
         Button button2 = new Button("Click Me");
 
         // Manual positioning using setBounds (when no layout manager is used)
-        button2.setBounds(150,200,100,30);  // x, y, width, height
+        button2.setBounds(150,100,100,30);  // x, y, width, height
 
         // Styling: background, foreground, and font
         button2.setBackground(Color.CYAN);

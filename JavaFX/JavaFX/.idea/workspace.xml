@@ -61,7 +61,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.jfx006_event_handling_yt4">
+  <component name="RunManager" selected="Application.jfx007_css_file">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.javafx.HelloApplication" />
       <module name="JavaFX" />
@@ -129,8 +129,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.jfx006_event_handling_yt4" />
         <item itemvalue="Application.jfx007_css_file" />
+        <item itemvalue="Application.jfx006_event_handling_yt4" />
         <item itemvalue="Application.jfk005_scene_builder_yt3" />
         <item itemvalue="Application.HelloApplication" />
         <item itemvalue="Application.jfx004_text_line_shapes_yt2" />

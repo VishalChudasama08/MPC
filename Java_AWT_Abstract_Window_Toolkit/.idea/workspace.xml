@@ -33,21 +33,12 @@
     &quot;onboarding.tips.debug.path&quot;: &quot;D:/Happy_Coding/My_Code_In_Github/MPC/Java_AWT_Abstract_Window_Toolkit/src/Main.java&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.AWT_007_Button">
-    <configuration name="AWT_006_All_Event_and_it_Listener_interfaces (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="AWT_006_All_Event_and_it_Listener_interfaces" />
-      <module name="Java_AWT_Abstract_Window_Toolkit" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AWT_006_All_Event_and_it_Listener_interfaces (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="AWT_006_All_Event_and_it_Listener_interfaces" />
-      <module name="Java_AWT_Abstract_Window_Toolkit" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.AWT_008_Label">
     <configuration name="AWT_006_All_Event_and_it_Listener_interfaces (5)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="AWT_006_All_Event_and_it_Listener_interfaces" />
       <module name="Java_AWT_Abstract_Window_Toolkit" />
@@ -69,13 +60,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AWT_008_Label (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AWT_008_Label" />
+      <module name="Java_AWT_Abstract_Window_Toolkit" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AWT_008_Label" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AWT_008_Label" />
+      <module name="Java_AWT_Abstract_Window_Toolkit" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AWT_008_Label" />
+        <item itemvalue="Application.AWT_008_Label (1)" />
         <item itemvalue="Application.AWT_007_Button" />
         <item itemvalue="Application.AWT_006_All_Event_and_it_Listener_interfaces" />
         <item itemvalue="Application.AWT_006_All_Event_and_it_Listener_interfaces (5)" />
-        <item itemvalue="Application.AWT_006_All_Event_and_it_Listener_interfaces (4)" />
-        <item itemvalue="Application.AWT_006_All_Event_and_it_Listener_interfaces (3)" />
       </list>
     </recent_temporary>
   </component>

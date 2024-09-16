@@ -38,23 +38,37 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AWT_009_TextField">
-    <configuration name="AWT_008_Label (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="AWT_008_Label" />
+  <component name="RunManager" selected="Application.AWT_012_Dialog (4)">
+    <configuration name="AWT_012_Dialog (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AWT_012_Dialog" />
       <module name="Java_AWT_Abstract_Window_Toolkit" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AWT_008_Label" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="AWT_008_Label" />
+    <configuration name="AWT_012_Dialog (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AWT_012_Dialog" />
       <module name="Java_AWT_Abstract_Window_Toolkit" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AWT_009_TextField" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="AWT_009_TextField" />
+    <configuration name="AWT_012_Dialog (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AWT_012_Dialog" />
+      <module name="Java_AWT_Abstract_Window_Toolkit" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AWT_012_Dialog (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AWT_012_Dialog" />
+      <module name="Java_AWT_Abstract_Window_Toolkit" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AWT_012_Dialog" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AWT_012_Dialog" />
       <module name="Java_AWT_Abstract_Window_Toolkit" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -62,9 +76,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.AWT_009_TextField" />
-        <item itemvalue="Application.AWT_008_Label" />
-        <item itemvalue="Application.AWT_008_Label (1)" />
+        <item itemvalue="Application.AWT_012_Dialog (4)" />
+        <item itemvalue="Application.AWT_012_Dialog (3)" />
+        <item itemvalue="Application.AWT_012_Dialog (2)" />
+        <item itemvalue="Application.AWT_012_Dialog (1)" />
+        <item itemvalue="Application.AWT_012_Dialog" />
       </list>
     </recent_temporary>
   </component>

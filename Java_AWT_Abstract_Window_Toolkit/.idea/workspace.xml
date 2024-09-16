@@ -38,14 +38,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AWT_012_Dialog (4)">
-    <configuration name="AWT_012_Dialog (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="AWT_012_Dialog" />
-      <module name="Java_AWT_Abstract_Window_Toolkit" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.DynamicPanelExample">
     <configuration name="AWT_012_Dialog (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="AWT_012_Dialog" />
       <module name="Java_AWT_Abstract_Window_Toolkit" />
@@ -67,8 +60,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AWT_012_Dialog" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="AWT_012_Dialog" />
+    <configuration name="DynamicPanelExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DynamicPanelExample" />
+      <module name="Java_AWT_Abstract_Window_Toolkit" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LayoutExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LayoutExample" />
       <module name="Java_AWT_Abstract_Window_Toolkit" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -76,11 +76,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DynamicPanelExample" />
+        <item itemvalue="Application.LayoutExample" />
         <item itemvalue="Application.AWT_012_Dialog (4)" />
         <item itemvalue="Application.AWT_012_Dialog (3)" />
         <item itemvalue="Application.AWT_012_Dialog (2)" />
-        <item itemvalue="Application.AWT_012_Dialog (1)" />
-        <item itemvalue="Application.AWT_012_Dialog" />
       </list>
     </recent_temporary>
   </component>

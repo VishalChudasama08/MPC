@@ -38,37 +38,23 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DynamicPanelExample">
-    <configuration name="AWT_012_Dialog (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="AWT_012_Dialog" />
+  <component name="RunManager" selected="Application.AWT_14_MenuItem_and_Menu">
+    <configuration name="AWT_14_MenuItem_and_Menu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AWT_14_MenuItem_and_Menu" />
       <module name="Java_AWT_Abstract_Window_Toolkit" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AWT_012_Dialog (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="AWT_012_Dialog" />
+    <configuration name="AWT_MenuBar_PopupMenu_Menu_MenuItem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AWT_MenuBar_PopupMenu_Menu_MenuItem" />
       <module name="Java_AWT_Abstract_Window_Toolkit" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AWT_012_Dialog (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="AWT_012_Dialog" />
-      <module name="Java_AWT_Abstract_Window_Toolkit" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DynamicPanelExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DynamicPanelExample" />
-      <module name="Java_AWT_Abstract_Window_Toolkit" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LayoutExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LayoutExample" />
+    <configuration name="AWT_MenuItem_and_Menu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AWT_MenuItem_and_Menu" />
       <module name="Java_AWT_Abstract_Window_Toolkit" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -76,11 +62,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DynamicPanelExample" />
-        <item itemvalue="Application.LayoutExample" />
-        <item itemvalue="Application.AWT_012_Dialog (4)" />
-        <item itemvalue="Application.AWT_012_Dialog (3)" />
-        <item itemvalue="Application.AWT_012_Dialog (2)" />
+        <item itemvalue="Application.AWT_MenuBar_PopupMenu_Menu_MenuItem" />
+        <item itemvalue="Application.AWT_14_MenuItem_and_Menu" />
       </list>
     </recent_temporary>
   </component>

@@ -12,10 +12,10 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
 // A class that inherits the AWT Frame class and implements WindowListener interface
-public class AWT_018_WindowEvent extends Frame implements WindowListener {
+public class AWT_019_WindowEvent extends Frame implements WindowListener {
 
     // Constructor of the class
-    AWT_018_WindowEvent() {
+    AWT_019_WindowEvent() {
         // Adding the current class (which implements WindowListener) to the Frame
         // This allows the class to listen to window events
         addWindowListener(this);
@@ -35,7 +35,7 @@ public class AWT_018_WindowEvent extends Frame implements WindowListener {
     public static void main(String[] args) {
         // Creating an instance of AWT_WindowExample
         // This triggers the constructor and displays the window
-        new AWT_018_WindowEvent();
+        new AWT_019_WindowEvent();
     }
 
     // This method is called when the window becomes active (in focus)

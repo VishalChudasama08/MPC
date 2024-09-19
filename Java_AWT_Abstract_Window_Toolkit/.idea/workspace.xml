@@ -38,23 +38,23 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AWT_019_Scrollbar">
-    <configuration name="AWT_019_Scrollbar (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="AWT_019_Scrollbar" />
+  <component name="RunManager" selected="Application.AWT_016_Choice">
+    <configuration name="AWT_016_Choice" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AWT_016_Choice" />
       <module name="Java_AWT_Abstract_Window_Toolkit" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AWT_019_Scrollbar" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="AWT_019_Scrollbar" />
+    <configuration name="AWT_020_Scrollbar" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AWT_020_Scrollbar" />
       <module name="Java_AWT_Abstract_Window_Toolkit" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AWT_Dimension" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="AWT_Dimension" />
+    <configuration name="AWT_020_Scrollbar" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AWT_020_Scrollbar" />
       <module name="Java_AWT_Abstract_Window_Toolkit" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -76,11 +76,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.AWT_019_Scrollbar" />
-        <item itemvalue="Application.AWT_019_Scrollbar (1)" />
+        <item itemvalue="Application.AWT_016_Choice" />
+        <item itemvalue="Application.AWT_020_Scrollbar" />
+        <item itemvalue="Application.AWT_020_Scrollbar" />
         <item itemvalue="Application.Two_Frame_Example" />
         <item itemvalue="Application.Two_Frame_Example (1)" />
-        <item itemvalue="Application.AWT_Dimension" />
       </list>
     </recent_temporary>
   </component>

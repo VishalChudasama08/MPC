@@ -1,9 +1,9 @@
 import java.awt.*;
 import java.awt.event.*;
 
-public class AWT_016_List {
+public class AWT_017_List {
     Frame frame;
-    AWT_016_List(){
+    AWT_017_List(){
         frame = new Frame("List example");
         frame.setSize(500, 500);
         frame.setLayout(null);
@@ -148,6 +148,6 @@ public class AWT_016_List {
     }
 
     public static void main(String[] args) {
-        new AWT_016_List();
+        new AWT_017_List();
     }
 }

@@ -1,8 +1,8 @@
 import java.awt.*;
 
-public class AWT_017_Canvas {
+public class AWT_018_Canvas {
     // class constructor
-    public AWT_017_Canvas() {
+    public AWT_018_Canvas() {
         // creating a frame
         Frame f = new Frame("Canvas Example");
         // adding canvas to frame
@@ -17,7 +17,7 @@ public class AWT_017_Canvas {
     // main method
     public static void main(String args[])
     {
-        new AWT_017_Canvas();
+        new AWT_018_Canvas();
     }
 }
 

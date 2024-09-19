@@ -4,7 +4,7 @@ import java.awt.event.AdjustmentListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-public class AWT_019_Scrollbar {
+public class AWT_020_Scrollbar {
     static Frame f, frame, frame3;
 
     public static void ScrollbarExample() {
@@ -166,7 +166,7 @@ public class AWT_019_Scrollbar {
         frame.setBackground(new Color(red, green, blue));
     }
 
-    AWT_019_Scrollbar(){
+    AWT_020_Scrollbar(){
         ScrollbarExample();
         ScrollbarExampleChatGPT();
         ScrollbarExampleChatGPT2();
@@ -174,6 +174,6 @@ public class AWT_019_Scrollbar {
 
     // main method
     public static void main(String args[]) {
-        new AWT_019_Scrollbar();
+        new AWT_020_Scrollbar();
     }
 }    

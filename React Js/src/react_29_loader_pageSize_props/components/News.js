@@ -3,18 +3,6 @@ import NewsItem from './NewsItem';
 import Spinner from './Spinner';
 
 export default class News extends Component {
-   static defaultProps = { // set default Props if props not pass than use this
-      pageSize: 10,
-      country: 'in',
-      category: 'general'
-   }
-
-   // static propTypes = { // set props data types 
-   //    pageSize: PropTypes.number,
-   //    country: PropTypes.string,
-   //    category: PropTypes.string
-   // }
-
    constructor(props) {
       super(props);
       // Initialize state to store API data and loading status
@@ -22,18 +10,16 @@ export default class News extends Component {
          currentArticles: [], // Initialize as an empty array for articles
          loading: true,      // Initial loading state
          error: null,        // Error handling state
-         page: 1,
+         page: 1
       };
    }
 
-   mainURl = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=e4e19cdc690c45e5a82a414d018d5d25`
-   // "https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=e4e19cdc690c45e5a82a414d018d5d25" 
+   mainURl = "https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=e4e19cdc690c45e5a82a414d018d5d25"
+   // "https://newsapi.org/v2/top-headlines?country=us&apiKey=e4e19cdc690c45e5a82a414d018d5d25"
 
    // Fetch data when the component mounts
    async componentDidMount() { // first run render() method than run this method automatically (call itself)
       let url = `${this.mainURl}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
-      console.log(url);
-
       let apiData = await fetch(url)
       let parsedData = await apiData.json()
 
@@ -62,7 +48,6 @@ export default class News extends Component {
       if (!(this.state.page + 1 > Math.ceil(this.state.totalResults / this.props.pageSize))) {
          let url = `${this.mainURl}&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`
          console.log(url);
-
          let apiData = await fetch(url)
          let parsedData = await apiData.json()
          this.setState({
@@ -87,7 +72,7 @@ export default class News extends Component {
 
       return (
          <div className='container mb-3 mt-1'>
-            <div className="d-flex justify-content-between mb-3">
+            <div className="container d-flex justify-content-between mb-3">
                <button disabled={this.state.page <= 1} onClick={this.handlePrevious} type="button" className="btn btn-sm btn-primary mt-4">&larr; Previous</button>
                <h2 className='mt-2'>VNews - Top Headlines</h2>
                <button disabled={this.state.page + 1 > Math.ceil(this.state.totalResults / this.props.pageSize)} onClick={this.handleNext} type="button" className="btn btn-sm btn-primary mt-4">Next &rarr;</button>
@@ -107,7 +92,7 @@ export default class News extends Component {
                   );
                })}
             </div>
-            <div className="d-flex justify-content-between mb-3">
+            <div className="container d-flex justify-content-between mb-3">
                <button disabled={this.state.page <= 1} onClick={this.handlePrevious} type="button" className="btn btn-sm btn-primary">&larr; Previous</button>
                <button disabled={this.state.page + 1 > Math.ceil(this.state.totalResults / this.props.pageSize)} onClick={this.handleNext} type="button" className="btn btn-sm btn-primary">Next &rarr;</button>
             </div>

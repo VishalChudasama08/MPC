@@ -47,28 +47,7 @@
       <recent name="D:\Happy_Coding\My_Code_In_Github\MPC\Java_Swing\JavaTpoint\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Swing_010_ComboBox">
-    <configuration name="Swing_007_PasswordField" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_007_PasswordField" />
-      <module name="Java_Swing" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Swing_008_CheckBox" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_008_CheckBox" />
-      <module name="Java_Swing" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Swing_008_CheckBox_advance_example" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_008_CheckBox_advance_example" />
-      <module name="Java_Swing" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Swing_011_Table">
     <configuration name="Swing_009_RadioButton" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Swing_009_RadioButton" />
       <module name="Java_Swing" />
@@ -83,13 +62,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Swing_011_Table" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_011_Table" />
+      <module name="Java_Swing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Swing_011_Table" />
         <item itemvalue="Application.Swing_010_ComboBox" />
         <item itemvalue="Application.Swing_009_RadioButton" />
-        <item itemvalue="Application.Swing_007_PasswordField" />
-        <item itemvalue="Application.Swing_008_CheckBox_advance_example" />
-        <item itemvalue="Application.Swing_008_CheckBox" />
       </list>
     </recent_temporary>
   </component>

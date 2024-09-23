@@ -47,23 +47,9 @@
       <recent name="D:\Happy_Coding\My_Code_In_Github\MPC\Java_Swing\JavaTpoint\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Swing_013_OptionPane">
-    <configuration name="Swing_005_TextField" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_005_TextField" />
-      <module name="Java_Swing" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Swing_012_List">
     <configuration name="Swing_008_CheckBox_advance_example" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Swing_008_CheckBox_advance_example" />
-      <module name="Java_Swing" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Swing_011_Table" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_011_Table" />
       <module name="Java_Swing" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -83,13 +69,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Swing_020_Scrollbar" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_020_Scrollbar" />
+      <module name="Java_Swing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Swing_021_MenuBar_Menu_MenuItem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_021_MenuBar_Menu_MenuItem" />
+      <module name="Java_Swing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Swing_013_OptionPane" />
-        <item itemvalue="Application.Swing_008_CheckBox_advance_example" />
         <item itemvalue="Application.Swing_012_List" />
-        <item itemvalue="Application.Swing_005_TextField" />
-        <item itemvalue="Application.Swing_011_Table" />
+        <item itemvalue="Application.Swing_021_MenuBar_Menu_MenuItem" />
+        <item itemvalue="Application.Swing_013_OptionPane" />
+        <item itemvalue="Application.Swing_020_Scrollbar" />
+        <item itemvalue="Application.Swing_008_CheckBox_advance_example" />
       </list>
     </recent_temporary>
   </component>

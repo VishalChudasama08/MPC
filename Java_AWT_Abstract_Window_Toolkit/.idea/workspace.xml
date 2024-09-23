@@ -38,7 +38,14 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AWT_016_Choice">
+  <component name="RunManager" selected="Application.AWT_014_MenuBar_MenuItem_and_Menu">
+    <configuration name="AWT_014_MenuBar_MenuItem_and_Menu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AWT_014_MenuBar_MenuItem_and_Menu" />
+      <module name="Java_AWT_Abstract_Window_Toolkit" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AWT_016_Choice" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="AWT_016_Choice" />
       <module name="Java_AWT_Abstract_Window_Toolkit" />
@@ -76,11 +83,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AWT_014_MenuBar_MenuItem_and_Menu" />
+        <item itemvalue="Application.AWT_020_Scrollbar" />
         <item itemvalue="Application.AWT_016_Choice" />
         <item itemvalue="Application.AWT_020_Scrollbar" />
-        <item itemvalue="Application.AWT_020_Scrollbar" />
         <item itemvalue="Application.Two_Frame_Example" />
-        <item itemvalue="Application.Two_Frame_Example (1)" />
       </list>
     </recent_temporary>
   </component>

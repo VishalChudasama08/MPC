@@ -2,16 +2,14 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.AdjustmentEvent;
 import java.awt.event.AdjustmentListener;
 
-public class Swing_020_Scrollbar {
+public class Swing_014_Scrollbar {
     static JFrame f, frame2, frame3;
 
     // Constructor to run all examples
-    Swing_020_Scrollbar() {
+    Swing_014_Scrollbar() {
         ScrollbarExample();
 
         ScrollbarExampleChatGPT();
@@ -208,6 +206,6 @@ public class Swing_020_Scrollbar {
 
     // main method
     public static void main(String[] args) {
-        new Swing_020_Scrollbar();
+        new Swing_014_Scrollbar();
     }
 }

@@ -38,9 +38,16 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AWT_014_MenuBar_MenuItem_and_Menu">
+  <component name="RunManager" selected="Application.AWT_015_PopupMenu">
     <configuration name="AWT_014_MenuBar_MenuItem_and_Menu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="AWT_014_MenuBar_MenuItem_and_Menu" />
+      <module name="Java_AWT_Abstract_Window_Toolkit" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AWT_015_PopupMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AWT_015_PopupMenu" />
       <module name="Java_AWT_Abstract_Window_Toolkit" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -74,20 +81,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Two_Frame_Example" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Two_Frame_Example" />
-      <module name="Java_AWT_Abstract_Window_Toolkit" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AWT_015_PopupMenu" />
         <item itemvalue="Application.AWT_014_MenuBar_MenuItem_and_Menu" />
         <item itemvalue="Application.AWT_020_Scrollbar" />
         <item itemvalue="Application.AWT_016_Choice" />
         <item itemvalue="Application.AWT_020_Scrollbar" />
-        <item itemvalue="Application.Two_Frame_Example" />
       </list>
     </recent_temporary>
   </component>

@@ -1,9 +1,8 @@
 import javax.swing.*;
-import java.awt.event.WindowAdapter;
 
-public class Swing_021_MenuBar_Menu_MenuItem {
+public class Swing_015_MenuBar_Menu_MenuItem {
     JFrame frame, frame2;
-    Swing_021_MenuBar_Menu_MenuItem() {
+    Swing_015_MenuBar_Menu_MenuItem() {
         frame = new JFrame("Menu and MenuItem Example");
 
         // Create a single MenuBar that will hold all menus
@@ -199,6 +198,6 @@ public class Swing_021_MenuBar_Menu_MenuItem {
     }
 
     public static void main(String args[]) {
-        new Swing_021_MenuBar_Menu_MenuItem();
+        new Swing_015_MenuBar_Menu_MenuItem();
     }
 }

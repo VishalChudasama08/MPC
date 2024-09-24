@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 
 public class Swing_006_TextArea implements ActionListener {
     JFrame frame; // for access in any method declare global
@@ -70,18 +72,43 @@ public class Swing_006_TextArea implements ActionListener {
 
         // Create a JScrollPane and add the JTextArea to it
         JScrollPane scrollPane = new JScrollPane(textArea);
-        scrollPane.setBounds(500, 50, 300, 200); // Set position and size manually
+        scrollPane.setBounds(500, 20, 300, 200); // Set position and size manually
 
         // Add the JScrollPane (which contains the JTextArea) to the frame
         frame.add(scrollPane);
 
         // Create a JButton that clears the JTextArea when clicked
         JButton clearButton = new JButton("Clear Text");
-        clearButton.setBounds(500, 270, 120, 30); // Set position and size manually
+        clearButton.setBounds(500, 240, 120, 30); // Set position and size manually
         frame.add(clearButton);
 
         // Add an action listener to the button to clear the text when clicked
         clearButton.addActionListener(e -> textArea.setText("")); // Clear text on button click
+
+
+
+        // Add FocusListener to simulate placeholder behavior
+        JTextArea textArea1 = new JTextArea();
+        textArea1.setBounds(500, 300, 320, 200);
+
+        String placeholder = "Enter your text here...";
+        textArea1.setText(placeholder);
+        textArea1.setForeground(Color.GRAY); // Placeholder text in gray
+        textArea1.addFocusListener(new FocusAdapter() {
+            public void focusGained(FocusEvent e) {
+                if (textArea1.getText().equals(placeholder)) {
+                    textArea1.setText("");  // Remove placeholder when focused
+                    textArea1.setForeground(Color.BLACK); // Set text color to black
+                }
+            }
+            public void focusLost(FocusEvent e) {
+                if (textArea1.getText().isEmpty()) {
+                    textArea1.setText(placeholder); // Show placeholder again when focus is lost and the text area is empty
+                    textArea1.setForeground(Color.GRAY); // Set placeholder text color to gray
+                }
+            }
+        });
+        frame.add(textArea1);
     }
 
     @Override

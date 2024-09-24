@@ -47,9 +47,9 @@
       <recent name="D:\Happy_Coding\My_Code_In_Github\MPC\Java_Swing\JavaTpoint\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Swing_012_List">
-    <configuration name="Swing_008_CheckBox_advance_example" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_008_CheckBox_advance_example" />
+  <component name="RunManager" selected="Application.Swing_016_PopupMenu">
+    <configuration name="Swing_006_TextArea" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_006_TextArea" />
       <module name="Java_Swing" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -69,13 +69,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Swing_014_Scrollbar" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_014_Scrollbar" />
-      <module name="Java_Swing" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Swing_015_MenuBar_Menu_MenuItem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Swing_015_MenuBar_Menu_MenuItem" />
       <module name="Java_Swing" />
@@ -83,13 +76,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Swing_016_PopupMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_016_PopupMenu" />
+      <module name="Java_Swing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Swing_016_PopupMenu" />
+        <item itemvalue="Application.Swing_006_TextArea" />
         <item itemvalue="Application.Swing_012_List" />
         <item itemvalue="Application.Swing_015_MenuBar_Menu_MenuItem" />
         <item itemvalue="Application.Swing_013_OptionPane" />
-        <item itemvalue="Application.Swing_014_Scrollbar" />
-        <item itemvalue="Application.Swing_008_CheckBox_advance_example" />
       </list>
     </recent_temporary>
   </component>

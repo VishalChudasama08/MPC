@@ -146,11 +146,13 @@ public class Swing_016_PopupMenu {
                 copyLabel.setText("Copy In Clipboard");
 
                 // Timer to remove the text after 3 seconds (3000 ms)
-                new Timer(3000, new ActionListener() {
+                Timer time = new Timer(1000, new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         copyLabel.setText(""); // Clear the label text after 3 seconds
                     }
-                }).start(); // Start the timer
+                });
+                time.setRepeats(false);
+                time.start(); // Start the timer
             }
         });
 
@@ -163,9 +165,9 @@ public class Swing_016_PopupMenu {
         // Step 6: Set up a MouseListener to show the popup menu when the right mouse button is clicked
         textArea.addMouseListener(new MouseAdapter() {
             public void mouseReleased(MouseEvent e) {
-                if (e.isPopupTrigger()) { // Detect if it's the right-click button
-                    popupMenu.show(e.getComponent(), e.getX(), e.getY()); // Show the popup menu at the cursor's location
-                }
+            if (e.isPopupTrigger()) { // Detect if it's the right-click button
+                popupMenu.show(e.getComponent(), e.getX(), e.getY()); // Show the popup menu at the cursor's location
+            }
             }
         });
 

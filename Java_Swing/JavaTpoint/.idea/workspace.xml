@@ -47,16 +47,9 @@
       <recent name="D:\Happy_Coding\My_Code_In_Github\MPC\Java_Swing\JavaTpoint\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Swing_017_CheckBoxMenuItem">
+  <component name="RunManager" selected="Application.Swing_018_Separator">
     <configuration name="Swing_006_TextArea" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Swing_006_TextArea" />
-      <module name="Java_Swing" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Swing_012_List" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_012_List" />
       <module name="Java_Swing" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -83,13 +76,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Swing_018_Separator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_018_Separator" />
+      <module name="Java_Swing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Swing_018_Separator" />
         <item itemvalue="Application.Swing_017_CheckBoxMenuItem" />
         <item itemvalue="Application.Swing_016_PopupMenu (1)" />
         <item itemvalue="Application.Swing_016_PopupMenu" />
         <item itemvalue="Application.Swing_006_TextArea" />
-        <item itemvalue="Application.Swing_012_List" />
       </list>
     </recent_temporary>
   </component>

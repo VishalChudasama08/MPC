@@ -47,28 +47,7 @@
       <recent name="D:\Happy_Coding\My_Code_In_Github\MPC\Java_Swing\JavaTpoint\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Swing_020_Tree">
-    <configuration name="Swing_017_CheckBoxMenuItem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_017_CheckBoxMenuItem" />
-      <module name="Java_Swing" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Swing_018_Separator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_018_Separator" />
-      <module name="Java_Swing" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Swing_019_ProgressBar" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_019_ProgressBar" />
-      <module name="Java_Swing" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Swing_024_Spinner">
     <configuration name="Swing_020_Tree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Swing_020_Tree" />
       <module name="Java_Swing" />
@@ -76,8 +55,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Swing_All" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_All" />
+    <configuration name="Swing_021_ColorChooser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_021_ColorChooser" />
+      <module name="Java_Swing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Swing_022_TabbedPane" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_022_TabbedPane" />
+      <module name="Java_Swing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Swing_023_Slider" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_023_Slider" />
+      <module name="Java_Swing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Swing_024_Spinner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_024_Spinner" />
       <module name="Java_Swing" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -85,11 +85,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Swing_024_Spinner" />
+        <item itemvalue="Application.Swing_023_Slider" />
+        <item itemvalue="Application.Swing_022_TabbedPane" />
+        <item itemvalue="Application.Swing_021_ColorChooser" />
         <item itemvalue="Application.Swing_020_Tree" />
-        <item itemvalue="Application.Swing_019_ProgressBar" />
-        <item itemvalue="Application.Swing_All" />
-        <item itemvalue="Application.Swing_018_Separator" />
-        <item itemvalue="Application.Swing_017_CheckBoxMenuItem" />
       </list>
     </recent_temporary>
   </component>

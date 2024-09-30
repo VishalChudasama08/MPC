@@ -47,30 +47,9 @@
       <recent name="D:\Happy_Coding\My_Code_In_Github\MPC\Java_Swing\JavaTpoint\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Swing_024_Spinner">
-    <configuration name="Swing_020_Tree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_020_Tree" />
-      <module name="Java_Swing" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Swing_021_ColorChooser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_021_ColorChooser" />
-      <module name="Java_Swing" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Swing_022_TabbedPane" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_022_TabbedPane" />
-      <module name="Java_Swing" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Swing_023_Slider" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_023_Slider" />
+  <component name="RunManager" selected="Application.Swing_LayoutManager_BorderLayout">
+    <configuration name="Swing_004_Label" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_004_Label" />
       <module name="Java_Swing" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -83,13 +62,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Swing_025_Dialog" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_025_Dialog" />
+      <module name="Java_Swing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Swing_026_Panel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_026_Panel" />
+      <module name="Java_Swing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Swing_LayoutManager_BorderLayout" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_LayoutManager_BorderLayout" />
+      <module name="Java_Swing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Swing_LayoutManager_BorderLayout" />
+        <item itemvalue="Application.Swing_026_Panel" />
+        <item itemvalue="Application.Swing_004_Label" />
+        <item itemvalue="Application.Swing_025_Dialog" />
         <item itemvalue="Application.Swing_024_Spinner" />
-        <item itemvalue="Application.Swing_023_Slider" />
-        <item itemvalue="Application.Swing_022_TabbedPane" />
-        <item itemvalue="Application.Swing_021_ColorChooser" />
-        <item itemvalue="Application.Swing_020_Tree" />
       </list>
     </recent_temporary>
   </component>

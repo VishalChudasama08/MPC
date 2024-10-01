@@ -1,0 +1,62 @@
+<html>
+
+<body>
+    <textarea className='form-control' id="myBox" rows="10" cols="80"></textarea>
+    <br>
+    <button onclick="check()">OK</button>
+    <div id="result"></div>
+    <script>
+        function check() {
+            let text = document.getElementById('myBox')
+            let string = "";
+            string = text.value;
+            console.log(string.split(' '));
+
+            let str1 = ""
+            let str2 = ""
+            let spaces = 0;
+            let words = 0;
+
+            const regex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/; // regular expression
+            let gmail = 0
+
+            string.split(/\s+/).forEach(element => {
+                if (element != '') {
+                    if (regex.test(element)) {
+                        gmail++
+                        words = words + (element.split(regex).length + 1)
+                        console.log(element.split(regex).length + 1);
+
+                    } else if (element.match(/[a-zA-Z]/g)) {
+                        element.replace(/[^a-zA-Z]+/g, ' ').split(' ').forEach(ele => { if (ele != '') { words++ } });
+                    }
+                    if (element.includes("\n")) {
+                        str1 += element.replace("\n", " ")
+                        str2 += element.replace("\n", "")
+                    } else {
+                        str1 += element + ' '
+                        str2 += element
+                    }
+                    spaces++
+                } else {
+                    spaces++
+                }
+            });
+            console.log('str1=> ' + str1);
+            console.log('str2=> ' + str2);
+
+
+            // let words = str1.split(' ').length - 1
+            // let words = str1.match(/[a-zA-Z]/g).length
+            let number = str1.match(/[0-9]/g) == null ? 0 : str1.match(/[0-9]/g).length
+            let symbols = str2.match(/[^a-zA-Z0-9\s]/g)
+            let characters = str2.length - (symbols == null ? 0 : symbols.length)
+            let newline = string.match(/\n/g) == null ? 0 : string.match(/\n/g).length;
+            spaces = spaces - 1
+            /* words, number, characters, (symbols == null ? 0 : symbols.length), newline, spaces, gmail */
+            document.getElementById('result').innerHTML = words + "  words <br> " + number + "  number <br> " + characters + " characters <br> " + (symbols == null ? 0 : symbols.length) + " symbols <br> " + newline + " newlines <br> " + spaces + " spaces <br> " + gmail + " Gmail found";
+        }
+    </script>
+</body>
+
+</html>

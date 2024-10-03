@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        form {
+            flex: 1;
+            text-align: center;
+        }
+
+        input[type="checkbox"] {
+            position: absolute;
+            visibility: hidden;
+            width: 30px;
+            /* 60 */
+            height: 30px;
+            /* 60 */
+            z-index: 2;
+        }
+
+        .checkbox {
+            position: relative;
+        }
+
+        label {
+            position: relative;
+            display: inline-block;
+            width: 25px;
+            /* 50 */
+            height: 25px;
+            /* 50 */
+            background: #efefef;
+            border: 5px solid #aaaaaa;
+            cursor: pointer;
+            transition: all 0.3s ease-out;
+        }
+
+        input[type="checkbox"]:checked+label {
+            border: 5px solid #3d9970;
+            animation: confirm 0.15s linear;
+        }
+
+        input[type="checkbox"]:checked+label:after {
+            content: '\f00c';
+            font-family: FontAwesome;
+            font-size: 25px;
+            /* 35 */
+            line-height: 25px;
+            /* 50 */
+            width: 25px;
+            /* 50 */
+            height: 25px;
+            /* 50 */
+            background: #2ECC40;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            color: #ffffff;
+        }
+
+        @keyframes confirm {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(0.95)
+            }
+
+            75% {
+                transform: scale(0.8);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <div class="checkbox">
+            <input id="check" name="check" type="checkbox" />
+            <label for="check"></label>
+        </div>
+    </form>
+</body>
+
+<script src="https://use.fontawesome.com/3e3f9f9617.js"></script>
+<script src="mo.min.js"></script>
+<script>
+    "use strict";
+    const square = new mojs.Shape({
+        radius: 35, /* 70 */
+        radiusY: 35, /* 70 */
+        shape: 'rect',
+        stroke: '#2ECC40',
+        strokeWidth: { 8: 35 }, /* 10: 50 */
+        fill: 'none',
+        scale: { 0.45: 0.55 },
+        opacity: { 1: 0 },
+        duration: 350,
+        easing: 'sin.out',
+        isShowEnd: false,
+    });
+    const lines = new mojs.Burst({
+        left: 0, top: 0,
+        radius: { 35: 75 },
+        angle: 0,
+        count: 8,
+        children: {
+            shape: 'line',
+            radius: 10,
+            scale: 1,
+            stroke: '#2Ecc40',
+            strokeDasharray: '100%',
+            strokeDashoffset: { '-100%': '100%' },
+            duration: 700,
+            easing: 'quad.out',
+        }
+    });
+    const check = document.querySelector('label');
+    let checked = check.checked;
+    function fireBurst(e) {
+        if (!checked) {
+            const pos = this.getBoundingClientRect();
+            const timeline = new mojs.Timeline({ speed: 1.5 });
+            timeline.add(square, lines);
+            square.tune({
+                'left': pos.left + 17.5, /* 35 */
+                'top': pos.top + 17.5 /* 35 */
+            });
+            lines.tune({
+                x: pos.left + 17.5, /* 35 */
+                y: pos.top + 17.5 /* 35 */
+            });
+            if ("vibrate" in navigator) {
+                navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+                navigator.vibrate([100, 200, 400]);
+            }
+            timeline.play();
+        }
+        checked = !checked;
+    }
+    check.addEventListener('click', fireBurst);
+
+</script>
+
+</html>

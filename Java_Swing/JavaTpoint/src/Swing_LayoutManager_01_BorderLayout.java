@@ -1,10 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class Swing_LayoutManager_BorderLayout {
+public class Swing_LayoutManager_01_BorderLayout {
     static JFrame frame1, frame2, frame3;
 
-    Swing_LayoutManager_BorderLayout(){
+    Swing_LayoutManager_01_BorderLayout(){
         frame1 = getFrame("Swing BorderLayout", new BorderLayout());
 
         frame2 = getFrame("Swing BorderLayout with component gap", new BorderLayout(12, 18));
@@ -51,6 +51,6 @@ public class Swing_LayoutManager_BorderLayout {
     }
 
     public static void main(String[] args) {
-        new Swing_LayoutManager_BorderLayout();
+        new Swing_LayoutManager_01_BorderLayout();
     }
 }

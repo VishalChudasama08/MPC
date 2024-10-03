@@ -47,16 +47,9 @@
       <recent name="D:\Happy_Coding\My_Code_In_Github\MPC\Java_Swing\JavaTpoint\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Swing_027_FileChooser">
+  <component name="RunManager" selected="Application.Swing_LayoutManager_03_FlowLayout">
     <configuration name="HelloWorld" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="HelloWorld" />
-      <module name="Java_Swing" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Swing_026_Panel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_026_Panel" />
       <module name="Java_Swing" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -76,8 +69,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Swing_LayoutManager_BorderLayout" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_LayoutManager_BorderLayout" />
+    <configuration name="Swing_LayoutManager_02_GridLayout" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_LayoutManager_02_GridLayout" />
+      <module name="Java_Swing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Swing_LayoutManager_03_FlowLayout" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_LayoutManager_03_FlowLayout" />
       <module name="Java_Swing" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -85,11 +85,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Swing_LayoutManager_03_FlowLayout" />
+        <item itemvalue="Application.Swing_LayoutManager_02_GridLayout" />
         <item itemvalue="Application.Swing_027_FileChooser" />
         <item itemvalue="Application.HelloWorld" />
         <item itemvalue="Application.Swing_GridLayout_With_Panels" />
-        <item itemvalue="Application.Swing_LayoutManager_BorderLayout" />
-        <item itemvalue="Application.Swing_026_Panel" />
       </list>
     </recent_temporary>
   </component>

@@ -4,7 +4,6 @@ import javax.swing.filechooser.FileSystemView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.util.Scanner;
 
 public class Swing_027_FileChooser implements ActionListener {
     static JFrame frame;
@@ -91,8 +90,8 @@ public class Swing_027_FileChooser implements ActionListener {
 
 class AdvancedFileChooserExample extends JFrame implements ActionListener { // chatGPT
     // Declaring components
-    private JButton openButton, saveButton;
-    private JLabel label;
+    private final JButton openButton, saveButton;
+    private final JLabel label;
 
     public AdvancedFileChooserExample() {
         // Frame settings

@@ -47,23 +47,23 @@
       <recent name="D:\Happy_Coding\My_Code_In_Github\MPC\Java_Swing\JavaTpoint\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Swing_LayoutManager_03_FlowLayout">
-    <configuration name="HelloWorld" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="HelloWorld" />
+  <component name="RunManager" selected="Application.Swing_LayoutManager_02_GridLayout">
+    <configuration name="Swing_010_ComboBox" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_010_ComboBox" />
       <module name="Java_Swing" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Swing_027_FileChooser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_027_FileChooser" />
+    <configuration name="Swing_013_OptionPane" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_013_OptionPane" />
       <module name="Java_Swing" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Swing_GridLayout_With_Panels" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_GridLayout_With_Panels" />
+    <configuration name="Swing_029_ToolBar" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_029_ToolBar" />
       <module name="Java_Swing" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -85,11 +85,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Swing_LayoutManager_03_FlowLayout" />
         <item itemvalue="Application.Swing_LayoutManager_02_GridLayout" />
-        <item itemvalue="Application.Swing_027_FileChooser" />
-        <item itemvalue="Application.HelloWorld" />
-        <item itemvalue="Application.Swing_GridLayout_With_Panels" />
+        <item itemvalue="Application.Swing_LayoutManager_03_FlowLayout" />
+        <item itemvalue="Application.Swing_029_ToolBar" />
+        <item itemvalue="Application.Swing_010_ComboBox" />
+        <item itemvalue="Application.Swing_013_OptionPane" />
       </list>
     </recent_temporary>
   </component>

@@ -47,16 +47,9 @@
       <recent name="D:\Happy_Coding\My_Code_In_Github\MPC\Java_Swing\JavaTpoint\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Swing_LayoutManager_02_GridLayout">
+  <component name="RunManager" selected="Application.Swing_LayoutManager_04_BoxLayout">
     <configuration name="Swing_010_ComboBox" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Swing_010_ComboBox" />
-      <module name="Java_Swing" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Swing_013_OptionPane" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_013_OptionPane" />
       <module name="Java_Swing" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -83,13 +76,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Swing_LayoutManager_04_BoxLayout" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_LayoutManager_04_BoxLayout" />
+      <module name="Java_Swing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Swing_LayoutManager_04_BoxLayout" />
         <item itemvalue="Application.Swing_LayoutManager_02_GridLayout" />
         <item itemvalue="Application.Swing_LayoutManager_03_FlowLayout" />
         <item itemvalue="Application.Swing_029_ToolBar" />
         <item itemvalue="Application.Swing_010_ComboBox" />
-        <item itemvalue="Application.Swing_013_OptionPane" />
       </list>
     </recent_temporary>
   </component>

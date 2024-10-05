@@ -5,6 +5,8 @@ import java.awt.*;
 public class Swing_LayoutManager_02_GridLayout {
     JFrame frame1,frame2,frame3, frame;
     Swing_LayoutManager_02_GridLayout(){
+        // The Java GridLayout class is used to arrange the components in a rectangular grid.
+        // One component is displayed in each rectangle.
         gridLayoutExample(); // javatpoint
         gridLayoutExampleRowColumns(); // javatpoint
         gridLayoutExampleRowColumnsHgapVgap(); // javatpoint

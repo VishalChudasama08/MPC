@@ -5,7 +5,7 @@ public class Swing_002_Create_Frame_Using_Extends_JFrame_Class extends JFrame {
     // for use JFrame class functionality create constructor
     public Swing_002_Create_Frame_Using_Extends_JFrame_Class() { // this is Constructor
         // for calling JFrame class constructor and given argument to set frame title
-        super("Extends Frame Class");
+        super("Extends Frame Class"); // also use setTitle() method
 
         setSize(400, 300); // call setSize JFrame class method with argument, and that is width and height
 

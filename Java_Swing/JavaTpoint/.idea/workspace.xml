@@ -47,37 +47,43 @@
       <recent name="D:\Happy_Coding\My_Code_In_Github\MPC\Java_Swing\JavaTpoint\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Swing_036_SplitPane">
-    <configuration name="Swing_032_LayeredPane" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_032_LayeredPane" />
+  <component name="RunManager" selected="Application.Swing_043_Display_Image">
+    <configuration name="Swing_039_SplitPane" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_039_app.Swing_039_SplitPane" />
+      <module name="Java_Swing" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Swing_039_app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Swing_041_TitleBar_icon" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_041_TitleBar_icon" />
       <module name="Java_Swing" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Swing_033_DesktopPane" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_033_DesktopPane" />
+    <configuration name="Swing_042_Digital_Clock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_042_Digital_Clock" />
       <module name="Java_Swing" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Swing_034_EditorPane" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_034_EditorPane" />
+    <configuration name="Swing_043_Display_Image" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_043_Display_Image" />
       <module name="Java_Swing" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Swing_035_ScrollPane" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_035_ScrollPane" />
-      <module name="Java_Swing" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Swing_036_SplitPane" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Swing_036_SplitPane" />
+    <configuration name="Swing_044_Display_Graphics" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing_044_Display_Graphics" />
       <module name="Java_Swing" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -85,11 +91,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Swing_036_SplitPane" />
-        <item itemvalue="Application.Swing_035_ScrollPane" />
-        <item itemvalue="Application.Swing_034_EditorPane" />
-        <item itemvalue="Application.Swing_033_DesktopPane" />
-        <item itemvalue="Application.Swing_032_LayeredPane" />
+        <item itemvalue="Application.Swing_043_Display_Image" />
+        <item itemvalue="Application.Swing_044_Display_Graphics" />
+        <item itemvalue="Application.Swing_042_Digital_Clock" />
+        <item itemvalue="Application.Swing_039_SplitPane" />
+        <item itemvalue="Application.Swing_041_TitleBar_icon" />
       </list>
     </recent_temporary>
   </component>

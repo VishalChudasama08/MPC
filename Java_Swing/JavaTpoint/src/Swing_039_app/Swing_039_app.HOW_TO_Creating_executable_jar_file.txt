@@ -1,0 +1,47 @@
+To create an executable JAR file that can be run by double-clicking or using the java -jar command, follow these steps:
+
+1. Create a Manifest File:
+    You need a manifest file that specifies the main class to be run when the JAR is executed.
+    Create a file called myfile.mf (any name) with the following content:
+
+EX. ///
+Main-Class: Swing_039_SplitPane
+
+///
+Ensure there is a newline at the end of the file.
+
+2. Create the JAR:
+    Open CMD (at java file directory) and Use the jar command to create the JAR file.
+    Ensure all .class files (including inner classes) are included.
+    Here's the command:
+    jar -cvmf myfile.mf myjar.jar Swing_039_SplitPane.class Swing_039_SplitPane$1.class Swing_039_SplitPane$2.class Swing_039_SplitPane$2$1.class
+
+    -c creates the JAR.
+    -v enables verbose output (shows what is being added).
+    -m specifies the manifest file.
+
+    myjar.jar is the name of the output JAR file.
+    The rest are the compiled .class files.
+
+3. Run the JAR:
+    After creating the JAR file, you can run it from the command line using:
+    java -jar myjar.jar
+    Or you can try double-clicking the JAR file (depending on your OS settings).
+
+Make sure all the .class files are in the same directory as where you're running the jar command or specify the correct paths.
+This should give you an executable JAR that runs your Swing application.
+
+********************************
+in java file if package statement (usually at first line) present than
+
+compiled time command -->  javac Swing_036_app\Swing_036_SplitPane.java
+
+manifest file -->
+///
+Main-Class: Swing_039_app.Swing_039_SplitPane
+
+///
+
+create .jar file command --> jar -cvmf myfile.mf myjar.jar Swing_039_app/Swing_039_SplitPane.class Swing_039_app/Swing_039_SplitPane$1.class Swing_039_app/Swing_039_SplitPane$2.class Swing_039_app/Swing_039_SplitPane$2$1.class
+
+********************************

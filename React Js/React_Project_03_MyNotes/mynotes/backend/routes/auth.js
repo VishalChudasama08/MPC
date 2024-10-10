@@ -2,8 +2,12 @@ const express = require('express');
 const User = require('../models/User');
 const router = express.Router();
 const { body, validationResult } = require('express-validator');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
-// Create A User using: POSt "/api/author/createUser". Doesn't require log-in    
+const JWT_Secret = 'ThisIsJWTSecretString'
+
+// Create A User using: POSt "/api/auth/createUser". Doesn't require log-in    
 router.post('/createUser', [
     body('name', 'Enter a valid name').isLength({ min: 3 }),
     body('email', 'Enter a valid email').isEmail(),
@@ -21,11 +25,23 @@ router.post('/createUser', [
         if (user) {
             return res.status(400).json({ error: "Sorry a user with this email is already exists " });
         }
+
+        const salt = await bcrypt.genSalt(10); // create salt
+        const secretPassword = await bcrypt.hash(req.body.password, salt); // crypt and add salt
+
         user = await User.create({
             name: req.body.name,
             email: req.body.email,
-            password: req.body.password
+            password: secretPassword // save crypted password in mongo
         })
+        const data = {
+            user: {
+                id: user.id
+            }
+        }
+        const jwtData = jwt.sign(data, JWT_Secret); // 
+        console.log(jwtData);
+
         res.json(user) // send response to user (user info)
     } catch (error) {
         console.log(error.message);

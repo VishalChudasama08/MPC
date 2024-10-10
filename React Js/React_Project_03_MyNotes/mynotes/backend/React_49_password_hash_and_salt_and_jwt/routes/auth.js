@@ -42,7 +42,8 @@ router.post('/createUser', [
         const jwtData = jwt.sign(data, JWT_Secret); // 
         console.log(jwtData);
 
-        res.json(user) // send response to user (user info)
+        res.json(jwtData)
+        // res.json(user) // send response to user (user info)
     } catch (error) {
         console.log(error.message);
         res.status(500).send("Some Error occured")

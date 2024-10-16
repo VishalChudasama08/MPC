@@ -8,7 +8,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route
-} from "react-router-dom";// https://v5.reactrouter.com/web/guides/quick-start
+} from "react-router-dom"; // npm install react-router-dom@5
+// https://v5.reactrouter.com/web/guides/quick-start
 
 function App() {
   const [mode, setMode] = useState('light') // dark than Dark Mode on else dark Mode off

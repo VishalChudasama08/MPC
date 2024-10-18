@@ -7,6 +7,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import in.v8.entities.Emp;
 import in.v8.entities.User;
 
 public class App {
@@ -82,10 +83,21 @@ public class App {
 //		}
         
         // ------------------ Select / get all row --------------------------------
+//        try {
+//        	List<User> users = session.createQuery("from User", User.class).list();
+//        	for (User user : users) {
+//        		user.displayUser();
+//        	}
+//        } catch (Exception e) {
+//        	e.printStackTrace();
+//        	System.out.println("User Details Not Get Deu to Same Error");
+//        }
+        
+        //------------------ Select / get all row --------------------------------
         try {
-        	List<User> users = session.createQuery("from User", User.class).list();
-        	for (User user : users) {
-        		user.displayUser();
+        	List<Emp> employees = session.createQuery("from Emp", Emp.class).list();
+        	for (Emp emp : employees) {
+        		emp.displayAll();
         	}
         } catch (Exception e) {
         	e.printStackTrace();

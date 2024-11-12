@@ -1,9 +1,7 @@
-import React, { useContext } from 'react'
-import noteContext from '../context/notes/NoteContext'
+import React from 'react'
+import Notes from './Notes';
 
 const Home = () => {
-    const { notes, setNotes } = useContext(noteContext); // get notes from noteContext (using useContext hook). notes, setNotes is useState hook declared in NoteState.js file 
-
     return (
         <div>
             <h2>Add a Note</h2>
@@ -18,10 +16,9 @@ const Home = () => {
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
             </form>
-            <h2>Your Notes</h2>
-            {notes.map((note) => {
-                return note.title;
-            })};
+
+            <Notes />
+
         </div>
     )
 }

@@ -67,6 +67,6 @@ public class Users {
 		this.city = city;
 	}
 	public void displayUser() {
-		System.out.println("User ID: "+ this.id +"\tName: "+ this.name + "\tEmail: " + this.email + "\tPassword" + this.password + "\t Gender: " + this.gender + "\t City: " + this.city);
+		System.out.println("User ID: "+ this.id +"\tName: "+ this.name + "\tEmail: " + this.email + "\tPassword: " + this.password + "\t Gender: " + this.gender + "\t City: " + this.city);
 	}
 }

@@ -17,8 +17,7 @@ public class SpringBootProject11HibernateIndustryCodingStyleApplication {
 		Users user = dbOperations.getUserDetails(1L);
 		
 		if(user != null) {
-			System.out.println(user.getName());
-			System.out.println(user.getEmail());
+			user.displayUser();
 		} else {
 			System.out.println("User Not Found");
 		}

@@ -6,7 +6,7 @@ const Navbar = () => {
     let location = useLocation(); // useLocation is hook. present in react-router-dom package. using to work on url 
     React.useEffect(() => {
         // console.log(location);
-        console.log(location.pathname); // .pathname to get url (not full url)
+        // console.log(location.pathname); // .pathname to get url (not full url)
     }, [location]);
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">

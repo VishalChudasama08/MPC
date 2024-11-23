@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Boot V14 web mvc</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">VISHAL</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="About.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="RegisterFrom">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="LoginForm">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="LogoutForm">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <h5>How to create spring boot web mvc project with database connection ?</h5>
+        <h5>Create Spring Boot Web MVC project with database and make Register and Login step by step</h5> <br>
+
+        <div class="row">
+            <div class="col-1"><strong>Step-1 :</strong></div>
+            <div class="col">Open STS ide and create new 'spring starter project'. Enter name and package click 'next'. Find and select dependencies and click 'finish'.</div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-1"><strong>Step-2 :</strong></div>
+            <div class="col">
+                Open project folder and find main folder. in resources folder:<br>
+                static folder : here store and create html, css, javaScript, images,... files.<br>
+                application.properties : file is used to configure various settings for the application, such as database connection, server port, or custom properties.<br>
+                Than, Create index.html file, and aether needed Front-end code files. <br>
+                in main folder create webapp/views folders and in views folder create jsp files. <br>
+                Here in this project register.jsp file created with Register Form.
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-1"><strong>Step-3 :</strong></div>
+            <div class="col">
+                Create Controller class in controllers package. here in this project MyContoller.java in in.v8.main.controllers package. with @Controller annotation. <br>
+                The <strong>@Controller:</strong> annotation marks a class as a Spring MVC controller, Allowing it to handle HTTP requests and return views or data. In Spring Boot, a Controller class is a class which manages web requests and responses. <br>
+                It handles user inputs, processes data, and returns views or other responses.
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-1"><strong>Step-4 :</strong></div>
+            <div class="col">
+                in MyController class create method to handel http requests and provide responses. <br>
+                here, created openRegisterFrom method and use @GetMapping("/RegisterFrom") annotation because anchor tag (a tag) href attribute make get method request. <br>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-1"><strong>Step-5 :</strong></div>
+            <div class="col">
+                A <strong>view resolver</strong> in Spring Boot maps logical view names returned by controller to actual JSP files. It configures the prefix and suffix for JSP paths, allowing the application to locate and render the appropriate JSP files. <br>
+                Than, Provide view resolver in application.properties file. Here, <br>
+                <span>spring.mvc.view.prefix=/views/ </span> <br>
+                <span>spring.mvc.view.suffix=.jsp </span>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-1"><strong>Step-6 :</strong></div>
+            <div class="col">
+                "JSP" is not the default view technology in Spring Boot but YES we can use JSP in Spring Boot. By default, Spring BOot uses "Thymeleaf" for view rendering. <br>
+                Than, provide dependency 'tomcat-jasper' dependency. find in chrome copy and paste in pom.xml file.
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-1"><strong>Step-7 :</strong></div>
+            <div class="col">
+                For Connection to database and perform CRUD operation add 'spring-boot-starter-data-jpa' and 'mysql-connector-j' dependency. (Here, For register form data add in database)<br>
+                find 'jpa' and 'mysql' in https://start.spring.io and in that click 'EXPLORE' and copy only than two dependency and paste in pom.xml file than, save file
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-1"><strong>Step-8 :</strong></div>
+            <div class="col">
+                Create Entity class in entities package with @Entity and @Table annotation. <br>
+                Here, created User.java class, in this class create variable and it's getter and setter <br>
+                <strong>Note:</strong> Than variable same as from input tag name attribute values (here in this project register.jsp file, present user Register Form) <br>
+                data jpa use hibernate to perform CRUD and manage databases than Here needed to create @Id annotated variable (Than variable same as database table unique id) and for generated unique id use @GeneratedValue(strategy = GenerationType.IDENTITY) annotation to generate column id automatic. <br>
+                And apply @Column in All variable, for create database table field name same as variable name <br>
+                <br>
+                <strong>@Entity</strong> : Marks a class as a JPA entity, indicating it represents a database table and it's instances correspond to rows in that table
+                <br>
+                <strong>@Table</strong> : Specifies the table name in the database that the JPA entity maps to. Default to the entity class name if not provided.
+                <br>
+                <strong>@ID</strong> : Denotes the primary key field of the entity, which uniquely identifies each record in the table.
+                <br>
+                <strong>@GeneratedValue(strategy = GenerationType.IDENTITY)</strong> : Configures the primary key to be automatically generated by the database, using an identity column to increment values.
+                <br>
+                <strong>@Column</strong> : Maps a field to a specific column in the database table, allowing customization of column name, type, and constraints.
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-1"><strong>Step-9 :</strong></div>
+            <div class="col">
+                Create repository <strong>interface</strong> and extends <code style="color: white;">JpaRepository&lt;Entity, ID&gt;</code>, Here Entity is User and ID is User entity id variable datatype (Long) <br>
+                A custom repository interface in spring Data JPA extends JpaRepository or another repository interface to define additional query methods or custom logic. <br>
+                It is used to add extra methods or custom behavior to handel specific database queries.
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-1"><strong>Step-10 : </strong></div>
+            <div class="col">
+                Create Service <strong>interface</strong> and create method register user. here UserService interface and it's registerUser(User user) method. than method Argument is Entity class <br>
+                than, create class than implement that interface, here UserServiceImpl class and provide @Service annotation and override UserService interface method <br>
+                than, make repository interface refresh, here <code style="color: white;">private UserRepository userRepository;</code> and make @Autowired annotated
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-1"><strong>Step-11 :</strong></div>
+            <div class="col">
+
+            </div>
+        </div>
+        <br>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+</html>

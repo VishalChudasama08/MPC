@@ -1,0 +1,26 @@
+body {
+    background-color: rgb(171, 112, 33);
+    color: white;
+}
+
+nav {
+    background-color: aqua !important;
+}
+
+.nav-link {
+    font-weight: bold;
+    font-size: large;
+}
+
+p {
+    margin-bottom: 5px;
+}
+
+.pera,
+.steps {
+    display: inline;
+}
+
+span {
+    margin-left: 60px;
+}

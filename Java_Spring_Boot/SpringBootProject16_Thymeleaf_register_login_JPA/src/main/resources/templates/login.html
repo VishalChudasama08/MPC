@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - thymeleaf</title>
+</head>
+
+<body>
+    <h3>Login Here</h3>
+
+    <div th:if="${error}">
+        <h4 th:text="${error}" style="color: red;"></h4>
+    </div>
+
+    <form th:action="@{/openProfile}" th:object="${user}" method="post">
+        Email : <input type="email" th:field="*{email}" id="email" required> <br><br>
+        Password : <input type="password" th:field="*{password}" id="password" required> <br><br>
+        <input type="submit" value="Login"> <br><br>
+    </form>
+
+    <a th:href="@{/openRegister}">Register First !</a> <br><br>
+    <a href="index.html">Go to home</a>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looping thymeleaf - Spring Boot v15</title>
+</head>
+
+<body>
+    <h2>Looping (th:each)</h2>
+    <ul>
+        <li th:each="item : ${listLoop}">
+            <span th:text="${item}"></span>
+        </li>
+        <!-- <li th:each="item : ${listLoop}" th:text="${item}"></li> --> <!-- This is also working -->
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional thymeleaf - Spring Boot v15</title>
+</head>
+
+<body>
+    <h2>Conditional (if)</h2>
+    <p th:if="${number1} > ${number2}" th:text="${number1} + ' is greater than ' + ${number2}"></p>
+    <p th:if="${number2} > ${number1}" th:text="${number2} + ' is greater than ' + ${number1}"></p>
+</body>
+
+</html>

@@ -17,17 +17,17 @@ public class MyController {
 	private UserService userService;
 	
 	@GetMapping("/RegisterFrom") 
-	public String openRegisterFrom(Model model){
-		model.addAttribute("user", new User());
+	public String openRegisterFrom( /* Model model */ ){
+		// model.addAttribute("user", new User()); // not needed
 		return "register";
 	}
 	
-	@PostMapping("RegisterFormSubmit")
-	public String submitRegisterForm(@ModelAttribute("user") User user, Model model) {
+	@PostMapping("/RegisterFormSubmit")
+	public String submitRegisterForm( /* @ModelAttribute("user") */ @ModelAttribute User user, Model model) { // without @ModelAttribute working (only User user), but complex form and good practice to use '@ModelAttribute User user'  
 		Boolean status = userService.registerUser(user);
 		
 		if (status) {
-			model.addAttribute("SuccessMsg", "User register successfullay");
+			model.addAttribute("SuccessMsg", "User register successfully");
 		} else {
 			model.addAttribute("ErrorMsg", "User not register due to some error");
 		}
@@ -44,7 +44,7 @@ public class MyController {
 	private String submitLoginPage(@ModelAttribute("enterUser") User user, Model model) {
 		User validUser = userService.loginUser(user.getEmail(), user.getPassword());
 		if (validUser != null) {
-			model.addAttribute("UserName", validUser.getName());
+			model.addAttribute("UserName", validUser.getName()); // set model Attribute to get UserName in profile.jsp page
 			return "profile";
 		} else {
 			model.addAttribute("ErrorMsg", "Email or Password didnt matched.");

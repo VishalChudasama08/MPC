@@ -51,9 +51,9 @@
                 Open project folder and find main folder. in resources folder:<br>
                 static folder : here store and create html, css, javaScript, images,... files.<br>
                 application.properties : file is used to configure various settings for the application, such as database connection, server port, or custom properties.<br>
-                Than, Create index.html file, and aether needed Front-end code files. <br>
+                Than, Create index.html file, and aether needed Front-end code files. (About.html, css/style.css) <br>
                 in main folder create webapp/views folders and in views folder create jsp files. <br>
-                Here in this project register.jsp file created with Register Form.
+                Here in this project register.jsp file created with Register Form, action='RegisterFormSubmit' and method='post'
             </div>
         </div>
         <br>
@@ -78,16 +78,28 @@
             <div class="col-1"><strong>Step-5 :</strong></div>
             <div class="col">
                 A <strong>view resolver</strong> in Spring Boot maps logical view names returned by controller to actual JSP files. It configures the prefix and suffix for JSP paths, allowing the application to locate and render the appropriate JSP files. <br>
-                Than, Provide view resolver in application.properties file. Here, <br>
-                <span>spring.mvc.view.prefix=/views/ </span> <br>
-                <span>spring.mvc.view.suffix=.jsp </span>
+                Than, Provide view resolver in application.properties file. here,
+                <pre>
+    spring.mvc.view.prefix=/views/ 
+    spring.mvc.view.suffix=.jsp 
+</pre>
+                Also Provide database Configuration in application.properties file. here,
+                <pre>
+    spring.datasource.url=jdbc:mysql://localhost:3306/springboot_mvcdb
+    spring.datasource.username=root
+    spring.datasource.password=root
+    
+    spring.jpa.hibernate.ddl-auto=update
+    spring.jpa.show-sql=true
+</pre>
+                Open Mysql database sell and create 'springboot_mvcdb' named database, they are not need to create table because, <code style="color: white;">spring.jpa.hibernate.ddl-auto=update</code> this line use to if table not exist than create table and <code style="color: white;">spring.jpa.show-sql=true</code> this line use to showing query in console (not browser console)
             </div>
         </div>
         <br>
         <div class="row">
             <div class="col-1"><strong>Step-6 :</strong></div>
             <div class="col">
-                "JSP" is not the default view technology in Spring Boot but YES we can use JSP in Spring Boot. By default, Spring BOot uses "Thymeleaf" for view rendering. <br>
+                "JSP" is not the default view technology in Spring Boot but YES we can use JSP in Spring Boot. By default, Spring Boot uses "Thymeleaf" for view rendering. <br>
                 Than, provide dependency 'tomcat-jasper' dependency. find in chrome copy and paste in pom.xml file.
             </div>
         </div>
@@ -134,15 +146,76 @@
             <div class="col-1"><strong>Step-10 : </strong></div>
             <div class="col">
                 Create Service <strong>interface</strong> and create method register user. here UserService interface and it's registerUser(User user) method. than method Argument is Entity class <br>
-                than, create class than implement that interface, here UserServiceImpl class and provide @Service annotation and override UserService interface method <br>
-                than, make repository interface refresh, here <code style="color: white;">private UserRepository userRepository;</code> and make @Autowired annotated
+                than, <strong>Create class implement that interface</strong>, here UserServiceImpl class and provide @Service annotation and override UserService interface registerUser methods <br>
+                than, make repository interface reference (<code style="color: white;">private UserRepository userRepository;</code>) and make @Autowired annotated, for using this object performed hibernate crud operations <br>
+                In <code style="color: white;">registerUser</code> method call JpaRepository save method to save user register data in database, here <code style="color: white;">userRepository.save(user);</code> in try...catch with return boolean status
             </div>
         </div>
         <br>
         <div class="row">
             <div class="col-1"><strong>Step-11 :</strong></div>
             <div class="col">
-
+                In MyController class handle /RegisterFormSubmit, create submitRegisterForm method and annotated @PostMapping("RegisterFormSubmit") annotation and in method call UserService registerUser() method with Entity class object. Here,
+                <pre>
+    @PostMapping("RegisterFormSubmit")
+    public String submitRegisterForm(@ModelAttribute User user, Model model){
+        Boolean status = userService.registerUser(user);
+        if (status) { 
+            model.addAttribute("SuccessMsg", "User register successfully"); 
+        } else { 
+            model.addAttribute("ErrorMsg", "User not register due to some error"); 
+        }
+        return "register";
+    }</pre>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-1"><strong>Step-12 :</strong></div>
+            <div class="col">
+                Create login.jsp page with login form (action="Profile" method="post") in views folder <br>
+                Create 'loginUser' method with return value in Entity object and argument email and password in UserService interface, than override this in UserServiceImpl class and call findByEmail with email to get valid User data store in Entity Object and check password or return this Entity object. here,
+                <pre>
+    User validUser = userRepository.findByEmail(email);
+    if (validUser != null && validUser.getPassword().equals(password)) {
+        return validUser;
+    } else {
+        return null;
+    }</pre>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-1"><strong>Step-13 :</strong></div>
+            <div class="col">
+                Repeat Step-11 to handle /Profile. here,
+                <pre>
+    @PostMapping("/Profile")
+    private String submitLoginPage(@ModelAttribute("enterUser") User user, Model model) {
+        User validUser = userService.loginUser(user.getEmail(), user.getPassword());
+        if (validUser != null) {
+            model.addAttribute("UserName", validUser.getName()); // set model Attribute to get UserName in profile.jsp page
+            return "profile";
+        } else {
+            model.addAttribute("ErrorMsg", "Email or Password didnt matched.");
+            return "login";
+        }
+    }
+</pre>
+                Also handle /LogoutForm wan client/user click logout button
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-1"><strong>Step-14 :</strong></div>
+            <div class="col">
+                Run Project -> In STS IDE right click in project and click 'Run As' than click 'Spring Boot App' <br>
+                and Open browser in new tab 'localhost:8080' this run index.html page <br>
+                in navbar click Register button fill form and click submit than check in database User table created and data showing ! <br>
+                than click Login button fill form and click submit this will open profile page <br>
+                <strong>Note: </strong> <br>
+                1. check mysql server is on ? <br>
+                2. in pom.xml all dependency present ? (tomcat-jasper, spring-boot-starter-data-jpa, mysql-connector-j, jstl)
             </div>
         </div>
         <br>

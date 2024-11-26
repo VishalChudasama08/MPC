@@ -77,12 +77,14 @@ router.post('/login', [
         let user = await User.findOne({ email }); // match email (because email is unique) and get user from database (mongodb)
 
         if (!user) { // if user not exist than
-            return res.status(400).json({ err: "Please try to login with correct credentials" });
+            success = false
+            return res.status(400).json({ success, err: "Please try to login with correct credentials" });
         }
 
         const passwordCompare = await bcrypt.compare(password, user.password);
         if (!passwordCompare) { // if passwordCompare not match than
-            return res.status(400).json({ err: "Please try to login with correct credentials" });
+            success = false
+            return res.status(400).json({ success, err: "Please try to login with correct credentials" });
         }
 
         const payload = {
@@ -91,8 +93,9 @@ router.post('/login', [
             }
         }
         const jwtToken = jwt.sign(payload, JWT_Secret); // sign
+        success = true
         // console.log(jwtToken);
-        res.json({ jwtToken }) // response to send jwtToken
+        res.json({ success, jwtToken }) // response to send jwtToken
 
     } catch (error) {
         console.log(error.message);

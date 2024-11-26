@@ -16,17 +16,20 @@ router.post('/createUser', [
     body('email', 'Enter a valid email').isEmail(),
     body('password', 'Password must be atleast 8 characters').isLength({ min: 8 }),
 ], async (req, res) => {
+    let success = false;
     // Finds the validation errors in this request and wraps them in an object with handy functions
     const errors = validationResult(req);
     if (!errors.isEmpty()) { // if any field empty or invalid than showing this error with json 
-        return res.status(400).json({ errors: errors.array() });
+        success = false;
+        return res.status(400).json({ success, errors: errors.array() });
     }
 
     // Check whether the user with this email exists already 
     try {
         let user = await User.findOne({ email: req.body.email });
         if (user) {
-            return res.status(400).json({ error: "Sorry a user with this email is already exists " });
+            success = false;
+            return res.status(400).json({ success, error: "Sorry a user with this email is already exists " });
         }
 
         const salt = await bcrypt.genSalt(10); // create salt
@@ -45,9 +48,8 @@ router.post('/createUser', [
         }
         const jwtToken = jwt.sign(data, JWT_Secret); // 
         // console.log(jwtToken);
-        res.json({ jwtToken }); // send response to jsonwebtoken 
-
-        // res.json(user) // send response to user (user info)
+        success = true
+        res.json({ success, jwtToken }); // send response to jsonwebtoken 
 
     } catch (error) {
         console.log(error.message);
@@ -65,6 +67,7 @@ router.post('/login', [
     body('email', 'Enter a valid email').isEmail(),
     body('password', 'Password cannot be blank').exists(),
 ], async (req, res) => {
+    let success = false;
     // If there are errors than, return Bad request and the errors 
     const errors = validationResult(req);
     if (!errors.isEmpty()) {

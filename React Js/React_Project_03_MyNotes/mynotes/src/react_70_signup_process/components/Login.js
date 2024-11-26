@@ -8,11 +8,11 @@ const Login = () => {
     const navigate = useNavigate();
 
     // handle onChange all input
-    const handleOnChange = (event) => {
+    const heddleOnChange = (event) => {
         setCredentials({ ...credentials, [event.target.name]: event.target.value }) // get input data and set in credentials named useState hook
     }
 
-    const handleSubmit = async (event) => {
+    const heddleSubmit = async (event) => {
         event.preventDefault()
         try {
             const response = await fetch(`${host}/api/auth/login`, {
@@ -39,14 +39,14 @@ const Login = () => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={heddleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email address</label>
-                    <input type="email" name="email" onChange={handleOnChange} className="form-control" id="email" aria-describedby="emailHelp" required />
+                    <input type="email" name="email" onChange={heddleOnChange} className="form-control" id="email" aria-describedby="emailHelp" required />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="password" className="form-label">Password</label>
-                    <input type="password" name="password" onChange={handleOnChange} className="form-control" id="password" minLength={8} required />
+                    <input type="password" name="password" onChange={heddleOnChange} className="form-control" id="password" minLength={8} required />
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
             </form>

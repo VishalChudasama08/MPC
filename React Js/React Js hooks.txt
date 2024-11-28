@@ -1,0 +1,71 @@
+Basic Hooks
+These hooks manage state, side effects, and references in functional components.
+
+useState
+
+Manages local state in functional components.
+Returns a state variable and a function to update it.
+useEffect
+
+Manages side effects, such as data fetching, subscriptions, or DOM updates.
+Runs after the render cycle.
+useContext
+
+Provides access to context values created with the React.createContext API.
+Eliminates the need for prop drilling.
+Additional Hooks
+These are for performance optimization, complex state management, and DOM interactions.
+
+useRef
+
+Provides a mutable reference to a DOM element or a value that persists across renders.
+useReducer
+
+Alternative to useState for complex state logic.
+Uses a reducer function to define state transitions.
+useMemo
+
+Memoizes a value to optimize performance.
+Only recalculates when dependencies change.
+useCallback
+
+Memoizes a callback function to prevent unnecessary re-creations.
+Useful in optimizing child component rendering.
+useLayoutEffect
+
+Similar to useEffect, but runs synchronously after DOM mutations and before the browser paints.
+Used for layout adjustments.
+useImperativeHandle
+
+Customizes the instance value (ref) exposed when using React.forwardRef.
+useDebugValue
+
+Used in custom hooks to display debug information in React DevTools.
+Custom Hook Development
+React encourages creating custom hooks to encapsulate reusable logic.
+
+useCustomHook (Custom)
+A pattern for building reusable functionality with other hooks like useState and useEffect.
+Example: useFetch, useAuth.
+Server-Side and Experimental Hooks
+These hooks are part of React's experimental or server-side rendering features.
+
+useTransition
+
+Manages transitions for UI updates, marking some updates as low-priority.
+Useful for improving user experience during heavy updates.
+useDeferredValue
+
+Delays updating a value to prioritize other high-priority updates.
+Often used with useTransition.
+useSyncExternalStore
+
+Used for subscribing to external stores (e.g., Redux) while ensuring a consistent state between server and client renders.
+useId
+
+Generates a unique ID for components, useful for accessibility attributes like id and htmlFor.
+Upcoming or Advanced Hooks
+These are experimental or used in specialized contexts.
+
+useInsertionEffect
+Runs before DOM mutations to insert styles or other effects directly into the DOM.

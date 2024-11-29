@@ -6,6 +6,7 @@ const ObjectList = () => {
 
     return (
         <div className="row">
+            <h3>Object List:</h3>
             {objects.map((obj, index) => (
                 <div key={index} className="col-md-4 mb-3">
                     <div className="card">

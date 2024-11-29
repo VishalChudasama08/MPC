@@ -13,7 +13,8 @@ const ArrayButtons = () => {
     };
 
     return (
-        <div className="mt-3">
+        <div className="my-3">
+            <h3>Add Item:</h3>
             <input
                 type="text"
                 value={newItem}

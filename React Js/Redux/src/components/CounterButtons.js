@@ -6,7 +6,8 @@ const CounterButtons = () => {
     const dispatch = useDispatch();
 
     return (
-        <div className="text-center mt-5">
+        <div className="my-3">
+            Result showing in navbar &nbsp;<br /><br />
             <button className="btn btn-success me-2" onClick={() => dispatch(increment())}>
                 Increment
             </button>

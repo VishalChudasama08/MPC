@@ -1,13 +1,13 @@
-import React from 'react'
-import Component5 from './Component5'
+import React from 'react';
+import ArrayButtons from './ArrayButtons';
 
 function Component4() {
     return (
-        <div className='border border-danger rounded p-3'>
+        <div className='border border-warning rounded p-3'>
             This is Component 4
-            <Component5 />
+            <ArrayButtons />
         </div>
-    )
+    );
 }
 
-export default Component4
+export default Component4;

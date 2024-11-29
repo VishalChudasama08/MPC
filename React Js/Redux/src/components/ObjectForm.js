@@ -17,22 +17,22 @@ const ObjectForm = () => {
 
     return (
         <div>
-            <h3>Add New Object</h3>
-            <input
+            <h3>Add New card</h3><br />
+            Enter Title: <input
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Name"
             />
-            <input
+            <br />
+            <br />
+            Enter Description: <input
                 type="text"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder="Description"
-            />
-            <button className="btn btn-primary ms-2" onClick={addObject}>
-                Add
-            </button>
+            /><br /><br />
+            <button className="btn btn-primary ms-2" onClick={addObject}>Add</button>
         </div>
     );
 };

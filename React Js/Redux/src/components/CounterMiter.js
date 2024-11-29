@@ -5,9 +5,7 @@ const CounterMiter = () => {
     const count = useSelector((state) => state.counter.count);
 
     return (
-        <nav className="navbar bg-dark text-white">
-            <h3>Counter Miter: {count}</h3>
-        </nav>
+        <button disabled className='btn btn-outline-info mx-3'>Counter Miter: {count}</button>
     );
 };
 

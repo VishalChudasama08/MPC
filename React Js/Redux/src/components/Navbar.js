@@ -1,8 +1,9 @@
 import React from 'react'
-// import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
+import CounterMiter from './CounterMiter'
 
 const Navbar = () => {
-    // const { amount } = useSelector(state => state.amount)
+    const balance = useSelector((state) => (state.wallet.balance))
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light border border-secondary rounded my-3">
             <div className="container-fluid">
@@ -21,8 +22,8 @@ const Navbar = () => {
                         </li>
                     </ul>
                     <div className="d-flex">
-                        <button className='btn btn-info mx-3'>Card Items:</button>
-                        <button className='btn btn-info'>Currant Balance: {/*amount*/}</button>
+                        <CounterMiter />
+                        <button className='btn btn-info'>Currant Balance: {balance}</button>
                     </div>
                 </div>
             </div>

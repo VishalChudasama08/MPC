@@ -33,7 +33,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User updateUser(User newUser, Long id) {
 		User user = userRepository.findById(id).orElse(null);
-		if(user != null) { // here user exist it means that id user exist and id present on than object (means user.id is not null) 
+		if(user != null) { // here user exist it means that id user exist and id present in that object (means user.id is not null) 
 			return userRepository.save(newUser); // if id exist in provided entity object than JSP do update
 		} else {
 			throw new RuntimeException("User not found with id:"+ id);

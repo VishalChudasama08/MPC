@@ -1,0 +1,128 @@
+Electronics
+	Mobiles & Accessories
+		Smartphones
+		Mobile Cases & Covers
+		Screen Protectors	
+		Power Banks
+		Headphones & Earphones
+	Laptops & Computers
+		Gaming Laptops
+		Desktop Computers
+		Computer Accessories
+		Printers & Scanners
+		Networking Devices
+	TV & Home Entertainment
+		Smart TVs
+		Streaming Devices
+		Speakers & Soundbars
+	Cameras & Accessories
+		DSLR Cameras
+		Lenses
+		Camera Accessories (Tripods, Gimbals)
+		Action Cameras
+
+Clothing & Accessories
+	Men's Clothing
+		Shirts
+		T-Shirts
+		Jeans
+		Trousers
+		Jackets & Coats
+		Activewear
+		Undergarments
+	Women's Clothing
+		Dresses
+		Tops
+		Skirts
+		Jeans & Leggings
+		Sarees & Ethnic Wear
+		Jackets & Coats
+		Activewear
+		Lingerie
+		Kids' Clothing
+		T-Shirts & Tops
+		Dresses
+		Pants & Shorts
+		Ethnic Wear
+		Jackets & Sweaters
+	Accessories
+		Watches
+		Sunglasses
+		Belts
+		Hats & Caps
+		Wallets
+		Jewelry (Necklaces, Rings, Bracelets)
+		Bags & Purses
+		Shoes
+
+Home & Kitchen
+	Furniture
+		Beds & Mattresses
+		Sofas & Recliners
+		Tables & Chairs
+		Shelves & Storage
+	Home Decor
+		Wall Art
+		Rugs & Carpets
+		Curtains
+		Lighting (Lamps, Chandeliers)
+	Kitchen Essentials
+		Cookware & Utensils
+		Small Appliances (Mixers, Blenders)
+		Storage Containers
+		Dinnerware & Serveware
+	
+Grocery & Gourmet Food
+	Staples
+		Rice, Pasta & Noodles
+		Lentils & Pulses
+		Flour & Grains
+		Cooking Oils
+	Snacks & Beverages
+		Chips & Crackers
+		Chocolates & Candies
+		Tea & Coffee
+		Juices & Soft Drinks
+	Breakfast Essentials
+		Cereals & Oats
+		Jams & Spreads
+		Honey & Syrups
+	Baking Supplies
+		Flours & Mixes
+		Baking Chocolates & Chips
+		Yeast & Leavening Agents
+	Gourmet Foods
+		Organic Foods
+		Imported Cheeses
+		Exotic Spices
+		Ready-to-Eat Meals
+
+Health & Wellness
+	Supplements
+		Multivitamins
+		Protein Powders
+		Herbal Supplements
+		Omega-3 & Fish Oils
+	Personal Care
+		Sanitary Products
+		Oral Hygiene (Toothpaste, Mouthwash)
+		Skin & Hair Treatments
+	Medical Supplies
+		First Aid Kits
+		Thermometers & Oximeters
+		Bandages & Wound Care
+	Fitness Essentials
+		Resistance Bands
+		Fitness Trackers
+		Yoga Accessories
+	Healthy Foods
+		Organic & Gluten-Free Foods
+		Energy Bars
+		Herbal Teas
+
+Beauty & Personal Care
+	Skincare (Moisturizers, Sunscreens)
+	Haircare (Shampoos, Conditioners)
+	Makeup (Lipsticks, Foundations, Eyeliners)
+	Grooming (Shaving Kits, Trimmers)
+	Fragrances (Perfumes, Body Sprays)

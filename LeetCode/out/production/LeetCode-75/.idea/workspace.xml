@@ -32,7 +32,14 @@
     "last_opened_file_path": "D:/Happy_Coding/My_Code_In_Github/MPC/LeetCode-75"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Q01_Merge_Strings_Alternately">
+    <configuration name="Q01_Merge_Strings_Alternately" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Q01_Merge_Strings_Alternately" />
+      <module name="LeetCode-75" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Q02_gcd" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Q02_gcd" />
       <module name="LeetCode-75" />
@@ -42,6 +49,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Q01_Merge_Strings_Alternately" />
         <item itemvalue="Application.Q02_gcd" />
       </list>
     </recent_temporary>

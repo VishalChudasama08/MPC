@@ -1,3 +1,19 @@
+table name: Product
+field: 
+	1. id
+	2. category (Electronics, Clothing & Accessories, Home & Kitchen, Grocery & Gourmet Food, Health & Wellness, Beauty & Personal Care)
+	3. subcategory (Mobiles & Accessories,....)
+	4. item (Smartphones, Mobile Cases & Covers,........)
+	5. name (product name)
+	6. seller name
+	7. seller_role
+	7. price
+	8. images
+	9. highlights
+	10. description 
+	11. add date
+
+
 Electronics
 	Mobiles & Accessories
 		Smartphones

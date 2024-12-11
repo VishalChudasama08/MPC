@@ -1,6 +1,4 @@
-package v11;
-
-import java.util.Scanner;
+package v11_Functions_Methods;
 
 public class PrimeNumber {
     public static void main(String[] args) {

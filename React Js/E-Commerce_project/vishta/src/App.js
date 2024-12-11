@@ -1,15 +1,15 @@
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Product from './components/Product';
 import ProductDetail from './components/ProductDetail';
 
 function App() {
 	return (
-		<div className="App">
-			<Router>
+		<>
+			<BrowserRouter>
 				<Navbar />
-				<div>
+				<div className='min-h-screen'>
 					<Routes>
 						<Route exact path='/Electronics' element={<Product />} />
 						<Route exact path='/ClothingAccessories' element={<Product />} />
@@ -21,8 +21,8 @@ function App() {
 
 					</Routes>
 				</div>
-			</Router>
-		</div>
+			</BrowserRouter>
+		</>
 	);
 }
 

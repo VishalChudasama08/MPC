@@ -32,7 +32,20 @@
     &quot;last_opened_file_path&quot;: &quot;D:/Happy_Coding/My_Code_In_Github/MPC/Java_DSA_with_kunal&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.FindFirstOccurrence">
+  <component name="RunManager" selected="Application.Richest_Customer_Wealth">
+    <configuration name="FindEvenNumberOfDigits" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Q1295.FindEvenNumberOfDigits" />
+      <module name="LeetCode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Q1295.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FindFirstOccurrence" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="String.FindFirstOccurrence" />
       <module name="LeetCode" />
@@ -59,25 +72,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Roman_to_Integer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetcode_string_easy.L13.Roman_to_Integer" />
+    <configuration name="Richest_Customer_Wealth" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Q1672.Richest_Customer_Wealth" />
       <module name="LeetCode" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="leetcode_string_easy.L13.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="validParentheses" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="String.validParentheses" />
-      <module name="LeetCode" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="String.*" />
+          <option name="PATTERN" value="Q1672.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -100,11 +100,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Richest_Customer_Wealth" />
+        <item itemvalue="Application.FindEvenNumberOfDigits" />
         <item itemvalue="Application.FindFirstOccurrence" />
         <item itemvalue="Application.LongestCommonPrefix" />
         <item itemvalue="Application.valueChange" />
-        <item itemvalue="Application.validParentheses" />
-        <item itemvalue="Application.Roman_to_Integer" />
       </list>
     </recent_temporary>
   </component>

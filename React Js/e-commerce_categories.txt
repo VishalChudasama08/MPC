@@ -16,17 +16,23 @@ field:
 
 Electronics
 	Mobiles & Accessories
-		Smartphones
+		Smartphones 	    
+			product1
+			product2... (this type for all sub-category)
 		Mobile Cases & Covers
 		Screen Protectors	
 		Power Banks
 		Headphones & Earphones
 	Laptops & Computers
-		Gaming Laptops
+		Laptops
 		Desktop Computers
-		Computer Accessories
-		Printers & Scanners
-		Networking Devices
+	Laptops & Computer Accessories
+		ram
+		storage hdd, ssd
+		motherboard
+		keyboard
+		mouse
+		gaming cabinet
 	TV & Home Entertainment
 		Smart TVs
 		Streaming Devices
@@ -95,9 +101,9 @@ Grocery & Gourmet Food
 		Flour & Grains
 		Cooking Oils
 	Snacks & Beverages
-		Chips & Crackers
-		Chocolates & Candies
-		Tea & Coffee
+	Chips & Crackers
+	Chocolates & Candies
+	Tea & Coffee
 		Juices & Soft Drinks
 	Breakfast Essentials
 		Cereals & Oats

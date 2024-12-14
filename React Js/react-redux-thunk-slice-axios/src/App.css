@@ -1,0 +1,182 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+.container {
+  height: auto;
+  width: 100%;
+  max-width: 1500px;
+  padding: 20px;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 20px;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  margin-bottom: 30px;
+}
+
+.input {
+  flex: 1 1 calc(33.333% - 20px);
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  /* Readable input font */
+  background-color: #222;
+  /* Darker input background */
+  color: #fff;
+  /* White text */
+  transition: border-color 0.3s;
+}
+
+.input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.button {
+  flex: 1 1 100%;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.heading {
+  font-size: 28px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ddd;
+}
+
+.records {
+  height: auto;
+  width: 100%;
+  max-width: 1500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.record-card {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  width: 40%;
+  margin: 10px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.record-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+}
+
+.record-image {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #333;
+}
+
+.record-title {
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.record-price {
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: #4caf50;
+  margin-bottom: 10px;
+}
+
+.record-description {
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  color: #ccc;
+  margin-bottom: 10px;
+  height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5;
+}
+
+.record-category {
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: #ddd;
+  margin-bottom: 10px;
+}
+
+.record-rating {
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  color: #ffa500;
+  margin-bottom: 15px;
+}
+
+.record-card button {
+  background-color: #ff4d4d;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.3s;
+}
+
+.record-card button:hover {
+  background-color: #e63939;
+}
+
+.record-card button:last-child {
+  background-color: #28a745;
+}
+
+.record-card button:last-child:hover {
+  background-color: #218838;
+}

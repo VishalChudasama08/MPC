@@ -32,7 +32,7 @@
     &quot;last_opened_file_path&quot;: &quot;D:/Happy_Coding/My_Code_In_Github/MPC/Java_DSA_with_kunal&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Richest_Customer_Wealth">
+  <component name="RunManager" selected="Application.FindSmallestLetterGreaterThanTarget">
     <configuration name="FindEvenNumberOfDigits" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Q1295.FindEvenNumberOfDigits" />
       <module name="LeetCode" />
@@ -52,6 +52,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="String.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FindSmallestLetterGreaterThanTarget" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Q744.FindSmallestLetterGreaterThanTarget" />
+      <module name="LeetCode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Q744.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -85,26 +98,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="valueChange" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LeetCode_75.valueChange" />
-      <module name="LeetCode" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="LeetCode_75.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FindSmallestLetterGreaterThanTarget" />
         <item itemvalue="Application.Richest_Customer_Wealth" />
         <item itemvalue="Application.FindEvenNumberOfDigits" />
         <item itemvalue="Application.FindFirstOccurrence" />
         <item itemvalue="Application.LongestCommonPrefix" />
-        <item itemvalue="Application.valueChange" />
       </list>
     </recent_temporary>
   </component>

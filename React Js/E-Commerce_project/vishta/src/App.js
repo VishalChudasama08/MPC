@@ -5,6 +5,8 @@ import Product from './components/Product';
 import ProductDetail from './components/ProductDetail';
 import { Provider } from 'react-redux';
 import store from './store/store';
+import Login from './components/Login';
+import Registration from './components/Registration';
 
 function App() {
 	return (
@@ -12,13 +14,16 @@ function App() {
 			<Provider store={store}>
 				<BrowserRouter>
 					<Navbar />
-					<div className='min-h-screen'>
+					<div className='pt-1 min-h-screen bg-gray-50 dark:bg-gray-900'>
 						<Routes>
 							<Route exact path='/Electronics' element={<Product />} />
 							<Route exact path='/ClothingAccessories' element={<Product />} />
 							<Route exact path='/GroceryGourmetFood' element={<Product />} />
 							<Route exact path='/HealthWellness' element={<Product />} />
 							<Route exact path='/BeautyPersonalCare' element={<Product />} />
+
+							<Route exact path='/Login' element={<Login />} />
+							<Route exact path='/Registration' element={<Registration />} />
 
 							<Route exact path='/ProductDetail' element={<ProductDetail />} />
 

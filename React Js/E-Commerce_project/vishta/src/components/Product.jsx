@@ -43,15 +43,14 @@ const Product = () => {
                         </div>
                      </div> */}
 
-                     <div className="w-full max-w-xs bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                     <div className="w-full max-w-xs border border-gray-200 bg-fuchsia-100 rounded-lg shadow">
                         <img src={"product/images/" + products.images.split(", ")[0]} className="rounded-t-lg" alt={products.name} />
 
                         <div className="p-2">
-                           <p className="text-base font-semibold tracking-tight text-gray-900 dark:text-white">{products.name}</p>
-
+                           <p className="text-base font-semibold tracking-tight ">{products.name}</p>
 
                            <div className="flex items-center justify-between">
-                              <span className="text-lg font-bold text-gray-900 dark:text-white">₹{products.price}</span>
+                              <span className="text-lg font-bold ">₹{products.price}</span>
                               {/* // star and rating */}
                               <div className="flex items-center mt-2.5 mb-5">
                                  <div className="flex items-center space-x-1 rtl:space-x-reverse">

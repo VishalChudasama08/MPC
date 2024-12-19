@@ -18,24 +18,30 @@ public class Binary_Search {
     static int binary_Search(int[] arr, int target){
         int start = 0;
         int end = arr.length-1;
-        boolean orderAgnostic = arr[start]<arr[end];
+        boolean orderAgnostic = arr[start]<arr[end]; // check array is ascending or descending order
 
-        while (start <= end){
-            int mid = (start + end) / 2;
-            if (arr[mid] == target){
-                return mid;
-            }
-            if (orderAgnostic){
-                if(arr[mid] > target){
-                    end = mid - 1;
-                } else {
-                    start = mid+1;
+        if (orderAgnostic){ // true means array is ascending order than do this
+            while (start <= end) {
+                int mid = (start + end) / 2;
+                if (arr[mid] == target) {
+                    return mid;
                 }
-            } else {
-                if(arr[mid] < target){
+                if (arr[mid] > target) {
                     end = mid - 1;
                 } else {
-                    start = mid+1;
+                    start = mid + 1;
+                }
+            }
+        } else { // means array is descending order than do this
+            while (start <= end) {
+                int mid = (start + end) / 2;
+                if (arr[mid] == target) {
+                    return mid;
+                }
+                if (arr[mid] < target) {
+                    end = mid - 1;
+                } else {
+                    start = mid + 1;
                 }
             }
         }

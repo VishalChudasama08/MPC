@@ -1,4 +1,4 @@
-package Q1672;
+package Q1672; // solution from java dsa by kunal v13
 // https://leetcode.com/problems/richest-customer-wealth/description/
 
 public class Richest_Customer_Wealth {

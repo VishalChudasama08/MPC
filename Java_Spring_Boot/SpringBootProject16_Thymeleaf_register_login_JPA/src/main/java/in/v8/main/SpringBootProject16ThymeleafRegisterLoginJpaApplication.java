@@ -9,5 +9,4 @@ public class SpringBootProject16ThymeleafRegisterLoginJpaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootProject16ThymeleafRegisterLoginJpaApplication.class, args);
 	}
-
 }

@@ -16,8 +16,13 @@ public class UserServiceImpl implements UserService {
 	private UserRepository userRepository;
 
 	@Override
-	public Users createUser(Users user) {
-		return userRepository.save(user);
+	public int createUser(Users user) {
+		if(userRepository.existsByEmail(user.getEmail())) { // check email is exists or not
+			return 0;
+		} else {
+			userRepository.save(user);
+			return 1;
+		}
 	}
 
 	@Override
@@ -42,12 +47,10 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public String deleteUser(Long id) {
-		Optional<Users> useOptional = userRepository.findById(id);
-		System.out.println(useOptional);
-		if (useOptional.isPresent()) {
+		if (userRepository.existsById(id)) {
 			userRepository.deleteById(id);
 			return "User deleted successfully";
-		} else {
+		} else {			
 			return "User not deleted or User not Found. Cheack provided id's user exist!";
 		}
 	}

@@ -9,4 +9,5 @@ import in.v8.main.entities.Users;
 @Repository
 public interface UserRepository extends JpaRepository<Users, Long> {
 	Users findByEmail(String email);
+	boolean existsByEmail(String email);
 }

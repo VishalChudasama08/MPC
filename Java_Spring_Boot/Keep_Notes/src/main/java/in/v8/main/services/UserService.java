@@ -6,7 +6,7 @@ import java.util.Optional;
 import in.v8.main.entities.Users;
 
 public interface UserService {
-	public Users createUser(Users user);
+	public int createUser(Users user);
 	public List<Users> getAllUsers();
 	public Users login(String email, String password);
 	public Optional<Users> getUser(Long id);

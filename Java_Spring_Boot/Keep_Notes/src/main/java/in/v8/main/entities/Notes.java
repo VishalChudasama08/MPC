@@ -20,6 +20,8 @@ public class Notes {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@Column(name = "user_id", nullable = false)
+	private Long userId;
 	@Column
 	private String title;
 	@Column
@@ -37,6 +39,12 @@ public class Notes {
 	}
 	public void setId(Long id) {
 		this.id = id;
+	}
+	public Long getUserId() {
+		return userId;
+	}
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
 	public String getTitle() {
 		return title;

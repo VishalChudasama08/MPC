@@ -10,10 +10,10 @@ import in.v8.main.entities.Student;import in.v8.main.services.StudentService;
 import in.v8.main.services.StudentServiceImpl;
 
 @SpringBootApplication
-public class SpringBootProject13DataJspCrudOperationsWithMysqlApplication {
+public class SpringBootProject13DataJpaCrudOperationsWithMysqlApplication {
 
 	public static void main(String[] args) {
-		ApplicationContext context = SpringApplication.run(SpringBootProject13DataJspCrudOperationsWithMysqlApplication.class, args);
+		ApplicationContext context = SpringApplication.run(SpringBootProject13DataJpaCrudOperationsWithMysqlApplication.class, args);
 		StudentServiceImpl studentServiceImpl = context.getBean(StudentServiceImpl.class);
 		
 		//------------------------------ insert operations ------------------------------

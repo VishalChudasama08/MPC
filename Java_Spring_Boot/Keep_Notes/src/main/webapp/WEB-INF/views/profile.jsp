@@ -4,6 +4,20 @@
    <jsp:include page="AddNote.jsp" />
    <jsp:include page="FetchNotes.jsp" />
    <script>
+      async function deleteNote(noteId) {
+         const url = "/api/note/" + noteId;
+         console.log(url);
+
+         try {
+            const response = await fetch(url, { method: "DELETE" });
+            const data = await response.json();
+            alert(data.message); // Show success message
+            location.reload(true); // reload page for remove deleted note
+         } catch (error) {
+            console.error("Error deleting note:", error);
+         }
+      }
+
       $(document).ready(function () {
          $("#addNoteSubmit").submit(function (event) {
             // event.preventDefault(); // Prevent page reload
@@ -77,7 +91,7 @@
                      "</div>" +
                      "<div class='hideIcon row card-footer m-0 p-2'>" +
                      "<di class='col-2'>" +
-                     "<i class='far fa-trash-alt text-danger'></i>" +
+                     "<i onClick='deleteNote(" + note.id + ")' class='far fa-trash-alt text-danger'></i>" +
                      "</di>" +
                      "<div class='col-2'>" +
                      "<i class='fa-solid fa-palette text-primary'></i>" +
@@ -130,10 +144,9 @@
                   }
                );
 
-            })
-               .catch(err => {
-                  console.error('Error fetching notes:', err);
-               });
+            }).catch(err => {
+               console.error('Error fetching notes:', err);
+            });
          }
 
          // Fetch and display notes when the page loads

@@ -44,14 +44,14 @@ public class NotesController {
 		return response;
 	}
 	
-	@GetMapping("/{id}") // for fetch All Notes, id is use id
+	@GetMapping("/{userId}") // for fetch All Notes, id is use id
 	@ResponseBody
 	public ResponseEntity<?> getAllNote(@PathVariable Long userId) { 
 		List<Notes> listNotes = notesService.getAllNotesByUserId(userId);
-		if (listNotes != null) {
+		if (listNotes != null && !listNotes.isEmpty()) {
 			return ResponseEntity.ok(listNotes);
 		} else {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Not found any note.");
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No notes found for this user.");
 		}
 	}
 	
@@ -68,14 +68,17 @@ public class NotesController {
 	}
 	
 	@DeleteMapping("/{id}") // for delete note
-	public String deleteNote(@PathVariable Long id, Model model) {
+	@ResponseBody
+	public Map<String, String> deleteNote(@PathVariable Long id, Model model) {
+		Map<String, String> response = new HashMap<>();
 		String message = notesService.deleteNote(id);
 		if (message.equals("Note deleted successfully")) {
 			model.addAttribute("Success", message);
-			return "okay"; // replace page name 
+			response.put("message", message);
 		} else {
 			model.addAttribute("ErrorMsg", message);
-		    return "not"; // replace page name 
+			response.put("message", message);
 		}
+		return response;
 	}
 }

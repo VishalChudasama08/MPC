@@ -17,33 +17,5 @@
    </form>
 </div>
 <script>
-   $(document).ready(function() {
-      $("#addNoteSubmit").submit(function(event) {
-         event.preventDefault(); // Prevent page reload
-         // Collect form data
-         const noteData = {
-            userId: sessionStorage.getItem("UserId"),
-            title: $("#title").val(),
-            description: $("#description").val()
-         };
-
-         // Make AJAX request
-         $.ajax({
-            url: "/api/note/addNote",
-            type: "POST",
-            contentType: "application/json",
-            data: JSON.stringify(noteData),
-            success: function(response) {
-               if (response.status === "success") {
-                  $("#message").text(response.message).css("color", "green");
-               } else {
-                  $("#message").text(response.message).css("color", "red");
-               }
-            },
-            error: function() {
-               $("#message").text("An error occurred while registering.").css("color", "red");
-            }
-         });
-      });
-   });
+   
 </script>

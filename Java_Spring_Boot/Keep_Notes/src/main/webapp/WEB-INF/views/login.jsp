@@ -43,7 +43,7 @@
                             sessionStorage.setItem("UserId", BigInt(response.UserId));
                             setTimeout(() => {
                                 window.location.href = "profile"; // go on profile page
-                            }, 5000);
+                            }, 3000);
                         } else {
                             $("#message").text(response.message).css("color", "red");
                         }

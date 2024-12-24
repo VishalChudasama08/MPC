@@ -46,30 +46,30 @@
 
    $(document).ready(function () {
       $("#saveNoteChanges").click(async function () {
-         const updatedNote = {
+         const updatedNoteData = {
             id: $("#editNoteId").val(),
             title: $("#editTitle").val(),
             description: $("#editDescription").val()
          };
 
-         const url = "/api/note/updateNote";
-
+         const url = "/api/note/" + $("#editNoteId").val();
+         // console.log(url);
          try {
             const response = await fetch(url, {
                method: "PUT",
                headers: { "Content-Type": "application/json" },
-               body: JSON.stringify(updatedNote)
+               body: JSON.stringify(updatedNoteData)
             });
-            const data = await response.json();
+            const responseData = await response.json();
 
-            if (data.status === "success") {
-               $("#editMessage").text(data.message).css("color", "green");
+            if (responseData.status === "success") {
+               $("#editMessage").text(responseData.message).css("color", "green");
                setTimeout(() => {
                   $("#noteModal").modal('hide'); // Close the modal
                   location.reload(true); // Refresh notes
                }, 1000);
             } else {
-               $("#editMessage").text(data.message).css("color", "red");
+               $("#editMessage").text(responseData.message).css("color", "red");
             }
          } catch (error) {
             console.error("Error updating note:", error);

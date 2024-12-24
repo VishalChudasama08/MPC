@@ -1,0 +1,12 @@
+Sem - 6 Project 
+
+pending work:-
+   1. add notification to showing data base message for all action
+   2. hide and showing login, register and logout button
+   3. create profile page
+   4. 
+
+problem:- 
+   1. first time add new note than not reflect this note in screen. add second note than showing... (only same time see this problem)
+   2. in updated than create_date is going to null see in database
+   3. 

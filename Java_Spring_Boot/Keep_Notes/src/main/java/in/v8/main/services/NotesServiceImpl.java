@@ -32,15 +32,20 @@ public class NotesServiceImpl implements NotesService {
 	}
 
 	@Override
-	public int updateNote(Notes editedNotes, Long id) {
-		Notes oldNote = notesRepository.findById(id).orElse(null);
-		if(oldNote != null) { // here note exist it means that id note exist and id present in that object (means oldNote.id is not null) 
-			editedNotes.setId(oldNote.getId()); // set oldNote id to editedNote id to do update
-			notesRepository.save(editedNotes); // if id exist in provided entity object than JPA do update
-			return 1; 
-		} else {
-			return 0;
-		}
+	public int updateNote(Notes editedNote, Long id) {
+	    Notes oldNote = notesRepository.findById(id).orElse(null);
+	    if (oldNote != null) { // here note exist it means that id note exist and id present in that object (means oldNote.id is not null)
+	        // Set the existing id and userId to the editedNote
+	        editedNote.setId(oldNote.getId());
+	        editedNote.setUserId(oldNote.getUserId());
+	        editedNote.setCreated_date(oldNote.getCreated_date()); // Preserve created_date, not do this than update time create date value null insert in database
+
+	        // Save the updated note
+	        notesRepository.save(editedNote); // if in provided entity object id is exist than JPA do update else JPA perform a new save
+	        return 1;
+	    } else {
+	        return 0;
+	    }
 	}
 
 	@Override

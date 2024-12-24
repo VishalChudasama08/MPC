@@ -2,7 +2,10 @@
 <jsp:include page="Navbar.jsp" />
 <div class="container">
    <jsp:include page="AddNote.jsp" />
-   <jsp:include page="FetchNotes.jsp" />
+   <div>
+      <h2>Your Notes</h2>
+      <div id="notesContainer" class='row my-3 p-0'></div>
+   </div>
    <script>
       async function deleteNote(noteId) {
          const url = "/api/note/" + noteId;
@@ -39,11 +42,7 @@
                   if (response.status === "success") {
                      $("#message").text(response.message).css("color", "green");
 
-                     // Clear the form
-                     document.getElementById("noteSubmitForm").reset();
-
-                     // Refresh the notes to include the new one
-                     fetchAndDisplayNotes();
+                     location.reload(true); // reload page for showing new added note
                   } else {
                      $("#message").text(response.message).css("color", "red");
                   }

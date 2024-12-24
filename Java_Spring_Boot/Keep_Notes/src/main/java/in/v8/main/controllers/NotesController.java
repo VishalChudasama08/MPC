@@ -39,7 +39,7 @@ public class NotesController {
 	        response.put("message", "Note not created due to same error");
 	    } else {
 	        response.put("status", "success");
-	        response.put("message", "Note add  successfully.");
+	        response.put("message", "Note add successfully.");
 	    }
 		return response;
 	}
@@ -56,15 +56,18 @@ public class NotesController {
 	}
 	
 	@PutMapping("/{id}") // for update note
-	public String editNote(@PathVariable Long id, @RequestBody Notes editedNotes, Model model) {  
-		int status = notesService.updateNote(editedNotes, id);
+	@ResponseBody
+	public Map<String, String> editNote(@PathVariable Long id, @RequestBody Notes editedNote) {
+		Map<String, String> response = new HashMap<>();
+		int status = notesService.updateNote(editedNote, id);
 		if(status == 0) {
-			model.addAttribute("ErrorMsg", "Note not edited due to same error");
-			return "not"; // replace page name 
+			response.put("status", "error");
+	        response.put("message", "Note not edited due to same error");
 		} else {
-			model.addAttribute("Success", "Note edited successfully.");
-			return "okay"; // replace page name
+			response.put("status", "success");
+	        response.put("message", "Note edited successfully.");
 		}
+		return response;
 	}
 	
 	@DeleteMapping("/{id}") // for delete note

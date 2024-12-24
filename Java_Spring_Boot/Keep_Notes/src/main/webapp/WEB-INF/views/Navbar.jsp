@@ -14,17 +14,18 @@
                 </li>
             </ul>
             <div class="d-flex">
-                <!-- {!localStorage.getItem('UserToken') ? (
-                            <> -->
                 <a role="button" href="/login" class="btn btn-primary me-2">Login</a>
                 <a role="button" href="/register" class="btn btn-primary">SignUp</a>
-                <!-- </>
-                        ) : (
-                            <> -->
-                <button class="btn btn-primary me-2" onClick={handleLogout}>Logout</button>
-                <!-- </>
-                        )} -->
+                <button onClick="handleLogout()" class="btn btn-primary me-2" >Logout</button>
+                <script>
+                function handleLogout(){
+                    sessionStorage.removeItem("UserName");
+                    sessionStorage.removeItem("UserId");
+                    window.location.href = '/';
+                }
+                </script>
             </div>
         </div>
     </div>
 </nav>
+<div class="container">

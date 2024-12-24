@@ -73,28 +73,29 @@
                   throw new Error('Unexpected response format');
                }
                console.log('Fetched data:', data);
-               history.replaceState(null, "", window.location.pathname) // remove url data
                const notesContainer = document.getElementById('notesContainer');
                notesContainer.innerHTML = '';
                data.forEach(note => {
-                  console.log(note);
                   notesContainer.innerHTML +=
-                     "<div class='col-lg-3 col-md-4 col-sm-6 p-0 m-0'>" +
+                     "<div class='col-lg-3 col-md-4 col-sm-6 p-0 mt-0' style='margin-bottom:36px;'>" +
                      "<div class='card m-1 position-relative'>" +
-                     "<span class='hideIcon icon position-absolute rounded-start text-warning my-2 px-2'>" +
+                     "<span class='hideIcon pin-icon position-absolute rounded-start text-warning my-2 px-2'>" +
                      "<i class='fa-solid fa-thumbtack'></i>" +
                      "</span>" +
-                     "<div class='card-body'>" +
+                     "<div class='card-body pb-0'>" +
                      "<h5 class='card-title'>" + note.title + "</h5>" +
                      "<p class='card-text mb-2'>" + note.description + "</p>" +
                      "<p class='card-text'><small class='text-muted'>" + note.created_date + "</small></p>" +
                      "</div>" +
-                     "<div class='hideIcon row card-footer m-0 p-2'>" +
-                     "<di class='col-2'>" +
-                     "<i onClick='deleteNote(" + note.id + ")' class='far fa-trash-alt text-danger'></i>" +
-                     "</di>" +
-                     "<div class='col-2'>" +
+                     "<div class='iconDiv row border-0 position-absolute m-0 p-2' style='bottom: -40px;z-index: 1;'>" +
+                     "<div class='hideIcon col-3'>" +
+                     "<i class='far fa-edit text-primary' onClick='editNote(" + JSON.stringify(note) + ")' id='showModalBtn' data-bs-toggle='modal' data-bs-target='#noteModal'></i>" +
+                     "</div>" +
+                     "<div class='hideIcon col-3'>" +
                      "<i class='fa-solid fa-palette text-primary'></i>" +
+                     "</div>" +
+                     "<div class='hideIcon col-3'>" +
+                     "<i onClick='deleteNote(" + note.id + ")' class='far fa-trash-alt text-danger'></i>" +
                      "</div>" +
                      "</div>" +
                      "</div>" +
@@ -105,17 +106,19 @@
 
                $(".hideIcon").hide();
 
-               $(".icon").css({
+               $(".pin-icon").css({
                   "top": "0px",
-                  "right": "1px"
+                  "right": "1px",
+                  "cursor": "pointer"
                });
 
-               $(".card-footer i").hover(
+               $(".iconDiv i").hover(
                   function () {
                      $(this).css({
                         "color": "#007bff", // Highlight color on hover
                         "transform": "scale(1.2)", // Slight zoom effect
-                        "transition": "transform 0.2s ease-in-out"
+                        "transition": "transform 0.2s ease-in-out",
+                        "cursor": "pointer"
                      });
                   },
                   function () {
@@ -131,9 +134,16 @@
                   function () {
                      $(this).find(".hideIcon").show();
                      $(this).css({
-                        "box-shadow": "0 5px 12px rgba(0, 0, 0, 0.3)", // Subtle shadow effect
+                        "box-shadow": "-3px 3px 0px rgba(0, 0, 0, 0.2)", // Subtle shadow effect
                         "transition": "box-shadow 0.3s ease-in-out"
                      });
+                     $(this)
+                        .find(".iconDiv") // select iconDiv name tag from this card only 
+                        .css({
+                           "box-shadow": "-3px 3px 0px rgba(0, 0, 0, 0.2)", // Subtle shadow effect
+                           "transition": "box-shadow 0.3s ease-in-out"
+                        })
+                        .addClass('card-footer');
                   },
                   function () {
                      $(this).find(".hideIcon").hide();
@@ -141,6 +151,13 @@
                         "box-shadow": "", // Reset to default
                         "transition": "box-shadow 0.3s ease-in-out"
                      });
+                     $(this)
+                        .find(".iconDiv")
+                        .css({
+                           "box-shadow": "", // Reset to default
+                           "transition": "box-shadow 0.3s ease-in-out"
+                        })
+                        .removeClass('card-footer');
                   }
                );
 
@@ -149,10 +166,14 @@
             });
          }
 
+         function editNote(note) {
+            console.log(note);
+         }
          // Fetch and display notes when the page loads
          window.onload = fetchAndDisplayNotes;
          history.replaceState(null, "", window.location.pathname) // remove url data
       });
    </script>
+   <jsp:include page="openAndEditNote.jsp" />
 </div>
 <jsp:include page="footer.jsp" />

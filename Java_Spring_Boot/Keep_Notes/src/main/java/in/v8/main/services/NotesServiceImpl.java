@@ -57,15 +57,4 @@ public class NotesServiceImpl implements NotesService {
 			return "Note not deleted or note not Found.";
 		}
 	}
-//
-//	@Override
-//	public Users login(String email, String password) {
-//		Users validUser = userRepository.findByEmail(email);
-//		
-//		if (validUser != null && validUser.getPassword().equals(password)) {
-//			return validUser;
-//		} else {
-//			return null;
-//		}
-//	}
 }

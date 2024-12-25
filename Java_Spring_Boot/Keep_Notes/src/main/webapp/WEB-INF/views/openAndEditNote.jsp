@@ -17,7 +17,6 @@
                   <textarea class="form-control" id="editDescription" name="description" rows="4" required></textarea>
                </div>
                <input type="hidden" id="editNoteId">
-               <div id="editMessage" class="text-center"></div>
             </form>
          </div>
          <div class="modal-footer">
@@ -27,54 +26,3 @@
       </div>
    </div>
 </div>
-
-<script>
-   function editNote(noteString) {
-      try {
-         const note = typeof noteString === "string" ? JSON.parse(noteString) : noteString;
-
-         // Populate modal fields with note data
-         $("#editTitle").val(note.title);
-         $("#editDescription").val(note.description);
-         $("#editNoteId").val(note.id);
-         $("#editMessage").text(""); // Clear any previous messages
-      } catch (error) {
-         console.error("Error parsing note data:", error);
-      }
-   }
-
-
-   $(document).ready(function () {
-      $("#saveNoteChanges").click(async function () {
-         const updatedNoteData = {
-            id: $("#editNoteId").val(),
-            title: $("#editTitle").val(),
-            description: $("#editDescription").val()
-         };
-
-         const url = "/api/note/" + $("#editNoteId").val();
-         // console.log(url);
-         try {
-            const response = await fetch(url, {
-               method: "PUT",
-               headers: { "Content-Type": "application/json" },
-               body: JSON.stringify(updatedNoteData)
-            });
-            const responseData = await response.json();
-
-            if (responseData.status === "success") {
-               $("#editMessage").text(responseData.message).css("color", "green");
-               setTimeout(() => {
-                  $("#noteModal").modal('hide'); // Close the modal
-                  location.reload(true); // Refresh notes
-               }, 1000);
-            } else {
-               $("#editMessage").text(responseData.message).css("color", "red");
-            }
-         } catch (error) {
-            console.error("Error updating note:", error);
-            $("#editMessage").text("An error occurred.").css("color", "red");
-         }
-      });
-   });
-</script>

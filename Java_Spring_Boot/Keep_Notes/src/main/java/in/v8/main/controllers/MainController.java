@@ -7,22 +7,27 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class MainController {
 
     @GetMapping("/")
-    public String homePage() {
+    public String openHomePage() {
         return "index"; // Matches index.jsp in /WEB-INF/view/
     }
     
     @GetMapping("/register")
-    public String registerPage() {
+    public String openRegisterPage() {
     	return "register";
     }
     
     @GetMapping("/login")
-    public String loginPage() {
+    public String openLoginPage() {
     	return "login";
     }
     
+    @GetMapping("/NotesHome")
+    public String openNotesHomePage() {
+    	return "NotesHome";
+    }
+    
     @GetMapping("/profile")
-    public String profilePage() {
+    public String openProfilePage() {
     	return "profile";
     }
 }

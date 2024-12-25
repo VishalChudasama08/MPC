@@ -77,9 +77,11 @@ public class NotesController {
 		String message = notesService.deleteNote(id);
 		if (message.equals("Note deleted successfully")) {
 			model.addAttribute("Success", message);
+			response.put("status", "success");
 			response.put("message", message);
 		} else {
 			model.addAttribute("ErrorMsg", message);
+			response.put("status", "error");
 			response.put("message", message);
 		}
 		return response;

@@ -1,4 +1,4 @@
-<!-- openAndEditNote.jsp -->
+<!-- EditNote.jsp -->
 <div class="modal fade" id="noteModal" tabindex="-1" aria-labelledby="noteModalLabel" aria-hidden="true">
    <div class="modal-dialog">
       <div class="modal-content">

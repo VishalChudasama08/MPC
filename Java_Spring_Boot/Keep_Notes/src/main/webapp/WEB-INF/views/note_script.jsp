@@ -1,4 +1,54 @@
 <script>
+   async function openNote(noteString) {
+      try {
+         const note = await typeof noteString === "string" ? JSON.parse(noteString) : noteString;
+
+         let createdDate = note.created_date.slice(0, 10).split('-');
+         let formatCreateDateAndTime = note.created_date.slice(11, 16) + ", " + createdDate[2] + "-" + createdDate[1] + "-" + createdDate[0];
+         let formatEditDate = "";
+         if (note.created_date !== note.updated_date) {
+            let updatedDate = note.updated_date.slice(0, 10).split('-');
+            formatEditDateAndTimeElement = "<br><small id='noteUpdatedDate'>Edit at " + note.updated_date.slice(11, 16) + ", " + updatedDate[2] + "-" + updatedDate[1] + "-" + updatedDate[0] + "</small>";
+         }
+
+         const openNoteModal = document.getElementById('openNoteModal');
+         openNoteModal.innerHTML = '<!-- OpenNote.jsp -->' +
+            '<div class="modal fade" id="openFullNoteModal" tabindex="-1" aria-labelledby="fullNoteModalLabel" aria-hidden="true">' +
+            '<div class="modal-dialog">' +
+            '<div class="modal-content">' +
+            '<div class="modal-body">' +
+            '<div class="iconDiv row border-0 m-0 p-2">' +
+            '<div class="col-3 d-flex justify-content-center align-items-center">' +
+            '<i class="far fa-edit text-primary" onClick="editNote(' + note.id + ')"></i>' +
+            '</div>' +
+            '<div class="col-3 d-flex justify-content-center align-items-center">' +
+            '<i class="fa-solid fa-palette text-primary"></i>' +
+            '</div>' +
+            '<div class="col-3 d-flex justify-content-center align-items-center">' +
+            '<i onClick="deleteNote(' + note.id + ')" class="far fa-trash-alt text-danger"></i>' +
+            '</div>' +
+            '<div class="col-3 d-flex justify-content-center align-items-center" style="direction: rtl;">' +
+            '<button type="button" class="btn-close btn-primary btn-sm" data-bs-dismiss="modal" aria-label="Close" style="height: 5px;"></button>' +
+            '</div>' +
+            '</div>' +
+            '<h5 id="noteTitle">' + note.title + '</h5>' +
+            '<p id="noteDescription">' + note.description + '</p>' +
+            '<small><h6>Note Details:</h6></small>' +
+            '<p><small id="noteCreateDate">Create at ' + formatCreateDateAndTime + '</small>' + formatEditDateAndTimeElement + '</small></p>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>';
+         formatEditDateAndTimeElement = "";
+         $(document).ready(await function () {
+            $("#openFullNoteModal").modal('show');
+            <jsp:include page="style.jsp" />
+         })
+      } catch (error) {
+         console.error("Error parsing note data:", error);
+      }
+   }
+
    //////////////////
    // fetch all note
    //////////////////
@@ -50,14 +100,13 @@
                "<span class='hideIcon pin-icon position-absolute rounded-start text-warning my-2 px-2'>" +
                "<i class='fa-solid fa-thumbtack'></i>" +
                "</span>" +
-               "<div class='card-body pb-0'>" +
-               "<h5 class='card-title'>" + note.title + "</h5>" +
+               "<div class='card-body pb-0' onClick='openNote(" + JSON.stringify(note) + ")'>" +
+               "<h6 class='card-title'>" + note.title + "</h6>" +
                "<p class='card-text mb-2'>" + note.description + "</p>" +
-               "<p class='card-text'><small class='text-muted'>" + note.created_date + "</small></p>" +
                "</div>" +
                "<div class='iconDiv row border-0 position-absolute m-0 p-2' style='bottom: -40px;z-index: 1;'>" +
                "<div class='hideIcon col-3'>" +
-               "<i class='far fa-edit text-primary' onClick='editNote(" + JSON.stringify(note) + ")' id='showModalBtn' data-bs-toggle='modal' data-bs-target='#noteModal'></i>" +
+               "<i class='far fa-edit text-primary' onClick='editNote(" + note.id + ")'></i>" +
                "</div>" +
                "<div class='hideIcon col-3'>" +
                "<i class='fa-solid fa-palette text-primary'></i>" +
@@ -74,64 +123,7 @@
          document.getElementById('notesContainer').innerHTML = "<p class='error'>An error occurred while loading notes.</p>"; // Generic error message for unexpected errors
       }
 
-      /////////////////////////////////////////
-      $(".hideIcon").hide();
-
-      $(".pin-icon").css({
-         "top": "0px",
-         "right": "1px",
-         "cursor": "pointer"
-      });
-
-      $(".iconDiv i").hover(
-         function () {
-            $(this).css({
-               "color": "#007bff", // Highlight color on hover
-               "transform": "scale(1.2)", // Slight zoom effect
-               "transition": "transform 0.2s ease-in-out",
-               "cursor": "pointer"
-            });
-         },
-         function () {
-            $(this).css({
-               "color": "", // Reset to default
-               "transform": "scale(1)", // Reset zoom effect
-               "transition": "transform 0.2s ease-in-out"
-            });
-         }
-      );
-
-      $(".card").hover(
-         function () {
-            $(this).find(".hideIcon").show();
-            $(this).css({
-               "box-shadow": "-3px 3px 0px rgba(0, 0, 0, 0.2)", // Subtle shadow effect
-               "transition": "box-shadow 0.3s ease-in-out"
-            });
-            $(this)
-               .find(".iconDiv") // select iconDiv name tag from this card only 
-               .css({
-                  "box-shadow": "-3px 3px 0px rgba(0, 0, 0, 0.2)", // Subtle shadow effect
-                  "transition": "box-shadow 0.3s ease-in-out"
-               })
-               .addClass('card-footer');
-         },
-         function () {
-            $(this).find(".hideIcon").hide();
-            $(this).css({
-               "box-shadow": "", // Reset to default
-               "transition": "box-shadow 0.3s ease-in-out"
-            });
-            $(this)
-               .find(".iconDiv")
-               .css({
-                  "box-shadow": "", // Reset to default
-                  "transition": "box-shadow 0.3s ease-in-out"
-               })
-               .removeClass('card-footer');
-         }
-      );
-      /////////////////////////////////////////////
+      <jsp:include page="style.jsp" />
    }
 
    ////////////
@@ -173,9 +165,31 @@
       history.replaceState(null, "", window.location.pathname) // remove url data
    });
 
-   function editNote(noteString) {
+   /////////////
+   // edit note
+   /////////////
+   async function editNote(id) {
+      $("#openFullNoteModal").modal('hide');
+      $("#noteModal").modal('show');
       try {
-         const note = typeof noteString === "string" ? JSON.parse(noteString) : noteString;
+         let url = "/api/note/" + id; // fetch this note endpoint
+         console.log("fetch this note endpoint:- " + url);
+
+         const response = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" } });
+         if (!response.ok) {
+            if (response.status === 404) { // Specific check for 404
+               const errorText = await response.text();
+               // Handle "No notes found" as a special case
+               document.getElementById('notesContainer').innerHTML = "<p>" + errorText + "</p>"; // No error class needed
+               return; // Stop further processing, no need to throw an error
+            } else {
+               // For other errors (not 404), throw the error to be caught below
+               const errorText = await response.text();
+               throw new Error(errorText);
+            }
+         }
+
+         const note = await response.json();
 
          // Populate modal fields with note data
          $("#editTitle").val(note.title);
@@ -183,13 +197,10 @@
          $("#editNoteId").val(note.id);
          $("#editMessage").text(""); // Clear any previous messages
       } catch (error) {
-         console.error("Error parsing note data:", error);
+         console.error("Error fetching notes:", error); // Only log *actual* errors
       }
    }
 
-   /////////////
-   // edit note
-   ////////////
    $("#saveNoteChanges").click(async function () {
       const updatedNoteData = {
          id: $("#editNoteId").val(),
@@ -227,6 +238,7 @@
    // delete note
    ///////////////
    async function deleteNote(noteId) {
+      $("#openFullNoteModal").modal('hide'); // if delete from open full note modal than hide modal first
       const url = "/api/note/" + noteId; // delete note endpoint
       console.log("delete note endpoint:- " + url);
 

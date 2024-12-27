@@ -5,18 +5,19 @@ pending work:-
 ✔️2. hide and showing login, register and logout button
    3. create profile page
    4. color pallet 
-   5. form input validation
-   6. loading gif
-   7. make script and css separate file
-   8. spring boot -> spring -> https://gemini.google.com/app/1a298163cb0363d6
-   9. remove maven -> https://gemini.google.com/app/1a298163cb0363d6
-   10. pin icon
-   11. not use browser session use server session
-   12. full note view on click in note with details like create_date edited date in sort form
+✔️5. form input validation
+   6. make script and css separate file
+   7. spring boot -> spring -> https://gemini.google.com/app/1a298163cb0363d6
+   8. remove maven -> https://gemini.google.com/app/1a298163cb0363d6
+   9. pin icon (remove this note element from dom and set on pined note section)
+   10. not use browser session use server session
+✔️11. full note view on click in note with details like create_date edited date in sort form
+   12. user details edit 
+   13. forgot password
     
     . At last make clear code remove not useful console logs and comments
 
 problem:- 
 ✔️1. first time add new note than not reflect this note in screen. add second note than showing... (only same time see this problem)
-   2. in updated than create_date is going to null see in database
-   3. 
+✔️2. in updated than create_date is remove(null) see in database
+✔️3. click on note card this open modal here edit not work

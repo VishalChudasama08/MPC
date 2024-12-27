@@ -3,6 +3,7 @@ package in.v8.main.controllers;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -44,7 +45,7 @@ public class NotesController {
 		return response;
 	}
 	
-	@GetMapping("/{userId}") // for fetch All Notes, id is use id
+	@GetMapping("/{userId}") // for fetch All Notes, id is note table useId
 	@ResponseBody
 	public ResponseEntity<?> getAllNote(@PathVariable Long userId) { 
 		List<Notes> listNotes = notesService.getAllNotesByUserId(userId);
@@ -52,6 +53,17 @@ public class NotesController {
 			return ResponseEntity.ok(listNotes);
 		} else {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No notes found for this user.");
+		}
+	}
+	
+	@PostMapping("/{id}") // for fetch this Notes
+	@ResponseBody
+	public ResponseEntity<?> getThisNote(@PathVariable Long id) { 
+		Optional<Notes> listNotes = notesService.getThisNote(id);
+		if (listNotes != null && !listNotes.isEmpty()) {
+			return ResponseEntity.ok(listNotes);
+		} else {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Note not found.");
 		}
 	}
 	

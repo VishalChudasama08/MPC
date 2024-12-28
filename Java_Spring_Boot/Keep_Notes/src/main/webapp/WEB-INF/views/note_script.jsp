@@ -1,44 +1,116 @@
 <script>
+   function setNoteBGC(id, color) {
+      // update in dom
+      let thisNote = '#note' + id;
+      let thisModal = '#modal' + id;
+      $(thisNote).css("background-color", color);
+      $(thisModal).css("background-color", color);
+
+      // update in db
+      updateBGCinDB(id, color);
+   }
+   async function updateBGCinDB(id, color) {
+      let url = "/api/note/" + id + "/color?color=" + color;
+      console.log(url);
+
+      try {
+         const response = await fetch(url, { method: "PUT" });
+         const data = await response.json();
+         softAlert(data.status, data.message, 1500); // Show success message
+      } catch (error) {
+         console.error("Error where set note background-color:", error);
+         softAlert("danger", "Error when trying to set note color ", 30000);
+      }
+   }
+   function getColorPaletteElement(id) {
+      return "<!-- color Palette start -->" +
+         "<ul class='dropdown-menu p-2' aria-labelledby='dropdownMenuButton" + id + "'>" +
+         "<div class='d-flex'>" +
+         "<li class='p-1 me-1 border border-danger rounded-circle d-flex justify-content-center align-items-center' onclick='setNoteBGC(" + id + ", ``)' style='width: 30px;height: 30px;'>" +
+         "<i class='fa-solid fa-droplet-slash'></i>" +
+         "</li>" +
+         "<li class='me-1 d-flex justify-content-center align-items-center'>" +
+         "<span class='border border-danger rounded-circle' type='button' onclick='setNoteBGC(" + id + ", `springgreen`)' style='background-color:springgreen;width: 30px;height: 30px;'></span>" +
+         "</li>" +
+         "<li class='me-1 d-flex justify-content-center align-items-center'>" +
+         "<span class='border border-danger rounded-circle' type='button' onclick='setNoteBGC(" + id + ", `darkolivegreen`)' style='background-color:darkolivegreen;width: 30px;height: 30px;'></span>" +
+         "</li>" +
+         "<li class='me-1 d-flex justify-content-center align-items-center'>" +
+         "<span class='border border-danger rounded-circle' type='button' onclick='setNoteBGC(" + id + ", `coral`)' style='background-color:coral;width: 30px;height: 30px;'></span>" +
+         "</li>" +
+         "<li class='me-1 d-flex justify-content-center align-items-center'>" +
+         "<span class='border border-danger rounded-circle' type='button' onclick='setNoteBGC(" + id + ", `slateblue`)' style='background-color:slateblue;width: 30px;height: 30px;'></span>" +
+         "</li>" +
+         "<li class='me-1 d-flex justify-content-center align-items-center'>" +
+         "<span class='border border-danger rounded-circle' type='button' onclick='setNoteBGC(" + id + ", `goldenrod`)' style='background-color:goldenrod;width: 30px;height: 30px;'></span>" +
+         "</li>" +
+         "<li class='me-1 d-flex justify-content-center align-items-center'>" +
+         "<span class='border border-danger rounded-circle' type='button' onclick='setNoteBGC(" + id + ", `greenyellow`)' style='background-color:greenyellow;width: 30px;height: 30px;'></span>" +
+         "</li>" +
+         "<li class='me-1 d-flex justify-content-center align-items-center'>" +
+         "<span class='border border-danger rounded-circle' type='button' onclick='setNoteBGC(" + id + ", `violet`)' style='background-color:violet;width: 30px;height: 30px;'></span>" +
+         "</li>" +
+         "<li class='me-1 d-flex justify-content-center align-items-center'>" +
+         "<span class='border border-danger rounded-circle' type='button' onclick='setNoteBGC(" + id + ", `deepskyblue`)' style='background-color:deepskyblue;width: 30px;height: 30px;'></span>" +
+         "</li>" +
+         "<li class='d-flex justify-content-center align-items-center'>" +
+         "<span class='border border-danger rounded-circle' type='button' onclick='setNoteBGC(" + id + ", `slategray`)' style='background-color:slategray;width: 30px;height: 30px;'></span>" +
+         "</li>" +
+         "</div>" +
+         "</ul>" +
+         "<!-- color Palette end -->";
+   }
    async function openNote(noteString) {
       try {
          const note = await typeof noteString === "string" ? JSON.parse(noteString) : noteString;
+         console.log(note);
+
 
          let createdDate = note.created_date.slice(0, 10).split('-');
          let formatCreateDateAndTime = note.created_date.slice(11, 16) + ", " + createdDate[2] + "-" + createdDate[1] + "-" + createdDate[0];
          let formatEditDate = "";
+         let formatEditDateAndTimeElement = "";
          if (note.created_date !== note.updated_date) {
             let updatedDate = note.updated_date.slice(0, 10).split('-');
             formatEditDateAndTimeElement = "<br><small id='noteUpdatedDate'>Edit at " + note.updated_date.slice(11, 16) + ", " + updatedDate[2] + "-" + updatedDate[1] + "-" + updatedDate[0] + "</small>";
          }
+         let bgColor = "";
+         if (note.bg_color !== null || note.bg_color !== '') {
+            bgColor = note.bg_color;
+         }
 
          const openNoteModal = document.getElementById('openNoteModal');
-         openNoteModal.innerHTML = '<!-- OpenNote.jsp -->' +
-            '<div class="modal fade" id="openFullNoteModal" tabindex="-1" aria-labelledby="fullNoteModalLabel" aria-hidden="true">' +
-            '<div class="modal-dialog">' +
-            '<div class="modal-content">' +
-            '<div class="modal-body">' +
-            '<div class="iconDiv row border-0 m-0 p-2">' +
-            '<div class="col-3 d-flex justify-content-center align-items-center">' +
-            '<i class="far fa-edit text-primary" onClick="editNote(' + note.id + ')"></i>' +
-            '</div>' +
-            '<div class="col-3 d-flex justify-content-center align-items-center">' +
-            '<i class="fa-solid fa-palette text-primary"></i>' +
-            '</div>' +
-            '<div class="col-3 d-flex justify-content-center align-items-center">' +
-            '<i onClick="deleteNote(' + note.id + ')" class="far fa-trash-alt text-danger"></i>' +
-            '</div>' +
-            '<div class="col-3 d-flex justify-content-center align-items-center" style="direction: rtl;">' +
-            '<button type="button" class="btn-close btn-primary btn-sm" data-bs-dismiss="modal" aria-label="Close" style="height: 5px;"></button>' +
-            '</div>' +
-            '</div>' +
-            '<h5 id="noteTitle">' + note.title + '</h5>' +
-            '<p id="noteDescription">' + note.description + '</p>' +
-            '<small><h6>Note Details:</h6></small>' +
-            '<p><small id="noteCreateDate">Create at ' + formatCreateDateAndTime + '</small>' + formatEditDateAndTimeElement + '</small></p>' +
-            '</div>' +
-            '</div>' +
-            '</div>' +
-            '</div>';
+         openNoteModal.innerHTML = "<!-- OpenNote.jsp -->" +
+            "<div class='modal fade' id='openFullNoteModal' tabindex='-1' aria-labelledby='fullNoteModalLabel' aria-hidden='true'>" +
+            "<div class='modal-dialog d-flex justify-content-center align-items-center vh-100 my-0'>" +
+            "<div class='modal-content' id='modal" + note.id + "' style='background-color:" + bgColor + ";'>" +
+            "<div class='icons modal-header row m-0 p-3'>" +
+            "<div class='col-2 d-flex justify-content-center align-items-center'>" +
+            "<i class='far fa-edit text-primary' onClick='editNote(" + note.id + ")'></i>" +
+            "</div>" +
+            "<div class='col-2 d-flex justify-content-center align-items-center'>" +
+            "<i class='fa-solid fa-palette text-primary' id='dropdownMenuButton" + note.id + "' data-bs-toggle='dropdown' aria-expanded='false'></i>" +
+            getColorPaletteElement(note.id) +
+            "</div>" +
+            "<div class='col-2 d-flex justify-content-center align-items-center'>" +
+            "<i onClick='deleteNote(" + note.id + ")' class='far fa-trash-alt text-danger'></i>" +
+            "</div>" +
+            "<div class='col-2 d-flex justify-content-center align-items-center'>" +
+            "<i class='fa-solid fa-thumbtack text-warning'></i>" +
+            "</div>" +
+            "<div class='col-4 d-flex justify-content-center align-items-center' style='direction: rtl;'>" +
+            "<button type='button' class='btn-close btn-primary btn-sm' data-bs-dismiss='modal' aria-label='Close' style='height: 5px;'></button>" +
+            "</div>" +
+            "</div>" +
+            "<div class='modal-body'>" +
+            "<h5 id='noteTitle'>" + note.title + "</h5>" +
+            "<p id='noteDescription'>" + note.description + "</p>" +
+            "<small><h6>Note Details:</h6></small>" +
+            "<p><small id='noteCreateDate'>Create at " + formatCreateDateAndTime + "</small>" + formatEditDateAndTimeElement + "</small></p>" +
+            "</div>" +
+            "</div>" +
+            "</div>" +
+            "</div";
          formatEditDateAndTimeElement = "";
          $(document).ready(await function () {
             $("#openFullNoteModal").modal('show');
@@ -94,24 +166,33 @@
          }
 
          allNotes.forEach(note => {
+            console.log(note.pinned);
+
+            let bgColor = "";
+            if (note.bg_color !== null || note.bg_color !== '') {
+               bgColor = note.bg_color;
+            }
+            console.log(note);
+
             notesContainer.innerHTML +=
                "<div class='col-lg-3 col-md-4 col-sm-6 p-0 mt-0' style='margin-bottom:36px;'>" +
-               "<div class='card m-1 position-relative'>" +
-               "<span class='hideIcon pin-icon position-absolute rounded-start text-warning my-2 px-2'>" +
-               "<i class='fa-solid fa-thumbtack'></i>" +
+               "<div class='icons card m-1 position-relative'>" +
+               "<span class='hideIcon pin-icon position-absolute rounded-start my-2 px-2'>" +
+               "<i class='fa-solid fa-thumbtack text-warning'></i>" +
                "</span>" +
-               "<div class='card-body pb-0' onClick='openNote(" + JSON.stringify(note) + ")'>" +
+               "<div class='card-body pb-0 rounded' id='note" + note.id + "' style='background-color: " + bgColor + ";' onClick='openNote(" + JSON.stringify(note) + ")'>" +
                "<h6 class='card-title'>" + note.title + "</h6>" +
                "<p class='card-text mb-2'>" + note.description + "</p>" +
                "</div>" +
                "<div class='iconDiv row border-0 position-absolute m-0 p-2' style='bottom: -40px;z-index: 1;'>" +
-               "<div class='hideIcon col-3'>" +
+               "<div class='hideIcon col-4'>" +
                "<i class='far fa-edit text-primary' onClick='editNote(" + note.id + ")'></i>" +
                "</div>" +
-               "<div class='hideIcon col-3'>" +
-               "<i class='fa-solid fa-palette text-primary'></i>" +
+               "<div class='hideIcon col-4'>" +
+               "<i class='fa-solid fa-palette text-primary' id='dropdownMenuButton" + note.id + "' data-bs-toggle='dropdown' aria-expanded='false'></i>" +
+               getColorPaletteElement(note.id) +
                "</div>" +
-               "<div class='hideIcon col-3'>" +
+               "<div class='hideIcon col-4'>" +
                "<i onClick='deleteNote(" + note.id + ")' class='far fa-trash-alt text-danger'></i>" +
                "</div>" +
                "</div>" +
@@ -250,7 +331,7 @@
          fetchAndDisplayNotes(); // re-fetch note for remove deleted note
       } catch (error) {
          console.error("Error deleting note:", error);
-         softAlert("danger", data.message, 30000);
+         softAlert("danger", "note not delete. same error occurred.", 30000);
       }
    }
 

@@ -4,7 +4,7 @@ pending work:-
 ✔️1. add notification to showing data base message for all action
 ✔️2. hide and showing login, register and logout button
    3. create profile page
-   4. color pallet 
+✔️4. color pallet 
 ✔️5. form input validation
    6. make script and css separate file
    7. spring boot -> spring -> https://gemini.google.com/app/1a298163cb0363d6
@@ -14,6 +14,7 @@ pending work:-
 ✔️11. full note view on click in note with details like create_date edited date in sort form
    12. user details edit 
    13. forgot password
+   14. minimum api request / not use api request wen frontend site content update like new add note, updated note, delete note...
     
     . At last make clear code remove not useful console logs and comments
 

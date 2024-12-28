@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -65,6 +66,21 @@ public class NotesController {
 		} else {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Note not found.");
 		}
+	}
+	
+	@PutMapping("/{id}/color") // update color
+	@ResponseBody
+	public Map<String, String> updateNoteBGColor(@PathVariable Long id, @RequestParam String color){
+		Map<String, String> response = new HashMap<>();
+		int status = notesService.updateBGColor(id, color);
+		if(status > 0) {
+			response.put("status", "success");
+			response.put("message", status+" note set color successful");
+		} else {
+			response.put("status", "error");
+	        response.put("message", "set color failed");
+		}
+		return response;
 	}
 	
 	@PutMapping("/{id}") // for update note

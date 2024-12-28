@@ -27,6 +27,11 @@ public class Notes {
 	@Column
 	private String description;
 	
+	@Column(name = "pinned", columnDefinition = "BIT(1) DEFAULT b'0'") // Default is false (0)
+	private boolean pinned;
+	@Column(name = "bg_color", columnDefinition = "VARCHAR(255) DEFAULT ''") // Default is empty
+	private String bg_color;
+	
 	@Column
 	@CreationTimestamp
 	private LocalDateTime created_date;
@@ -36,6 +41,18 @@ public class Notes {
 	
 	public Long getId() {
 		return id;
+	}
+	public boolean isPinned() {
+		return pinned;
+	}
+	public void setPinned(boolean pinned) {
+		this.pinned = pinned;
+	}
+	public String getBg_color() {
+		return bg_color;
+	}
+	public void setBg_color(String bg_color) {
+		this.bg_color = bg_color;
 	}
 	public void setId(Long id) {
 		this.id = id;

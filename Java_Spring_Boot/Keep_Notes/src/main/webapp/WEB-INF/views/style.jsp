@@ -6,10 +6,9 @@ $(".pin-icon").css({
    "cursor": "pointer"
 });
 
-$(".iconDiv i").hover(
+$(".icons i").hover(
    function () {
       $(this).css({
-         "color": "#007bff", // Highlight color on hover
          "transform": "scale(1.2)", // Slight zoom effect
          "transition": "transform 0.2s ease-in-out",
          "cursor": "pointer"
@@ -17,7 +16,6 @@ $(".iconDiv i").hover(
    },
    function () {
       $(this).css({
-         "color": "", // Reset to default
          "transform": "scale(1)", // Reset zoom effect
          "transition": "transform 0.2s ease-in-out"
       });
@@ -31,8 +29,7 @@ $(".card").hover(
          "box-shadow": "-3px 3px 0px rgba(0, 0, 0, 0.2)", // Subtle shadow effect
          "transition": "box-shadow 0.3s ease-in-out"
       });
-      $(this)
-         .find(".iconDiv") // select iconDiv name tag from this card only 
+      $(this).find(".iconDiv") // select iconDiv name tag from this card only 
          .css({
             "box-shadow": "-3px 3px 0px rgba(0, 0, 0, 0.2)", // Subtle shadow effect
             "transition": "box-shadow 0.3s ease-in-out"

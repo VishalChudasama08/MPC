@@ -57,4 +57,9 @@ public class NotesServiceImpl implements NotesService {
 			return "Note not deleted or note not Found.";
 		}
 	}
+
+	@Override
+	public int updateBGColor(Long id, String color) {
+		return notesRepository.updateNoteBgColor(id, color);
+	}
 }

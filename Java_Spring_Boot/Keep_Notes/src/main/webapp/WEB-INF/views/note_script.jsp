@@ -2,28 +2,6 @@
    async function pinNote(note) {
       note.pinned = !note.pinned;// Update the pinned status in the note object
 
-      // update in UI
-      createNoteCard(note);
-
-      // // swap note card section (pinned section or all note section)
-      // const cardElement = document.getElementById('note' + note.id);
-      // const pinnedContainer = document.getElementById('pinnedNotesContainer');
-      // const notesContainer = document.getElementById('notesContainer');
-
-      // if (note.pinned) {
-      //    pinnedContainer.appendChild(cardElement);// Move card to pinned section
-      // } else {
-      //    notesContainer.appendChild(cardElement);// Move card to notes section
-      // }
-
-      // swap icon on current open modal
-      const modalPin = document.getElementById('pin' + note.id)
-      if (note.pinned) {
-         modalPin.innerHTML = "<i class='fa-solid text-warning fa-ban' onclick='pinNote(" + JSON.stringify(note) + ")'></i>";
-      } else {
-         modalPin.innerHTML = "<i class='fa-solid fa-thumbtack text-warning' onclick='pinNote(" + JSON.stringify(note) + ")'></i>";
-      }
-
       // update in database
       let url = "/api/note/pin/" + note.id + "/pinned?pinned=" + note.pinned;
       console.log(url);
@@ -31,6 +9,20 @@
       try {
          const response = await fetch(url, { method: "PUT" });
          const data = await response.json();
+
+         // swap icon on current open modal
+         const modalPin = document.getElementById('pin' + note.id)
+         if (modalPin !== null) {
+            if (note.pinned) {
+               modalPin.innerHTML = "<i class='fa-solid text-warning fa-ban' onclick='pinNote(" + JSON.stringify(note) + ")'></i>";
+            } else {
+               modalPin.innerHTML = "<i class='fa-solid fa-thumbtack text-warning' onclick='pinNote(" + JSON.stringify(note) + ")'></i>";
+            }
+         }
+
+         // update in UI
+         createNoteCard(note);
+
          softAlert(data.status, data.message, 1500); // Show success message
       } catch (error) {
          console.error("Error where set note background-color:", error);
@@ -38,15 +30,16 @@
       }
    }
 
-   function setNoteBGC(id, color) {
-      // update in dom
-      let thisNote = '#card' + id;
-      let thisModal = '#modal' + id;
-      $(thisNote).css("background-color", color);
+   function setNoteBGC(note, color) {
+      // update in UI
+      note.bg_color = color;
+      createNoteCard(note);
+
+      let thisModal = '#modal' + note.id;
       $(thisModal).css("background-color", color);
 
       // update in db
-      updateBGCinDB(id, color);
+      updateBGCinDB(note.id, color);
    }
    async function updateBGCinDB(id, color) {
       let url = "/api/note/bgColor/" + id + "/color?color=" + color;
@@ -61,39 +54,39 @@
          softAlert("danger", "Error when trying to set note color ", 30000);
       }
    }
-   function getColorPaletteElement(id) {
+   function getColorPaletteElement(note) {
       return "<!-- color Palette start -->" +
-         "<ul class='dropdown-menu p-2' aria-labelledby='dropdownMenuButton" + id + "'>" +
+         "<ul class='dropdown-menu p-2' aria-labelledby='dropdownMenuButton" + note.id + "'>" +
          "<div class='d-flex'>" +
-         "<li class='p-1 me-1 border border-danger rounded-circle d-flex justify-content-center align-items-center' onclick='setNoteBGC(" + id + ", ``)' style='width: 30px;height: 30px;'>" +
+         "<li class='p-1 me-1 border border-danger rounded-circle d-flex justify-content-center align-items-center' onclick='setNoteBGC(" + JSON.stringify(note) + ", ``)' style='width: 30px;height: 30px;'>" +
          "<i class='fa-solid fa-droplet-slash'></i>" +
          "</li>" +
          "<li class='me-1 d-flex justify-content-center align-items-center'>" +
-         "<span class='border border-danger rounded-circle' type='button' onclick='setNoteBGC(" + id + ", `springgreen`)' style='background-color:springgreen;width: 30px;height: 30px;'></span>" +
+         "<span class='border border-danger rounded-circle' type='button' onclick='setNoteBGC(" + JSON.stringify(note) + ", `springgreen`)' style='background-color:springgreen;width: 30px;height: 30px;'></span>" +
          "</li>" +
          "<li class='me-1 d-flex justify-content-center align-items-center'>" +
-         "<span class='border border-danger rounded-circle' type='button' onclick='setNoteBGC(" + id + ", `darkolivegreen`)' style='background-color:darkolivegreen;width: 30px;height: 30px;'></span>" +
+         "<span class='border border-danger rounded-circle' type='button' onclick='setNoteBGC(" + JSON.stringify(note) + ", `darkolivegreen`)' style='background-color:darkolivegreen;width: 30px;height: 30px;'></span>" +
          "</li>" +
          "<li class='me-1 d-flex justify-content-center align-items-center'>" +
-         "<span class='border border-danger rounded-circle' type='button' onclick='setNoteBGC(" + id + ", `coral`)' style='background-color:coral;width: 30px;height: 30px;'></span>" +
+         "<span class='border border-danger rounded-circle' type='button' onclick='setNoteBGC(" + JSON.stringify(note) + ", `coral`)' style='background-color:coral;width: 30px;height: 30px;'></span>" +
          "</li>" +
          "<li class='me-1 d-flex justify-content-center align-items-center'>" +
-         "<span class='border border-danger rounded-circle' type='button' onclick='setNoteBGC(" + id + ", `slateblue`)' style='background-color:slateblue;width: 30px;height: 30px;'></span>" +
+         "<span class='border border-danger rounded-circle' type='button' onclick='setNoteBGC(" + JSON.stringify(note) + ", `slateblue`)' style='background-color:slateblue;width: 30px;height: 30px;'></span>" +
          "</li>" +
          "<li class='me-1 d-flex justify-content-center align-items-center'>" +
-         "<span class='border border-danger rounded-circle' type='button' onclick='setNoteBGC(" + id + ", `goldenrod`)' style='background-color:goldenrod;width: 30px;height: 30px;'></span>" +
+         "<span class='border border-danger rounded-circle' type='button' onclick='setNoteBGC(" + JSON.stringify(note) + ", `goldenrod`)' style='background-color:goldenrod;width: 30px;height: 30px;'></span>" +
          "</li>" +
          "<li class='me-1 d-flex justify-content-center align-items-center'>" +
-         "<span class='border border-danger rounded-circle' type='button' onclick='setNoteBGC(" + id + ", `greenyellow`)' style='background-color:greenyellow;width: 30px;height: 30px;'></span>" +
+         "<span class='border border-danger rounded-circle' type='button' onclick='setNoteBGC(" + JSON.stringify(note) + ", `greenyellow`)' style='background-color:greenyellow;width: 30px;height: 30px;'></span>" +
          "</li>" +
          "<li class='me-1 d-flex justify-content-center align-items-center'>" +
-         "<span class='border border-danger rounded-circle' type='button' onclick='setNoteBGC(" + id + ", `violet`)' style='background-color:violet;width: 30px;height: 30px;'></span>" +
+         "<span class='border border-danger rounded-circle' type='button' onclick='setNoteBGC(" + JSON.stringify(note) + ", `violet`)' style='background-color:violet;width: 30px;height: 30px;'></span>" +
          "</li>" +
          "<li class='me-1 d-flex justify-content-center align-items-center'>" +
-         "<span class='border border-danger rounded-circle' type='button' onclick='setNoteBGC(" + id + ", `deepskyblue`)' style='background-color:deepskyblue;width: 30px;height: 30px;'></span>" +
+         "<span class='border border-danger rounded-circle' type='button' onclick='setNoteBGC(" + JSON.stringify(note) + ", `deepskyblue`)' style='background-color:deepskyblue;width: 30px;height: 30px;'></span>" +
          "</li>" +
          "<li class='d-flex justify-content-center align-items-center'>" +
-         "<span class='border border-danger rounded-circle' type='button' onclick='setNoteBGC(" + id + ", `slategray`)' style='background-color:slategray;width: 30px;height: 30px;'></span>" +
+         "<span class='border border-danger rounded-circle' type='button' onclick='setNoteBGC(" + JSON.stringify(note) + ", `slategray`)' style='background-color:slategray;width: 30px;height: 30px;'></span>" +
          "</li>" +
          "</div>" +
          "</ul>" +
@@ -135,7 +128,7 @@
             "</div>" +
             "<div class='col-2 d-flex justify-content-center align-items-center'>" +
             "<i class='fa-solid fa-palette text-primary' id='dropdownMenuButton" + note.id + "' data-bs-toggle='dropdown' aria-expanded='false'></i>" +
-            getColorPaletteElement(note.id) +
+            getColorPaletteElement(note) +
             "</div>" +
             "<div class='col-2 d-flex justify-content-center align-items-center'>" +
             "<i class='far fa-trash-alt text-danger' onclick='deleteNote(" + note.id + ")'></i>" +
@@ -202,7 +195,7 @@
          "</div>" +
          "<div class='hideIcon col-4'>" +
          "<i class='fa-solid fa-palette text-primary' id='dropdownMenuButton" + note.id + "' data-bs-toggle='dropdown' aria-expanded='false'></i>" +
-         getColorPaletteElement(note.id) +
+         getColorPaletteElement(note) +
          "</div>" +
          "<div class='hideIcon col-4'>" +
          "<i onclick='deleteNote(" + note.id + ")' class='far fa-trash-alt text-danger'></i>" +
@@ -280,9 +273,9 @@
       try {
          // Collect form data
          const noteData = {
-            userId: sessionStorage.getItem("UserId"),
-            title: $("#title").val(),
-            description: $("#description").val()
+            "userId": sessionStorage.getItem("UserId"),
+            "title": $("#title").val(),
+            "description": $("#title").val()
          };
 
          // Make AJAX request
@@ -385,15 +378,17 @@
    ///////////////
    async function deleteNote(noteId) {
       $("#openFullNoteModal").modal('hide'); // if delete from open full note modal than hide modal first
-      const url = "/api/note/" + noteId; // delete note endpoint
-      console.log("delete note endpoint:- " + url);
 
       try {
+         const url = "/api/note/" + noteId; // delete note endpoint
+         console.log("delete note endpoint:- " + url);
+
          const response = await fetch(url, { method: "DELETE" });
          const data = await response.json();
          softAlert(data.status, data.message, 2000); // Show success message
 
-         fetchAndDisplayNotes(); // re-fetch note for remove deleted note
+         let noteExist = document.getElementById('note' + noteId);
+         if (noteExist) { noteExist.remove(); } // if this not card exist than remove it
       } catch (error) {
          console.error("Error deleting note:", error);
          softAlert("danger", "note not delete. same error occurred.", 30000);

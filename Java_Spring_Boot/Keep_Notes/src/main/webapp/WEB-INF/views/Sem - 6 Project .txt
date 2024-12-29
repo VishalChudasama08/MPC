@@ -14,8 +14,8 @@ pending work:-
 ✔️11. full note view on click in note with details like create_date edited date in sort form
    12. user details edit 
    13. forgot password
-   14. minimum api request / not use api request wen frontend site content update like new add note, updated note, delete note...
-   16.
+✔️14. minimum api request / not use api request wen frontend site content update like new add note, updated note, delete note...
+   16. in all note showing only 50 words (not character here 50 words) 
     
     . At last make clear code remove not useful console logs and comments
 

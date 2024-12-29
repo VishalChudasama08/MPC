@@ -3,6 +3,8 @@ package in.v8.main.services;
 import java.util.List;
 import java.util.Optional;
 
+import javax.swing.text.StyledEditorKit.BoldAction;
+
 import in.v8.main.entities.Notes;
 
 public interface NotesService {
@@ -12,4 +14,5 @@ public interface NotesService {
 	public int updateNote(Notes editedNote, Long id);
 	public String deleteNote(Long id);
 	public int updateBGColor(Long id, String color);
+	public int updatePinStatus(Long id, Boolean pinned);
 }

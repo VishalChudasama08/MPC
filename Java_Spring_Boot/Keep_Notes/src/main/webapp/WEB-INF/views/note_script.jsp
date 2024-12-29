@@ -1,7 +1,46 @@
 <script>
+   async function pinNote(note) {
+      note.pinned = !note.pinned;// Update the pinned status in the note object
+
+      // update in UI
+      createNoteCard(note);
+
+      // // swap note card section (pinned section or all note section)
+      // const cardElement = document.getElementById('note' + note.id);
+      // const pinnedContainer = document.getElementById('pinnedNotesContainer');
+      // const notesContainer = document.getElementById('notesContainer');
+
+      // if (note.pinned) {
+      //    pinnedContainer.appendChild(cardElement);// Move card to pinned section
+      // } else {
+      //    notesContainer.appendChild(cardElement);// Move card to notes section
+      // }
+
+      // swap icon on current open modal
+      const modalPin = document.getElementById('pin' + note.id)
+      if (note.pinned) {
+         modalPin.innerHTML = "<i class='fa-solid text-warning fa-ban' onclick='pinNote(" + JSON.stringify(note) + ")'></i>";
+      } else {
+         modalPin.innerHTML = "<i class='fa-solid fa-thumbtack text-warning' onclick='pinNote(" + JSON.stringify(note) + ")'></i>";
+      }
+
+      // update in database
+      let url = "/api/note/pin/" + note.id + "/pinned?pinned=" + note.pinned;
+      console.log(url);
+
+      try {
+         const response = await fetch(url, { method: "PUT" });
+         const data = await response.json();
+         softAlert(data.status, data.message, 1500); // Show success message
+      } catch (error) {
+         console.error("Error where set note background-color:", error);
+         softAlert("danger", "Error when trying to set note color ", 30000);
+      }
+   }
+
    function setNoteBGC(id, color) {
       // update in dom
-      let thisNote = '#note' + id;
+      let thisNote = '#card' + id;
       let thisModal = '#modal' + id;
       $(thisNote).css("background-color", color);
       $(thisModal).css("background-color", color);
@@ -10,7 +49,7 @@
       updateBGCinDB(id, color);
    }
    async function updateBGCinDB(id, color) {
-      let url = "/api/note/" + id + "/color?color=" + color;
+      let url = "/api/note/bgColor/" + id + "/color?color=" + color;
       console.log(url);
 
       try {
@@ -60,10 +99,10 @@
          "</ul>" +
          "<!-- color Palette end -->";
    }
-   async function openNote(noteString) {
+   async function openNote(note) {
       try {
-         const note = await typeof noteString === "string" ? JSON.parse(noteString) : noteString;
-         console.log(note);
+         // const note = await typeof noteString === "string" ? JSON.parse(noteString) : noteString;
+         console.log("modal note data " + JSON.stringify(note));
 
 
          let createdDate = note.created_date.slice(0, 10).split('-');
@@ -74,29 +113,35 @@
             let updatedDate = note.updated_date.slice(0, 10).split('-');
             formatEditDateAndTimeElement = "<br><small id='noteUpdatedDate'>Edit at " + note.updated_date.slice(11, 16) + ", " + updatedDate[2] + "-" + updatedDate[1] + "-" + updatedDate[0] + "</small>";
          }
-         let bgColor = "";
-         if (note.bg_color !== null || note.bg_color !== '') {
-            bgColor = note.bg_color;
-         }
+         // let bgColor = "";
+         // if (note.bg_color !== null || note.bg_color !== '') {
+         //    bgColor = note.bg_color;
+         // }
+         // let pinIcon = "thumbtack";
+         // if (note.pinned) {
+         //    pinIcon = "ban";
+         // }
+         // console.log(pinIcon);
+
 
          const openNoteModal = document.getElementById('openNoteModal');
          openNoteModal.innerHTML = "<!-- OpenNote.jsp -->" +
             "<div class='modal fade' id='openFullNoteModal' tabindex='-1' aria-labelledby='fullNoteModalLabel' aria-hidden='true'>" +
             "<div class='modal-dialog d-flex justify-content-center align-items-center vh-100 my-0'>" +
-            "<div class='modal-content' id='modal" + note.id + "' style='background-color:" + bgColor + ";'>" +
+            "<div class='modal-content' id='modal" + note.id + "' style='background-color:" + note.bg_color + ";'>" +
             "<div class='icons modal-header row m-0 p-3'>" +
             "<div class='col-2 d-flex justify-content-center align-items-center'>" +
-            "<i class='far fa-edit text-primary' onClick='editNote(" + note.id + ")'></i>" +
+            "<i class='far fa-edit text-primary' onclick='editNote(" + note.id + ")'></i>" +
             "</div>" +
             "<div class='col-2 d-flex justify-content-center align-items-center'>" +
             "<i class='fa-solid fa-palette text-primary' id='dropdownMenuButton" + note.id + "' data-bs-toggle='dropdown' aria-expanded='false'></i>" +
             getColorPaletteElement(note.id) +
             "</div>" +
             "<div class='col-2 d-flex justify-content-center align-items-center'>" +
-            "<i onClick='deleteNote(" + note.id + ")' class='far fa-trash-alt text-danger'></i>" +
+            "<i class='far fa-trash-alt text-danger' onclick='deleteNote(" + note.id + ")'></i>" +
             "</div>" +
-            "<div class='col-2 d-flex justify-content-center align-items-center'>" +
-            "<i class='fa-solid fa-thumbtack text-warning'></i>" +
+            "<div class='col-2 d-flex justify-content-center align-items-center' id='pin" + note.id + "'>" +
+            "<i class='fa-solid fa-" + note.pin_icon + " text-warning' onclick='pinNote(" + JSON.stringify(note) + ")'></i>" +
             "</div>" +
             "<div class='col-4 d-flex justify-content-center align-items-center' style='direction: rtl;'>" +
             "<button type='button' class='btn-close btn-primary btn-sm' data-bs-dismiss='modal' aria-label='Close' style='height: 5px;'></button>" +
@@ -119,6 +164,52 @@
       } catch (error) {
          console.error("Error parsing note data:", error);
       }
+   }
+
+   function createNoteCard(note) {
+      let noteExist = document.getElementById('note' + note.id);
+      if (noteExist) {
+         noteExist.remove(); // if this not card exist than remove it 
+      }
+
+      let bgColor = "";
+      if (note.bg_color !== null || note.bg_color !== '') { // if bg color not set or null than
+         bgColor = note.bg_color;
+      }
+      note.bg_color = bgColor;
+
+      let goHere = document.getElementById('notesContainer');
+      let pinIcon = "thumbtack";
+
+      if (note.pinned) {
+         goHere = document.getElementById('pinnedNotesContainer');
+         pinIcon = "ban";
+      }
+      note = { ...note, "pin_icon": pinIcon }
+      console.log("edited note data: " + JSON.stringify(note));
+      goHere.innerHTML += "<div class='col-lg-3 col-md-4 col-sm-6 p-0 mt-0' id='note" + note.id + "' style='margin-bottom:36px;'>" +
+         "<div class='icons card m-1 position-relative'>" +
+         "<span class='hideIcon pin-icon position-absolute rounded-start my-2 px-2'>" +
+         "<i class='fa-solid fa-" + note.pin_icon + " text-warning' onclick='pinNote(" + JSON.stringify(note) + ")'></i>" +
+         "</span>" +
+         "<div class='card-body pb-0 rounded' id='card" + note.id + "' style='background-color: " + note.bg_color + ";' onclick='openNote(" + JSON.stringify(note) + ")'>" +
+         "<h6 class='card-title'>" + note.title + "</h6>" +
+         "<p class='card-text mb-2'>" + note.description + "</p>" +
+         "</div>" +
+         "<div class='iconDiv row border-0 position-absolute m-0 p-2' style='bottom: -40px;z-index: 1;'>" +
+         "<div class='hideIcon col-4'>" +
+         "<i class='far fa-edit text-primary' onclick='editNote(" + note.id + ")'></i>" +
+         "</div>" +
+         "<div class='hideIcon col-4'>" +
+         "<i class='fa-solid fa-palette text-primary' id='dropdownMenuButton" + note.id + "' data-bs-toggle='dropdown' aria-expanded='false'></i>" +
+         getColorPaletteElement(note.id) +
+         "</div>" +
+         "<div class='hideIcon col-4'>" +
+         "<i onclick='deleteNote(" + note.id + ")' class='far fa-trash-alt text-danger'></i>" +
+         "</div>" +
+         "</div>" +
+         "</div>" +
+         "</div>";
    }
 
    //////////////////
@@ -160,45 +251,18 @@
          const notesContainer = document.getElementById('notesContainer');
          notesContainer.innerHTML = ''; // Clear previous content
 
+         const pinnedContainer = document.getElementById('pinnedNotesContainer');
+         pinnedContainer.innerHTML = ''; // Clear previous content
+
          if (allNotes.length === 0) { // for this use no any notes than 
             notesContainer.innerHTML = "<p>No notes found.</p>";
             return;
          }
 
          allNotes.forEach(note => {
-            console.log(note.pinned);
-
-            let bgColor = "";
-            if (note.bg_color !== null || note.bg_color !== '') {
-               bgColor = note.bg_color;
-            }
-            console.log(note);
-
-            notesContainer.innerHTML +=
-               "<div class='col-lg-3 col-md-4 col-sm-6 p-0 mt-0' style='margin-bottom:36px;'>" +
-               "<div class='icons card m-1 position-relative'>" +
-               "<span class='hideIcon pin-icon position-absolute rounded-start my-2 px-2'>" +
-               "<i class='fa-solid fa-thumbtack text-warning'></i>" +
-               "</span>" +
-               "<div class='card-body pb-0 rounded' id='note" + note.id + "' style='background-color: " + bgColor + ";' onClick='openNote(" + JSON.stringify(note) + ")'>" +
-               "<h6 class='card-title'>" + note.title + "</h6>" +
-               "<p class='card-text mb-2'>" + note.description + "</p>" +
-               "</div>" +
-               "<div class='iconDiv row border-0 position-absolute m-0 p-2' style='bottom: -40px;z-index: 1;'>" +
-               "<div class='hideIcon col-4'>" +
-               "<i class='far fa-edit text-primary' onClick='editNote(" + note.id + ")'></i>" +
-               "</div>" +
-               "<div class='hideIcon col-4'>" +
-               "<i class='fa-solid fa-palette text-primary' id='dropdownMenuButton" + note.id + "' data-bs-toggle='dropdown' aria-expanded='false'></i>" +
-               getColorPaletteElement(note.id) +
-               "</div>" +
-               "<div class='hideIcon col-4'>" +
-               "<i onClick='deleteNote(" + note.id + ")' class='far fa-trash-alt text-danger'></i>" +
-               "</div>" +
-               "</div>" +
-               "</div>" +
-               "</div>";
+            createNoteCard(note);
          });
+
       } catch (error) {
          console.error("Error fetching notes:", error); // Only log *actual* errors
          document.getElementById('notesContainer').innerHTML = "<p class='error'>An error occurred while loading notes.</p>"; // Generic error message for unexpected errors
@@ -234,6 +298,7 @@
 
             $("#title").val("");
             $("#description").val("");
+            $("#addNoteSubmitButton").prop("disabled", true); // make disable button
 
             fetchAndDisplayNotes(); // re-fetch note for showing new added note 
          } else {

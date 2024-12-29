@@ -68,7 +68,22 @@ public class NotesController {
 		}
 	}
 	
-	@PutMapping("/{id}/color") // update color
+	@PutMapping("/{id}") // for update note
+	@ResponseBody
+	public Map<String, String> editNote(@PathVariable Long id, @RequestBody Notes editedNote) {
+		Map<String, String> response = new HashMap<>();
+		int status = notesService.updateNote(editedNote, id);
+		if(status == 0) {
+			response.put("status", "error");
+			response.put("message", "Note not edited due to same error");
+		} else {
+			response.put("status", "success");
+			response.put("message", "Note edited successfully.");
+		}
+		return response;
+	}
+
+	@PutMapping("bgColor/{id}/color") // update color
 	@ResponseBody
 	public Map<String, String> updateNoteBGColor(@PathVariable Long id, @RequestParam String color){
 		Map<String, String> response = new HashMap<>();
@@ -83,17 +98,17 @@ public class NotesController {
 		return response;
 	}
 	
-	@PutMapping("/{id}") // for update note
+	@PutMapping("pin/{id}/pinned") // for update pinned status
 	@ResponseBody
-	public Map<String, String> editNote(@PathVariable Long id, @RequestBody Notes editedNote) {
+	public Map<String, String> updatePinStatus(@PathVariable Long id, @RequestParam Boolean pinned) {
 		Map<String, String> response = new HashMap<>();
-		int status = notesService.updateNote(editedNote, id);
-		if(status == 0) {
-			response.put("status", "error");
-	        response.put("message", "Note not edited due to same error");
-		} else {
+		int status = notesService.updatePinStatus(id, pinned);
+		if(status > 0) {
 			response.put("status", "success");
-	        response.put("message", "Note edited successfully.");
+			response.put("message", "Note pinned status update successfully.");
+		} else {
+			response.put("status", "error");
+			response.put("message", "Note pinned status not update due to same error");
 		}
 		return response;
 	}

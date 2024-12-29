@@ -9,12 +9,13 @@ pending work:-
    6. make script and css separate file
    7. spring boot -> spring -> https://gemini.google.com/app/1a298163cb0363d6
    8. remove maven -> https://gemini.google.com/app/1a298163cb0363d6
-   9. pin icon (remove this note element from dom and set on pined note section)
+✔️9. pin icon (remove this note element from dom and set on pined note section also replace icon on both modal and card)
    10. not use browser session use server session
 ✔️11. full note view on click in note with details like create_date edited date in sort form
    12. user details edit 
    13. forgot password
    14. minimum api request / not use api request wen frontend site content update like new add note, updated note, delete note...
+   16.
     
     . At last make clear code remove not useful console logs and comments
 
@@ -22,3 +23,5 @@ problem:-
 ✔️1. first time add new note than not reflect this note in screen. add second note than showing... (only same time see this problem)
 ✔️2. in updated than create_date is remove(null) see in database
 ✔️3. click on note card this open modal here edit not work
+   4. <img src="thumbtack-slash-solid.svg" alt="Thumbtack Slash" width="24" height="24"> or <i class="fa-solid fa-thumbtack-slash"></i>
+   5. change bg color and than open this note here color not reflect

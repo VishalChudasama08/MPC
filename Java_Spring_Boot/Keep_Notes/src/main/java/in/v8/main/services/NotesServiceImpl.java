@@ -39,6 +39,8 @@ public class NotesServiceImpl implements NotesService {
 	        editedNote.setId(oldNote.getId());
 	        editedNote.setUserId(oldNote.getUserId());
 	        editedNote.setCreated_date(oldNote.getCreated_date()); // Preserve created_date, not do this than update time create date value null insert in database
+	        editedNote.setBg_color(oldNote.getBg_color());
+	        editedNote.setPinned(oldNote.isPinned());
 
 	        // Save the updated note
 	        notesRepository.save(editedNote); // if in provided entity object id is exist than JPA do update else JPA perform a new save
@@ -61,5 +63,10 @@ public class NotesServiceImpl implements NotesService {
 	@Override
 	public int updateBGColor(Long id, String color) {
 		return notesRepository.updateNoteBgColor(id, color);
+	}
+
+	@Override
+	public int updatePinStatus(Long id, Boolean pinned) {
+		return notesRepository.updatePinnedStatus(id, pinned);
 	}
 }

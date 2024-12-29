@@ -7,16 +7,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/About">About</a>
+                    <a class="nav-link active" href="/NotesHome">Notes</a>
                 </li>
             </ul>
             <div class="d-flex">
-                <a role="button" id="loginButton" href="/login" class="btn btn-primary me-2">Login</a>
-                <a role="button" id="registerButton" href="/register" class="btn btn-primary">SignUp</a>
-                <button onClick="handleLogout()" id="logoutButton" class="btn btn-primary me-2" >Logout</button>
+                <a role="button" id="loginButton" href="/login" class="btn btn-outline-primary me-2">Login</a>
+                <a role="button" id="registerButton" href="/register" class="btn btn-outline-primary">SignUp</a>
+                <a role="button" id="logoutButton" href="/logout" class="btn btn-outline-primary me-2" onClick="handleLogout()" >Logout</a>
             </div>
         </div>
     </div>

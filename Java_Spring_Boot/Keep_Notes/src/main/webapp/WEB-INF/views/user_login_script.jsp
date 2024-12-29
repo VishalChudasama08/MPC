@@ -1,5 +1,6 @@
 <script>
    $(document).ready(function () {
+      sessionStorage.clear();
       function toggleLoginSubmitButtonDisability() {
          // boolean 
          const allFieldsFilled = $("#email").val() !== '' && $("#password").val() !== '';
@@ -37,13 +38,13 @@
                   sessionStorage.setItem("UserId", BigInt(response.UserId));
                   setTimeout(() => {
                      window.location.href = "NotesHome"; // go on NotesHome page
-                  }, 1600);
+                  }, 1000);
                } else {
                   softAlert("danger", response.message, 30000);
                }
             },
             error: function () {
-               softAlert("danger", "An error occurred while login.", 30000);
+               softAlert("danger", "Server error occurred while login.", 30000);
             }
          });
       });

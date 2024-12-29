@@ -3,6 +3,8 @@ package in.v8.main.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class MainController {
 
@@ -21,6 +23,13 @@ public class MainController {
     	return "login";
     }
     
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.invalidate(); // Invalidate the session
+        System.out.print("remove session all data");
+        return "redirect:/login"; // Redirect to login page
+    }
+
     @GetMapping("/NotesHome")
     public String openNotesHomePage() {
     	return "NotesHome";

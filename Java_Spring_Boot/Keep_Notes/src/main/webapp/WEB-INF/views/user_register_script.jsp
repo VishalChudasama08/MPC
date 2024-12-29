@@ -1,5 +1,6 @@
 <script>
    $(document).ready(function () {
+      sessionStorage.clear()
 
       $("#password, #cPassword").on("input", function () {
          const password = $("#password").val();

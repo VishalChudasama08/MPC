@@ -60,6 +60,8 @@ public class UserServiceImpl implements UserService {
 		Users validUser = userRepository.findByEmail(email);
 		
 		if (validUser != null && validUser.getPassword().equals(password)) {
+			validUser.setPassword(""); // remove password
+			validUser.setCreateDate(null); // remove date
 			return validUser;
 		} else {
 			return null;

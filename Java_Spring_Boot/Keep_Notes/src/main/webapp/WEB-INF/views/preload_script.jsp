@@ -3,7 +3,6 @@
    function handleLogout() {
       sessionStorage.removeItem("UserName");
       sessionStorage.removeItem("UserId");
-      window.location.href = '/';
    }
    if (sessionStorage.getItem("UserName") !== null && sessionStorage.getItem("UserId") !== null) {
       $('#loginButton').hide();

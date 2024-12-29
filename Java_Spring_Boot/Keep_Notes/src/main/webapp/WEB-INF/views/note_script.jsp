@@ -1,4 +1,20 @@
 <script>
+   if (sessionStorage.getItem("UserName") == null && sessionStorage.getItem("UserId") == null) {
+      window.location.href = "/login";
+   }
+
+   const loggedInUser = {
+      id: "${loggedInUser.id}",
+      firstName: "${loggedInUser.firstName}",
+      lastName: "${loggedInUser.lastName}",
+      email: "${loggedInUser.email}",
+      password: "${loggedInUser.password}",
+      phoneNumber: "${loggedInUser.phoneNumber}",
+      createDate: "${loggedInUser.createDate}"
+   };
+   console.log("Logged-in User:", loggedInUser);
+
+
    async function pinNote(note) {
       note.pinned = !note.pinned;// Update the pinned status in the note object
 
@@ -106,16 +122,6 @@
             let updatedDate = note.updated_date.slice(0, 10).split('-');
             formatEditDateAndTimeElement = "<br><small id='noteUpdatedDate'>Edit at " + note.updated_date.slice(11, 16) + ", " + updatedDate[2] + "-" + updatedDate[1] + "-" + updatedDate[0] + "</small>";
          }
-         // let bgColor = "";
-         // if (note.bg_color !== null || note.bg_color !== '') {
-         //    bgColor = note.bg_color;
-         // }
-         // let pinIcon = "thumbtack";
-         // if (note.pinned) {
-         //    pinIcon = "ban";
-         // }
-         // console.log(pinIcon);
-
 
          const openNoteModal = document.getElementById('openNoteModal');
          openNoteModal.innerHTML = "<!-- OpenNote.jsp -->" +
@@ -213,6 +219,9 @@
       if (!userId) {
          console.error("User ID is missing in session storage.");
          document.getElementById('notesContainer').innerHTML = "<p>Please log in to view notes.</p>";
+         if (alert("Please log in to view notes.")) {
+            window.location.href = "/login";
+         }
          return;
       }
 

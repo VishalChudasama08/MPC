@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import in.v8.main.entities.Users;
 import in.v8.main.services.UserService;
+import jakarta.servlet.http.HttpSession;
 
 @RestController
 @RequestMapping("/api/user")
@@ -40,7 +41,7 @@ public class UserController {
 	
 	@PostMapping("/login")
 	@ResponseBody
-	public Map<String, String> getOneUser(@RequestBody Users user) {
+	public Map<String, String> getOneUser(@RequestBody Users user, HttpSession session) {
 		Map<String, String> response = new HashMap<>();
 		Users validUser = userService.login(user.getEmail(), user.getPassword());
 		if (validUser != null) {
@@ -48,6 +49,7 @@ public class UserController {
 			response.put("message", "User loging successfully.");
 			response.put("UserName", validUser.getFirstName());
 			response.put("UserId", String.valueOf(validUser.getId()));
+			session.setAttribute("loggedInUser", validUser);
 		} else {
 			response.put("status", "error");
 			response.put("message", "Email or Password didn't matched.");

@@ -3,18 +3,6 @@
       window.location.href = "/login";
    }
 
-   const loggedInUser = {
-      id: "${loggedInUser.id}",
-      firstName: "${loggedInUser.firstName}",
-      lastName: "${loggedInUser.lastName}",
-      email: "${loggedInUser.email}",
-      password: "${loggedInUser.password}",
-      phoneNumber: "${loggedInUser.phoneNumber}",
-      createDate: "${loggedInUser.createDate}"
-   };
-   console.log("Logged-in User:", loggedInUser);
-
-
    async function pinNote(note) {
       note.pinned = !note.pinned;// Update the pinned status in the note object
 

@@ -35,8 +35,8 @@ public class MainController {
     	return "NotesHome";
     }
     
-    @GetMapping("/profile")
+    @GetMapping("/Profile")
     public String openProfilePage() {
-    	return "profile";
+    	return "Profile";
     }
 }

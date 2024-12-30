@@ -1,3 +1,4 @@
+<%@ include file="sessionVariables.jsp" %>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">MyNotes</a>
@@ -9,11 +10,19 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="/NotesHome">Notes</a>
                 </li>
+                <li class="nav-item" id="profileButton">
+                    <button class="nav-link active" data-bs-toggle="modal" data-bs-target="#profileModal">Profile</button>
+                    <% if (loggedInUser != null) { %>
+                        <jsp:include page="ProfileModal.jsp" />
+                    <% } else { %>
+                        <span>User is not logged in or information is not available.</span>
+                    <% } %>
+                </li>
             </ul>
             <div class="d-flex">
-                <a role="button" id="loginButton" href="/login" class="btn btn-outline-primary me-2">Login</a>
-                <a role="button" id="registerButton" href="/register" class="btn btn-outline-primary">SignUp</a>
-                <a role="button" id="logoutButton" href="/logout" class="btn btn-outline-primary me-2" onClick="handleLogout()" >Logout</a>
+                <a id="loginButton" href="/login" class="btn btn-outline-primary btn-sm me-2">Login</a>
+                <a id="registerButton" href="/register" class="btn btn-outline-primary  btn-sm">SignUp</a>
+                <a id="logoutButton" href="/logout" class="btn btn-outline-primary  btn-sm me-2" onClick="handleLogout()" >Logout</a>
             </div>
         </div>
     </div>

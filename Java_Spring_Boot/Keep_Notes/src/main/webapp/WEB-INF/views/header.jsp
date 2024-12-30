@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ include file="sessionVariables.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,6 +19,12 @@
          top: 0px;
          right: 1px;
          cursor: pointer; /* Same as $(".pin-icon").css({...}) */
+      }
+      .custom-tooltip {
+         background-color: #ffc107; /* Change background color */
+         color: #000; /* Change text color */
+         font-size: 0.875rem; /* Adjust font size */
+         border-radius: 0.5rem; /* Rounded corners */
       }
 </style>
 </head>

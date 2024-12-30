@@ -36,6 +36,21 @@
 
                   sessionStorage.setItem("UserName", response.UserName);
                   sessionStorage.setItem("UserId", BigInt(response.UserId));
+                  const loggedInUser = {
+                     id: "${loggedInUser.id}",
+                     firstName: "${loggedInUser.firstName}",
+                     lastName: "${loggedInUser.lastName}",
+                     email: "${loggedInUser.email}",
+                     password: "${loggedInUser.password}",
+                     phoneNumber: "${loggedInUser.phoneNumber}",
+                     createDate: "${loggedInUser.createDate}"
+                  };
+                  sessionStorage.setItem("UserFirstName", loggedInUser.firstName);
+                  sessionStorage.setItem("UserLastName", loggedInUser.lastName);
+                  sessionStorage.setItem("UserEmail", loggedInUser.email);
+                  sessionStorage.setItem("UserPhoneNumber", loggedInUser.phoneNumber);
+                  console.log("Logged-in User:", loggedInUser);
+
                   setTimeout(() => {
                      window.location.href = "NotesHome"; // go on NotesHome page
                   }, 1000);

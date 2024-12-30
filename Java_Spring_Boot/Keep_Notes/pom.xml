@@ -56,11 +56,14 @@
         	<scope>provided</scope>
     	</dependency>
     	<dependency>
-    		<groupId>javax.servlet</groupId>
-    		<artifactId>javax.servlet-api</artifactId>
-    		<version>4.0.1</version>
-    		<scope>provided</scope>
+		    <groupId>jakarta.servlet</groupId>
+		    <artifactId>jakarta.servlet-api</artifactId>
+		    <scope>provided</scope>
 		</dependency>
+    	<dependency>
+        	<groupId>org.glassfish.web</groupId>
+        	<artifactId>jakarta.servlet.jsp.jstl</artifactId>
+        </dependency>
 	</dependencies>
 
 	<build>

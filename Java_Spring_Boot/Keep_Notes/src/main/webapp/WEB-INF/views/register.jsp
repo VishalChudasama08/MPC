@@ -28,7 +28,7 @@
                 <label for="phoneNumber" class="form-label">Phone Number</label>
                 <input type="number" class="form-control" id="phoneNumber" name="phoneNumber" required />
             </div>
-            <button type="submit" id="registerBtn" class="btn btn-primary d-block">Submit</button>
+            <button type="submit" id="registerBtn" class="btn btn-primary d-block btn-sm">Submit</button>
         </form>
     </div>
 

@@ -1,13 +1,13 @@
 <script>
    document.title += " - " + window.location.pathname.split('/')[1];
    function handleLogout() {
-      sessionStorage.removeItem("UserName");
-      sessionStorage.removeItem("UserId");
+      sessionStorage.clear();
    }
    if (sessionStorage.getItem("UserName") !== null && sessionStorage.getItem("UserId") !== null) {
       $('#loginButton').hide();
       $('#registerButton').hide();
    } else {
+      $('#profileButton').hide();
       $('#logoutButton').hide();
    }
 
@@ -21,4 +21,12 @@
          $('#thisIsAlert').remove();
       }, time);
    }
+
+   document.addEventListener('DOMContentLoaded', function () {
+      // Initialize all tooltips on the page
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+      tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+         new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+   });
 </script>

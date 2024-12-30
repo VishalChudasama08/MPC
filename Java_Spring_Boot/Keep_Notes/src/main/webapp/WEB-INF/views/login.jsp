@@ -12,7 +12,7 @@
                 <label for="password" class="form-label">Password</label>
                 <input type="password" name="password" class="form-control" id="password" minLength={8} required />
             </div>
-            <button type="submit" id="loginSubmitBtn" class="btn btn-primary">Submit</button>
+            <button type="submit" id="loginSubmitBtn" class="btn btn-primary btn-sm">Submit</button>
         </form>
     </div>
 

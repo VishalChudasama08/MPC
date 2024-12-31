@@ -25,7 +25,7 @@
                 <input type="password" class="form-control" id="cPassword" name="cPassword" minLength="5" autoComplete="new-password" required />
             </div>
             <div class="mb-3">
-                <label for="phoneNumber" class="form-label">Phone Number</label>
+                <label for="phoneNumber" class="form-label">Phone Number</label><i style="font-size: small;" class="fa-solid fa-info bg-warning-subtle rounded-circle py-1 px-2" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="for recovery password and account."></i>
                 <input type="number" class="form-control" id="phoneNumber" name="phoneNumber" required />
             </div>
             <button type="submit" id="registerBtn" class="btn btn-primary d-block btn-sm">Submit</button>

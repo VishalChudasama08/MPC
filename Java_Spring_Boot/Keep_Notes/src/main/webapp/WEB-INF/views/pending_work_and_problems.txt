@@ -24,4 +24,5 @@ problem:-
 ✔️2. in updated than create_date is remove(null) see in database
 ✔️3. click on note card this open modal here edit not work
    4. <img src="thumbtack-slash-solid.svg" alt="Thumbtack Slash" width="24" height="24"> or <i class="fa-solid fa-thumbtack-slash"></i>
-   5. change bg color and than open this note here color not reflect
+✔️5. change bg color and than open this note here color not reflect
+   6. login than open Profile this working, but reload than this not working (solution -> read Navbar.jsp line number 20 comment)

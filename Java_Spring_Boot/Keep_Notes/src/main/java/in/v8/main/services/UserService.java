@@ -10,6 +10,6 @@ public interface UserService {
 	public List<Users> getAllUsers();
 	public Users login(String email, String password);
 	public Optional<Users> getUser(Long id);
-	public Users updateUser(Users newUser, Long id);
+	public Users updateUser(Long id, Users newUser);
 	public String deleteUser(Long id);
 }

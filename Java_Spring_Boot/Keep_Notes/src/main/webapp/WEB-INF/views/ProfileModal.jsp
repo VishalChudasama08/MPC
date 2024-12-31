@@ -7,11 +7,11 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
          </div>
          <div class="modal-body">
-            <p id="infoEditable">Now edit your information...</p>
+            <p id="infoEditable" style="color: blue;">Now edit your information...</p>
             <form id="profileForm">
                <div class="mb-3">
                   <label for="firstName" class="form-label">First Name</label>
-                  <input type="text" class="form-control" id="pFirstName" name="firstName" value="sessionStorage.setItem('UserFirstName')" disabled />
+                  <input type="text" class="form-control" id="pFirstName" name="firstName" value="${loggedInUser.firstName}" disabled />
                </div>
                <div class="mb-3">
                   <label for="lastName" class="form-label">Last Name</label>
@@ -28,11 +28,10 @@
             </form>
          </div>
          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-info btn-sm" id="editProfileBtn" >Edit Info</button>
-            <button type="button" class="btn btn-primary btn-sm" id="saveProfileChanges">Save Changes</button>
-            <br>
-            <button type="button" id="deleteAccount">Delete Account</button>
+            <button type="button" class="btn text-danger position-absolute start-0" id="deleteAccount">Delete Account</button>
+            <button type="button" class="btn btn-outline-info btn-sm" id="editProfileBtn" >Edit Info</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm" id="cancelEditingBtn" >Cancel editing</button>
+            <button type="button" class="btn btn-outline-primary btn-sm" id="saveProfileChanges">Save Changes</button>
          </div>
       </div>
    </div>

@@ -3,6 +3,20 @@
       window.location.href = "/login";
    }
 
+   // const loggedInUser = {
+   //    id: "${loggedInUser.id}",
+   //    firstName: "${loggedInUser.firstName}",
+   //    lastName: "${loggedInUser.lastName}",
+   //    email: "${loggedInUser.email}",
+   //    password: "${loggedInUser.password}",
+   //    phoneNumber: "${loggedInUser.phoneNumber}",
+   //    createDate: "${loggedInUser.createDate}"
+   // };
+   // console.log(loggedInUser);
+   // console.log(loggedInUser.firstName);
+   // console.log("loggedInUser");
+   // console.log("loggedInUser.firstName");
+
    async function pinNote(note) {
       note.pinned = !note.pinned;// Update the pinned status in the note object
 
@@ -18,9 +32,9 @@
          const modalPin = document.getElementById('pin' + note.id)
          if (modalPin !== null) {
             if (note.pinned) {
-               modalPin.innerHTML = "<i class='fa-solid text-warning fa-ban' onclick='pinNote(" + JSON.stringify(note) + ")'></i>";
+               modalPin.innerHTML = "<i class='fa-solid text-warning fa-ban' onclick='pinNote(" + JSON.stringify(note) + ")' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-delay='{`show`:500, `hide`:100}' data-bs-title='Unpin note'></i>";
             } else {
-               modalPin.innerHTML = "<i class='fa-solid fa-thumbtack text-warning' onclick='pinNote(" + JSON.stringify(note) + ")'></i>";
+               modalPin.innerHTML = "<i class='fa-solid fa-thumbtack text-warning' onclick='pinNote(" + JSON.stringify(note) + ")' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-delay='{`show`:500, `hide`:100}' data-bs-title='Pin note'></i>";
             }
          }
 
@@ -47,7 +61,7 @@
    }
    async function updateBGCinDB(id, color) {
       let url = "/api/note/bgColor/" + id + "/color?color=" + color;
-      console.log(url);
+      console.log("update bg color endpoint:- ", url);
 
       try {
          const response = await fetch(url, { method: "PUT" });
@@ -63,7 +77,7 @@
          "<ul class='dropdown-menu p-2' aria-labelledby='dropdownMenuButton" + note.id + "'>" +
          "<div class='d-flex'>" +
          "<li class='p-1 me-1 border border-danger rounded-circle d-flex justify-content-center align-items-center' onclick='setNoteBGC(" + JSON.stringify(note) + ", ``)' style='width: 30px;height: 30px;'>" +
-         "<i class='fa-solid fa-droplet-slash'></i>" +
+         "<i class='fa-solid fa-droplet-slash' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-delay='{`show`:500, `hide`:100}' data-bs-title='Default'></i>" +
          "</li>" +
          "<li class='me-1 d-flex justify-content-center align-items-center'>" +
          "<span class='border border-danger rounded-circle' type='button' onclick='setNoteBGC(" + JSON.stringify(note) + ", `springgreen`)' style='background-color:springgreen;width: 30px;height: 30px;'></span>" +
@@ -111,6 +125,13 @@
             formatEditDateAndTimeElement = "<br><small id='noteUpdatedDate'>Edit at " + note.updated_date.slice(11, 16) + ", " + updatedDate[2] + "-" + updatedDate[1] + "-" + updatedDate[0] + "</small>";
          }
 
+         let pin_tooltip = "";
+         if (note.pin_icon === "ban") {
+            pin_tooltip = "Unpin note";
+         } else {
+            pin_tooltip = "Pin note";
+         }
+
          const openNoteModal = document.getElementById('openNoteModal');
          openNoteModal.innerHTML = "<!-- OpenNote.jsp -->" +
             "<div class='modal fade' id='openFullNoteModal' tabindex='-1' aria-labelledby='fullNoteModalLabel' aria-hidden='true'>" +
@@ -118,17 +139,17 @@
             "<div class='modal-content' id='modal" + note.id + "' style='background-color:" + note.bg_color + ";'>" +
             "<div class='icons modal-header row m-0 p-3'>" +
             "<div class='col-2 d-flex justify-content-center align-items-center'>" +
-            "<i class='far fa-edit text-primary' onclick='editNote(" + note.id + ")'></i>" +
+            "<i class='far fa-edit text-primary' onclick='editNote(" + note.id + ")' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-delay='{`show`:500, `hide`:100}' data-bs-title='Edit note'></i>" +
             "</div>" +
             "<div class='col-2 d-flex justify-content-center align-items-center'>" +
-            "<i class='fa-solid fa-palette text-primary' id='dropdownMenuButton" + note.id + "' data-bs-toggle='dropdown' aria-expanded='false'></i>" +
+            "<i class='fa-solid fa-palette text-primary' id='dropdownMenuButton" + note.id + "' data-bs-toggle='dropdown' aria-expanded='false' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-delay='{`show`:500, `hide`:100}' data-bs-title='Set color'></i>" +
             getColorPaletteElement(note) +
             "</div>" +
             "<div class='col-2 d-flex justify-content-center align-items-center'>" +
-            "<i class='far fa-trash-alt text-danger' onclick='deleteNote(" + note.id + ")'></i>" +
+            "<i class='far fa-trash-alt text-danger' onclick='deleteNote(" + note.id + ")' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-delay='{`show`:500, `hide`:100}' data-bs-title='Delete this note'></i>" +
             "</div>" +
             "<div class='col-2 d-flex justify-content-center align-items-center' id='pin" + note.id + "'>" +
-            "<i class='fa-solid fa-" + note.pin_icon + " text-warning' onclick='pinNote(" + JSON.stringify(note) + ")'></i>" +
+            "<i class='fa-solid fa-" + note.pin_icon + " text-warning' onclick='pinNote(" + JSON.stringify(note) + ")' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-delay='{`show`:500, `hide`:100}' data-bs-title='" + pin_tooltip + "'></i>" +
             "</div>" +
             "<div class='col-4 d-flex justify-content-center align-items-center' style='direction: rtl;'>" +
             "<button type='button' class='btn-close btn-primary btn-sm' data-bs-dismiss='modal' aria-label='Close' style='height: 5px;'></button>" +
@@ -174,10 +195,18 @@
       }
       note = { ...note, "pin_icon": pinIcon }
       console.log("edited note data: " + JSON.stringify(note));
+
+      let pin_tooltip = "";
+      if (note.pin_icon === "ban") {
+         pin_tooltip = "Unpin note";
+      } else {
+         pin_tooltip = "Pin note";
+      }
+
       goHere.innerHTML += "<div class='col-lg-3 col-md-4 col-sm-6 p-0 mt-0' id='note" + note.id + "' style='margin-bottom:36px;'>" +
          "<div class='icons card m-1 position-relative'>" +
          "<span class='hideIcon pin-icon position-absolute rounded-start my-2 px-2'>" +
-         "<i class='fa-solid fa-" + note.pin_icon + " text-warning' onclick='pinNote(" + JSON.stringify(note) + ")'></i>" +
+         "<i class='fa-solid fa-" + note.pin_icon + " text-warning' onclick='pinNote(" + JSON.stringify(note) + ")' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-delay='{`show`:500, `hide`:100}' data-bs-title='" + pin_tooltip + "'></i>" +
          "</span>" +
          "<div class='card-body pb-0 rounded' id='card" + note.id + "' style='background-color: " + note.bg_color + ";' onclick='openNote(" + JSON.stringify(note) + ")'>" +
          "<h6 class='card-title'>" + note.title + "</h6>" +
@@ -185,14 +214,14 @@
          "</div>" +
          "<div class='iconDiv row border-0 position-absolute m-0 p-2' style='bottom: -40px;z-index: 1;'>" +
          "<div class='hideIcon col-4'>" +
-         "<i class='far fa-edit text-primary' onclick='editNote(" + note.id + ")'></i>" +
+         "<i class='far fa-edit text-primary' onclick='editNote(" + note.id + ")' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-delay='{`show`:500, `hide`:100}' data-bs-title='Edit note'></i>" +
          "</div>" +
          "<div class='hideIcon col-4'>" +
-         "<i class='fa-solid fa-palette text-primary' id='dropdownMenuButton" + note.id + "' data-bs-toggle='dropdown' aria-expanded='false'></i>" +
+         "<i class='fa-solid fa-palette text-primary' id='dropdownMenuButton" + note.id + "' data-bs-toggle='dropdown' aria-expanded='false' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-delay='{`show`:500, `hide`:100}' data-bs-title='Set color'></i>" +
          getColorPaletteElement(note) +
          "</div>" +
          "<div class='hideIcon col-4'>" +
-         "<i onclick='deleteNote(" + note.id + ")' class='far fa-trash-alt text-danger'></i>" +
+         "<i onclick='deleteNote(" + note.id + ")' class='far fa-trash-alt text-danger' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-delay='{`show`:500, `hide`:100}' data-bs-title='Delete this note'></i>" +
          "</div>" +
          "</div>" +
          "</div>" +
@@ -366,7 +395,7 @@
          }
       } catch (error) {
          console.error("Error updating note:", error);
-         softAlert("danger", "Note not edited due to same error", 30000);
+         softAlert("danger", "Note not edited due to some error", 30000);
       }
    });
 
@@ -388,7 +417,7 @@
          if (noteExist) { noteExist.remove(); } // if this not card exist than remove it
       } catch (error) {
          console.error("Error deleting note:", error);
-         softAlert("danger", "note not delete. same error occurred.", 30000);
+         softAlert("danger", "note not delete. some error occurred.", 30000);
       }
    }
 

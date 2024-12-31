@@ -36,9 +36,12 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public Users updateUser(Users newUser, Long id) {
+	public Users updateUser(Long id, Users newUser) {
 		Users user = userRepository.findById(id).orElse(null);
 		if(user != null) { // here user exist it means that id user exist and id present in that object (means user.id is not null) 
+			newUser.setId(user.getId());
+			newUser.setPassword(user.getPassword());
+			newUser.setCreateDate(user.getCreateDate());
 			return userRepository.save(newUser); // if id exist in provided entity object than JSP do update
 		} else {
 			throw new RuntimeException("User not found with id:"+ id);
@@ -51,7 +54,7 @@ public class UserServiceImpl implements UserService {
 			userRepository.deleteById(id);
 			return "User deleted successfully";
 		} else {			
-			return "User not deleted or User not Found. Cheack provided id's user exist!";
+			return "User not deleted or User not Found."; // Check provided id's user exist!
 		}
 	}
 

@@ -11,11 +11,13 @@
                     <a class="nav-link active" href="/NotesHome">Notes</a>
                 </li>
                 <li class="nav-item" id="profileButton">
-                    <button class="nav-link active" data-bs-toggle="modal" data-bs-target="#profileModal">Profile</button>
                     <% if (loggedInUser != null) { %>
+                        <button class="nav-link active" data-bs-toggle="modal" data-bs-target="#profileModal">Profile</button>
                         <jsp:include page="ProfileModal.jsp" />
+                        <jsp:include page="ProfileModal_script.jsp" />
                     <% } else { %>
-                        <span>User is not logged in or information is not available.</span>
+                        <span id="userNotLogin">User is not logged in or information is not available.</span>
+                        <%-- This reload problem solving by create Profile Button and modal by js and put condition sessionStorage.getItem("UserFirstName") !== null than show Profile Button--%>
                     <% } %>
                 </li>
             </ul>

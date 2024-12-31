@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -39,6 +40,22 @@ public class UserController {
 		return response;
 	}
 	
+	@PutMapping("/updateUser/{id}")
+	@ResponseBody
+	public Map<String, String> updateUser(@PathVariable Long id, @RequestBody Users user) {
+		Map<String, String> response = new HashMap<>();
+		Users newUser = userService.updateUser(id, user);
+		if (newUser != null) {
+			response.put("status", "success");
+	        response.put("message", "User Details Update successfully.");
+	    } else {
+	    	response.put("status", "error");
+	        response.put("message", "User Details not updated due to some error");
+	    }
+		return response;
+	}
+
+	
 	@PostMapping("/login")
 	@ResponseBody
 	public Map<String, String> getOneUser(@RequestBody Users user, HttpSession session) {
@@ -57,15 +74,20 @@ public class UserController {
 		return response;
 	}
 	
-	@DeleteMapping("/{id}")
-	public String deleteUser(@PathVariable Long id, Model model) {
+	@DeleteMapping("deleteUser/{id}")
+	@ResponseBody
+	public Map<String, String> deleteUser(@PathVariable Long id, Model model) {
+		Map<String, String> response = new HashMap<>();
 		String message = userService.deleteUser(id);
 		if (message.equals("User deleted successfully")) {
 			model.addAttribute("Success", message);
-			return "register";
+			response.put("status", "success");
+			response.put("message", message);
 		} else {
 			model.addAttribute("ErrorMsg", message);
-		    return "profile"; // not going any ware return same page name 
+			response.put("status", "error");
+			response.put("message", message);
 		}
+		return response;
 	}
 }

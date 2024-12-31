@@ -3,6 +3,7 @@ package in.v8.main.entities;
 import java.time.LocalDateTime;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -37,9 +38,21 @@ public class Users {
 	@Column(name = "create_date", nullable = false, updatable = false)
 	@CreationTimestamp
 	private LocalDateTime createDate;
+	@Column(name = "updated_date", nullable = false, updatable = true)
+	@UpdateTimestamp
+	private LocalDateTime updatedDate;
 	
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public Long getId() {
 		return id;
+	}
+	public LocalDateTime getUpdatedDate() {
+		return updatedDate;
+	}
+	public void setUpdatedDate(LocalDateTime updatedDate) {
+		this.updatedDate = updatedDate;
 	}
 	public String getFirstName() {
 		return firstName;

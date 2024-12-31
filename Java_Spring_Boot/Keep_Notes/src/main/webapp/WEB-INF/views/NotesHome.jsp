@@ -3,7 +3,7 @@
 <%-- <div>
    <h3>User Info</h3>
    <p>User ID: ${loggedInUser.id}</p>
-   <p>User Name: ${loggedInUser.firstName}</p>
+   <p>User Name: <% out.println(loggedInUser.getFirstName()) %></p>
 </div> --%>
 <jsp:include page="AddNote.jsp" />
 

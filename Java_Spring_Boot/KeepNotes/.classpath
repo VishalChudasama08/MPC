@@ -54,6 +54,21 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Happy_Coding/My_Code_In_Github/BCA/Sem-6/Project_S6/Keep_Notes/src/main/webapp/WEB-INF/lib/spring-web-5.3.19.jar"/>
+	<classpathentry kind="lib" path="C:/Users/visha/.m2/repository/org/springframework/spring-web/5.3.30/spring-web-5.3.30.jar" sourcepath="C:/Users/visha/.m2/repository/org/springframework/spring-web/5.3.30/spring-web-5.3.30-sources.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="org.eclipse.jst.component.archivename" value="spring-web-5.3.30.jar"/>
+			<attribute name="maven.groupId" value="org.springframework"/>
+			<attribute name="maven.artifactId" value="spring-web"/>
+			<attribute name="maven.version" value="5.3.30"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

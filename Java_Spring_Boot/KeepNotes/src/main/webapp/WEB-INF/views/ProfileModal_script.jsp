@@ -59,7 +59,7 @@
             phoneNumber: $('#pPhoneNumber').val()
          }
 
-         let url = "/api/user/updateUser/" + sessionStorage.getItem("UserId");
+         let url = "/KeepNotes/api/user/updateUser/" + sessionStorage.getItem("UserId");
          console.log("update user details endpoint:- " + url);
          try {
             const response = await fetch(url, {
@@ -103,7 +103,7 @@
       $('#deleteAccount').click(async function () { // delete account and go register page
          if (confirm("Are You sure ? You want to delete your account")) { // confirmation
             try {
-               const url = "/api/user/deleteUser/" + sessionStorage.getItem("UserId"); // delete user endpoint
+               const url = "/KeepNotes/api/user/deleteUser/" + sessionStorage.getItem("UserId"); // delete user endpoint
                console.log("delete user endpoint:- " + url);
 
                const response = await fetch(url, { method: "DELETE" });
@@ -112,7 +112,7 @@
                   $("#profileModal").modal('hide'); // if delete than hide modal
                   sessionStorage.clear();
                   await new Promise(resolve => setTimeout(function () {
-                     window.location.href = "/register";
+                     window.location.href = "/KeepNotes/register";
                      softAlert(data.status, data.message, 2000);
                      sessionStorage.clear();
                      resolve(); // Resolve the Promise

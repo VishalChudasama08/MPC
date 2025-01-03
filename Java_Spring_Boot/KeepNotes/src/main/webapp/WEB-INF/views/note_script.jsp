@@ -1,6 +1,6 @@
 <script>
    if (sessionStorage.getItem("UserName") == null && sessionStorage.getItem("UserId") == null) {
-      window.location.href = "/login";
+      window.location.href = "/KeepNotes/login";
    }
 
    // const loggedInUser = {
@@ -21,7 +21,7 @@
       note.pinned = !note.pinned;// Update the pinned status in the note object
 
       // update in database
-      let url = "/api/note/pin/" + note.id + "/pinned?pinned=" + note.pinned;
+      let url = "/KeepNotes/api/note/pin/" + note.id + "/pinned?pinned=" + note.pinned;
       console.log(url);
 
       try {
@@ -60,7 +60,7 @@
       updateBGCinDB(note.id, color);
    }
    async function updateBGCinDB(id, color) {
-      let url = "/api/note/bgColor/" + id + "/color?color=" + color;
+      let url = "/KeepNotes/api/note/bgColor/" + id + "/color?color=" + color;
       console.log("update bg color endpoint:- ", url);
 
       try {
@@ -237,12 +237,12 @@
          console.error("User ID is missing in session storage.");
          document.getElementById('notesContainer').innerHTML = "<p>Please log in to view notes.</p>";
          if (alert("Please log in to view notes.")) {
-            window.location.href = "/login";
+            window.location.href = "/KeepNotes/login";
          }
          return;
       }
 
-      let url = "/api/note/" + userId; // fetch all note endpoint
+      let url = "/KeepNotes/api/note/" + userId; // fetch all note endpoint
       console.log("fetch all note endpoint:- " + url);
 
       try {
@@ -306,7 +306,7 @@
 
          // Make AJAX request
          const response = await $.ajax({
-            url: "/api/note/addNote", // add new note endpoint
+            url: "/KeepNotes/api/note/addNote", // add new note endpoint
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify(noteData),
@@ -337,7 +337,7 @@
       $("#openFullNoteModal").modal('hide');
       $("#noteModal").modal('show');
       try {
-         let url = "/api/note/" + id; // fetch this note endpoint
+         let url = "/KeepNotes/api/note/" + id; // fetch this note endpoint
          console.log("fetch this note endpoint:- " + url);
 
          const response = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" } });
@@ -373,7 +373,7 @@
          description: $("#editDescription").val()
       };
 
-      const url = "/api/note/" + $("#editNoteId").val(); // edit note endpoint
+      const url = "/KeepNotes/api/note/" + $("#editNoteId").val(); // edit note endpoint
       console.log("edit note endpoint:- " + url);
       try {
          const response = await fetch(url, {
@@ -406,7 +406,7 @@
       $("#openFullNoteModal").modal('hide'); // if delete from open full note modal than hide modal first
 
       try {
-         const url = "/api/note/" + noteId; // delete note endpoint
+         const url = "/KeepNotes/api/note/" + noteId; // delete note endpoint
          console.log("delete note endpoint:- " + url);
 
          const response = await fetch(url, { method: "DELETE" });

@@ -1,8 +1,5 @@
 package in.v8.main.services;
 
-import java.util.List;
-import java.util.Optional;
-
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.springframework.stereotype.Service;
@@ -12,8 +9,6 @@ import in.v8.main.entities.Users;
 
 @Service
 public class UserServiceImpl implements UserService {
-	
-	Transaction transaction = null;
 	
 	@Override
 	public Users login(String email, String password) {
@@ -35,75 +30,72 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public int createUser(Users user) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public List<Users> getAllUsers() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Optional<Users> getUser(Long id) {
-		// TODO Auto-generated method stub
-		return Optional.empty();
+		Transaction transaction = null;
+		try (Session session = HibernateConfig.getSessionFactory().openSession()) {
+			transaction = session.beginTransaction();
+		    String hql = "select count(*) from Users where email = :email";
+		    Long count = session.createQuery(hql, Long.class)
+		                        .setParameter("email", user.getEmail())
+		                        .uniqueResult();
+		    boolean exists = count > 0; // if user exist than true 
+		    if(!exists) { // user not exist than save
+		    	session.save(user);
+				transaction.commit();	
+		    	return 1;
+		    } else {
+		    	System.out.println("Yser not save becauae user Exists: " + exists + " : " + user.getEmail());
+		    	return 0;
+		    }
+		} catch (Exception e) {
+		    if (transaction != null) transaction.rollback();
+		    e.printStackTrace();
+		    return 0;
+		}
 	}
 
 	@Override
 	public Users updateUser(Long id, Users newUser) {
-		// TODO Auto-generated method stub
-		return null;
+		Transaction transaction = null;
+		try (Session session = HibernateConfig.getSessionFactory().openSession()) {
+			transaction = session.beginTransaction();
+			
+			Users user = session.get(Users.class, id);
+			
+			if(user != null) {
+				newUser.setId(user.getId());
+				newUser.setPassword(user.getPassword());
+				newUser.setCreateDate(user.getCreateDate());
+				
+				session.merge(newUser); // Merge updates an entity if it exists
+	            transaction.commit();
+	            return newUser;
+			} else {
+				throw new RuntimeException("User not found with id:"+ id);
+			}
+		} catch (Exception e) {
+	        if (transaction != null) transaction.rollback();
+	        e.printStackTrace();
+	        newUser.setFirstName(e.getMessage()); // Indicate an error
+	        return newUser;
+	    }
 	}
 
 	@Override
 	public String deleteUser(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		Transaction transaction = null;
+		try (Session session = HibernateConfig.getSessionFactory().openSession()) {
+		    transaction = session.beginTransaction();
+		    Users user = session.get(Users.class, id); // get this note by id
+		    if (user != null) { // user have ? than delete
+		        session.delete(user);
+		        transaction.commit();
+		        return "User deleted successfully";
+		    }
+		} catch (Exception e) {
+		    if (transaction != null) transaction.rollback();
+		    e.getMessage();
+		}
+		return "User not deleted or User not Found."; // Check provided id's user exist!
 	}
-
-//	@Override
-//	public int createUser(Users user) {
-//		if(userRepository.existsByEmail(user.getEmail())) { // check email is exists or not
-//			return 0;
-//		} else {
-//			userRepository.save(user);
-//			return 1;
-//		}
-//	}
-//
-//	@Override
-//	public List<Users> getAllUsers() {
-//		return userRepository.findAll();
-//	}
-//
-//	@Override
-//	public Optional<Users> getUser(Long id) {
-//		return userRepository.findById(id);
-//	}
-//
-//	@Override
-//	public Users updateUser(Long id, Users newUser) {
-//		Users user = userRepository.findById(id).orElse(null);
-//		if(user != null) { // here user exist it means that id user exist and id present in that object (means user.id is not null) 
-//			newUser.setId(user.getId());
-//			newUser.setPassword(user.getPassword());
-//			newUser.setCreateDate(user.getCreateDate());
-//			return userRepository.save(newUser); // if id exist in provided entity object than JSP do update
-//		} else {
-//			throw new RuntimeException("User not found with id:"+ id);
-//		}
-//	}
-//
-//	@Override
-//	public String deleteUser(Long id) {
-//		if (userRepository.existsById(id)) {
-//			userRepository.deleteById(id);
-//			return "User deleted successfully";
-//		} else {			
-//			return "User not deleted or User not Found."; // Check provided id's user exist!
-//		}
-//	}
 
 }

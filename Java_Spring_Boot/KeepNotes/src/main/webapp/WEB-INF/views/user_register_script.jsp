@@ -50,7 +50,7 @@
 
          // Make AJAX request
          $.ajax({
-            url: "/api/user/createUser",
+            url: "/KeepNotes/api/user/createUser",
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify(userData),
@@ -58,7 +58,7 @@
                if (response.status === "success") {
                   softAlert(response.status, response.message, 2000);
                   setTimeout(() => {
-                     window.location.href = "login"; // go on login page
+                     window.location.href = "/KeepNotes/login"; // go on login page
                   }, 1600);
                } else {
                   softAlert("danger", response.message, 30000);

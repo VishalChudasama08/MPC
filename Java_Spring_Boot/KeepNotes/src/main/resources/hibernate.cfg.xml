@@ -11,16 +11,27 @@
         <property name="connection.username">root</property>
         <property name="connection.password"></property>
 
-		<!-- Hibernate properties -->
-        <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
-        <property name="show_sql">true</property>
-        <property name="format_sql">true</property>
+		<!-- JDBC connection pool settings -->
+        <property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.max_size">20</property>
+        <property name="hibernate.c3p0.timeout">300</property>
+        <property name="hibernate.c3p0.max_statements">50</property>
+        <property name="hibernate.c3p0.idle_test_period">3000</property>
+
+        <!-- Specify dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup -->
         <property name="hibernate.hbm2ddl.auto">update</property>
 
-        <property name="connection.pool_size">20</property>
-
-		<!-- Specify annotated entity classes -->
-        <mapping class="in.v8.main.entities.Users" /> 
+        <!-- Mention annotated class -->
+        <mapping class="in.v8.main.entities.Users"/>
         <mapping class="in.v8.main.entities.Notes" />
     </session-factory>
 </hibernate-configuration>

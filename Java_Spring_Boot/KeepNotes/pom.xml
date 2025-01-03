@@ -23,6 +23,13 @@
         <artifactId>spring-webmvc</artifactId>
         <version>5.3.30</version>
     </dependency>
+    
+    <!-- Spring Core and Context -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>5.3.30</version>
+    </dependency>
 
     <!-- Hibernate Core -->
     <dependency>
@@ -37,6 +44,12 @@
         <artifactId>hibernate-validator</artifactId>
         <version>6.2.5.Final</version>
     </dependency>
+    
+    <dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-entitymanager</artifactId>
+	    <version>5.6.15.Final</version>
+	</dependency>
 
     <!-- MySQL Connector -->
     <dependency>
@@ -44,6 +57,19 @@
         <artifactId>mysql-connector-j</artifactId>
         <version>8.0.33</version>
     </dependency>
+    
+    <!-- Request data convert in json  -->
+    <dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-databind</artifactId>
+	    <version>2.15.2</version>
+	</dependency>
+	<dependency>
+	    <groupId>com.fasterxml.jackson.datatype</groupId>
+	    <artifactId>jackson-datatype-jsr310</artifactId>
+	    <version>2.15.2</version>
+	</dependency>
+
 
     <!-- JSP API -->
     <dependency>

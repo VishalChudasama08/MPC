@@ -27,7 +27,7 @@ public class MainController {
     @GetMapping("/logout")
     public String logout(HttpSession session) {
         session.invalidate(); // Invalidate the session
-        System.out.print("remove session all data");
+        System.out.print("remove session all data\n");
         return "redirect:/login"; // Redirect to login page
     }
 

@@ -26,7 +26,7 @@
 
          // Make AJAX request
          $.ajax({
-            url: "/api/user/login",
+            url: "/KeepNotes/api/user/login",
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify(loginData),
@@ -38,7 +38,7 @@
                   sessionStorage.setItem("UserId", BigInt(response.UserId));
 
                   setTimeout(() => {
-                     window.location.href = "NotesHome"; // go on NotesHome page
+                     window.location.href = "/KeepNotes/NotesHome"; // go on NotesHome page
                   }, 300);
                } else {
                   softAlert("danger", response.message, 30000);

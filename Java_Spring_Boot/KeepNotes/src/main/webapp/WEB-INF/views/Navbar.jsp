@@ -1,7 +1,7 @@
 <%@ include file="sessionVariables.jsp" %>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/">MyNotes</a>
+        <a class="navbar-brand" href="/KeepNotes">MyNotes</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -22,9 +22,9 @@
                 </li>
             </ul>
             <div class="d-flex">
-                <a id="loginButton" href="/login" class="btn btn-outline-primary btn-sm me-2">Login</a>
-                <a id="registerButton" href="/register" class="btn btn-outline-primary  btn-sm">SignUp</a>
-                <a id="logoutButton" href="/logout" class="btn btn-outline-primary  btn-sm me-2" onClick="handleLogout()" >Logout</a>
+                <a id="loginButton" href="/KeepNotes/login" class="btn btn-outline-primary btn-sm me-2">Login</a>
+                <a id="registerButton" href="/KeepNotes/register" class="btn btn-outline-primary  btn-sm">SignUp</a>
+                <a id="logoutButton" href="/KeepNotes/logout" class="btn btn-outline-primary  btn-sm me-2" onClick="handleLogout()" >Logout</a>
             </div>
         </div>
     </div>

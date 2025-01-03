@@ -1,6 +1,8 @@
 package in.v8.main;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -21,6 +23,12 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 @EnableWebMvc
 @ComponentScan(basePackages = "in.v8.main")
 public class WebConfig implements WebMvcConfigurer {
+	
+	public WebConfig() {
+        // Adjust Hibernate logging levels programmatically
+        Logger.getLogger("org.hibernate").setLevel(Level.INFO); // Suppresses Hibernate DEBUG logs
+        Logger.getLogger("org.hibernate.SQL").setLevel(Level.INFO); // Suppresses SQL logs
+    }
 
     @Override
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {

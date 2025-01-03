@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -24,6 +25,7 @@ public class Notes {
 	private Long userId;
 	@Column
 	private String title;
+	@Lob // set this field type is text (no limit for text)
 	@Column
 	private String description;
 	

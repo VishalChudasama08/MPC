@@ -11,7 +11,9 @@ import in.v8.main.entities.Notes;
 
 @Service
 public class NotesServiceImpl implements NotesService {
-
+	
+	 // Add New Note //
+	//////////////////
 	@Override
 	public int addNote(Notes note) {
 		Transaction transaction = null;
@@ -27,6 +29,8 @@ public class NotesServiceImpl implements NotesService {
 		}
 	}
 
+	 // Get All Notes By User Id //
+	//////////////////////////////
 	@Override
 	public List<Notes> getAllNotesByUserId(Long userId) {
 		try(Session session = HibernateConfig.getSessionFactory().openSession()){			
@@ -36,7 +40,9 @@ public class NotesServiceImpl implements NotesService {
 	                      .getResultList();
 		}
 	}
-
+	
+	 // Get This Note By Note Id //
+	//////////////////////////////
 	@Override
 	public Notes getThisNote(Long id) {
 		try(Session session = HibernateConfig.getSessionFactory().openSession()){
@@ -44,6 +50,8 @@ public class NotesServiceImpl implements NotesService {
 		}
 	}
 	
+	 // Update Existing Note //
+	//////////////////////////
 	@Override
 	public int updateNote(Notes editedNote, Long id) {
 		Transaction transaction = null;
@@ -72,6 +80,8 @@ public class NotesServiceImpl implements NotesService {
 	    }
 	}
 
+	 // Delete Existing Note By Note id //
+	/////////////////////////////////////
 	@Override
 	public String deleteNote(Long id) {
 		Transaction transaction = null;
@@ -90,14 +100,20 @@ public class NotesServiceImpl implements NotesService {
 		return "Note not deleted or note not Found.";
 	}
 
+	 // Change or add Note Bg-Color by note id //
+	////////////////////////////////////////////
 	@Override
 	public int updateBGColor(Long id, String color) {
+		System.out.println(id);
+		System.out.println(color);
 		Transaction transaction = null;
 	    int rowsAffected = 0;
 	    try (Session session = HibernateConfig.getSessionFactory().openSession()) {
 	        transaction = session.beginTransaction();
 	        
-	        String hql = "UPDATE Notes SET bgColor = :color WHERE id = :id";
+	        String hql = "UPDATE Notes SET bg_color = :color WHERE id = :id";
+	        System.out.println(hql);
+//	        rowsAffected = 0;
 	        rowsAffected = session.createQuery(hql)
 	                              .setParameter("color", color)
 	                              .setParameter("id", id)
@@ -111,6 +127,8 @@ public class NotesServiceImpl implements NotesService {
 	    return rowsAffected;
 	}
 
+	 // Change or Add Note Pin Status by note id //
+	//////////////////////////////////////////////
 	@Override
 	public int updatePinStatus(Long id, Boolean pinned) {
 		Transaction transaction = null;

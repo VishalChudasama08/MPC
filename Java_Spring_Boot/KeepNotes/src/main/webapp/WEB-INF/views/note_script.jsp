@@ -73,6 +73,9 @@
       }
    }
    function getColorPaletteElement(note) {
+      console.log("normal note: ", note);
+      console.log("stringify note: ", JSON.stringify(note));
+
       return "<!-- color Palette start -->" +
          "<ul class='dropdown-menu p-2' aria-labelledby='dropdownMenuButton" + note.id + "'>" +
          "<div class='d-flex'>" +
@@ -110,19 +113,36 @@
          "</ul>" +
          "<!-- color Palette end -->";
    }
-   async function openNote(note) {
+   async function openNote(nId) {
+
       try {
-         // const note = await typeof noteString === "string" ? JSON.parse(noteString) : noteString;
-         console.log("modal note data " + JSON.stringify(note));
+         let url = "/KeepNotes/api/note/" + nId; // fetch this note endpoint
+         console.log("fetch this note endpoint for open note:- " + url);
+
+         const response = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" } });
+         if (!response.ok) {
+            if (response.status === 404) { // Specific check for 404
+               const errorText = await response.text();
+               // Handle "No notes found" as a special case
+               document.getElementById('notesContainer').innerHTML = "<p>" + errorText + "</p>"; // No error class needed
+               return; // Stop further processing, no need to throw an error
+            } else {
+               // For other errors (not 404), throw the error to be caught below
+               const errorText = await response.text();
+               throw new Error(errorText);
+            }
+         }
+
+         const note = await response.json();
+
+         console.log("modal note data: ", JSON.stringify(note));
 
 
-         let createdDate = note.created_date.slice(0, 10).split('-');
-         let formatCreateDateAndTime = note.created_date.slice(11, 16) + ", " + createdDate[2] + "-" + createdDate[1] + "-" + createdDate[0];
+         let formatCreateDateAndTime = note.created_date[3] + ":" + note.created_date[4] + ", " + note.created_date[2] + "-" + note.created_date[1] + "-" + note.created_date[0];
          let formatEditDate = "";
          let formatEditDateAndTimeElement = "";
          if (note.created_date !== note.updated_date) {
-            let updatedDate = note.updated_date.slice(0, 10).split('-');
-            formatEditDateAndTimeElement = "<br><small id='noteUpdatedDate'>Edit at " + note.updated_date.slice(11, 16) + ", " + updatedDate[2] + "-" + updatedDate[1] + "-" + updatedDate[0] + "</small>";
+            formatEditDateAndTimeElement = "<br><small id='noteUpdatedDate'>Edit at " + note.updated_date[3] + ":" + note.updated_date[4] + ", " + note.updated_date[2] + "-" + note.updated_date[1] + "-" + note.updated_date[0] + "</small>";
          }
 
          let pin_tooltip = "";
@@ -131,11 +151,13 @@
          } else {
             pin_tooltip = "Pin note";
          }
+         // Format the description for HTML rendering
+         const formattedDescription = note.description.replace(/\n/g, "<br>");
 
          const openNoteModal = document.getElementById('openNoteModal');
          openNoteModal.innerHTML = "<!-- OpenNote.jsp -->" +
             "<div class='modal fade' id='openFullNoteModal' tabindex='-1' aria-labelledby='fullNoteModalLabel' aria-hidden='true'>" +
-            "<div class='modal-dialog d-flex justify-content-center align-items-center vh-100 my-0'>" +
+            "<div class='modal-dialog modal-dialog-scrollable d-flex justify-content-center align-items-center vh-100 my-0'>" +
             "<div class='modal-content' id='modal" + note.id + "' style='background-color:" + note.bg_color + ";'>" +
             "<div class='icons modal-header row m-0 p-3'>" +
             "<div class='col-2 d-flex justify-content-center align-items-center'>" +
@@ -157,7 +179,7 @@
             "</div>" +
             "<div class='modal-body'>" +
             "<h5 id='noteTitle'>" + note.title + "</h5>" +
-            "<p id='noteDescription'>" + note.description + "</p>" +
+            "<p id='noteDescription'>" + formattedDescription + "</p>" +
             "<small><h6>Note Details:</h6></small>" +
             "<p><small id='noteCreateDate'>Create at " + formatCreateDateAndTime + "</small>" + formatEditDateAndTimeElement + "</small></p>" +
             "</div>" +
@@ -165,12 +187,14 @@
             "</div>" +
             "</div";
          formatEditDateAndTimeElement = "";
+         formatCreateDateAndTime = "";
          $(document).ready(await function () {
             $("#openFullNoteModal").modal('show');
             <jsp:include page="style.jsp" />
          })
+
       } catch (error) {
-         console.error("Error parsing note data:", error);
+         console.error("Error fetching notes:", error); // Only log *actual* errors
       }
    }
 
@@ -194,7 +218,7 @@
          pinIcon = "ban";
       }
       note = { ...note, "pin_icon": pinIcon }
-      console.log("edited note data: " + JSON.stringify(note));
+      // console.log("edited note data: " + JSON.stringify(note));
 
       let pin_tooltip = "";
       if (note.pin_icon === "ban") {
@@ -203,14 +227,17 @@
          pin_tooltip = "Pin note";
       }
 
+      // Format the description for HTML rendering
+      const formattedDescription = note.description.replace(/\n/g, "<br>");
+
       goHere.innerHTML += "<div class='col-lg-3 col-md-4 col-sm-6 p-0 mt-0' id='note" + note.id + "' style='margin-bottom:36px;'>" +
          "<div class='icons card m-1 position-relative'>" +
          "<span class='hideIcon pin-icon position-absolute rounded-start my-2 px-2'>" +
          "<i class='fa-solid fa-" + note.pin_icon + " text-warning' onclick='pinNote(" + JSON.stringify(note) + ")' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-delay='{`show`:500, `hide`:100}' data-bs-title='" + pin_tooltip + "'></i>" +
          "</span>" +
-         "<div class='card-body pb-0 rounded' id='card" + note.id + "' style='background-color: " + note.bg_color + ";' onclick='openNote(" + JSON.stringify(note) + ")'>" +
+         "<div class='card-body pb-0 rounded' id='card" + note.id + "' style='background-color: " + note.bg_color + ";' onclick='openNote(" + note.id + ")'>" +
          "<h6 class='card-title'>" + note.title + "</h6>" +
-         "<p class='card-text mb-2'>" + note.description + "</p>" +
+         "<p class='card-text mb-2'>" + formattedDescription.split(/\s+/).slice(0, 30).join(' ') + "</p>" +
          "</div>" +
          "<div class='iconDiv row border-0 position-absolute m-0 p-2' style='bottom: -40px;z-index: 1;'>" +
          "<div class='hideIcon col-4'>" +
@@ -301,7 +328,7 @@
          const noteData = {
             "userId": sessionStorage.getItem("UserId"),
             "title": $("#title").val(),
-            "description": $("#title").val()
+            "description": $("#description").val()
          };
 
          // Make AJAX request
@@ -313,6 +340,7 @@
          });
 
          if (response.status === "success") {
+            console.log("Add New Note at endpoint:- " + "/KeepNotes/api/note/addNote", noteData);
             softAlert(response.status, response.message, 2000);
 
             $("#title").val("");

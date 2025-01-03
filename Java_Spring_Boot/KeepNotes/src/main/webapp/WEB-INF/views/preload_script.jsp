@@ -1,5 +1,6 @@
 <script>
-   document.title += " - " + window.location.pathname.split('/')[1];
+   let pathName = window.location.pathname.split('/')[2];
+   document.title += " - " + pathName ? pathName : "Index";
    function handleLogout() {
       sessionStorage.clear();
    }

@@ -301,7 +301,7 @@
          const noteData = {
             "userId": sessionStorage.getItem("UserId"),
             "title": $("#title").val(),
-            "description": $("#title").val()
+            "description": $("#description").val()
          };
 
          // Make AJAX request

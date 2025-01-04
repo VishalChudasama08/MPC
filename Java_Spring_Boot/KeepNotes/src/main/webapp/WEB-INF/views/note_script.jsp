@@ -51,7 +51,9 @@
    function setNoteBGC(note, color) {
       // update in UI
       note.bg_color = color;
-      createNoteCard(note);
+      let id = '#card' + note.id;
+      $(id).css("background-color", color)
+      // createNoteCard(note);
 
       let thisModal = '#modal' + note.id;
       $(thisModal).css("background-color", color);
@@ -73,8 +75,8 @@
       }
    }
    function getColorPaletteElement(note) {
-      console.log("normal note: ", note);
-      console.log("stringify note: ", JSON.stringify(note));
+      note.description = "NoDescriptionBecauseThisNoteForColorPallette";
+      // console.log("stringify note from color palette: ", JSON.stringify(note));
 
       return "<!-- color Palette start -->" +
          "<ul class='dropdown-menu p-2' aria-labelledby='dropdownMenuButton" + note.id + "'>" +
@@ -180,8 +182,10 @@
             "<div class='modal-body'>" +
             "<h5 id='noteTitle'>" + note.title + "</h5>" +
             "<p id='noteDescription'>" + formattedDescription + "</p>" +
-            "<small><h6>Note Details:</h6></small>" +
-            "<p><small id='noteCreateDate'>Create at " + formatCreateDateAndTime + "</small>" + formatEditDateAndTimeElement + "</small></p>" +
+            "</div>" +
+            "<div class='modal-footer d-block'>" +
+            "<small><strong>Note Details:</strong></small>" +
+            "<div><small id='noteCreateDate'>Create at " + formatCreateDateAndTime + "</small>" + formatEditDateAndTimeElement + "</small></div>" +
             "</div>" +
             "</div>" +
             "</div>" +
@@ -358,6 +362,13 @@
       history.replaceState(null, "", window.location.pathname) // remove url data
    });
 
+
+   function editionUpdateUI(editedNoteId, editedNoteTitle, editedNoteDescription) {
+      // card update
+      let elementId = '#card' + editedNoteId;
+      $(elementId).find('h6').text(editedNoteTitle);
+      $(elementId).find('p').text(editedNoteDescription);
+   }
    /////////////
    // edit note
    /////////////
@@ -416,7 +427,8 @@
             setTimeout(() => {
                $("#noteModal").modal('hide'); // Close the modal
 
-               fetchAndDisplayNotes(); // re-fetch all note
+               // fetchAndDisplayNotes(); // re-fetch all note
+               editionUpdateUI(updatedNoteData.id, updatedNoteData.title, updatedNoteData.description);
             }, 200);
          } else {
             softAlert("danger", responseData.message, 30000);

@@ -40,4 +40,9 @@ public class MainController {
     public String openProfilePage() {
     	return "Profile";
     }
+    
+    @GetMapping("/About")
+    public String openAboutPage() {
+    	return "About";
+    }
 }

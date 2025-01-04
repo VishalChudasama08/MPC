@@ -8,7 +8,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/NotesHome">Notes</a>
+                    <a id="NotesHomeNavButton" class="nav-link active" href="/KeepNotes/NotesHome">Notes</a>
                 </li>
                 <li class="nav-item" id="profileButton">
                     <% if (loggedInUser != null) { %>
@@ -19,6 +19,9 @@
                         <span id="userNotLogin">User is not logged in or information is not available.</span>
                         <%-- This reload problem solving by create Profile Button and modal by js and put condition sessionStorage.getItem("UserFirstName") !== null than show Profile Button--%>
                     <% } %>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/KeepNotes/About">About Us</a>
                 </li>
             </ul>
             <div class="d-flex">

@@ -7,7 +7,7 @@
 </div> --%>
 <jsp:include page="AddNote.jsp" />
 
-<h3>Pinned Notes</h3>
+<h3 class="mt-3">Pinned Notes</h3>
 <div id="pinnedNotesContainer" class='row my-3 p-0'></div>
 
 <h3 class="my-3">Your All Notes</h3>

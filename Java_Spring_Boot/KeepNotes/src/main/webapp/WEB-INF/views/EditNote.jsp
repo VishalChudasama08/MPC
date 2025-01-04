@@ -10,11 +10,11 @@
             <form id="editNoteForm">
                <div class="mb-3">
                   <label for="editTitle" class="form-label">Title</label>
-                  <input type="text" class="form-control" id="editTitle" name="title" required>
+                  <input type="text" class="form-control restrict-input" id="editTitle" name="title" required>
                </div>
                <div class="mb-3">
                   <label for="editDescription" class="form-label">Description</label>
-                  <textarea class="form-control" id="editDescription" name="description" rows="4" required></textarea>
+                  <textarea class="form-control restrict-input" id="editDescription" name="description" rows="4" required></textarea>
                </div>
                <input type="hidden" id="editNoteId">
             </form>

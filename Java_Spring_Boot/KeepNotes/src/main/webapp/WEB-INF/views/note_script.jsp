@@ -135,10 +135,9 @@
             }
          }
 
-         const note = await response.json();
+         let note = await response.json();
 
          console.log("modal note data: ", JSON.stringify(note));
-
 
          let formatCreateDateAndTime = note.created_date[3] + ":" + note.created_date[4] + ", " + note.created_date[2] + "-" + note.created_date[1] + "-" + note.created_date[0];
          let formatEditDate = "";
@@ -146,6 +145,12 @@
          if (note.created_date !== note.updated_date) {
             formatEditDateAndTimeElement = "<br><small id='noteUpdatedDate'>Edit at " + note.updated_date[3] + ":" + note.updated_date[4] + ", " + note.updated_date[2] + "-" + note.updated_date[1] + "-" + note.updated_date[0] + "</small>";
          }
+
+         let pinIcon = "thumbtack";
+         if (note.pinned) {
+            pinIcon = "ban";
+         }
+         note = { ...note, "pin_icon": pinIcon }
 
          let pin_tooltip = "";
          if (note.pin_icon === "ban") {
@@ -363,12 +368,6 @@
    });
 
 
-   function editionUpdateUI(editedNoteId, editedNoteTitle, editedNoteDescription) {
-      // card update
-      let elementId = '#card' + editedNoteId;
-      $(elementId).find('h6').text(editedNoteTitle);
-      $(elementId).find('p').text(editedNoteDescription);
-   }
    /////////////
    // edit note
    /////////////
@@ -428,8 +427,11 @@
                $("#noteModal").modal('hide'); // Close the modal
 
                // fetchAndDisplayNotes(); // re-fetch all note
-               editionUpdateUI(updatedNoteData.id, updatedNoteData.title, updatedNoteData.description);
-            }, 200);
+               // card details update
+               let elementId = '#card' + updatedNoteData.id;
+               $(elementId).find('h6').text(updatedNoteData.title);
+               $(elementId).find('p').text(updatedNoteData.description);
+            }, 300);
          } else {
             softAlert("danger", responseData.message, 30000);
          }
@@ -443,21 +445,23 @@
    // delete note
    ///////////////
    async function deleteNote(noteId) {
-      $("#openFullNoteModal").modal('hide'); // if delete from open full note modal than hide modal first
+      if (confirm("Are you sure ? Delete this note ?")) {
+         $("#openFullNoteModal").modal('hide'); // if delete from open full note modal than hide modal first
 
-      try {
-         const url = "/KeepNotes/api/note/" + noteId; // delete note endpoint
-         console.log("delete note endpoint:- " + url);
+         try {
+            const url = "/KeepNotes/api/note/" + noteId; // delete note endpoint
+            console.log("delete note endpoint:- " + url);
 
-         const response = await fetch(url, { method: "DELETE" });
-         const data = await response.json();
-         softAlert(data.status, data.message, 2000); // Show success message
+            const response = await fetch(url, { method: "DELETE" });
+            const data = await response.json();
+            softAlert(data.status, data.message, 2000); // Show success message
 
-         let noteExist = document.getElementById('note' + noteId);
-         if (noteExist) { noteExist.remove(); } // if this not card exist than remove it
-      } catch (error) {
-         console.error("Error deleting note:", error);
-         softAlert("danger", "note not delete. some error occurred.", 30000);
+            let noteExist = document.getElementById('note' + noteId);
+            if (noteExist) { noteExist.remove(); } // if this not card exist than remove it
+         } catch (error) {
+            console.error("Error deleting note:", error);
+            softAlert("danger", "note not delete. some error occurred.", 30000);
+         }
       }
    }
 
@@ -479,5 +483,14 @@
 
       // Fetch and display notes when the page loads
       window.onload = fetchAndDisplayNotes;
+
+      // single inverted comma (') not allowed because user input single inverted comma (') than for pin and un-pin note error (not work) for this note
+      $('.restrict-input').on('input', function () {
+         let value = $(this).val();
+         if (value.includes("'")) {
+            alert("Single quotes (') are not allowed!");
+            $(this).val(value.replace(/'/g, '')); // Remove single quotes
+         }
+      });
    });
 </script>

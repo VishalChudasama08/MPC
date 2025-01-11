@@ -13,12 +13,12 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column
-	private String full_name;
+	@Column(name = "full_name")
+	private String fullName;
 	@Column
 	private String email;
-	@Column
-	private String profile_picture;
+	@Column(name = "profile_picture")
+	private String profilePicture;
 	@Column
 	private String password;
 	public Integer getId() {
@@ -27,11 +27,11 @@ public class User {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getFull_name() {
-		return full_name;
+	public String getFullName() {
+		return fullName;
 	}
-	public void setFull_name(String full_name) {
-		this.full_name = full_name;
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
 	public String getEmail() {
 		return email;
@@ -39,11 +39,11 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getProfile_picture() {
-		return profile_picture;
+	public String getProfilePicture() {
+		return profilePicture;
 	}
-	public void setProfile_picture(String profile_picture) {
-		this.profile_picture = profile_picture;
+	public void setProfilePicture(String profilePicture) {
+		this.profilePicture = profilePicture;
 	}
 	public String getPassword() {
 		return password;

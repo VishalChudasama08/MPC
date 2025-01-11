@@ -10,7 +10,7 @@ public interface UserService {
 	
 	public User findUserById(Integer id) throws UserException;
 	
-	public User findUserProfile(String awt);
+	public User findUserProfile(String awt) throws UserException;
 	
 	public User updateUser(Integer userId, UpdataUserRequest req) throws UserException;
 	

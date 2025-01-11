@@ -52,14 +52,14 @@ public class JwtTokenValidator extends OncePerRequestFilter {
                 	    .getPayload(); // Extract the payload.
 
                 // Extract information from the claims.
-                String username = String.valueOf(claims.get("username"));
+                String email = String.valueOf(claims.get("email"));
                 String authorities = String.valueOf(claims.get("authorities"));
 
                 // Convert authorities into a list of GrantedAuthority objects.
                 List<GrantedAuthority> auths = AuthorityUtils.commaSeparatedStringToAuthorityList(authorities);
 
                 // Create an Authentication object and set it in the SecurityContext.
-                Authentication authentication = new UsernamePasswordAuthenticationToken(username, null, auths);
+                Authentication authentication = new UsernamePasswordAuthenticationToken(email, null, auths);
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             } catch (Exception e) {
                 // Handle invalid token scenario.

@@ -1,6 +1,7 @@
 package in.v8.services;
 
 import java.lang.foreign.Linker.Option;
+import java.security.cert.Certificate;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
@@ -40,7 +41,7 @@ public class ChatServiceImplementation implements ChatService{
 		createdChat.getUsers().add(reqUser);
 		createdChat.setGroup(false);
 		
-		return createdChat;
+		return chatRepository.save(createdChat);
 	}
 
 	@Override

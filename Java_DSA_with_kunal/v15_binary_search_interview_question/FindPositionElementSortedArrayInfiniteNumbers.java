@@ -1,5 +1,6 @@
 package v15_binary_search_interview_question; // solution from java dsa by kunal v15
-
+// Question -> Find position of an element in a sorted array of infinite numbers
+// https://www.geeksforgeeks.org/find-position-element-sorted-array-infinite-numbers/
 public class FindPositionElementSortedArrayInfiniteNumbers {
     public static void main(String[] args) {
         int [] arr = {3,5,7,9,10,90,100,130,140,160,170}; // imagine this is infinite array

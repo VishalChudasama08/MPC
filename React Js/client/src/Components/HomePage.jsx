@@ -3,14 +3,17 @@ import { AiOutlineSearch } from 'react-icons/ai'
 import { BiCommentDetail } from 'react-icons/bi'
 import { BsEmojiSmile, BsFilter, BsMicFill, BsThreeDotsVertical } from 'react-icons/bs'
 import { TbCircleDashed } from 'react-icons/tb'
-import ChatCard from './ChatCard/ChatCard'
 import MessageCard from './MessageCard/MessageCard'
+import Profile from './Profile/Profile'
 import { ImAttachment } from 'react-icons/im'
+import '../css/HomePage.css'
+import Chats from './Chat/Chats'
 
 function HomePage() {
    const [query, setQuery] = useState(null);
    const [currantChat, setCurrantChat] = useState(Boolean);
    const [content, setContent] = useState(null);
+   const [isProfile, setIsProfile] = useState(false);
 
    const handleSearch = (value) => {
 
@@ -22,6 +25,10 @@ function HomePage() {
 
    const handleCreateNewMessage = () => {
 
+   }
+
+   const handleCloseOpenProfile = () => {
+      isProfile ? setIsProfile(false) : setIsProfile(true);
    }
 
    const chatMessages = [
@@ -47,18 +54,21 @@ function HomePage() {
          <div className='py-14 bg-[#00a884] w-full'></div>
          <div className='flex bg-[#f0f2f5] h-[95vh] absolute top-5 left-5 right-5'> {/* style={{ "border": "1px solid red" }} */}
 
+            {/* Profile section */}
+            {isProfile && <Profile handleCloseOpenProfile={handleCloseOpenProfile} />}
+
             {/* left side section */}
-            <div className='left w-[30%] bg-[#e8e9ec] h-full'>
+            {!isProfile && <div className='leftSide w-[30%] bg-[#e8e9ec] h-full'>
                <div className='w-full'>
                   {/* login user details / currant user details */}
                   <div className='flex justify-between items-center p-3'>
-                     <div className='flex items-center space-x-3'>
+                     <div className='flex items-center space-x-3 cursor-pointer' onClick={handleCloseOpenProfile}>
                         <img className='rounded-full w-10 h-10 cursor-pointer' src="IMG_20230327_101111.jpg" alt="" />
                         <p>UserName</p>
                      </div>
                      <div className='space-x-3 text-2xl flex'>
-                        <TbCircleDashed />
-                        <BiCommentDetail />
+                        <TbCircleDashed className='cursor-pointer' />
+                        <BiCommentDetail className='cursor-pointer' />
                      </div>
                   </div>
 
@@ -75,22 +85,15 @@ function HomePage() {
                   </div>
 
                   {/* all users */}
-                  <div className='bg-white overflow-y-scroll h-[76.5vh] px-3'>
-                     {query && [1, 2, 1, 1, 1, 4, 5, 1, 3, 4, 7, 8].map((item) => (
-                        <div onClick={handleClickOnChat}>
-                           <hr />
-                           <ChatCard />
-                        </div>
-                     ))}
-                  </div>
+                  <Chats query={query} handleClickOnChat={handleClickOnChat} />
                </div>
-            </div>
+            </div>}
 
             {/* right side section */}
-            <div className="right w-[70%] relative">
+            <div className="rightSide w-[70%] relative flex items-center justify-center">
                {/* Default page */}
                {/* if click on any chat than hide default page */}
-               {!currantChat && <div className="flex flex-col justify-center items-center text-center">
+               {!currantChat && <div className="flex flex-col text-center">
                   <img
                      className="max-w-[75%] mx-auto"
                      src="https://res.cloudinary.com/zarmariya/image/upload/v1662264838/whatsapp_multi_device_support_update_image_1636207150180-removebg-preview_jgyy3t.png"
@@ -117,7 +120,7 @@ function HomePage() {
                   </div>
 
                   {/* message view section */}
-                  <div className='h-[82%] overflow-y-scroll bg-blue-100'>
+                  <div className='h-[83%] overflow-y-scroll bg-blue-100'>
                      <div className='space-y-1 flex flex-col justify-center border p-2'>
                         {chatMessages.map((item) => (
                            <MessageCard isReqUserMassage={item.thisUser} massageContent={item.message} />

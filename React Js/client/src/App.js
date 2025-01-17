@@ -7,14 +7,14 @@ import {
 import HomePage from './Components/HomePage';
 function App() {
 	return (
-		// <Router>
-		<div className="">
-			<Routes>
-				<Route path='/' element={<HomePage />}></Route>
-				<Route path='/' element={<HomePage />}></Route>
-			</Routes>
-		</div>
-		// </Router>
+		<Router>
+			<div>
+				<Routes>
+					<Route path='/' element={<HomePage />}></Route>
+					<Route path='/' element={<HomePage />}></Route>
+				</Routes>
+			</div>
+		</Router>
 	);
 }
 

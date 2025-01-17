@@ -17,7 +17,7 @@ public class SearchingInMatrix {
     }
     public static int[] searchingInMatrix(int[][] matrix, int target){
         int row = 0;
-        int column = matrix.length - 1; // it's return max row but in matrix both are same than max column is matrix.length-1
+        int column = matrix[0].length - 1; // it's return max column number if find max row than -> row = matrix.length - 1
 
         while (row < matrix.length && column >= 0){
             if(matrix[row][column] == target){

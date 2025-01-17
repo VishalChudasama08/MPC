@@ -1,4 +1,4 @@
-package Q744; // solution from java dsa by kunal v15
+package Q744_FindSmallestLetterGreaterThanTarget; // solution from java dsa by kunal v15
 // https://leetcode.com/problems/find-smallest-letter-greater-than-target/
 public class FindSmallestLetterGreaterThanTarget {
     public static void main(String[] args) {

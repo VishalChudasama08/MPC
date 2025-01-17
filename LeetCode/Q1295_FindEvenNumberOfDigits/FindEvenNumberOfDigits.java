@@ -1,4 +1,4 @@
-package Q1295; // solution from java dsa by kunal v13
+package Q1295_FindEvenNumberOfDigits; // solution from java dsa by kunal v13
 // https://leetcode.com/problems/find-numbers-with-even-number-of-digits/description/
 public class FindEvenNumberOfDigits {
     public static void main(String[] args) {

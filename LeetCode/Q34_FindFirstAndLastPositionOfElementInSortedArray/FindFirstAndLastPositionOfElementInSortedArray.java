@@ -1,4 +1,4 @@
-package Q34; // solution from java dsa by kunal v15
+package Q34_FindFirstAndLastPositionOfElementInSortedArray; // solution from java dsa by kunal v15
 
 import java.util.Arrays;
 

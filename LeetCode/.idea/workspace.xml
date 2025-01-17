@@ -30,16 +30,21 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/Happy_Coding/My_Code_In_Github/MPC/Java_Spring_Framework/Spring_Program_08_And_09_Autowiring"
+    "last_opened_file_path": "D:/Happy_Coding/My_Code_In_Github/MPC/LeetCode"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Happy_Coding\My_Code_In_Github\MPC\LeetCode" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.FindFirstAndLastPositionOfElementInSortedArray">
     <configuration name="FindEvenNumberOfDigits" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Q1295.FindEvenNumberOfDigits" />
+      <option name="MAIN_CLASS_NAME" value="Q1295_FindEvenNumberOfDigits.FindEvenNumberOfDigits" />
       <module name="LeetCode" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Q1295.*" />
+          <option name="PATTERN" value="Q1295_FindEvenNumberOfDigits.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -48,11 +53,11 @@
       </method>
     </configuration>
     <configuration name="FindFirstAndLastPositionOfElementInSortedArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Q34.FindFirstAndLastPositionOfElementInSortedArray" />
+      <option name="MAIN_CLASS_NAME" value="Q34_FindFirstAndLastPositionOfElementInSortedArray.FindFirstAndLastPositionOfElementInSortedArray" />
       <module name="LeetCode" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Q34.*" />
+          <option name="PATTERN" value="Q34_FindFirstAndLastPositionOfElementInSortedArray.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -74,11 +79,11 @@
       </method>
     </configuration>
     <configuration name="FindSmallestLetterGreaterThanTarget" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Q744.FindSmallestLetterGreaterThanTarget" />
+      <option name="MAIN_CLASS_NAME" value="Q744_FindSmallestLetterGreaterThanTarget.FindSmallestLetterGreaterThanTarget" />
       <module name="LeetCode" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Q744.*" />
+          <option name="PATTERN" value="Q744_FindSmallestLetterGreaterThanTarget.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -87,11 +92,11 @@
       </method>
     </configuration>
     <configuration name="Richest_Customer_Wealth" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Q1672.Richest_Customer_Wealth" />
+      <option name="MAIN_CLASS_NAME" value="Q1672_Richest_Customer_Wealth.Richest_Customer_Wealth" />
       <module name="LeetCode" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Q1672.*" />
+          <option name="PATTERN" value="Q1672_Richest_Customer_Wealth.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

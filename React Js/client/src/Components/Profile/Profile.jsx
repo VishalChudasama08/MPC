@@ -11,8 +11,8 @@ function Profile({ handleCloseOpenProfile }) {
 
    return (
       <div className='leftSide w-[30%] bg-[#e8e9ec] h-full'>
-         <div className='flex flex-row space-x-10 bg-[#008069] text-white py-5 px-10'>
-            <BsArrowLeft className='absolute top-6 cursor-pointer text-2xl font-bold' onClick={handleCloseOpenProfile} />
+         <div className='flex flex-row space-x-10 bg-[#008069] text-white py-5 px-7'>
+            <BsArrowLeft className='mt-px cursor-pointer text-3xl' onClick={handleCloseOpenProfile} />
             <p className='cursor-pointer text-2xl font-semibold'>Profile</p>
          </div>
 

@@ -8,12 +8,14 @@ import Profile from './Profile/Profile'
 import { ImAttachment } from 'react-icons/im'
 import '../css/HomePage.css'
 import Chats from './Chat/Chats'
+import Status from './Status/Status'
 
 function HomePage() {
    const [query, setQuery] = useState(null);
    const [currantChat, setCurrantChat] = useState(Boolean);
    const [content, setContent] = useState(null);
    const [isProfile, setIsProfile] = useState(false);
+   const [isChat, setIsChat] = useState(true);
 
    const handleSearch = (value) => {
 
@@ -21,6 +23,10 @@ function HomePage() {
 
    const handleClickOnChat = () => {
       setCurrantChat(true);
+   }
+
+   const handleClickISChat = (what) => {
+      setIsChat(what);
    }
 
    const handleCreateNewMessage = () => {
@@ -67,8 +73,8 @@ function HomePage() {
                         <p>UserName</p>
                      </div>
                      <div className='space-x-3 text-2xl flex'>
-                        <TbCircleDashed className='cursor-pointer' />
-                        <BiCommentDetail className='cursor-pointer' />
+                        <TbCircleDashed className='cursor-pointer' onClick={() => { handleClickISChat(false) }} />
+                        <BiCommentDetail className='cursor-pointer' onClick={() => { handleClickISChat(true) }} />
                      </div>
                   </div>
 
@@ -84,8 +90,11 @@ function HomePage() {
                      </div>
                   </div>
 
-                  {/* all users */}
-                  <Chats query={query} handleClickOnChat={handleClickOnChat} />
+                  {/* All Users chat */}
+                  {isChat && <Chats query={query} handleClickOnChat={handleClickOnChat} />}
+
+                  {/* All Status */}
+                  {!isChat && <Status />}
                </div>
             </div>}
 

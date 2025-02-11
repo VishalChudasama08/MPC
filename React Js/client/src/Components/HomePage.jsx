@@ -9,12 +9,16 @@ import { ImAttachment } from 'react-icons/im'
 import '../css/HomePage.css'
 import Chats from './Chat/Chats'
 import Status from './Status/Status'
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import CreateGroup from './Group/CreateGroup'
 
 function HomePage() {
-   const [query, setQuery] = useState(null);
+   const [query, setQuery] = useState();
    const [currantChat, setCurrantChat] = useState(Boolean);
    const [content, setContent] = useState(null);
    const [isProfile, setIsProfile] = useState(false);
+   const [createGroup, setCreateGroup] = useState(false);
    const [isChat, setIsChat] = useState(true);
 
    const handleSearch = (value) => {
@@ -35,6 +39,19 @@ function HomePage() {
 
    const handleCloseOpenProfile = () => {
       isProfile ? setIsProfile(false) : setIsProfile(true);
+   }
+
+   const [anchorEl, setAnchorEl] = React.useState(null);
+   const open = Boolean(anchorEl);
+   const handleClick = (event) => {
+      setAnchorEl(event.currentTarget);
+   };
+   const handleClose = () => {
+      setAnchorEl(null);
+   };
+   const handleCreateGroup = () => {
+      createGroup ? setCreateGroup(false) : setCreateGroup(true);
+      setAnchorEl(null);
    }
 
    const chatMessages = [
@@ -63,8 +80,11 @@ function HomePage() {
             {/* Profile section */}
             {isProfile && <Profile handleCloseOpenProfile={handleCloseOpenProfile} />}
 
+            {/* Create Group */}
+            {createGroup && <CreateGroup handleCreateGroup={handleCreateGroup} handleSearch={handleSearch} setQuery={setQuery} query={query} />}
+
             {/* left side section */}
-            {!isProfile && <div className='leftSide w-[30%] bg-[#e8e9ec] h-full'>
+            {!isProfile && !createGroup && <div className='leftSide w-[30%] bg-[#e8e9ec] h-full'>
                <div className='w-full'>
                   {/* login user details / currant user details */}
                   <div className='flex justify-between items-center p-3'>
@@ -73,12 +93,32 @@ function HomePage() {
                         <p>UserName</p>
                      </div>
                      <div className='space-x-3 text-2xl flex'>
-                        <TbCircleDashed className='cursor-pointer' onClick={() => { handleClickISChat(false) }} />
+                        <TbCircleDashed className='cursor-pointer mr-1' onClick={() => { handleClickISChat(false) }} />
                         <BiCommentDetail className='cursor-pointer' onClick={() => { handleClickISChat(true) }} />
+                        <BsThreeDotsVertical
+                           className='cursor-pointer'
+                           id="basic-button"
+                           aria-controls={open ? 'basic-menu' : undefined}
+                           aria-haspopup="true"
+                           aria-expanded={open ? 'true' : undefined}
+                           onClick={handleClick} />
+                        <Menu
+                           id="basic-menu"
+                           anchorEl={anchorEl}
+                           open={open}
+                           onClose={handleClose}
+                           MenuListProps={{
+                              'aria-labelledby': 'basic-button',
+                           }}
+                        >
+                           <MenuItem onClick={handleClose}>Profile</MenuItem>
+                           <MenuItem onClick={handleCreateGroup}>Create Group</MenuItem>
+                           <MenuItem onClick={handleClose}>Logout</MenuItem>
+                        </Menu>
                      </div>
                   </div>
 
-                  {/* search / find use chat */}
+                  {/* search & find use chat */}
                   <div className='relative flex justify-center bg-white py-4 px-3'>
                      <input className='border-none outline-none bg-slate-200 rounded-md w-[90%] pl-9 py-2' type="text"
                         placeholder='Search or start new chat'

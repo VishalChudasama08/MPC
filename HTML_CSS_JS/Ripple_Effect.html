@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Ripple Effect</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+   <style>
+      /* General Button Styling */
+      .ripple-button,
+      .ripple-icon,
+      .ripple-box {
+         position: relative;
+         overflow: hidden;
+         display: inline-block;
+         padding: 10px 20px;
+         font-size: 16px;
+         cursor: pointer;
+         border: none;
+         outline: none;
+         background-color: #1976d2;
+         color: white;
+         border-radius: 5px;
+         user-select: none;
+         transition: background-color 0.3s;
+      }
+
+      /* Ripple Effect */
+      .ripple {
+         position: absolute;
+         border-radius: 50%;
+         background: rgba(255, 255, 255, 0.5);
+         transform: scale(0);
+         animation: ripple-effect 0.6s linear;
+         pointer-events: none;
+      }
+
+      /* Keyframe Animation */
+      @keyframes ripple-effect {
+         to {
+            transform: scale(4);
+            opacity: 0;
+         }
+      }
+
+      /* Icon Styling */
+      .ripple-icon {
+         font-size: 40px;
+         background: transparent;
+         padding: 10px;
+      }
+
+      /* Custom Div Styling */
+      .ripple-box {
+         width: 120px;
+         height: 50px;
+         background: orange;
+         text-align: center;
+         line-height: 50px;
+      }
+   </style>
+
+   <style>
+      .twist {
+         margin-right: 20px;
+      }
+
+      .twist1 {
+         background-color: aqua;
+      }
+
+      .twist1 .ripple {
+         animation: ripple-effect 6s linear;
+      }
+
+
+      .twist2 {
+         background-color: rgb(115, 174, 113);
+      }
+
+      .twist2 .ripple {
+         animation: ripple-effect2 4s linear;
+      }
+
+      @keyframes ripple-effect2 {
+         to {
+            transform: scale(4);
+            opacity: 0;
+         }
+      }
+
+      .twist3 {
+         background-color: rgb(115, 174, 113);
+         position: relative;
+         overflow: hidden;
+      }
+
+      .twist3 .ripple {
+         position: absolute;
+         border-radius: 50%;
+         background: rgba(255, 255, 255, 0.5);
+         transform: scale(0);
+         animation: ripple-effect3 .6s linear;
+         pointer-events: none;
+      }
+
+      @keyframes ripple-effect3 {
+         to {
+            transform: scale(4);
+            opacity: 0;
+            /* Correct opacity value (0 = fully transparent) */
+         }
+      }
+   </style>
+</head>
+
+<body>
+
+   <!-- Normal Button -->
+   <button class="ripple-button" onclick="Ripple_Effect(event)">Click Me I am Button tag</button>
+   <br>
+
+   <!-- Icon Example -->
+   <div class="ripple-icon" onclick="Ripple_Effect(event)">🌟</div>
+   <i class="far fa-edit ripple-icon" onclick="Ripple_Effect(event)" style="color:green;"></i>
+   <i class="fa-solid fa-palette ripple-icon" onclick="Ripple_Effect(event)" style="color:blue;"></i>
+   <i class="far fa-trash-alt ripple-icon" onclick="Ripple_Effect(event)" style="color:red;"></i>
+   <br>
+
+   <!-- Custom Div Example -->
+   <div class="ripple-box" onclick="Ripple_Effect(event)">Custom Box</div><br><br>
+   <div class="ripple-box" onmouseenter="Ripple_Effect(event)">Custom Box</div><br><br>
+
+   <div style="display: flex;">
+      <div class="ripple-box twist twist1" onmouseenter="Ripple_Effect(event)">Custom Box</div><br><br>
+      <div class="ripple-box twist twist2" onmouseenter="Ripple_Effect2(event)">Custom Box</div><br><br>
+      <div class="ripple-box twist twist3" onclick="Ripple_Effect3(event)">Custom Box</div><br><br>
+      <div class="ripple-box twist twist4" onmouseenter="Ripple_Effect(event)">Custom Box</div><br><br>
+      <div class="ripple-box twist twist5" onmouseenter="Ripple_Effect(event)">Custom Box</div><br><br>
+      <div class="ripple-box twist twist6" onmouseenter="Ripple_Effect(event)">Custom Box</div><br><br>
+      <div class="ripple-box twist twist7" onmouseenter="Ripple_Effect(event)">Custom Box</div><br><br>
+   </div>
+
+   <script>
+      function Ripple_Effect(e) {
+         // Check if clicked element has ripple effect
+         const target = e.target;
+         if (!target.classList.contains("ripple-button") &&
+            !target.classList.contains("ripple-icon") &&
+            !target.classList.contains("ripple-box")) return;
+
+         // Create ripple span
+         const ripple = document.createElement("span");
+         ripple.classList.add("ripple");
+
+         // Get click position relative to element
+         const rect = target.getBoundingClientRect();
+         const size = Math.max(rect.width, rect.height);
+         const x = e.clientX - rect.left - size / 2;
+         const y = e.clientY - rect.top - size / 2;
+
+         // Apply styles
+         ripple.style.width = ripple.style.height = `${size}px`;
+         ripple.style.left = `${x}px`;
+         ripple.style.top = `${y}px`;
+
+         // Append ripple to element
+         target.appendChild(ripple);
+
+         // Remove ripple after animation
+         setTimeout(() => ripple.remove(), 600);
+      }
+
+      function Ripple_Effect2(e) {
+         // Check if clicked element has ripple effect
+         const target = e.target;
+         if (!target.classList.contains("ripple-button") &&
+            !target.classList.contains("ripple-icon") &&
+            !target.classList.contains("ripple-box")) return;
+
+         // Create ripple span
+         const ripple = document.createElement("span");
+         ripple.classList.add("ripple");
+
+         // Get click position relative to element
+         const rect = target.getBoundingClientRect();
+         const size = Math.max(rect.width, rect.height);
+         const x = e.clientX - rect.left - size / 2;
+         const y = e.clientY - rect.top - size / 2;
+
+         // Apply styles
+         ripple.style.width = ripple.style.height = `${size}px`;
+         ripple.style.left = `${x}px`;
+         ripple.style.top = `${y}px`;
+
+         // Append ripple to element
+         target.appendChild(ripple);
+
+         document.querySelectorAll(".twist2").forEach(element => {
+            element.addEventListener("mouseout", function () {
+               let ripple = element.querySelector(".ripple");
+               if (ripple) {
+                  ripple.remove(); // Remove ripple on mouse out
+               }
+            });
+         });
+      }
+
+      function Ripple_Effect3(e) {
+         // Check if clicked element has ripple effect
+         const target = e.target;
+         if (!target.classList.contains("ripple-button") &&
+            !target.classList.contains("ripple-icon") &&
+            !target.classList.contains("ripple-box")) return;
+
+         // Create ripple span
+         const ripple = document.createElement("span");
+         ripple.classList.add("ripple");
+
+         // Get click position relative to element
+         const rect = target.getBoundingClientRect();
+         const size = Math.max(rect.width, rect.height);
+         const x = e.clientX - rect.left - size / 2;
+         const y = e.clientY - rect.top - size / 2;
+
+         // Apply styles
+         ripple.style.width = ripple.style.height = `${size}px`;
+         ripple.style.left = `${x}px`;
+         ripple.style.top = `${y}px`;
+
+         // Append ripple to element
+         target.appendChild(ripple);
+
+         // Remove ripple after animation
+         setTimeout(() => ripple.remove(), 600);
+      }
+   </script>
+
+</body>
+
+</html>

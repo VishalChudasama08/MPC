@@ -80,11 +80,8 @@ function HomePage() {
             {/* Profile section */}
             {isProfile && <Profile handleCloseOpenProfile={handleCloseOpenProfile} />}
 
-            {/* Create Group */}
-            {createGroup && <CreateGroup handleCreateGroup={handleCreateGroup} handleSearch={handleSearch} setQuery={setQuery} query={query} />}
-
             {/* left side section */}
-            {!isProfile && !createGroup && <div className='leftSide w-[30%] bg-[#e8e9ec] h-full'>
+            {!isProfile && <div className='leftSide w-[30%] bg-[#e8e9ec] h-full'>
                <div className='w-full'>
                   {/* login user details / currant user details */}
                   <div className='flex justify-between items-center p-3'>
@@ -140,9 +137,12 @@ function HomePage() {
 
             {/* right side section */}
             <div className="rightSide w-[70%] relative flex items-center justify-center">
+               {/* Create Group */}
+               {createGroup && <CreateGroup handleCreateGroup={handleCreateGroup} handleSearch={handleSearch} />}
+
                {/* Default page */}
                {/* if click on any chat than hide default page */}
-               {!currantChat && <div className="flex flex-col text-center">
+               {!currantChat && !createGroup && <div className="flex flex-col text-center">
                   <img
                      className="max-w-[75%] mx-auto"
                      src="https://res.cloudinary.com/zarmariya/image/upload/v1662264838/whatsapp_multi_device_support_update_image_1636207150180-removebg-preview_jgyy3t.png"
@@ -153,7 +153,7 @@ function HomePage() {
                </div>}
 
                {/* open chat && Message section */}
-               {currantChat && <div className='h-full'>
+               {currantChat && !createGroup && <div className='h-full'>
                   {/* header part */}
                   <div className='w-full'>
                      <div className='flex justify-between items-center p-3'>

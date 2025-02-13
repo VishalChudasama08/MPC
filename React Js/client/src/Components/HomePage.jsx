@@ -11,9 +11,13 @@ import Chats from './Chat/Chats'
 import Status from './Status/Status'
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import CreateGroup from './Group/CreateGroup'
+import CreateGroup from './Group/CreateGroup';
+import useConfirmDialog from '../CustomHooks/useConfirmDialog'; // import 'useConfirmDialog' custom hook
 
 function HomePage() {
+
+   const { showDialog, ConfirmDialog } = useConfirmDialog();
+
    const [query, setQuery] = useState();
    const [currantChat, setCurrantChat] = useState(Boolean);
    const [content, setContent] = useState(null);
@@ -26,6 +30,9 @@ function HomePage() {
    }
 
    const handleClickOnChat = () => {
+      if (createGroup) { // click on any chat time if CreateGroup component is running than showing Dialog
+         handleCloseCreateGroup();
+      }
       setCurrantChat(true);
    }
 
@@ -49,9 +56,17 @@ function HomePage() {
    const handleClose = () => {
       setAnchorEl(null);
    };
-   const handleCreateGroup = () => {
+   const handleCreateGroup = async () => {
       createGroup ? setCreateGroup(false) : setCreateGroup(true);
       setAnchorEl(null);
+   }
+
+   const handleCloseCreateGroup = async () => {
+      const userConfirmed = await showDialog("Cancel creating group ?", "Your group members, group name, and icon will not be saved. Are you sure?."); // showDialog function take 2 argument 1st->title, 2nd->content
+      if (userConfirmed) {
+         createGroup ? setCreateGroup(false) : setCreateGroup(true);
+         setAnchorEl(null);
+      }
    }
 
    const chatMessages = [
@@ -74,6 +89,10 @@ function HomePage() {
 
    return (
       <div className='relative'>
+
+         {/* Inject modal component from custom hook */}
+         <ConfirmDialog />
+
          <div className='py-14 bg-[#00a884] w-full'></div>
          <div className='flex bg-[#f0f2f5] h-[95vh] absolute top-5 left-5 right-5'> {/* style={{ "border": "1px solid red" }} */}
 
@@ -82,63 +101,61 @@ function HomePage() {
 
             {/* left side section */}
             {!isProfile && <div className='leftSide w-[30%] bg-[#e8e9ec] h-full'>
-               <div className='w-full'>
-                  {/* login user details / currant user details */}
-                  <div className='flex justify-between items-center p-3'>
-                     <div className='flex items-center space-x-3 cursor-pointer' onClick={handleCloseOpenProfile}>
-                        <img className='rounded-full w-10 h-10 cursor-pointer' src="IMG_20230327_101111.jpg" alt="" />
-                        <p>UserName</p>
-                     </div>
-                     <div className='space-x-3 text-2xl flex'>
-                        <TbCircleDashed className='cursor-pointer mr-1' onClick={() => { handleClickISChat(false) }} />
-                        <BiCommentDetail className='cursor-pointer' onClick={() => { handleClickISChat(true) }} />
-                        <BsThreeDotsVertical
-                           className='cursor-pointer'
-                           id="basic-button"
-                           aria-controls={open ? 'basic-menu' : undefined}
-                           aria-haspopup="true"
-                           aria-expanded={open ? 'true' : undefined}
-                           onClick={handleClick} />
-                        <Menu
-                           id="basic-menu"
-                           anchorEl={anchorEl}
-                           open={open}
-                           onClose={handleClose}
-                           MenuListProps={{
-                              'aria-labelledby': 'basic-button',
-                           }}
-                        >
-                           <MenuItem onClick={handleClose}>Profile</MenuItem>
-                           <MenuItem onClick={handleCreateGroup}>Create Group</MenuItem>
-                           <MenuItem onClick={handleClose}>Logout</MenuItem>
-                        </Menu>
-                     </div>
+               {/* login user details / currant user details */}
+               <div className='flex justify-between items-center p-3'>
+                  <div className='flex items-center space-x-3 cursor-pointer' onClick={handleCloseOpenProfile}>
+                     <img className='rounded-full w-10 h-10 cursor-pointer' src="IMG_20230327_101111.jpg" alt="" />
+                     <p>UserName</p>
                   </div>
-
-                  {/* search & find use chat */}
-                  <div className='relative flex justify-center bg-white py-4 px-3'>
-                     <input className='border-none outline-none bg-slate-200 rounded-md w-[90%] pl-9 py-2' type="text"
-                        placeholder='Search or start new chat'
-                        onChange={(e) => { handleSearch(e.target.value); setQuery(e.target.value); }}
-                        value={query} />
-                     <AiOutlineSearch className='absolute left-5 top-7' />
-                     <div>
-                        <BsFilter className='ml-4 text-3xl mt-2' />
-                     </div>
+                  <div className='space-x-3 text-2xl flex'>
+                     <TbCircleDashed className='cursor-pointer mr-1' onClick={() => { handleClickISChat(false) }} />
+                     <BiCommentDetail className='cursor-pointer' onClick={() => { handleClickISChat(true) }} />
+                     <BsThreeDotsVertical
+                        className='cursor-pointer'
+                        id="basic-button"
+                        aria-controls={open ? 'basic-menu' : undefined}
+                        aria-haspopup="true"
+                        aria-expanded={open ? 'true' : undefined}
+                        onClick={handleClick} />
+                     <Menu
+                        id="basic-menu"
+                        anchorEl={anchorEl}
+                        open={open}
+                        onClose={handleClose}
+                        MenuListProps={{
+                           'aria-labelledby': 'basic-button',
+                        }}
+                     >
+                        <MenuItem onClick={handleClose}>Profile</MenuItem>
+                        <MenuItem onClick={handleCreateGroup}>Create Group</MenuItem>
+                        <MenuItem onClick={handleClose}>Logout</MenuItem>
+                     </Menu>
                   </div>
-
-                  {/* All Users chat */}
-                  {isChat && <Chats query={query} handleClickOnChat={handleClickOnChat} />}
-
-                  {/* All Status */}
-                  {!isChat && <Status />}
                </div>
+
+               {/* search & find use chat */}
+               <div className='relative flex justify-center bg-white py-4 px-3'>
+                  <input className='border-none outline-none bg-slate-200 rounded-md w-[90%] pl-9 py-2' type="text"
+                     placeholder='Search or start new chat'
+                     onChange={(e) => { handleSearch(e.target.value); setQuery(e.target.value); }}
+                     value={query} />
+                  <AiOutlineSearch className='absolute left-5 top-7' />
+                  <div>
+                     <BsFilter className='ml-4 text-3xl mt-2' />
+                  </div>
+               </div>
+
+               {/* All Users chat */}
+               {isChat && <Chats query={query} handleClickOnChat={handleClickOnChat} />}
+
+               {/* All Status */}
+               {!isChat && <Status />}
             </div>}
 
             {/* right side section */}
             <div className="rightSide w-[70%] relative flex items-center justify-center">
                {/* Create Group */}
-               {createGroup && <CreateGroup handleCreateGroup={handleCreateGroup} handleSearch={handleSearch} />}
+               {createGroup && <CreateGroup handleCloseCreateGroup={handleCloseCreateGroup} handleSearch={handleSearch} />}
 
                {/* Default page */}
                {/* if click on any chat than hide default page */}
@@ -202,8 +219,8 @@ function HomePage() {
                </div>}
             </div>
 
-         </div >
-      </div >
+         </div>
+      </div>
    )
 }
 

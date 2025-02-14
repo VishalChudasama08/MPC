@@ -32,8 +32,12 @@ const useConfirmDialog = () => {
          <DialogTitle>{dialogData.title}</DialogTitle>
          <DialogContent>{dialogData.content}</DialogContent>
          <DialogActions>
-            <Button onClick={handleCancel} color="primary">Cancel</Button>
-            <Button onClick={handleConfirm} color="error">Confirm</Button>
+            <span className="border-2 rounded hover:border-[#1976d2]">
+               <Button onClick={handleCancel} style={{ "borderWidth": "2px" }} color="primary">Cancel</Button>
+            </span>
+            <span className="border-2 rounded hover:border-[#d32f2f]">
+               <Button onClick={handleConfirm} color="error">Yes, Confirm</Button>
+            </span>
          </DialogActions>
       </Dialog>
    );

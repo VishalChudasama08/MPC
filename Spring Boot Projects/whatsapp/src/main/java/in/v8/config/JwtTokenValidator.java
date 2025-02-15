@@ -14,6 +14,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 import jakarta.servlet.FilterChain;
@@ -64,7 +66,7 @@ public class JwtTokenValidator extends OncePerRequestFilter {
             } catch (Exception e) {
                 // Handle invalid token scenario.
                 throw new BadCredentialsException("Invalid Token Received.", e);
-            }
+            } 
         }
 
         // Continue the filter chain.

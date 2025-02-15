@@ -2,6 +2,8 @@ import { BASE_API_URL } from "../../Config/api"
 import { LOGIN, REGISTER, REQ_USER, SEARCH_USER, UPDATE_USER } from "./ActionType";
 
 export const register = (data) => async (dispatch) => {
+   console.log(data);
+
    try {
       const res = await fetch(`${BASE_API_URL}/api/auth/signup`, {
          method: "POST",
@@ -11,11 +13,11 @@ export const register = (data) => async (dispatch) => {
          body: JSON.stringify(data)
       })
 
+      console.log("register data: ", res.json());
       const resData = await res.json();
       if (resData.jwt) {
          localStorage.setItem("token", resData.jwt)
       }
-      console.log("register data: ", resData);
 
       dispatch({ type: REGISTER, payload: resData })
    } catch (error) {

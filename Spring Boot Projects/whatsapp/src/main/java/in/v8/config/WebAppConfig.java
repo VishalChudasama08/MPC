@@ -30,12 +30,13 @@ public class WebAppConfig {
             // Apply Cross-Origin Resource Sharing (CORS) settings.
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
             // Define endpoint-specific authorization rules.
-            .authorizeHttpRequests(authorize -> authorize
-                .requestMatchers(new AntPathRequestMatcher("/api/**")).authenticated() // Secure /api/** endpoints.
-                .anyRequest().permitAll() // Permit access to all other endpoints.
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/api/auth/signup", "/api/auth/login").permitAll() // Allow signup/login
+                .requestMatchers("/api/**").authenticated() // Secure API endpoints
+                .anyRequest().permitAll() // Allow all other requests
             )
             // Configure form-based login for default login handling.
-            .formLogin(formLogin -> formLogin.permitAll())
+            .formLogin(formLogin -> formLogin.disable())
             // Add a custom filter to validate JWT tokens.
             .addFilterBefore(new JwtTokenValidator(), BasicAuthenticationFilter.class);
 

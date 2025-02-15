@@ -11,6 +11,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import in.v8.config.TokenProvider;
@@ -38,7 +39,7 @@ public class AuthController {
 	}
 	
 	@PostMapping("/signup")
-	public ResponseEntity<AuthResponse> createUserHandler(@RequestBody User user) throws UserException {
+	public @ResponseBody ResponseEntity<AuthResponse> createUserHandler(@RequestBody User user) throws UserException {
 		String email = user.getEmail();
 		String fullname = user.getFullName();
 		String password = user.getPassword();

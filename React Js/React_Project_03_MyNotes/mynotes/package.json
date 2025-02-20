@@ -19,7 +19,7 @@
     "build": "cross-env BUILD_PATH=ReactJs_Project_03_MyNotes react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "both": "concurrently \"npm run start\" \"nodemon backend/index.js \""
+    "both": "concurrently \"npm run start\" \"npx nodemon backend/index.js \""
   },
   "eslintConfig": {
     "extends": [

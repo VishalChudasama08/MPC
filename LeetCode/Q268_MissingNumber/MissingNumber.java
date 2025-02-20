@@ -1,7 +1,7 @@
 package Q268_MissingNumber;
 // Amazon Question
-// solution by vishal (kunal solution is different v20 t34:44)
-//
+// solution by kunal (v20 34:20)
+// https://leetcode.com/problems/missing-number/description/
 
 import java.util.Arrays;
 
@@ -12,27 +12,33 @@ public class MissingNumber {
         System.out.println("missing Number is " + missingIs);
         System.out.println(Arrays.toString(arr));
     }
-    static int missingNumber(int [] nums) { // not all time full array sorting, this method at the end put arrays max value at missing number place. that place index is missing number
-        int i = 0;
-        int length = nums.length;
-        int maxValueIndex = length;
-        while (i < length) {
-            int correct = nums[i];
-            if (correct == length){
-                i++;
-                continue;
-            }
-            if (nums[i] != nums[correct]){
-                int temp = nums[i];
-                nums[i] = nums[correct];
-                nums[correct] = temp;
-                if(nums[i] == length){
-                    maxValueIndex = i;
-                }
-            } else {
-                i++;
-            }
+    static int missingNumber(int [] nums) {
+//        int i = 0;
+//        while (i < nums.length) {
+//            int correct = nums[i];
+//            if (nums[i] < nums.length && nums[i] != nums[correct]){
+//                int temp = nums[i];
+//                nums[i] = nums[correct];
+//                nums[correct] = temp;
+//            } else {
+//                i++;
+//            }
+//        }
+//
+//        int missingNumber = nums.length;
+//        for (int j = 0; j < nums.length; j++) {
+//            if (nums[j] != j){
+//                missingNumber = j;
+//            }
+//        }
+//        return missingNumber;
+
+        // best solution =>
+        int n = nums.length;
+        int sum = n*(n+1)/2;
+        for (int i = 0; i < n; i++) {
+            sum = sum - nums[i];
         }
-        return maxValueIndex;
+        return sum;
     }
 }

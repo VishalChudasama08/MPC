@@ -1,15 +1,35 @@
 import { Alert, Button, Snackbar } from '@mui/material';
 import { green } from '@mui/material/colors';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { register } from '../../Redux/Auth/Action';
-import { useDispatch } from 'react-redux';
+import { currentUser, register } from '../../Redux/Auth/Action';
+import { useDispatch, useSelector } from 'react-redux';
 
 function SignUp() {
+   const token = localStorage.getItem("token");
+
+   const { auth } = useSelector(store => store);
+   console.log("auth from signup page: ", auth);
+
    const dispatch = useDispatch();
+
    const navigate = useNavigate();
-   const [inputData, setInputData] = useState({ fullname: "", email: "", password: "" })
+
+   const [inputData, setInputData] = useState({ fullName: "", email: "", password: "" })
    const [openSnackbar, setOpenSnackbar] = useState(false);
+   const [confirmPassword, setConfirmPassword] = useState("");
+
+   useEffect(() => {
+      if (token) {
+         dispatch(currentUser(token))
+      }
+   }, [token])
+
+   useEffect(() => {
+      if (auth.reqUser?.fullName) {
+         navigate("/")
+      }
+   }, [auth.reqUser])
 
    const handleSnackbarClose = () => {
       setOpenSnackbar(false);
@@ -22,9 +42,30 @@ function SignUp() {
       setOpenSnackbar(true);
    }
 
+   const formSubmitDisability = () => {
+      if (inputData.email === "" || inputData.fullName === "" || inputData.password === "" || confirmPassword === "" || inputData.password !== confirmPassword) {
+         return true;
+      } else {
+         return false;
+      }
+   }
+
    const handleChange = (e) => {
-      const { name, value } = e.target;
-      setInputData((values) => ({ ...values, [name]: value }))
+      setInputData({ ...inputData, [e.target.name]: e.target.value })
+      // console.log(inputData);
+   }
+
+   const handleConfirmPassword = (e, thisElementClassName) => {
+      setConfirmPassword(e.target.value);
+      // console.log(confirmPassword);
+      const element = document.getElementsByClassName(thisElementClassName)[0];
+      if (element) {
+         if (inputData.password === e.target.value) { // here not use confirmPassword. The issue occurs because React state updates are asynchronous.
+            element.classList.remove("outline-red-600", "bg-red-100")
+         } else {
+            element.classList.add("outline-red-600", "bg-red-100")
+         }
+      }
    }
 
    const changeStyle = (cName) => {
@@ -45,17 +86,18 @@ function SignUp() {
          <div className='flex flex-col justify-center min-h-screen items-center'>
             <div className='w-[70%] p-10 shadow-md rounded-md bg-white'>
                <form onSubmit={handleSubmit} action="" className='space-y-5'>
+                  {/* <p>name: {inputData.fullname} <br /> email: {inputData.email} <br /> password: {inputData.password} <br /> confirm password: {confirmPassword}</p> */}
                   <div>
-                     <p className='usernameInput mb-2 px-1 relative inline-block transition-all duration-500 ease-in-out translate-x-5 translate-y-4 bg-white'>User Name</p>
-                     <input type="text" name='fullname' placeholder='Enter username'
+                     <p className='usernameInput mb-[0.65%] px-1.5 relative inline-block transition-all duration-500 ease-in-out translate-x-5 translate-y-4 bg-white rounded-full'>User Name</p>
+                     <input type="text" name='fullName' placeholder='Enter username'
                         className='py-2 ps-3 outline outline-green-600 w-full rounded border-1'
                         onFocus={() => changeStyle("usernameInput")}
-                        onBlur={() => { inputData.fullname.length === 0 ? changeStyleV("usernameInput") : changeStyle("usernameInput") }}
+                        onBlur={(e) => { inputData.fullName.length === 0 ? changeStyleV("usernameInput") : changeStyle("usernameInput") }}
                         onChange={(e) => handleChange(e)}
-                        value={inputData.fullname} />
+                        value={inputData.fullName} />
                   </div>
                   <div>
-                     <p className='emailInput mb-2 px-1 relative inline-block transition-all duration-500 ease-in-out translate-x-5 translate-y-4 bg-white'>Email</p>
+                     <p className='emailInput mb-[0.65%] px-1.5 relative inline-block transition-all duration-500 ease-in-out translate-x-5 translate-y-4 bg-white rounded-full'>Email</p>
                      <input type="text" name='email' placeholder='Enter Email'
                         className='py-2 ps-3 outline outline-green-600 w-full rounded border-1'
                         onFocus={() => changeStyle("emailInput")}
@@ -64,16 +106,26 @@ function SignUp() {
                         value={inputData.email} />
                   </div>
                   <div>
-                     <p className='passwordInput mb-2 px-1 relative inline-block transition-all duration-500 ease-in-out translate-x-5 translate-y-4 bg-white'>Password</p>
-                     <input type="password" name='password' placeholder='Enter Password'
+                     <p className='passwordInput mb-[0.65%] px-1.5 relative inline-block transition-all duration-500 ease-in-out translate-x-5 translate-y-4 bg-white rounded-full'>Password</p>
+                     <input type="password" name='password' placeholder='Create Password'
                         className='py-2 ps-3 outline outline-green-600 w-full rounded border-1'
                         onFocus={() => changeStyle("passwordInput")}
                         onBlur={() => { inputData.password.length === 0 ? changeStyleV("passwordInput") : changeStyle("passwordInput") }}
-                        onChange={(e) => handleChange(e)}
+                        onChange={(e) => { handleChange(e); setConfirmPassword("") }}
                         value={inputData.password} />
                   </div>
+                  <div className={`confirmEnterPassword ${inputData.password === "" ? 'opacity-30' : ''}`}>
+                     <p className='ConfirmPasswordInput mb-[0.65%] px-1.5 relative inline-block transition-all duration-500 ease-in-out translate-x-5 translate-y-4 bg-white rounded-full'>Confirm Password</p>
+                     <input type="password" name='password' placeholder='Re-Enter Password'
+                        className='input8 py-2 ps-3 outline outline-green-600 w-full rounded border-1'
+                        onFocus={() => changeStyle("ConfirmPasswordInput")}
+                        onBlur={() => { confirmPassword.length === 0 ? changeStyleV("ConfirmPasswordInput") : changeStyle("ConfirmPasswordInput") }}
+                        onChange={(e) => { handleConfirmPassword(e, "input8") }}
+                        value={confirmPassword}
+                        disabled={inputData.password === "" ? true : false} />
+                  </div>
                   <div>
-                     <Button type='submit' sx={{ bgcolor: green[600], paddingTop: ".7rem", ":hover": { bgcolor: "primary.main" } }} className='w-full' variant='contained'>Sing Up</Button>
+                     <Button type='submit' sx={{ bgcolor: green[600], paddingTop: ".7rem", ":hover": { bgcolor: "primary.main" } }} className=' w-full' variant='contained' disabled={formSubmitDisability()}>Sing Up</Button>
                   </div>
                </form>
                <div className='flex space-x-3 items-center mt-5'>

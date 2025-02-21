@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { BsArrowLeft, BsCheck2, BsPencil } from 'react-icons/bs'
 
-function Profile({ handleCloseOpenProfile }) {
+function Profile({ handleCloseOpenProfile, fullName }) {
    const [flag, setFlag] = useState(false);
-   const [username, setUsername] = useState("");
+   const [username, setUsername] = useState(fullName);
 
    const handleFlag = () => {
       flag ? setFlag(false) : setFlag(true);
@@ -34,7 +34,7 @@ function Profile({ handleCloseOpenProfile }) {
             </div>}
 
             {flag && <div className='flex justify-between'>
-               <input className='w-[85%] outline-none border-b-2 border-blue-500 rounded-sm ps-1' type="text" placeholder='Enter Your Name' onChange={(e) => { setUsername(e.target.value) }} />
+               <input className='w-[85%] outline-none border-b-2 border-blue-500 rounded-sm ps-1' type="text" placeholder='Enter Your Name' onChange={(e) => { setUsername(e.target.value) }} value={username} />
                <BsCheck2 className='cursor-pointer text-2xl' onClick={handleFlag} />
             </div>}
 

@@ -11,4 +11,10 @@ public class AuthResponse {
 		this.awt = awt;
 		this.isAuth = isAuth;
 	}
+	public String getAwt() {
+		return awt;
+	}
+	public boolean isAuth() {
+		return isAuth;
+	}
 }

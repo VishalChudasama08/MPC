@@ -11,8 +11,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import in.v8.config.TokenProvider;
 import in.v8.entities.User;
@@ -39,14 +41,14 @@ public class AuthController {
 	}
 	
 	@PostMapping("/signup")
-	public @ResponseBody ResponseEntity<AuthResponse> createUserHandler(@RequestBody User user) throws UserException {
+	public ResponseEntity<AuthResponse> createUserHandler(@RequestBody User user) throws UserException {
 		String email = user.getEmail();
 		String fullname = user.getFullName();
 		String password = user.getPassword();
 		
 		User isUser = userRepository.findByEmail(email);
 		if(isUser != null) {
-			throw new UserException("Email is used with another account " + email);
+			throw new UserException("Sorry a user with this ("+email+") email is already exists. Try another email.");
 		}
 		
 		User createUser = new User();
@@ -62,9 +64,12 @@ public class AuthController {
 		String token = tokenProvider.generateToken(authentication);
 		
 		AuthResponse response = new AuthResponse(token, true);
+//		System.out.println("Response: " + new ObjectMapper().writeValueAsString(response));
+		
 		return new ResponseEntity<AuthResponse>(response, HttpStatus.ACCEPTED);
 	}
 	
+	@PostMapping("/signin")
 	public ResponseEntity<AuthResponse> loginHandler(@RequestBody LoginRequest request){
 		String email = request.getEmail();
 		String password = request.getPassword();

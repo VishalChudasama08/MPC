@@ -1,8 +1,8 @@
 import { BASE_API_URL } from "../../Config/api"
-import { LOGIN, REGISTER, REQ_USER, SEARCH_USER, UPDATE_USER } from "./ActionType";
+import { LOGIN, LOGOUT, REGISTER, REQ_USER, SEARCH_USER, UPDATE_USER } from "./ActionType";
 
-export const register = (data) => async (dispatch) => {
-   console.log(data);
+export const register = (inputData) => async (dispatch) => {
+   // console.log(inputData);
 
    try {
       const res = await fetch(`${BASE_API_URL}/api/auth/signup`, {
@@ -10,13 +10,14 @@ export const register = (data) => async (dispatch) => {
          headers: {
             "Content-Type": "application/json",
          },
-         body: JSON.stringify(data)
+         body: JSON.stringify(inputData)
       })
 
-      console.log("register data: ", res.json());
       const resData = await res.json();
-      if (resData.jwt) {
-         localStorage.setItem("token", resData.jwt)
+      console.log(resData);
+
+      if (resData.awt) {
+         localStorage.setItem("token", resData.awt)
       }
 
       dispatch({ type: REGISTER, payload: resData })
@@ -37,6 +38,10 @@ export const login = (data) => async (dispatch) => {
 
       const resData = await res.json();
       console.log("login data: ", resData);
+
+      if (resData.awt) {
+         localStorage.setItem("token", resData.awt)
+      }
 
       dispatch({ type: LOGIN, payload: resData })
    } catch (error) {
@@ -99,4 +104,10 @@ export const updateUser = (data) => async (dispatch) => {
    } catch (error) {
       console.log("catch updateUser error: " + error);
    }
+}
+
+export const logout = () => async (dispatch) => {
+   localStorage.clear();
+   dispatch({ type: LOGOUT, payload: null })
+   dispatch({ type: REQ_USER, payload: null }) // remove request user data from store
 }

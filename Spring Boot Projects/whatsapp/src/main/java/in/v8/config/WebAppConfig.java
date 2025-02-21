@@ -3,6 +3,7 @@ package in.v8.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -12,11 +13,21 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 
+import jakarta.servlet.ServletException;
+
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
 
 @Configuration
+@EnableWebSecurity
 public class WebAppConfig {
+	/**
+     * Configures the security filter chain for the application.
+     * 
+     * .csrf (Cross-Site Request Forgery) => spring security allows only get method. post, put, delete,... not allows if use this methods than need csrf token. 
+     * 											this is like a secret key (ID). disable csrf not allows all request method 
+     */
 
 	// Configures the security filter chain for the application.
     @Bean
@@ -31,7 +42,7 @@ public class WebAppConfig {
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
             // Define endpoint-specific authorization rules.
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/auth/signup", "/api/auth/login").permitAll() // Allow signup/login
+                .requestMatchers("/api/auth/signup", "/api/auth/signin").permitAll() // Allow signup/login
                 .requestMatchers("/api/**").authenticated() // Secure API endpoints
                 .anyRequest().permitAll() // Allow all other requests
             )

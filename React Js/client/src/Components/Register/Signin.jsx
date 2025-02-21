@@ -1,20 +1,45 @@
 import { Alert, Button, Snackbar } from '@mui/material';
 import { green } from '@mui/material/colors';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { currentUser, login } from '../../Redux/Auth/Action';
 
 function Signin() {
+   const token = localStorage.getItem("token");
+
+   const { auth } = useSelector(store => store);
+   console.log("auth from signup page: ", auth);
+
+   const dispatch = useDispatch();
+
    const navigate = useNavigate();
+
    const [inputData, setInputData] = useState({ email: "", password: "" })
    const [openSnackbar, setOpenSnackbar] = useState(false);
 
-   const handleSnackbarClose = () => {
-      setOpenSnackbar(false);
-   }
+   useEffect(() => {
+      if (token) {
+         dispatch(currentUser(token))
+      }
+   }, [token])
+
+   useEffect(() => {
+      if (auth.reqUser?.fullName) {
+         navigate("/")
+      }
+   }, [auth.reqUser])
 
    const handleSubmit = (event) => {
-      event.preventDefault()
+      event.preventDefault();
+      // console.log(inputData);
+
+      dispatch(login(inputData))
       setOpenSnackbar(true);
+   }
+
+   const handleSnackbarClose = () => {
+      setOpenSnackbar(false);
    }
 
    const handleChange = (e) => {
@@ -36,6 +61,13 @@ function Signin() {
          }
       }
    }
+   const formSubmitDisability = () => {
+      if (inputData.email === "" || inputData.password === "") {
+         return true;
+      } else {
+         return false;
+      }
+   }
 
    return (
       <div>
@@ -43,8 +75,8 @@ function Signin() {
             <div className='w-[70%] p-10 shadow-md rounded-md bg-white'>
                <form onSubmit={handleSubmit} action="" className='space-y-5'>
                   <div>
-                     <p className='emailInput mb-2 px-1 relative inline-block transition-all duration-500 ease-in-out translate-x-5 translate-y-4 bg-white'>Email</p>
-                     <input type="text" name="email" id=""
+                     <p className='emailInput mb-[0.65%] px-1.5 relative inline-block transition-all duration-500 ease-in-out translate-x-5 translate-y-4 bg-white rounded-full'>Email</p>
+                     <input type="text" name="email"
                         className='py-2 ps-2 outline outline-green-600 w-full rounded border'
                         placeholder='Enter Your Email'
                         onFocus={() => changeStyle("emailInput")}
@@ -54,8 +86,8 @@ function Signin() {
                      />
                   </div>
                   <div>
-                     <p className='passwordInput mb-2 px-1 relative inline-block transition-all duration-500 ease-in-out translate-x-5 translate-y-4 bg-white'>Password</p>
-                     <input type="password" name="password" id=""
+                     <p className='passwordInput mb-[0.65%] px-1.5 relative inline-block transition-all duration-500 ease-in-out translate-x-5 translate-y-4 bg-white rounded-full'>Password</p>
+                     <input type="password" name="password"
                         className='py-2 ps-2 outline outline-green-600 w-full rounded border'
                         placeholder='Enter Your Password'
                         onFocus={() => changeStyle("passwordInput")}
@@ -64,7 +96,7 @@ function Signin() {
                         value={inputData.password} />
                   </div>
                   <div>
-                     <Button type='submit' sx={{ bgcolor: green[600], paddingTop: ".7rem", ":hover": { bgcolor: "primary.main" } }} className='w-full' variant='contained'>Sing In</Button>
+                     <Button type='submit' sx={{ bgcolor: green[600], paddingTop: ".7rem", ":hover": { bgcolor: "primary.main" } }} className='w-full' variant='contained' disabled={formSubmitDisability()}>Sing In</Button>
                   </div>
                </form>
                <div className='flex space-x-3 items-center mt-5'>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { BiCommentDetail } from 'react-icons/bi'
 import { BsEmojiSmile, BsFilter, BsMicFill, BsThreeDotsVertical } from 'react-icons/bs'
@@ -13,8 +13,20 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import CreateGroup from './Group/CreateGroup';
 import useConfirmDialog from '../CustomHooks/useConfirmDialog'; // import 'useConfirmDialog' custom hook
+import { useDispatch, useSelector } from 'react-redux'
+import { logout } from '../Redux/Auth/Action'
+import { useNavigate } from 'react-router-dom'
 
 function HomePage() {
+   // const token = localStorage.getItem("token");
+
+   const { auth } = useSelector(store => store);
+   console.log("auth from home page: ", auth);
+
+
+   const dispatch = useDispatch();
+
+   const navigate = useNavigate();
 
    const { showDialog, ConfirmDialog } = useConfirmDialog();
 
@@ -24,6 +36,20 @@ function HomePage() {
    const [isProfile, setIsProfile] = useState(false);
    const [createGroup, setCreateGroup] = useState(false);
    const [isChat, setIsChat] = useState(true);
+
+   // useEffect(() => {
+   //    dispatch(currentUser(token))
+   // }, [token])
+
+   useEffect(() => {
+      if (!auth.reqUser) {
+         navigate("/signin")
+      }
+   }, [auth.reqUser])
+
+   const handleLogout = () => {
+      dispatch(logout())
+   }
 
    const handleSearch = (value) => {
 
@@ -97,7 +123,7 @@ function HomePage() {
          <div className='flex bg-[#f0f2f5] h-[95vh] absolute top-5 left-5 right-5'> {/* style={{ "border": "1px solid red" }} */}
 
             {/* Profile section */}
-            {isProfile && <Profile handleCloseOpenProfile={handleCloseOpenProfile} />}
+            {isProfile && <Profile handleCloseOpenProfile={handleCloseOpenProfile} fullName={auth.reqUser.fullName} />}
 
             {/* left side section */}
             {!isProfile && <div className='leftSide w-[30%] bg-[#e8e9ec] h-full'>
@@ -105,7 +131,7 @@ function HomePage() {
                <div className='flex justify-between items-center p-3'>
                   <div className='flex items-center space-x-3 cursor-pointer' onClick={handleCloseOpenProfile}>
                      <img className='rounded-full w-10 h-10 cursor-pointer' src="IMG_20230327_101111.jpg" alt="" />
-                     <p>UserName</p>
+                     <p>{auth.reqUser?.fullName}</p>
                   </div>
                   <div className='space-x-3 text-2xl flex'>
                      <TbCircleDashed className='cursor-pointer mr-1' onClick={() => { handleClickISChat(false) }} />
@@ -128,7 +154,7 @@ function HomePage() {
                      >
                         <MenuItem onClick={handleClose}>Profile</MenuItem>
                         <MenuItem onClick={handleCreateGroup}>Create Group</MenuItem>
-                        <MenuItem onClick={handleClose}>Logout</MenuItem>
+                        <MenuItem onClick={handleLogout}>Logout</MenuItem>
                      </Menu>
                   </div>
                </div>

@@ -11,5 +11,10 @@ public class ApiResponse {
 		this.message = message;
 		this.status = status;
 	}
-	
+	public String getMessage() {
+		return message;
+	}
+	public boolean isStatus() {
+		return status;
+	}
 }

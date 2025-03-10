@@ -1,7 +1,7 @@
 package v20_cyclic_sort.Q268_MissingNumber;
 // Amazon Question
 // solution by kunal (v20 t34:44)
-// ttps://leetcode.com/problems/missing-number/description/
+// https://leetcode.com/problems/missing-number/description/
 
 import java.util.ArrayList;
 import java.util.Arrays;

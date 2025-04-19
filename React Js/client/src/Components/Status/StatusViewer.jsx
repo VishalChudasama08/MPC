@@ -23,7 +23,7 @@ function StatusViewer() {
    }
 
    const handleClickOnClose = () => {
-      navigate(-1);
+      navigate("/");
    }
 
    useEffect(() => {

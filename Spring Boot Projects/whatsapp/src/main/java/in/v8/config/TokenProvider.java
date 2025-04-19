@@ -22,12 +22,20 @@ public class TokenProvider {
         Instant now = Instant.now();
         Instant expiry = now.plusSeconds(86400); // 86400 seconds = 24 hours
         
+        /** It’s commonly used for authentication and authorization. A JWT consists of three parts, separated by dots (.):
+         * Header: Metadata about the token (e.g., the algorithm used). (here issuer(), issuedAt(), expiration())
+         * Payload: The actual data (e.g., user info like email or ID). (here called claim())
+         * Signature: A cryptographic signature to verify the token’s authenticity. (here signWith())
+         * When combined, it looks like this:	header.payload.signature
+         * last compact() to separated by dots (.) that jwt make token
+         */
+
         // Create JWT token
         String jwt = Jwts.builder()
                 .issuer("V8")  // Replaces setIssuer()
-                .issuedAt(Date.from(now))  // Replaces setIssuedAt()
-                .expiration(Date.from(expiry))  // Replaces setExpiration()
-                .claim("email", authentication.getName()) // Add custom claim
+                .issuedAt(Date.from(now))  // set token create date time
+                .expiration(Date.from(expiry))  // set token expire time 
+                .claim("email", authentication.getName()) // Add custom claim form set email (claim is that data which you won to set in token)
                 .signWith(key) // Sign with the secret key	
                 .compact();
 		return jwt;
@@ -46,7 +54,9 @@ public class TokenProvider {
 				.parseSignedClaims(jwt) // Parse the token
 				.getPayload();
 		
-		// Extract and return the "email" claim	
-		return claims.get("email", String.class);
+		// Extract "email" from claim	
+		String email = claims.get("email", String.class);
+		
+		return email;
 	}
 }

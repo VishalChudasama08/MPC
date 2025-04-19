@@ -23,15 +23,16 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/Happy_Coding/My_Code_In_Github/MPC/Java_Swing/JavaTpoint",
+    "last_opened_file_path": "D:/Happy_Coding/My_Code_In_Github/MPC/Java_Swing",
     "onboarding.tips.debug.path": "D:/Happy_Coding/My_Code_In_Github/MPC/Java_Swing/src/Main.java",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RunManager">
     <configuration name="swing_001_ColorChanger" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/jdk-21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="swing_001_ColorChanger" />
-      <module name="Java_Swing" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

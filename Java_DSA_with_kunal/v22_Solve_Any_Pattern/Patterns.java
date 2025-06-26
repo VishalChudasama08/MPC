@@ -1,7 +1,7 @@
 package v22_Solve_Any_Pattern;
 
 public class Patterns {
-    public static void main(String[] args) {
+    public static void main(String[] args) { // v means that was done my self
         System.out.println("Pattern 1:- ");
         pattern1(5);
         System.out.println("\nPattern 2:- ");
@@ -24,6 +24,10 @@ public class Patterns {
         System.out.println("\nPattern 10:- ");
         pattern10v(5);
         pattern10(5);
+        System.out.println("\nPattern 11:- ");
+        pattern11v(5);
+        System.out.println("\nPattern 12:- ");
+        pattern12v(10);
     }
     static void pattern1(int n){
         for (int i = 0; i <= n; i++) {
@@ -174,15 +178,66 @@ public class Patterns {
         }
     }
     static void pattern10(int n){
-        int i,j,sp=5;
+        System.out.println();
+        int i,j,sp=n;
         for(i=1;i<=5;i++) {
-            for(j=1;j<=sp;j++) {
+            for(j=1;j<sp;j++) {
                 System.out.print(" ");
             }
             sp--;
             for(j=1;j<=i;j++) {
                 System.out.print(" *");
             }
+            System.out.println();
+        }
+    }
+
+    static void pattern11v(int n){
+        int maxWidth = (n*2)-1;
+        for (int i = 0; i < maxWidth; i++) {
+            if(i < n){
+                for (int j = n; j > i; j--) {
+                    System.out.print(" ");
+                }
+                for (int j = 0; j <= i; j++) {
+                    System.out.print(" *");
+                }
+            } else {
+                for (int j = n; j < i+2; j++) {
+                    System.out.print(" ");
+                }
+                for (int j = i; j < maxWidth; j++) {
+                    System.out.print(" *");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void pattern12v(int n){
+        int a = 1;
+        for (int i = 0; i < n-1; i++) {
+            int b = 2;
+            for (int j = 0; j < n; j++) {
+                if(i < 5){
+                    if(i >= j){
+                        System.out.print("*");
+                    } else if(i < n-a && j < n-a){
+                        System.out.print("#");
+                    } else {
+                        System.out.print("*");
+                    }
+                } else {
+                    if(j <= n-b-a+6){
+                        System.out.print("*");
+                    } else if(i < n-a && j < n-a){
+                        System.out.print("#");
+                    } else {
+                        System.out.print("$");
+                    }
+                }
+                b++;
+            }
+            a++;
             System.out.println();
         }
     }

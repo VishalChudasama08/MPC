@@ -1,22 +1,24 @@
-//variable type global and local
-#include<iostream>
+// variable type global and local
+#include <iostream>
 using namespace std;
-int g = 8; //g is global variable
-int vishal(){
-    cout << "\nGlobal variable g is " << g; //g = 10
+int g = 8; // g is global variable
+int vishal()
+{
+    cout << "\nGlobal variable g is " << g; // g = 8 (print global value)
 }
-int main(){
+int main()
+{
     int g = 10, a = 5, b = 8;
     float pi = 3.14;
     bool t = true, f = false;
-    char v = 'V'; //save only one character if ensert more charecter then values is last character
+    char v = 'V'; // save only one character if ensert more charecter then values is last character
     cout << "This is Tutorial 004.cpp";
     cout << "\nHere Intiger Value of a is " << a << " And Value of b is " << b;
     cout << "\nFloting Point Value of pi is " << pi;
     cout << "\nCharacter Value of v is " << v;
-    cout << "\nboolian Value of t is " << t; //1
-    cout << "\nboolian Value of f is " << f; //0
-    cout << "\nGlobal variable g is " << g; // g = 8 
+    cout << "\nboolian Value of t is " << t; // 1
+    cout << "\nboolian Value of f is " << f; // 0
+    cout << "\nGlobal variable g is " << g;  // g = 10 (print local value here global not print, yes same name is working on cpp but in different block of code, )
     vishal();
     return 0;
 }

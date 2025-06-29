@@ -1,0 +1,43 @@
+Spring Security 6 with Spring Boot and JWT Tutorial(1080P_60FPS).mp4 =>
+
+pom.xml file => <dependency>
+                	<groupId>org.springframework.boot</groupId>
+                	<artifactId>spring-boot-starter-security</artifactId>
+                </dependency>
+You are add spring security then that buy default add login form.
+that login form username is "user" and password is generated in console ex.
+Using generated security password: 4993bb38-8efe-49a0-a8dd-2da9d64a9eb7
+this password is change wen reload project
+after login done for logout write logout in url and enter ex.  localhost:8080/logout
+
+
+spring security manage session id for another tab or another browser
+in another tab not need to log-in again. but in another browser or like postman need to log-in again
+
+
+for remove this default log in form do this
+application.properties file =>
+    spring.security.user.name = vishal
+    spring.security.user.password = vishal08
+
+restart project and log-in this username and password.
+also you see in console this time password not generated.
+and this password is not change, this is fix password
+
+now with postman set Authentication -> basic auth and enter username and password
+
+35:30 to 46:35 CSRF token
+postman add_data and get_data request, Strident.java and StudentController.java file (post and get methods) =>
+    for add data (like send data on database) than without spring security it's work
+    you try it but comment spring security dependency (and maven reload) and restart project
+    try to add data with proper body it's work check buy send get_data request. for security this is very bed.
+    now uncomment spring security (and maven reload) and restart project
+    then you try to add data it's not working showing 401 Unauthorized error
+
+    Now with spring security form add data (send add_data request) ned csrf token.
+    StudentController.java file getCsrfToken method to get csrf token.
+    in postman send get_CSRF_token request and get token,
+    then add token on add_data request header part. key is headerName and token is token from collected data by getCsrfToken method
+
+
+47:00 to  Create Security Filter Chain, Bypass default spring security login form and more, create your own security settings

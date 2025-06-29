@@ -16,3 +16,21 @@ public class j004_literals {
         System.out.println(str);
     }
 }
+
+/*
+ 📦 Summary Table (Java Primitives – Fixed Sizes)
+    Type	    Size	    Default	    Min Value	                 Max Value
+    byte	    1 byte	    0	        -128	                     127
+    short	    2 byte	    0	        -32,768	                     32,767
+    int	        4 byte	    0	        -2,147,483,648	             2,147,483,647
+    long	    8 byte	    0L	        -9,223,372,036,854,775,808	 9,223,372,036,854,775,807
+    float	    4 byte	    0.0f	    ±1.4e-45	                 ±3.4e+38
+    double	    8 byte	    0.0d	    ±4.9e-324	                 ±1.8e+308
+    char	    2 byte	    '\u0000'	0	                         65,535
+    boolean	    ~1 byte	    false	    false	                     true
+
+ 🧠 Notes:
+    Any primitives in java default value is not NULL.
+    char default value is '\u0000'. It's a valid character, just invisible (non-printable).
+
+ */

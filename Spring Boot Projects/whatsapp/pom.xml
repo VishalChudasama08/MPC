@@ -12,7 +12,7 @@
 	<artifactId>whatsapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>whatsapp</name>
-	<description>Whatsapp clone project for Spring Boot</description>
+	<description>Spring Boot project for Whatsapp clone</description>
 	<url/>
 	<licenses>
 		<license/>

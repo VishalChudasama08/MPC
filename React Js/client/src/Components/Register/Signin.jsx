@@ -76,6 +76,7 @@ function Signin() {
                <form onSubmit={handleSubmit} action="" className='space-y-5'>
                   <div>
                      <p className='emailInput mb-[0.65%] px-1.5 relative inline-block transition-all duration-500 ease-in-out translate-x-5 translate-y-4 bg-white rounded-full'>Email</p>
+                     {/* vishal@gmail.com */}
                      <input type="text" name="email"
                         className='py-2 ps-2 outline outline-green-600 w-full rounded border'
                         placeholder='Enter Your Email'
@@ -87,6 +88,7 @@ function Signin() {
                   </div>
                   <div>
                      <p className='passwordInput mb-[0.65%] px-1.5 relative inline-block transition-all duration-500 ease-in-out translate-x-5 translate-y-4 bg-white rounded-full'>Password</p>
+                     {/* 12345 */}
                      <input type="password" name="password"
                         className='py-2 ps-2 outline outline-green-600 w-full rounded border'
                         placeholder='Enter Your Password'

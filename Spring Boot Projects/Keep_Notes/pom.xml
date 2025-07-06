@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>SpringBootProject19_RESTful_Web_Services_http_get_post_put_delete</artifactId>
+	<artifactId>KeepNotes</artifactId>
 	<version>1.0</version>
-	<name>SpringBootProject19_RESTful_Web_Services_http_get_post_put_delete</name>
-	<description>Spring Boot Demo project RESTful Web Services to perform get, post, put and delete http request</description>
+	<name>KeepNote</name>
+	<description>Spring Boot project</description>
 	<url/>
 	<licenses>
 		<license/>

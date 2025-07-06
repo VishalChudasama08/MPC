@@ -220,7 +220,7 @@ function HomePage() {
                      </div>
                   </div>
 
-                  {/* write and sent message section */}
+                  {/* write and send message section */}
                   <div className='bg-[#f0f2f5] absolute bottom-0 w-full py-3'>
                      <div className='flex justify-between items-center px-5 relative text-2xl'>
                         <BsEmojiSmile className='cursor-pointer' />

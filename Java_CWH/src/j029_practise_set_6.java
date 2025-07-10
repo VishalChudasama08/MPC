@@ -20,10 +20,9 @@ public class j029_practise_set_6 {
             }
         }
         if (v) {
-            System.out.println("Yes, this value is present on array");
-        }
-        else{
-            System.out.println("Yes, this value is present on array");
+            System.out.println("Yes, this value is present in array");
+        } else{
+            System.out.println("No, this value is not present in array");
         }
         System.out.println();
 

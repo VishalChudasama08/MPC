@@ -1,4 +1,4 @@
-package com.droid08.SpringSecurtyEx;
+package com.droid08.SpringSecurtyEx.modal;
 
 public class Student {
     public int id;

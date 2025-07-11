@@ -1,4 +1,4 @@
-package com.droid08.SpringSecurtyEx;
+package com.droid08.SpringSecurtyEx.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.GetMapping;

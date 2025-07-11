@@ -1,5 +1,6 @@
-package com.droid08.SpringSecurtyEx;
+package com.droid08.SpringSecurtyEx.controller;
 
+import com.droid08.SpringSecurtyEx.modal.Student;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.GetMapping;

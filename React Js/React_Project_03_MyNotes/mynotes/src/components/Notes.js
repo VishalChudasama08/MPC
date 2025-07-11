@@ -3,6 +3,7 @@ import noteContext from '../context/notes/NoteContext'
 import NoteItem from './NoteItem';
 import AddNote from './AddNote';
 import { useNavigate } from 'react-router-dom';
+import NoteItems from './NoteItems';
 
 const Notes = () => {
     const navigate = useNavigate()
@@ -40,6 +41,19 @@ const Notes = () => {
         event.preventDefault()
     }
 
+    // Distribute notes into 4 arrays based on their index
+    const note1 = [];
+    const note2 = [];
+    const note3 = [];
+    const note4 = [];
+
+    notes.forEach((note, idx) => {
+        if (idx % 4 === 0) note1.push(note);
+        else if (idx % 4 === 1) note2.push(note);
+        else if (idx % 4 === 2) note3.push(note);
+        else if (idx % 4 === 3) note4.push(note);
+    });
+
     return (
         <>
             <AddNote />
@@ -67,7 +81,7 @@ const Notes = () => {
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="eDescription" className="form-label">Edit New Note</label>
-                                    <textarea name='eDescription' onChange={onChange} value={note.eDescription} className="form-control" id="eDescription" rows="3"></textarea>
+                                    <textarea name='eDescription' onChange={onChange} value={note.eDescription} className="form-control" id="eDescription" rows="8"></textarea>
                                     {note.eDescription.length < 5 && (<small className="text-danger">{"Minimum 3 characters required"}</small>)}
                                 </div>
                                 <div className="mb-3">
@@ -89,9 +103,31 @@ const Notes = () => {
                 <div className='container'>
                     {notes.length === 0 && 'No Any Note Found To Display'}
                 </div>
-                {notes.map((note) => {
+                {/* {notes.map((note) => {
                     return <NoteItem key={note._id} updateNote={updateNote} note={note} />;
-                })}
+                })} */}
+                <div className="row">
+                    <div className="col p-0 m-0">
+                        {note1.map((note) => (
+                            <NoteItems key={note._id} updateNote={updateNote} note={note} />
+                        ))}
+                    </div>
+                    <div className="col p-0 m-0">
+                        {note2.map((note) => (
+                            <NoteItems key={note._id} updateNote={updateNote} note={note} />
+                        ))}
+                    </div>
+                    <div className="col p-0 m-0">
+                        {note3.map((note) => (
+                            <NoteItems key={note._id} updateNote={updateNote} note={note} />
+                        ))}
+                    </div>
+                    <div className="col p-0 m-0">
+                        {note4.map((note) => (
+                            <NoteItems key={note._id} updateNote={updateNote} note={note} />
+                        ))}
+                    </div>
+                </div>
             </div>
         </>
     )

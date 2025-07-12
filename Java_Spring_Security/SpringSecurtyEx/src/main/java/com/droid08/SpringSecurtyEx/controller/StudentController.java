@@ -1,6 +1,6 @@
 package com.droid08.SpringSecurtyEx.controller;
 
-import com.droid08.SpringSecurtyEx.modal.Student;
+import com.droid08.SpringSecurtyEx.entity.Student;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,13 +26,13 @@ public class StudentController {
 
     @GetMapping("/csrf-token")
     public CsrfToken getCsrfToken(HttpServletRequest request){
-        return (CsrfToken) request.getAttribute("_csrf");
+        return (CsrfToken)request.getAttribute("_csrf");
     }
 
     @PostMapping("/students")
     public Student addStudent(@RequestBody Student student){
         System.out.println("Post Request Detected for add student in list. - this from StudentController.java addStudent() method System.out.println() line no. ~33");
         students.add(student);
-        return student;
+        return student; // not return list, only return added student
     }
 }

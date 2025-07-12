@@ -41,3 +41,10 @@ postman add_data and get_data request, Strident.java and StudentController.java 
 
 
 47:00 to  Create Security Filter Chain, Bypass default spring security login form and more, create your own security settings
+
+        username    password
+user 1: vishal      12345
+user 2: vishal2     54321
+user 3: vishal3     123456
+user 4: vishal4     12345678
+

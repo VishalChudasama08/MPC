@@ -36,5 +36,62 @@ public class NumberSystem {
         //      30    36    1F    11110
         //      31    37    20    11111
         //      32    40    21    100000
+        int binary = 100, decimal = 8, octal = 10;
+        System.out.println("BinaryToDecimal "+binary+" => " + BinaryToDecimal(binary));
+        System.out.println("DecimalToBinary "+decimal+" => " + DecimalToBinary(decimal));
+
+        System.out.println("DecimalToOctal "+decimal+" => " + DecimalToOctal(decimal));
+        System.out.println("OctalToDecimal "+octal+" => " + OctalToDecimal(octal));
+
+        System.out.println("BinaryToOctal "+binary+" => " + BinaryToOctal(binary));
+        System.out.println("OctalToBinary "+octal+" => " + OctalToBinary(octal));
+    }
+    private static int BinaryToDecimal(int binary) {
+        int decimal = 0, base = 1;
+        while (binary > 0) {
+            int last_digit = binary % 10;
+            binary /= 10;
+            decimal += last_digit * base;
+            base *= 2;
+        }
+        return decimal;
+    }
+    private static int DecimalToBinary(int decimal) {
+        int binary = 0, base = 1;
+        while (decimal > 0) {
+            int last_digit = decimal % 2;
+            decimal /= 2;
+            binary += last_digit * base;
+            base *= 10;
+        }
+        return binary;
+    }
+
+    private static int DecimalToOctal(int decimal) {
+        int octal = 0, base = 1;
+        while (decimal > 0) {
+            int last_digit = decimal % 8;
+            decimal /= 8;
+            octal += last_digit * base;
+            base *= 10;
+        }
+        return octal;
+    }
+    private static int OctalToDecimal(int octal) {
+        int decimal = 0, base = 1;
+        while (octal > 0) {
+            int last_digit = octal % 10;
+            octal /= 10;
+            decimal += last_digit * base;
+            base *= 8;
+        }
+        return decimal;
+    }
+
+    private static int BinaryToOctal(int binary) {
+        return DecimalToOctal(BinaryToDecimal(binary));
+    }
+    private static int OctalToBinary(int octal) {
+        return DecimalToBinary(OctalToDecimal(octal));
     }
 }

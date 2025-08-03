@@ -3,7 +3,6 @@ package v25_Bitwise_operstors_number_systems;
 public class FindUniqueByUsingBitwiseOperators {
     public static void main(String[] args) {
         int [] arr = {1,5,7,3,4,8,5,1,3,7,4}; // here only 8 is one time another all in 2 times
-
         System.out.println(ans(arr));
     }
     public static int ans(int [] arr){
@@ -20,4 +19,6 @@ public class FindUniqueByUsingBitwiseOperators {
 
         return unique;
     }
+
+
 }

@@ -1,0 +1,102 @@
+#include <stdio.h>
+#include <conio.h>
+#include <dos.h>   // for delay()
+
+#define MAP_WIDTH 40
+#define MAP_HEIGHT 15
+
+// 2D map
+char map[MAP_HEIGHT][MAP_WIDTH + 1] = {
+    "########################################",
+    "#                                      #",
+    "#                                      #",
+    "#                                      #",
+    "#                                      #",
+    "#          ####                       ##",
+    "#                                      #",
+    "#      ####                            #",
+    "#                                      #",
+    "#                         ####         #",
+    "#                                      #",
+    "#                                      #",
+    "#                                      #",
+    "#                                      #",
+    "########################################"
+};
+
+// Player position
+int playerX = 2;
+int playerY = 13;
+
+// Function to draw map and player
+void draw() {
+	int y, x;
+	clrscr();
+	for (y = 0; y < MAP_HEIGHT; y++) {
+		for (x = 0; x < MAP_WIDTH; x++) {
+            if (x == playerX && y == playerY)
+                printf("@");  // player
+            else
+                printf("%c", map[y][x]);
+        }
+        printf("\n");
+    }
+}
+
+// Check if position is empty (not wall)
+int isEmpty(int x, int y) {
+    if (x < 0 || x >= MAP_WIDTH || y < 0 || y >= MAP_HEIGHT)
+        return 0;
+    return map[y][x] == ' ';
+}
+
+// Simple gravity to pull player down
+void applyGravity() {
+    if (isEmpty(playerX, playerY + 1)) {
+        playerY++;
+    }
+}
+
+// Jump logic (jump up and fall down)
+void jump() {
+	int i;
+	for (i = 0; i < 3; i++) {
+		if (isEmpty(playerX, playerY - 1)) {
+			playerY--;
+			draw();
+			delay(100);
+		}
+	}
+	for (i = 0; i < 3; i++) {
+		applyGravity();
+		draw();
+		delay(100);
+	}
+}
+
+void main() {
+	char ch;
+
+	draw();
+	while (1) {
+		if (kbhit()) {
+			ch = getch();
+
+			if (ch == 'a') { // Left
+				if (isEmpty(playerX - 1, playerY))
+					playerX--;
+			} else if (ch == 'd') { // Right
+				if (isEmpty(playerX + 1, playerY))
+					playerX++;
+			} else if (ch == 'w') { // Jump
+				jump();
+			} else if (ch == 27) { // ESC to exit
+				break;
+			}
+		}
+
+		applyGravity();
+		draw();
+		delay(100);
+	}
+}

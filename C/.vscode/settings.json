@@ -2,6 +2,7 @@
 	"files.associations": {
 		"BinaryTo.C": "cpp",
 		"inBinary.C": "cpp",
-		"Convert.C": "cpp"
+		"Convert.C": "cpp",
+		"PointerArray.C": "cpp"
 	}
 }

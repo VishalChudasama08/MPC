@@ -13,7 +13,7 @@ int main() {
 	printf("\t %d \n", n1);
 	printf("\t %p \n", &n1); // use & (reference operator) to print address, here printed n1 variable address
 	printf("\t %p \n", ptr); // use %p to print pointer value, here ptr value is variable n1 address
-	printf("\t %d \n", *ptr); // print variable value by using pointer
+	printf("\t %d---\n", ptr); // print variable value by using pointer
 	printf("\t %p \n", &ptr); // print pointer address, here printed ptr address not n1 address
 
 

@@ -3,6 +3,7 @@
 		"BinaryTo.C": "cpp",
 		"inBinary.C": "cpp",
 		"Convert.C": "cpp",
-		"PointerArray.C": "cpp"
+		"PointerArray.C": "cpp",
+		"BUSBOOK.C": "cpp"
 	}
 }

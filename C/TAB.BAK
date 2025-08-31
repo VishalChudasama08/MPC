@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <string.h>
+
+void printWith4Tabs(const char *s) {
+	int i, j;
+	static int col=0;
+	for (i = 0; s[i] != '\0'; i++) {
+		if (s[i] == '\t') {
+			// how many spaces until next multiple of 4?
+			int spaces = 4 - (col % 4);
+			for (j = 0; j < spaces; j++) {
+				putchar(' ');
+				col++;
+			}
+		} else {
+			putchar(s[i]);
+			if (s[i] == '\n') {
+				// reset column count at newline
+				col = 0;
+			} else {
+				col++;
+			}
+		}
+	}
+}
+
+int main() {
+	printWith4Tabs("HelloHello\tWorld\n");
+	printWith4Tabs("HelloHell\tWorld\n");
+	printWith4Tabs("HelloHelloo\tWorld\n");
+	printf("HelloHello\t\tWorld\n");
+	printf("HelloHell\t\tWorld\n");
+	printf("HelloHelloo\t\tWorld\n");
+	getch();
+	return 0;
+}

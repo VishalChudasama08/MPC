@@ -1,0 +1,113 @@
+rowmutireals:-
+
+wheat: 32, 32, 24, 24, 624, 48, 56, 24, 24, 256, 86
+Tomato: 156, 86
+Pumpkin: ▶️16, 42: 58
+corn: ▶️22, 28, 42
+Sugar Cane: 16, 56, 36
+Strawberry: 8
+Mushroom: 180 = 48
+Potato: 54, 66
+
+Cow Feed: 128 = 30, 30, 30, 30, done
+Chick Feed: 86 = 45, 
+
+Milk: 8, 12, 9, 9, 104, 18, 21, 120, 6, 4 => 311
+Egg: 8, 156, 24 => 212
+
+Lemon: 18 / 6
+Mango: 2 done
+Banana: 4 done
+Peach: 4 done
+Olive: 66, 18 => 84/ 28
+Cocoa: 6, 18, 18 => 42/ 14
+
+
+Honeycombs: 84, 12, 112, 32, 8, 16
+
+
+items:-
+flour(wheat 4): 8, 8, 6, 6, 156, 42, 12, 14, 6, 6 => 264: 14, 
+Bread(flour 2, Milk 2) : 4, 3 : 7 done
+Batter(flour 2, Milk 3): 4, 3, 3, 6, 7: 23 done
+Noodles(Egg 2, flour 2): 78 
+Olive Loaf(Olive 6, Bread 1): 3 done
+
+Egg Whites(Egg 4): 6 done
+Cake(Batter 3, Egg Whites 3): 2 done
+
+Chocolate(Cocoa 6): 1, 3, 3: 10 done
+Brownie(Chocolate 3, Batter 3): 1, *1 done
+
+Honey Pot(Honeycombs 4): 21, 3, 28, 8, 2, 4 => 58
+Honey Butter Popcorn(corn 4, Honey Pot 3): 7
+Pancakes(Egg 2, Batter 1): 3, 1 done
+Honey Pancakes(Pancakes 1, Honey Pot 3): 1 done
+*Honey Cake(Honey Pot 4, Cake 1): 2 done
+Honey Bread(Bread 1, Honey Pot 2): 1 done
+*Honey Candy(Honey Pot 2): 14 done
+
+Tomato soup(Tomato 3, Milk 2): 52
+Tomato Spaghetti(Tomato soup 2, Noodles 3): 8, 1, 17
+
+Butter(Milk 4): 42, 3 => 45 done
+Pie Crust(flour 2, Butter 2): 21, 3 = 24: 6 done
+Pumpkin pie(Pumpkin 2, Pie Crust 2): 21 done
+
+Fruit Salad(Peach 4, Strawberry 8): 1 done
+Delicious Fruit Salad(Banana 4, Fruit Salad 1): 1 done
+Wonderful Fruit Salad(Mango 2, Delicious Fruit Salad 1): 1 done
+
+Mushroom soup(Mushroom 6, Milk 4): 6, 24 
+Potato Wedges(Potato 6): 6, 2
+*Honey Potatoes(Potato Wedges 1, Honey Pot 2): 2 
+Potato Salad(Potato 3, Olive 3): 22
+
+Brown Sugar(Sugar Cane 2): 28, 18
+White Sugar(Brown Sugar 2) : 14, 9
+Corn Cereal(Corn 3, White Sugar 1): 14 
+Lemon Jam(White Sugar 3, Lemon 6): 3
+Lemon Tart(Pie Crust 1, Lemon Jam 1): 3 
+
+
+
+1. i.  done  Pumpkin: 16	2. i.		Tomato Spaghetti: 8			3.	i.		Tomato Spaghetti: 1
+	ii. done	Pancakes: 3			ii. done	Honey Butter Popcorn: 7		ii. done	Brownie: 1
+	iii.done	Chocolate: 1		iii.done	Honey Pancakes: 1				iii.done Pumpkin pie: 21
+
+4. i.  done  *Brownie: 1		5. i.	 done	*Honey Cake: 2				6.	i.		Tomato Spaghetti: 17
+	ii. done	corn: 22					ii. done	Batter: 7						ii. done	Wonderful Fruit Salad: 1
+	iii.done	*Honey Candy: 14		iii.	Sugar Cane: 16						iii.done 	Honey Bread: 1
+
+7. i.  done  Mushroom soup: 6	8. i.		Potato Salad: 22				9.	i.	 done	Corn Cereal: 14
+	ii.	wool: 4						ii.	*Honey Potatoes: 2				ii. done	Lemon Tart: 3
+	iii.	Potato Wedges: 7			iii.done	Mushroom soup: 24				iii.done 	Olive Loaf: 3
+
+
+
+Merges items total:- 
+Bread 4 (flour 8(wheat 32), Milk 8) 
+Pancakes: 4 (Egg 8, Batter 4(flour 8(wheat 32), Milk 12))
+Chocolate: 1 (Cocoa 6)
+Brownie: 1 (Chocolate 3 (Cocoa 18), Batter 3(flour 6(wheat 24), Milk 9)) 
+*Brownie: 1 (*, Chocolate 3 (Cocoa 18), Batter 3(flour 6(wheat 24), Milk 9)) 
+Cake: 2(Batter 6, Egg Whites 6)
+Honey Bread: 1(Bread 1, Honey Pot 2)
+
+Tomato Spaghetti: 26 (Tomato soup 52(Tomato 156, Milk 104), Noodles 78(Egg 156, flour 156(wheat 624)))
+Honey Butter Popcorn: 7(corn 28, Honey Pot 21)
+Honey Pancakes: 1 (Pancakes 1, Honey Pot 3)
+
+Pumpkin pie: 21(Pumpkin 42, Pie Crust 21)
+Lemon Tart: 3 (Pie Crust 3, Lemon Jam 3)
+
+Honey Cake: 2 (Honey Pot 8, Cake 2)
+Wonderful Fruit Salad: 1 (Mango 2, Delicious Fruit Salad 1)
+Mushroom soup: 30 (Mushroom 180, Milk 120)
+
+Potato Wedges: 9 (Potato 54)
+*Honey Potatoes: 2 (Potato Wedges 2, Honey Pot 4)
+Potato Salad: 22 (Potato 66, Olive 66)
+
+Corn Cereal: 14 (Corn 42, White Sugar 14)
+Olive Loaf: 3 (Olive 18, Bread 3)

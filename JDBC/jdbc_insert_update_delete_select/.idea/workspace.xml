@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8c129aa9-ccdc-4a75-89b4-800a3f34aaaa" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../jdbc_02_simple_connection/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jdbc_02_simple_connection/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jdbc_02_simple_connection/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../jdbc_02_simple_connection/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jdbc_02_simple_connection/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../jdbc_02_simple_connection/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jdbc_02_simple_connection/jdbc_02_simple_connection.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../jdbc_02_simple_connection/jdbc_02_simple_connection.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jdbc_02_simple_connection/src/com/example/Delete_Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jdbc_02_simple_connection/src/com/example/Delete_Record.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jdbc_02_simple_connection/src/com/example/Insert_Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jdbc_02_simple_connection/src/com/example/Insert_Record.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jdbc_02_simple_connection/src/com/example/Update_Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jdbc_02_simple_connection/src/com/example/Update_Record.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jdbc_insert_update_delete_select.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jdbc_insert_update_delete_select.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/Delete_Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/Delete_Record.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/Update_Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/Update_Record.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="38WjSc03woYcEGUxIoyl1qysn0Y" />
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/Happy_Coding/My_Code_In_Github/MPC/JDBC/Jar Files/mysql-connector-j-8.4.0.jar",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.editor"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.Delete_Record">
+    <configuration name="Delete_Record" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.Delete_Record" />
+      <module name="jdbc_insert_update_delete_select" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Update_Record" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.Update_Record" />
+      <module name="jdbc_insert_update_delete_select" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Delete_Record" />
+        <item itemvalue="Application.Update_Record" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8c129aa9-ccdc-4a75-89b4-800a3f34aaaa" name="Changes" comment="" />
+      <created>1768922221818</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1768922221818</updated>
+    </task>
+    <servers />
+  </component>
+</project>

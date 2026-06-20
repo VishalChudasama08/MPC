@@ -1,0 +1,140 @@
+==================================================
+== MISSION: SOFTWARE SECURITY ENGINEER ==
+==================================================
+Role target: Software Security Engineer / Application Security Engineer (AppSec)
+Foundation : Java + Spring Boot full-stack dev (already done - see MPC repo)
+Duration   : MCA Final Year (1 year)
+Track      : Cybersecurity (Fundamentals, Ethical Hacking, Digital Forensics)
+
+==================================================
+== PHASE 1: Cybersecurity Fundamentals & Network Security ==
+==================================================
+- Goal: Understand how networks/systems actually get attacked before defending them
+
+1. Networking basics for security
+- OSI model, TCP/IP, ports, protocols (HTTP/HTTPS, DNS, FTP, SSH)
+- Firewalls, VPNs, proxies, NAT
+- source:- Professor Messer (CompTIA Network+ / Security+ playlists, YouTube)
+
+2. Core security concepts
+- CIA Triad (Confidentiality, Integrity, Availability)
+- Authentication vs Authorization
+- Encryption basics: symmetric vs asymmetric, hashing, salting
+- TLS/SSL handshake
+
+3. Certification target
+- CompTIA Security+ (industry recognized, good for resume)
+- source:- Professor Messer free videos + practice exams
+
+=== Status: [ ] Not started
+
+==================================================
+== PHASE 2: Ethical Hacking & Penetration Testing ==
+==================================================
+- Goal: Learn to think like an attacker to defend like an engineer
+
+1. OWASP Top 10 (MOST IMPORTANT - maps directly to your Java/PHP projects)
+- SQL Injection -> test on your own Movie_Booking_System_in_PHP
+- Broken Authentication -> test on your own KeepNotes_SpringBoot login
+- XSS (Cross Site Scripting)
+- CSRF (Cross Site Request Forgery)
+- Insecure Deserialization
+- Security Misconfiguration
+- source:- owasp.org/www-project-top-ten
+
+2. Hands-on labs (FREE)
+- TryHackMe - "Pre Security" and "Web Fundamentals" paths
+- PortSwigger Web Security Academy (FREE, best resource for web app pentesting)
+- DVWA (Damn Vulnerable Web Application) - practice attacks legally on your own machine
+- bWAPP - another vulnerable app for practice
+
+3. Tools to learn
+- Burp Suite (intercept/modify HTTP requests)
+- OWASP ZAP (free alternative to Burp)
+- Nmap (network scanning)
+- SQLMap (automated SQL injection testing)
+
+4. Certification target (after fundamentals solid)
+- eJPT (entry level, practical, affordable)
+- Later: OSCP (gold standard, do after job experience)
+
+=== Status: [ ] Not started
+
+==================================================
+== PHASE 3: Digital Forensics & Incident Response ==
+==================================================
+- Goal: Understand what happens AFTER a breach - investigation and response
+
+1. Core concepts
+- Chain of custody
+- Evidence acquisition (disk imaging, memory dumps)
+- Log analysis (Windows Event Logs, Linux syslogs)
+- Incident Response lifecycle: Preparation -> Detection -> Containment -> Eradication -> Recovery -> Lessons Learned
+
+2. Tools
+- Autopsy (open source forensic tool)
+- Wireshark (network traffic analysis)
+- Volatility (memory forensics)
+
+3. Hands-on
+- TryHackMe - "Digital Forensics" room series
+- CyberDefenders.org - free DFIR challenges
+
+=== Status: [ ] Not started
+
+==================================================
+== PHASE 4: Secure Coding (THIS IS YOUR EDGE) ==
+==================================================
+- Goal: Apply security directly to your existing Java/Spring skills
+- This is what makes you "Software Security Engineer" not just "Security Analyst"
+
+1. Secure coding in Java/Spring Boot
+- Input validation (never trust user input)
+- PreparedStatement vs raw SQL queries (you already use this - good habit)
+- Spring Security: proper password hashing (BCrypt), session management
+- JWT security best practices
+- Dependency vulnerability scanning (OWASP Dependency-Check)
+
+2. Practical project ideas (use for Software Project - I)
+=> Build a vulnerability scanner for Spring Boot REST APIs
+=> Take your own KeepNotes_SpringBoot and do a full security audit:
+   - Find every input field, test for injection
+   - Check password storage method
+   - Check session handling
+   - Document findings + fixes in a report
+=> Build a secure login system demonstrating: rate limiting, account lockout,
+   password hashing, CSRF protection, secure session cookies
+
+3. Resources
+- OWASP Cheat Sheet Series (cheatsheetseries.owasp.org)
+- "Secure by Design" book (Manning) - long term read
+
+=== Status: [ ] Not started
+
+==================================================
+== RESUME PROFILE LINES (keep these, still accurate) ==
+==================================================
+Primary target role: Software Security Engineer / Application Security Engineer
+
+"Aspiring Software Security Engineer with a strong full-stack development
+background in Java, Spring Boot, and PHP, combined with hands-on knowledge
+of secure coding practices, OWASP Top 10 vulnerabilities, and web application
+security testing."
+
+Short version (LinkedIn headline):
+"Aspiring Software Security Engineer | Java Full-Stack Developer"
+
+==================================================
+== TIMELINE SUGGESTION (12 months) ==
+==================================================
+Month 1-3   : Cybersecurity Fundamentals + Security+ prep
+Month 4-7   : Ethical Hacking - OWASP Top 10 + TryHackMe + PortSwigger Academy
+Month 8-10  : Digital Forensics & Incident Response
+Month 11-12 : Software Project - I (security audit project) + portfolio + resume + apply
+
+==================================================
+== NOTES ==
+==================================================
+- Old file "Mission Java Developer and cyber security.txt" = pure Java/DSA log,
+  NOT a cybersecurity path. This file replaces it as the real roadmap.
+- Revisit this file monthly, tick off [ ] -> [x] as topics are completed.

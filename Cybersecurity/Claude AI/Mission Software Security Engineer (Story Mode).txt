@@ -1,0 +1,280 @@
+==================================================
+== MISSION: SOFTWARE SECURITY ENGINEER ==
+==================================================
+== Learning style: STORY MODE, not syllabus mode ==
+==================================================
+
+Why this file is different:
+Most courses teach "Topic 1, Topic 2, Topic 3" like a textbook.
+Real security knowledge didn't appear that way. It appeared as:
+
+    PROBLEM happened in the real world
+        -> people got hacked / data got stolen
+            -> smart people figured out WHY
+                -> a DEFENSE / SOLUTION was invented
+                    -> that defense became "a topic" in textbooks
+
+So this file follows PROBLEM -> WHY IT WORKED -> SOLUTION -> PRACTICE
+in roughly the ORDER these things appeared/mattered in real history.
+You are not learning "SQL Injection" as a subject.
+You are learning "in 1998 people found you could break a login by typing
+weird text into a password box, here's exactly why that worked, here's
+what was eventually invented to stop it, now go break it yourself in a
+safe lab, then go check if YOUR OWN project has the same hole."
+
+==================================================
+== ERA 1 (1990s-2000s): "The website trusted everything you typed"
+==================================================
+This is the foundation era. Almost everything here still matters today
+because most apps (including yours) still get this wrong.
+
+--------------------------------------------------
+STORY 1: SQL Injection
+--------------------------------------------------
+WHAT HAPPENED:
+- Early websites built database queries by gluing user input directly
+  into SQL text. Someone typed ' OR '1'='1 into a login box and got in
+  without a password. This became one of the most damaging bugs in
+  internet history (used in Heartland Payment Systems breach - 130M+
+  card numbers stolen, 2008).
+
+WHY IT WORKED:
+- The app trusted that "username" would always just be a name.
+  It never imagined someone would type SQL code into a text box.
+
+THE SOLUTION THAT GOT INVENTED:
+- Parameterized queries / PreparedStatement - separates the SQL
+  STRUCTURE from the user's DATA so the database never confuses
+  "data" with "code"
+
+GO PRACTICE:
+1. PortSwigger Web Security Academy -> "SQL injection" section (free, do the labs)
+2. Then: open your OWN repo Movie_Booking_System_in_PHP. Find a query.
+   Is it using raw string concatenation or prepared statements?
+3. In KeepNotes_SpringBoot - check: does Hibernate/JPA protect you here?
+   (mostly yes, but understand WHY)
+
+=== Status: [ ]
+
+--------------------------------------------------
+STORY 2: Broken Authentication / Plaintext Passwords
+--------------------------------------------------
+WHAT HAPPENED:
+- Companies stored passwords as plain text in the database.
+  When databases got leaked (RockYou 2009 - 32 million passwords leaked
+  in plain text), everyone's password for every other site was exposed too
+  because people reuse passwords.
+
+WHY IT WORKED:
+- Developers thought "it's just stored in our database, who's going to see it"
+  - until the database itself got stolen.
+
+THE SOLUTION THAT GOT INVENTED:
+- Password hashing (one-way function, can't be reversed)
+- Then: salting (random data added so identical passwords don't look identical)
+- Then: slow hashing algorithms on purpose - bcrypt, scrypt, Argon2
+  (fast hashing = attacker can guess millions/sec, slow hashing = they can't)
+
+GO PRACTICE:
+1. Read: "Why bcrypt and not MD5/SHA256 for passwords" (search this exact phrase)
+2. Check your KeepNotes_SpringBoot - what does Spring Security use by default?
+   Is it BCryptPasswordEncoder? Find it in your own code.
+3. TryHackMe room: "Hashing - Crypto 101"
+
+=== Status: [ ]
+
+--------------------------------------------------
+STORY 3: Cross-Site Scripting (XSS)
+--------------------------------------------------
+WHAT HAPPENED:
+- MySpace, 2005 - the "Samy worm". A user put JavaScript inside his profile
+  "About Me" text. When other people VIEWED his profile, that JavaScript ran
+  in THEIR browser and quietly added Samy as their friend. Spread to over
+  1 million profiles in 20 hours - fastest spreading virus in history at that time.
+
+WHY IT WORKED:
+- The site displayed user input directly as HTML without checking if it
+  contained executable code (<script> tags).
+
+THE SOLUTION THAT GOT INVENTED:
+- Output encoding/escaping (turn < into &lt; so browsers display it as
+  text, not run it as code)
+- Content Security Policy (CSP) headers - tell the browser "only run
+  scripts from these trusted sources"
+
+GO PRACTICE:
+1. PortSwigger Academy -> "Cross-site scripting" labs
+2. Check: does your VNews_Real_Time_News_Application or MyNotes render
+   any user input directly into the page without escaping?
+3. Try injecting <script>alert(1)</script> into one of your own note apps
+   (locally, your own machine, your own data only)
+
+=== Status: [ ]
+
+==================================================
+== ERA 2 (2000s-2010s): "The website trusted the BROWSER too much"
+==================================================
+
+--------------------------------------------------
+STORY 4: Cross-Site Request Forgery (CSRF)
+--------------------------------------------------
+WHAT HAPPENED:
+- 2008, Netflix - attackers crafted a malicious webpage. If a logged-in
+  Netflix user simply VISITED that page, it secretly submitted requests
+  to Netflix's site (add to queue, change shipping address) using the
+  victim's already-logged-in session, without them knowing.
+
+WHY IT WORKED:
+- Browsers automatically attach cookies/session info to ANY request to
+  a site, even ones triggered by a completely different website.
+- The server had no way to tell "did the real user click this, or did
+  a hidden form on another page trigger it?"
+
+THE SOLUTION THAT GOT INVENTED:
+- CSRF tokens (a secret, unguessable value the server checks on every
+  state-changing request)
+- SameSite cookie attribute (tells browser: don't send this cookie on
+  requests coming from other sites)
+
+GO PRACTICE:
+1. PortSwigger Academy -> "CSRF" labs
+2. Spring Security has CSRF protection ON by default - find it in your
+   KeepNotes_SpringBoot config. What happens if you disable it?
+
+=== Status: [ ]
+
+--------------------------------------------------
+STORY 5: Man-in-the-Middle / Why HTTPS exists everywhere now
+--------------------------------------------------
+WHAT HAPPENED:
+- Firesheep (2010) - a Firefox extension that let ANYONE on the same
+  public WiFi (coffee shop, airport) literally click a button and take
+  over other people's Facebook/Twitter sessions, because those sites
+  sent login cookies over plain unencrypted HTTP.
+
+WHY IT WORKED:
+- HTTP sends everything in plain text. Anyone on the same network can
+  read it like an open postcard.
+
+THE SOLUTION THAT GOT INVENTED:
+- HTTPS everywhere (TLS encryption for ALL traffic, not just login pages)
+- HSTS header (forces browser to always use HTTPS)
+- This incident is largely WHY the entire internet moved to HTTPS by default
+
+GO PRACTICE:
+1. Wireshark - capture your own home network traffic, look at an HTTP
+   site vs HTTPS site, SEE the difference with your own eyes
+2. Read about TLS handshake (just enough to understand what's happening)
+
+=== Status: [ ]
+
+==================================================
+== ERA 3 (2010s-now): "The website trusted its own DEPENDENCIES"
+==================================================
+
+--------------------------------------------------
+STORY 6: Insecure Deserialization / Supply Chain
+--------------------------------------------------
+WHAT HAPPENED:
+- Log4Shell (2021) - one of the worst vulnerabilities ever found.
+  A single line of text sent to almost ANY Java application using the
+  extremely popular Log4j logging library could execute attacker code
+  on the server. Millions of Java apps worldwide were affected overnight,
+  including yours-could-have-been since you write Java.
+
+WHY IT WORKED:
+- A logging library (something nobody thinks of as "dangerous") had a
+  feature that looked up and EXECUTED remote code if certain text
+  patterns appeared in logs. Nobody imagined a logging library could
+  be an attack vector.
+
+THE SOLUTION:
+- Dependency scanning (OWASP Dependency-Check, Snyk) - know what's
+  inside your app, not just code you wrote
+- Keep dependencies updated, subscribe to CVE alerts for your stack
+
+GO PRACTICE:
+1. Read the Log4Shell story in detail (search "Log4Shell explained simply")
+2. Run OWASP Dependency-Check on your own KeepNotes_SpringBoot pom.xml
+   - see what's actually inside your project
+3. This is a "wow, this is REAL and could affect ME" moment - use it
+
+=== Status: [ ]
+
+--------------------------------------------------
+STORY 7: API Security / Broken Object Level Authorization
+--------------------------------------------------
+WHAT HAPPENED:
+- Common modern bug class - e.g. you log into an app and the URL says
+  /api/orders/1052 (your order). Many apps never check if order 1053
+  belongs to someone else - they just check "are you logged in" not
+  "is this YOUR data." Change the number in the URL, see someone
+  else's order/invoice/profile.
+
+WHY IT WORKED:
+- Developers check authentication (are you logged in) but forget
+  authorization (are you allowed to see THIS specific item)
+
+THE SOLUTION:
+- Always verify resource ownership server-side, every single request
+- This is now OWASP API Security Top 10, #1 issue (2023 list)
+
+GO PRACTICE:
+1. PortSwigger Academy -> "Access control vulnerabilities"
+2. In your own REST APIs (Spring Boot) - when you fetch a note/order
+   by ID, do you check if it belongs to the logged-in user, or does
+   ANY logged-in user get ANY note if they guess the ID?
+
+=== Status: [ ]
+
+==================================================
+== ERA 4: "After the breach happens" - Forensics & Response
+==================================================
+By this point you understand HOW attacks happen. Now: what happens
+AFTER a company gets breached - this is Digital Forensics & IR subject.
+
+--------------------------------------------------
+STORY 8: Target Breach 2013 - why logging/monitoring matters
+--------------------------------------------------
+WHAT HAPPENED:
+- Target's security tools actually DETECTED the attack in progress and
+  raised alerts. Humans IGNORED the alerts. 40 million credit cards stolen.
+
+WHY IT MATTERED:
+- Having logs is useless if nobody analyzes them. This birthed the
+  entire SIEM (Security Information and Event Management) industry
+  and modern Incident Response procedures.
+
+THE SOLUTION/PRACTICE THAT GOT BUILT:
+- Incident Response lifecycle: Preparation -> Detection -> Containment
+  -> Eradication -> Recovery -> Lessons Learned
+- Chain of custody for evidence (so findings hold up legally)
+
+GO PRACTICE:
+1. CyberDefenders.org - free DFIR challenge, pick one, walk through it
+2. Wireshark + a sample pcap file - practice spotting suspicious traffic
+3. Autopsy tool - basic disk image analysis tutorial
+
+=== Status: [ ]
+
+==================================================
+== HOW TO USE THIS FILE ==
+==================================================
+- Go in order, top to bottom. Each story is self-contained (1-3 days each).
+- For EVERY story: read the history -> understand WHY it worked -> do the
+  lab -> check your OWN repo for the same issue. That last step is what
+  makes it stick - you're not learning abstractly, you're auditing things
+  you personally built.
+- Don't move to the next story until you've done the "GO PRACTICE" part.
+  Reading without doing is how topics get forgotten (like the old file did).
+- Tick [ ] -> [x] as you finish each story.
+
+==================================================
+== AFTER ALL 8 STORIES: Software Project - I idea ==
+==================================================
+Take everything you audited above and turn it into ONE deliverable:
+"Security Audit Report: KeepNotes_SpringBoot"
+- Document every vulnerability class above, whether your app has it,
+  and the fix if it does. This becomes a real portfolio piece that
+  PROVES you think like a Software Security Engineer, not just
+  studied for one.

@@ -1,0 +1,261 @@
+==================================================
+== MISSION: SOFTWARE SECURITY ENGINEER ==
+== MASTER TIMELINE — FILE 1 of N ==
+== ERA: 1970s - 1990s (The Beginning) ==
+==================================================
+
+HOW THIS SERIES WORKS:
+This is NOT split by subject (Fundamentals / Pentest / Forensics).
+It is split BY TIME. Real history doesn't separate these three subjects -
+the same incidents in the same years gave birth to networking defenses,
+pentesting methodology, AND forensics practice simultaneously. So each
+file here pulls from ALL THREE syllabi at once, whichever topics belong
+to that time period.
+
+Tag system used below:
+[FUND] = maps to Cybersecurity Fundamentals & Network Security syllabus
+[PENT] = maps to Ethical Hacking & Penetration Testing syllabus
+[DFIR] = maps to Digital Forensics & Incident Response syllabus
+
+==================================================
+== STORY 1: The first hack wasn't even digital - it was a whistle
+==================================================
+[FUND - threat actors, attack surface concept]
+
+WHAT HAPPENED:
+- 1970s, "Phone Phreaking". John Draper discovered a toy whistle from a
+  cereal box produced the exact 2600Hz tone that AT&T's phone network
+  used internally to signal "this line is free." Blow the whistle into
+  a payphone, get free long-distance calls. This is literally the
+  ancestor of modern hacking culture - Steve Jobs and Steve Wozniak
+  built and sold "blue boxes" based on this before founding Apple.
+
+WHY IT WORKED:
+- The phone network trusted ANY signal at the right frequency, no
+  matter who or what produced it. It couldn't tell "official switch
+  equipment" from "kid with a whistle."
+
+THE CONCEPT THIS TEACHES (still true today):
+- Attack surface = anywhere a system accepts input from the outside
+  world. The phone network's attack surface was literally sound itself.
+- This is the root idea behind threat actor categories [FUND]: a
+  hacktivist doesn't need million dollar tools - just understanding
+  what the system blindly trusts.
+
+GO PRACTICE:
+1. Just read/watch "2600Hz blue box history" - 10 min video, builds
+   the right mental model for "what is attack surface" before anything else
+2. No lab needed for this one - it's pure intuition building
+
+=== Status: [ ]
+
+==================================================
+== STORY 2: The Morris Worm - the first real "incident" (1988)
+==================================================
+[FUND - Malware: worm, DoS concept, defence in depth intro]
+[DFIR - why incident response as a FIELD exists at all]
+
+WHAT HAPPENED:
+- Robert Morris (a student, not even malicious intent - he wanted to
+  measure the size of the internet) released a self-replicating program.
+  A bug in his code made it copy itself onto the SAME machine repeatedly,
+  consuming all resources. ~6,000 computers (10% of the entire internet
+  at the time) ground to a halt. This is recognized as the first major
+  worm and the incident that caused CERT (Computer Emergency Response
+  Team) to be created - the literal birth of "incident response" as
+  a profession.
+
+WHY IT WORKED:
+- It exploited a known bug in Unix sendmail and a weak password list -
+  systems had no segmentation, no monitoring, nothing watching for
+  "why is this machine suddenly using 100% CPU"
+
+THE SOLUTION/FIELD THAT GOT BORN:
+- CERT/CSIRT teams - the original "SOC" concept [FUND Unit V]
+- This is WHY Incident Response lifecycle exists (Preparation, Detection,
+  Containment, Eradication, Recovery) [DFIR Unit V] - it was built
+  AFTER this incident, in direct response to it, not before
+
+GO PRACTICE:
+1. Read "Morris Worm 1988" history (Wikipedia is genuinely good for this one)
+2. Mental exercise: if YOU were running a computer in 1988, what's the
+   FIRST sign you'd notice something's wrong? (this is literally
+   "Detection" phase of incident response - you're already thinking
+   like an IR analyst)
+
+=== Status: [ ]
+
+==================================================
+== STORY 3: Why your computer has "layers" at all - OSI Model origin
+==================================================
+[FUND Unit II - full OSI model, TCP/IP model]
+
+WHAT HAPPENED (this is conceptual, not an "attack" story):
+- Before the 1980s, every computer company (IBM, DEC, etc.) had their
+  OWN private networking system. An IBM machine literally could not
+  talk to a DEC machine - incompatible by design. Companies were locked
+  into one vendor forever.
+- The International Organization for Standardization (ISO) created the
+  OSI model (1984) as a UNIVERSAL set of rules so ANY vendor's hardware
+  could talk to ANY other vendor's hardware, as long as both followed
+  the same 7 layers.
+
+WHY THIS MATTERS FOR SECURITY (not just networking):
+- Every layer = a different place an attacker can strike, and a
+  different place a defender can put a control. This is WHY your
+  syllabus maps specific attacks to specific layers:
+  - Layer 2 (Data Link) -> ARP spoofing
+  - Layer 3 (Network) -> IP spoofing
+  - Layer 4 (Transport) -> TCP SYN flood
+  - Layer 7 (Application) -> HTTP injection (this is where YOUR
+    Java/PHP web apps live - this is your home turf)
+
+THE 7 LAYERS (learn top-down since L7 is where your dev experience
+already lives):
+7. Application  - HTTP, your Spring Boot APIs live here
+6. Presentation - encryption/encoding (TLS happens around here)
+5. Session      - keeps track of a "conversation" between two systems
+4. Transport    - TCP/UDP, ports, reliable delivery
+3. Network      - IP addresses, routing
+2. Data Link    - MAC addresses, switches, ARP
+1. Physical     - actual cables/wifi signals
+
+GO PRACTICE:
+1. Open your own KeepNotes_SpringBoot or any web project. When a user
+   clicks "login" - mentally walk the request DOWN from Layer 7 to
+   Layer 1, then back UP on the server side. This single exercise
+   makes OSI model permanently click for developers (you already
+   built Layer 7 - now see the layers underneath it that you never
+   had to think about)
+2. TCP/IP model - just know it's the PRACTICAL 4-layer version
+   (Application, Transport, Internet, Network Access) that the real
+   internet actually uses; OSI is the teaching/reference model
+
+=== Status: [ ]
+
+==================================================
+== STORY 4: Why IP addresses look the way they do
+==================================================
+[FUND Unit II - IPv4 structure, classes, private/public, subnetting, NAT]
+
+WHAT HAPPENED:
+- Early internet (1980s) assumed there'd never be more than ~4 billion
+  devices ever (IPv4 = 32 bits = ~4.3 billion addresses). They were
+  WRONG - the internet exploded. By the 2000s the world was running
+  out of IPv4 addresses.
+
+THE WORKAROUNDS THAT GOT INVENTED (in order, because each one bought
+more time before the next was needed):
+1. Address classes (A, B, C) - organize address blocks by size
+2. Private IP ranges (10.x, 172.16-31.x, 192.168.x) - reusable INSIDE
+   any private network, never routed on the public internet
+3. NAT (Network Address Translation) - lets an ENTIRE office/home
+   network share ONE public IP address by translating private IPs
+   at the router/gateway
+4. CIDR (/24, /16 notation) - more flexible than rigid classes,
+   lets you size a network exactly how big you need it
+5. IPv6 - the actual long-term fix (128 bits = practically infinite
+   addresses), still rolling out today, decades later
+
+WHY THIS MATTERS FOR SECURITY:
+- NAT accidentally became a weak security boundary (outside attacker
+  can't directly address your internal laptop) - but it is NOT a
+  firewall, this is a common misconception worth understanding clearly
+- Private ranges are why internal network segmentation [FUND Unit III]
+  even makes sense as a concept
+
+GO PRACTICE:
+1. Run "ipconfig" (Windows) or "ifconfig"/"ip a" (Linux/Mac) on your
+   own machine right now - find your private IP, recognize which
+   range it's in (probably 192.168.x.x)
+2. Understand: when you browse a website, your private IP gets NAT'd
+   to your home router's ONE public IP - that's why "what's my IP"
+   websites show a DIFFERENT address than your local one
+
+=== Status: [ ]
+
+==================================================
+== STORY 5: DNS - the internet's phonebook, and why it gets attacked
+==================================================
+[FUND Unit II - DNS resolution process, record types]
+
+WHAT HAPPENED:
+- Early internet, people had to remember raw IP addresses to visit any
+  site. In 1983, DNS was invented so humans could type names
+  (like google.com) instead of numbers. This single invention is WHY
+  the internet became usable for normal people, not just engineers.
+
+HOW DNS RESOLUTION ACTUALLY WORKS (step by step, this is exam-relevant):
+1. You type google.com in browser
+2. Browser checks its own cache first
+3. If not cached, asks OS, then asks a DNS Resolver (usually your ISP
+   or 8.8.8.8 Google DNS)
+4. Resolver asks a Root server -> "who handles .com?"
+5. Root server points to .com TLD server
+6. TLD server points to google.com's actual Authoritative Nameserver
+7. Authoritative server replies with the real IP address
+8. Browser finally connects to that IP
+
+RECORD TYPES YOU NEED:
+- A record = domain -> IPv4 address
+- MX record = where email for this domain should be delivered
+- CNAME = alias, one name points to another name
+- TXT = arbitrary text, often used for verification/security (SPF, DKIM)
+- NS = which nameservers are authoritative for this domain
+
+WHY THIS BECOMES A SECURITY TOPIC:
+- Because DNS is trusted blindly by almost everything, it became a
+  juicy attack target - DNS spoofing/cache poisoning (tricking a
+  resolver into caching a FAKE answer, redirecting victims to a
+  malicious site while the address bar still looks "normal" at the
+  DNS level)
+
+GO PRACTICE:
+1. Run "nslookup google.com" or "dig google.com" in your terminal -
+   watch a real DNS query happen
+2. Run "nslookup -type=MX gmail.com" - see real MX records
+3. This is also your FIRST taste of [PENT Unit II] reconnaissance -
+   attackers run these exact commands to learn about a target before
+   ever touching the actual website
+
+=== Status: [ ]
+
+==================================================
+== END OF FILE 1 ==
+==================================================
+Covered so far: foundational mindset (attack surface), first real
+incident + birth of IR (Morris Worm), OSI model, IPv4/NAT/subnetting
+basics, DNS resolution.
+
+NOT yet covered (coming in File 2): CIA Triad in depth, common ports,
+HTTPS protections, the rest of 1990s-2000s attacks (this connects
+into your EXISTING Story Mode file - SQLi, XSS, CSRF etc fit right
+after this point in the timeline).
+
+==================================================
+== CONTINUATION PROMPT — paste this when ready for File 2 ==
+==================================================
+I am continuing my Software Security Engineer story-mode master
+timeline. I have completed File 1 (1970s-1990s era: phone phreaking/
+attack surface, Morris Worm/incident response birth, OSI model,
+IPv4/NAT/subnetting, DNS resolution). My target role is Software
+Security Engineer / AppSec, MCA final year, Cybersecurity track
+(Fundamentals & Network Security + Ethical Hacking & Pentesting +
+Digital Forensics & IR combined into one chronological timeline,
+not separated by subject). I learn via story mode: real incident ->
+why it worked -> what got invented because of it -> hands-on practice
+-> check my own GitHub repos for the same issue where relevant. My
+repos: KeepNotes_SpringBoot (Java/Spring Boot/Hibernate), MyNotes
+(MERN), Movie_Booking_System_in_PHP, Doctor_Appointment_System_Laravel,
+VNews (React). I already separately have a Story Mode file covering:
+SQL Injection, plaintext passwords/hashing, XSS, CSRF, HTTPS/MITM,
+Log4Shell/dependency risk, broken API authorization, Target breach/
+forensics basics - these stories sit chronologically in the 1990s-2010s
+range, please weave references to them rather than repeating in full.
+
+Please create FILE 2 of the master timeline, continuing chronologically
+from where File 1 ended, pulling from all three syllabi as relevant to
+that time period, in the same format (story/why/solution/practice,
+tagged with [FUND]/[PENT]/[DFIR], downloadable txt, checklist status).
+Tell me clearly which topics from my three syllabi got covered in this
+file and which remain for future files.

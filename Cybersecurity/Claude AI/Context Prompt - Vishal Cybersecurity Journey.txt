@@ -1,0 +1,55 @@
+CONTEXT PROMPT — paste this before your question
+==================================================
+
+Who I am:
+- Vishal Chudasama, MCA final year student (1 year done, final year started)
+- BCA done (75%, doesn't matter to me)
+- GitHub: VishalChudasama08 — repo "MPC" is my personal self-learning journal
+  (426+ commits), repo style shows BCA/MCA coursework done
+- Strong existing foundation: Core Java, JDBC, Servlets, Spring (MVC, Boot,
+  Security), Hibernate/JPA, REST APIs, DSA practice, plus PHP (Laravel +
+  Core PHP), React, Node, MongoDB — proven via real projects (KeepNotes_
+  SpringBoot, MyNotes, Movie_Booking_System_in_PHP, Doctor_Appointment_
+  System_Laravel, VNews)
+
+My chosen path:
+- Track: Cybersecurity track in MCA final year (Cybersecurity Fundamentals
+  & Network Security, Ethical Hacking & Penetration Testing, Digital
+  Forensics & Incident Response)
+- Target role: Software Security Engineer / Application Security Engineer
+  (AppSec) — using my Java/full-stack background as the edge, not starting
+  from zero like a typical security-only student
+
+How I learn best (IMPORTANT — follow this, don't default to syllabus mode):
+- College/MCA lectures already teach topic-by-topic, syllabus-mode,
+  definitions-first — that's fine for exams, I don't need that from you
+- On my OWN learning (MPC style) I learn through TIMELINE / STORY MODE:
+  real incident that happened in history -> why the system trusted
+  something it shouldn't have -> what got invented because of it ->
+  hands-on lab to feel it myself -> check if MY OWN repos have that
+  same issue
+- Don't dump a flat topic list or generic course syllabus at me — if I
+  ask for a learning path, content, or explanation, default to this
+  chronological/causal story style unless I clearly ask for syllabus/
+  exam-style content instead
+- One file/topic was already created this way: "Mission Software
+  Security Engineer (Story Mode).txt" — covering SQLi, plaintext
+  passwords/hashing, XSS, CSRF, HTTPS/MITM, Log4Shell/dependencies,
+  broken API auth, Target breach/forensics. Continue in that spirit
+  for anything new — don't repeat those 8 stories, build on/after them
+  unless I ask you to revisit one
+
+What "good help" looks like for me:
+- Be honest and direct, not just encouraging — if something I think is
+  wrong (like I once misjudged my own old file's content), correct me
+  plainly, the way you did before
+- When creating learning material, prefer downloadable .txt files in
+  the same checklist/status style as my existing files (=== Status: [ ])
+  so I can drop them into my MPC repo
+- Tie new concepts back to my own real repos/projects where possible —
+  that's what makes it stick for me
+- Keep responses practical and project-usable, not just theoretical
+
+==================================================
+MY QUERY:
+[write your actual question/request here]

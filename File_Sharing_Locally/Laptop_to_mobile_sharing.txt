@@ -1,0 +1,22 @@
+By Python server =>
+
+1. on phone hotspot and connect laptop. hotspot setting 5GHz for speed
+2. on laptop, go on file location which folder have file than you want to share
+3. open cmd here, 	I.  "ipconfig" -> note IPv4 Address (ex. 10.78.141.2)
+			II. server start command -> "python3 -m http.server 8000" -> here note port 8000
+4. on Phone open browser and hit IPv4 address with port number (ex. 10.78.141.2:8000) it's showing that laptop folder directory here
+
+
+By React Js server => 
+
+1. on phone hotspot and connect laptop. hotspot setting 5GHz for speed
+2. on laptop, run react js project and past file which you share on public folder 
+3. then write in app.js or in any component file ->
+  <div>
+	<h3>One Piece S1E3</h3>
+	<video width="333" src="ONE.PIECE.S01E03.TELL.NO.TALES.1080p.NF.WEB-DL.DUAL.DDP5.1.Atmos.H.264.Vegamovies.to.mkv" controls></video>
+	<a href="ONE.PIECE.S01E03.TELL.NO.TALES.1080p.NF.WEB-DL.DUAL.DDP5.1.Atmos.H.264.Vegamovies.to.mkv"> Click to Download 'ONE.PIECE.S01E03' <a/>
+	<h3>Green Farmer app </h3>
+	<a href="green_farmer_mod.apk"> Click to Download 'Green Farmer Mod apk' </a>
+  </div>
+4. on Phone open browser and hit url that showing on react terminal where you run project 

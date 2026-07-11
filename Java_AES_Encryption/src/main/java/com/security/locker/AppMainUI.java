@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.sql.*;
 
+// "Store your document in securely"
 // “My application has secure registration and login. After authentication, the user can upload encrypted documents to a digital locker or retrieve and decrypt them. All files are protected using AES encryption and stored securely in MySQL.”
 public class AppMainUI extends JFrame {
 

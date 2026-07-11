@@ -4,13 +4,14 @@ import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
+import java.nio.charset.StandardCharsets;
 
 public class AESCrypto {
 
     private static final String SECRET = "MySuperSecretKey"; // keep same for encrypt/decrypt
 
     private static SecretKey getKey() throws Exception {
-        byte[] key = SECRET.getBytes("UTF-8");
+        byte[] key = SECRET.getBytes(StandardCharsets.UTF_8);
         return new SecretKeySpec(key, 0, 16, "AES");
     }
 
